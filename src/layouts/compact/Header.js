@@ -33,25 +33,14 @@ export default function Header({ isOffset }) {
           backgroundColor: theme.palette.primary.main,
           height: {
             xs: HEADER.H_MOBILE,
-            // md: HEADER.H_MAIN_DESKTOP,
           },
-          // transition: theme.transitions.create(['height', 'background-color'], {
-          //   easing: theme.transitions.easing.easeInOut,
-          //   duration: theme.transitions.duration.shorter,
-          // }),
-          // ...(isOffset && {
-          //   ...bgBlur({ color: theme.palette.background.default }),
-          //   height: {
-          //     md: HEADER.H_MAIN_DESKTOP - 16,
-          //   },
-          // }),
         }}
       >
         <Box sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
           <Box sx={{ lineHeight: 0, position: 'relative' }}>
             <Link href="/" component={NextLink}>
               <Tooltip arrow placement="bottom" title="home" enterDelay={1000}>
-                <Box sx={{ lineHeight: 0, position: 'relative', height: '64px' }}>
+                <Box sx={{ lineHeight: 0, position: 'relative', height: '54px', width: '170px' }}>
                   <Image src="/assets/images/scc-logo-blue-sm2.png" alt="navigation" disabledEffect sx={{ height: 1 }} />
                 </Box>
               </Tooltip>

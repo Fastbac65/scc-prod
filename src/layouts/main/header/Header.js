@@ -73,7 +73,7 @@ export default function Header() {
           }),
 
           ...(isOffset && {
-            ...{ backgroundColor: theme.palette.primary.dark },
+            ...{ backgroundColor: theme.palette.primary.main },
             // ...bgBlur({ color: theme.palette.primary.darker, blur: 6 }),
             // ...bgBlur({ color: theme.palette.background.default, blur: 5 }),
             // color: 'text.primary',
@@ -97,17 +97,18 @@ export default function Header() {
           // }),
         }}
       >
-        <Box sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
-          {isSmUp && (
+        <Box sx={{ height: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* logo image left on MdUp */}
+          {isMdUp && (
             <Link href="/" component={NextLink}>
               <Tooltip arrow placement="bottom" title="home" enterDelay={1000}>
                 <Box
                   sx={{
-                    ml: '2px',
+                    ml: '5px',
                     lineHeight: 0,
                     position: 'relative',
                     height: isOffset ? '64px' : '54px',
-                    width: '185.44px',
+                    width: '170px',
                     borderRadius: isOffset ? 0 : 1,
                     overflow: 'hidden',
                     transition: theme.transitions.create(['height'], {
@@ -117,25 +118,47 @@ export default function Header() {
                     }),
                   }}
                 >
-                  <Image src="/assets/sjb-logo/hnav-logo.jpg" alt="SJB logo" disabledEffect sx={{ height: 1 }} />
+                  <Image src="/assets/images/scc-logo-blue-sm2.png" alt="SCC logo" disabledEffect sx={{ height: 1 }} />
                 </Box>
               </Tooltip>
             </Link>
           )}
-          {!isSmUp && (
-            <Link href="/" component={NextLink}>
-              <Tooltip arrow placement="bottom" title="home" enterDelay={1000}>
-                <Box sx={{ ml: 1, lineHeight: 0, position: 'relative', height: '54px', width: '54px', borderRadius: 1, overflow: 'hidden' }}>
-                  <Image src="/assets/sjb-logo/hicon.png" alt="SJB logo" disabledEffect sx={{ height: 1 }} />
-                </Box>
-              </Tooltip>
-            </Link>
-          )}
+          {/* mobile nav below MdUp */}
           {!isMdUp && <NavMobile data={navConfig} />}
+          {/* image center on MdUp */}
+          {!isMdUp && (
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+              <Link href="/" component={NextLink}>
+                <Tooltip arrow placement="bottom" title="home" enterDelay={1000}>
+                  <Box
+                    sx={{
+                      lineHeight: 0,
+                      position: 'relative',
+                      height: isOffset ? '64px' : '54px',
+                      width: '170px',
+                      borderRadius: isOffset ? 0 : 1,
+                      overflow: 'hidden',
+                      transition: theme.transitions.create(['height'], {
+                        easing: theme.transitions.easing.easeInOut,
+                        duration: 500,
+                        // duration: theme.transitions.duration.shorter,
+                      }),
+                    }}
+                  >
+                    <Image src="/assets/images/scc-logo-blue-sm2.png" alt="SJB logo" disabledEffect sx={{ height: 1 }} />
+                  </Box>
+                </Tooltip>
+              </Link>
+            </Box>
+          )}
+          {/* desktop nav on MdUp */}
+          {isMdUp && (
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+              <NavDesktop data={navConfig} />
+            </Box>
+          )}
 
-          {isMdUp && <NavDesktop data={navConfig} />}
-
-          <Stack spacing={1} flexGrow={1} direction="row" alignItems="center" justifyContent="flex-end" sx={{ pr: { xs: 0, md: 2 } }}>
+          <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ pr: { xs: 0, sm: 1, md: 2 } }}>
             {user && !loading && (
               <>
                 <IconButton onClick={handleOpenUserMenu} color="inherit">
@@ -148,7 +171,7 @@ export default function Header() {
             {!user && !loading && (
               <>
                 <Tooltip title={theme.palette.mode === 'dark' ? 'Light Mode' : 'Dark Mode'} arrow placement="bottom-end">
-                  <IconButton onClick={onToggleMode} color="inherit">
+                  <IconButton onClick={onToggleMode} sx={{ color: theme.palette.mode === 'dark' ? '#f9de00' : 'inherit' }}>
                     {theme.palette.mode === 'dark' ? <Iconify icon="mdi:brightness-7" /> : <Iconify icon="mdi:brightness-2" />}
                   </IconButton>
                 </Tooltip>

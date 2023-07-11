@@ -32,7 +32,7 @@ export default function MainLayout({ children }) {
           flexGrow: 1,
         }}
       >
-        <Spacing />
+        {/* <Spacing /> */}
         {children}
       </Box>
       <ScrollToTop className="mui-fixed">

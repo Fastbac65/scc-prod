@@ -1,4 +1,4 @@
-import { Manrope, Public_Sans, Barlow } from 'next/font/google';
+import { Manrope, Quicksand, Roboto } from 'next/font/google';
 
 // ----------------------------------------------------------------------
 
@@ -24,15 +24,15 @@ export function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-export const primaryFont = Manrope({
-  weight: ['400', '500', '600', '700'],
+export const primaryFont = Quicksand({
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
-export const secondaryFont = Barlow({
-  weight: ['400', '500', '600', '700'],
+export const secondaryFont = Roboto({
+  weight: ['400', '500', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
@@ -45,7 +45,7 @@ export const secondaryFont = Barlow({
 
 const typography = {
   fontFamily: primaryFont.style.fontFamily,
-  fontWeightRegular: 300,
+  fontWeightRegular: 400,
   fontWeightMedium: 500,
   fontWeightSemiBold: 600,
   fontWeightBold: 700,

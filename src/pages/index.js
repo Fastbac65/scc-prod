@@ -31,11 +31,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>SJB Therapy - Your next step to a better you!!</title>
+        <title>South Curl Curl Surf Life Saving Club</title>
         <link rel="canonical" href={host} />
         <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
       </Head>
-      <div>hello</div>
       <HomeView />
     </>
   );

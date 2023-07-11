@@ -1,11 +1,11 @@
 // ----------------------------------------------------------------------
-
+import HomeLanding from 'src/sections/home/HomeLanding';
 // ----------------------------------------------------------------------
 
 export default function HomeView() {
   return (
     <>
-      HELLO
+      <HomeLanding />
       {/* <HomeHero />
       <HomeGuidedMeditation />
       <HomeBanner />

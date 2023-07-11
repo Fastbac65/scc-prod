@@ -31,9 +31,6 @@ const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002
 //   }
 // );
 
-console.log(admin.apps);
-// createFirebaseAdminApp();
-
 export default async function handler(req, res) {
   if (req.body.api_key !== process.env.API_ROUTE_SECRET) {
     return res.status(401).send('Not Authorised To Access This API');

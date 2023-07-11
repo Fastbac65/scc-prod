@@ -54,7 +54,7 @@ export function SettingsProvider({ children }) {
 
   // const purchaseRef = ref(db, 'purchases/');
   // const custRef = ref(db, 'customers/');
-  const host = process.env.NODE_ENV === 'development' ? 'https://scc-prod.vercel.com' : 'https://scc-prod.vercel.com';
+  const host = process.env.NODE_ENV === 'development' ? 'https://scc-prod.vercel.app' : 'https://scc-prod.vercel.app';
 
   // useEffect(() => {
   //   let listener = () => {};

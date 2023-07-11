@@ -64,7 +64,6 @@ export default function Header() {
           display: 'block',
           height: {
             xs: HEADER.H_MOBILE,
-            // md: HEADER.H_MAIN_DESKTOP,
           },
           transition: theme.transitions.create(['height', 'background-color'], {
             easing: theme.transitions.easing.easeInOut,
@@ -91,10 +90,6 @@ export default function Header() {
             //   md: HEADER.H_MAIN_DESKTOP,
             // },
           }),
-          // ...(!isMdUp && {
-          //   ...{ backgroundColor: theme.palette.primary.dark },
-          //   color: 'common.white',
-          // }),
         }}
       >
         <Box sx={{ height: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

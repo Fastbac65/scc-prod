@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { useMemo, useState, useEffect, useContext, useCallback, createContext, useReducer } from 'react';
 // firebase
-// import { auth, db } from 'src/lib/createFirebaseApp';
+import { auth, db } from 'src/lib/createFirebaseApp';
 
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
 
 //
@@ -49,54 +49,43 @@ export function SettingsProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [themeMode, setThemeMode] = useState(initialState.themeMode);
+  const [currentUser, setCurrentUser] = useState(initialState.themeMode);
 
-  // const [user, loading, error] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
 
   // const purchaseRef = ref(db, 'purchases/');
   // const custRef = ref(db, 'customers/');
   const host = process.env.NODE_ENV === 'development' ? 'https://scc-prod.vercel.app' : 'https://scc-prod.vercel.app';
 
-  // useEffect(() => {
-  //   let listener = () => {};
-  //   let custlistener = () => {};
-  //   if (user) {
-  //     console.log('user loaded', user);
-  //     setCurrentUser({ ...user });
-  //     setAvatar(user.photoURL || `/assets/images/avatar/avatar_19.jpg`);
-  //     listener = onValue(purchaseRef, (snapshot) => {
-  //       if (snapshot.val()) {
-  //         const items = Object?.values(snapshot.val());
-  //         console.log('purchases loaded');
-  //         setProductsTable([...items.filter((item) => item?.billing_details?.email === user.email)]);
-  //       }
-  //     });
-  //     custlistener = onValue(custRef, (snapshot) => {
-  //       if (snapshot.val()) {
-  //         const customers = Object?.values(snapshot.val());
-  //         console.log('custIds loaded');
-  //         const cust = customers.filter((item) => item.email === user.email);
-  //         setCustId(cust[0]?.id);
-  //         setClient({ ...cust[0] });
-  //       }
-  //     });
-  //   } else {
-  //     console.log('App logged out');
-  //     setCurrentUser(null);
-  //     setProductsTable([]);
-  //     setClient({});
-  //     setCustId('unset');
-  //     // onValue(custRef, (snapshot) => {
-  //     //   if (snapshot.val()) {
-  //     //     const customers = Object?.values(snapshot.val());
-
-  //     //     console.log(' logged out custIds loaded');
-  //     //     console.log(customers);
-  //     //     setClient(customers);
-  //     //   }
-  //     // });
-  //   }
-  //   return () => listener();
-  // }, [user]);
+  useEffect(() => {
+    let listener = () => {};
+    let custlistener = () => {};
+    if (user) {
+      console.log('user loaded', user);
+      setCurrentUser({ ...user });
+      // setAvatar(user.photoURL || `/assets/images/avatar/avatar_19.jpg`);
+      // listener = onValue(purchaseRef, (snapshot) => {
+      //   if (snapshot.val()) {
+      //     const items = Object?.values(snapshot.val());
+      //     console.log('purchases loaded');
+      //     setProductsTable([...items.filter((item) => item?.billing_details?.email === user.email)]);
+      //   }
+      // });
+      // custlistener = onValue(custRef, (snapshot) => {
+      //   if (snapshot.val()) {
+      //     const customers = Object?.values(snapshot.val());
+      //     console.log('custIds loaded');
+      //     const cust = customers.filter((item) => item.email === user.email);
+      //     setCustId(cust[0]?.id);
+      //     setClient({ ...cust[0] });
+      //   }
+      // });
+    } else {
+      console.log('App logged out');
+      setCurrentUser(null);
+    }
+    // return () => listener();
+  }, [user]);
 
   // looks for cookie in local storage with thememode - so that theme persists across tabs
   useEffect(() => {
@@ -119,8 +108,8 @@ export function SettingsProvider({ children }) {
       // Mode
       themeMode,
       onToggleMode,
-      // loading,
-      // user,
+      loading,
+      user,
       host,
     }),
     [
@@ -131,8 +120,8 @@ export function SettingsProvider({ children }) {
       // the rest
       themeMode,
       onToggleMode,
-      // loading,
-      // user,
+      loading,
+      user,
       host,
     ]
   );

@@ -44,7 +44,6 @@ export default function HomeLanding(props) {
       description: 'Hello Terry!',
     },
   ];
-  console.log(theme.palette.mode === 'dark');
 
   return (
     <>

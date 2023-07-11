@@ -9,7 +9,6 @@ import { HEADER } from 'src/config-global';
 // utils
 // import { bgBlur } from 'src/utils/cssStyles';
 // routes
-import { paths } from 'src/routes/paths';
 // components
 // import Logo from 'src/components/logo';
 // import SettingsDrawer from 'src/components/settings/drawer';
@@ -61,7 +60,7 @@ export default function Header({ isOffset }) {
           </Box>
 
           <Stack sx={{ mr: 1 }} spacing={1} direction="row" alignItems="center" flexGrow={1} justifyContent="flex-end">
-            <Link href={paths.support} component={NextLink} color="inherit">
+            <Link href="/support" component={NextLink} color="inherit">
               <IconButton color="inherit">
                 <Iconify icon="carbon:help" />
               </IconButton>

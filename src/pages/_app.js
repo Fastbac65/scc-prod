@@ -6,9 +6,9 @@ import 'simplebar-react/dist/simplebar.min.css';
 // import 'yet-another-react-lightbox/plugins/captions.css';
 // import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-// // slick-carousel
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+// slick-carousel
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // lazy image
 import 'react-lazy-load-image-component/src/effects/blur.css';

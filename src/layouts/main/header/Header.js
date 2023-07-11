@@ -35,7 +35,7 @@ import AccountMenu from '../AccountMenu';
 
 export default function Header() {
   const theme = useTheme();
-  const fallbackAvatar = `/assets/images/avatar/avatar_19.jpg`;
+  const fallbackAvatar = `/assets/images/avatar/avatar_9.jpg`;
   const { onToggleMode, user, loading = false, avatar = fallbackAvatar } = useSettingsContext();
   const [anchorElUser, setAnchorElUser] = useState();
 
@@ -157,7 +157,7 @@ export default function Header() {
             {user && !loading && (
               <>
                 <IconButton onClick={handleOpenUserMenu} color="inherit">
-                  <Avatar src={avatar} sx={{ width: 40, height: 40 }} />
+                  <Avatar src={user?.photoURL || avatar} sx={{ width: 40, height: 40 }} />
                 </IconButton>
               </>
             )}

@@ -21,15 +21,12 @@ export default function VerificationView() {
   useEffect(() => {
     if (!router.isReady) return;
     // code using router.query
-    const {
-      query: { oobCode, mode },
-    } = router;
+    const { oobCode, mode } = router.query;
 
     if (!oobCode || !mode) {
       router.back();
       return;
     }
-
     verifyUser(oobCode, mode);
   }, [router.isReady]);
 
@@ -185,7 +182,7 @@ export default function VerificationView() {
       {/* <AuthRegisterForm /> */}
       {/* </Box> */}
 
-      <AuthCarousel title="Client Verification" images={['/assets/sjb-logo/Hmobile.jpg', '/assets/sjb-logo/Hdocs-large.jpg']} />
+      <AuthCarousel title="Member Verification" images={['/assets/images/scc-beach-pool.jpeg', '/assets/images/scc-fb-grp.jpeg', '/assets/images/scc-pool-waves.jpeg']} />
     </Stack>
   );
 }

@@ -19,7 +19,7 @@ export default function ResetPasswordView() {
 
       {/* <Image alt="reset password" src="/assets/icons/ic_lock_password.svg" sx={{ mb: 5, width: 96, height: 96, mx: 'auto' }} /> */}
 
-      <Typography variant="h3" paragraph>
+      <Typography variant="h2" paragraph>
         Forgot Your Password?
       </Typography>
 
@@ -32,7 +32,7 @@ export default function ResetPasswordView() {
       <Link
         component={NextLink}
         href="/auth/login-cover"
-        color="primary.main"
+        color="primary.lighter"
         variant="subtitle2"
         sx={{
           mt: 3,

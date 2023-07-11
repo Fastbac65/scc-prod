@@ -30,7 +30,7 @@ export default function Header({ isOffset }) {
           // justifyContent: 'space-between',
           display: 'block',
           color: 'common.white',
-          backgroundColor: theme.palette.primary.dark,
+          backgroundColor: theme.palette.primary.main,
           height: {
             xs: HEADER.H_MOBILE,
             // md: HEADER.H_MAIN_DESKTOP,
@@ -51,8 +51,8 @@ export default function Header({ isOffset }) {
           <Box sx={{ lineHeight: 0, position: 'relative' }}>
             <Link href="/" component={NextLink}>
               <Tooltip arrow placement="bottom" title="home" enterDelay={1000}>
-                <Box sx={{ lineHeight: 0, position: 'relative', height: '64px', width: '185.44px' }}>
-                  <Image src="/assets/sjb-logo/hnav-logo.jpg" alt="navigation" disabledEffect sx={{ height: 1 }} />
+                <Box sx={{ lineHeight: 0, position: 'relative', height: '64px' }}>
+                  <Image src="/assets/images/scc-logo-blue-sm2.png" alt="navigation" disabledEffect sx={{ height: 1 }} />
                 </Box>
               </Tooltip>
             </Link>

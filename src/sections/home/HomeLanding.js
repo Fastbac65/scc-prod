@@ -49,7 +49,7 @@ export default function HomeLanding(props) {
     <>
       <StyledRoot>
         <Box mx={2} pt={10}>
-          <Typography textAlign="center" variant="h4" m={2}>
+          <Typography textAlign="center" variant="h2" m={2}>
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>

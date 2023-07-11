@@ -24,10 +24,10 @@ HomePage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 // Entry point to website content
 
 export default function HomePage() {
-  const { host } = useSettingsContext();
-  // if (loading) {
-  //   return <LoadingScreen />;
-  // }
+  const { loading, host } = useSettingsContext();
+  if (loading) {
+    return <LoadingScreen />;
+  }
   return (
     <>
       <Head>

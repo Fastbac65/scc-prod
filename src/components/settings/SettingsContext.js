@@ -7,9 +7,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
 
 //
-// import { onValue, ref } from 'firebase/database';
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
+import { doc, onSnapshot } from 'firebase/firestore';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -49,7 +49,7 @@ export function SettingsProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [themeMode, setThemeMode] = useState(initialState.themeMode);
-  const [currentUser, setCurrentUser] = useState(initialState.themeMode);
+  const [member, setMember] = useState(initialState.themeMode);
 
   const [user, loading, error] = useAuthState(auth);
 
@@ -62,15 +62,13 @@ export function SettingsProvider({ children }) {
     let custlistener = () => {};
     if (user) {
       console.log('user loaded', user);
-      setCurrentUser({ ...user });
-      // setAvatar(user.photoURL || `/assets/images/avatar/avatar_19.jpg`);
-      // listener = onValue(purchaseRef, (snapshot) => {
-      //   if (snapshot.val()) {
-      //     const items = Object?.values(snapshot.val());
-      //     console.log('purchases loaded');
-      //     setProductsTable([...items.filter((item) => item?.billing_details?.email === user.email)]);
-      //   }
-      // });
+
+      listener = onSnapshot(doc(db, 'members', user.uid), (snapshot) => {
+        if (snapshot.data()) {
+          console.log('user loaded', snapshot.data());
+          setMember(snapshot.data());
+        }
+      });
       // custlistener = onValue(custRef, (snapshot) => {
       //   if (snapshot.val()) {
       //     const customers = Object?.values(snapshot.val());
@@ -82,9 +80,8 @@ export function SettingsProvider({ children }) {
       // });
     } else {
       console.log('App logged out');
-      setCurrentUser(null);
     }
-    // return () => listener();
+    return () => listener();
   }, [user]);
 
   // looks for cookie in local storage with thememode - so that theme persists across tabs
@@ -110,6 +107,7 @@ export function SettingsProvider({ children }) {
       onToggleMode,
       loading,
       user,
+      member,
       host,
     }),
     [
@@ -122,6 +120,7 @@ export function SettingsProvider({ children }) {
       onToggleMode,
       loading,
       user,
+      member,
       host,
     ]
   );

@@ -35,8 +35,7 @@ import AccountMenu from '../AccountMenu';
 
 export default function Header() {
   const theme = useTheme();
-  const fallbackAvatar = `/assets/images/avatar/avatar_9.jpg`;
-  const { onToggleMode, user, loading = false, avatar = fallbackAvatar } = useSettingsContext();
+  const { onToggleMode, user, loading, member } = useSettingsContext();
   const [anchorElUser, setAnchorElUser] = useState();
 
   const isMdUp = useResponsive('up', 'md');
@@ -154,10 +153,10 @@ export default function Header() {
           )}
 
           <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ pr: { xs: 0, sm: 1, md: 2 } }}>
-            {user && !loading && (
+            {user && !loading && member.photoURL && (
               <>
                 <IconButton onClick={handleOpenUserMenu} color="inherit">
-                  <Avatar src={user?.photoURL || avatar} sx={{ width: 40, height: 40 }} />
+                  <Avatar src={member.photoURL} sx={{ width: 40, height: 40 }} />
                 </IconButton>
               </>
             )}

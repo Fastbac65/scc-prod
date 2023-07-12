@@ -21,13 +21,13 @@ export default function VerificationView() {
   useEffect(() => {
     if (!router.isReady) return;
     // code using router.query
-    const { oobCode, mode } = router.query;
+    const { oobCode, mode, continueUrl } = router.query;
 
     if (!oobCode || !mode) {
       router.back();
       return;
     }
-    verifyUser(oobCode, mode);
+    verifyUser(oobCode, mode, continueUrl);
   }, [router.isReady]);
 
   const {
@@ -37,19 +37,21 @@ export default function VerificationView() {
     state: { alert, modal },
   } = useSettingsContext();
 
-  const verifyUser = async (oobCode, mode) => {
+  const verifyUser = async (oobCode, mode, continueUrl) => {
     console.log('verify fct ran');
+    // Additional state parameters passed via continueUrl for fullname and email from the register page
+    const url = new URL(continueUrl);
+    const email = url.searchParams.get('em');
+    const fname = url.searchParams.get('fn');
+    const mobile = url.searchParams.get('ph');
 
     if (oobCode) {
       dispatch({ type: 'START_LOADING' });
-
-      // do stuff
       try {
         // action code boundary
         switch (mode) {
           case 'signIn': {
             if (isSignInWithEmailLink(auth, window.location.href)) {
-              // Additional state parameters can also be passed via URL.
               dispatch({ type: 'END_LOADING' });
               dispatch({
                 type: 'MODAL',
@@ -57,7 +59,7 @@ export default function VerificationView() {
                   ...modal,
                   open: true,
                   title: 'Create Password',
-                  content: <EmailSignInSetPassword />,
+                  content: <EmailSignInSetPassword email={email} fname={fname} mobile={mobile} />,
                 },
               });
             }

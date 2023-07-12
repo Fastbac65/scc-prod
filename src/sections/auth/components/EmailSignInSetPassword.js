@@ -1,18 +1,20 @@
 import { Button, DialogActions, DialogContent, DialogContentText, TextField } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import { signInWithEmailLink, updatePassword, updateProfile } from 'firebase/auth';
+import { EmailAuthProvider, reauthenticateWithCredential, signInWithEmailLink, updatePassword, updateProfile } from 'firebase/auth';
+
 import { auth, db } from 'src/lib/createFirebaseApp';
 import { useSettingsContext } from 'src/components/settings';
 import { useRouter } from 'next/router';
 import Iconify from 'src/components/iconify/Iconify';
-import { ref, update } from 'firebase/database';
 import PasswordField from './PasswordField';
+import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 
-const EmailSignInSetPassword = () => {
+const EmailSignInSetPassword = ({ email, fname, mobile }) => {
   const router = useRouter();
 
+  console.log(email, fname);
+
   const {
-    custId,
     dispatch,
     state: { alert, modal },
   } = useSettingsContext();
@@ -57,12 +59,35 @@ const EmailSignInSetPassword = () => {
       // The client SDK will parse the code from the link for you.
       const result = await signInWithEmailLink(auth, email, window.location.href);
       console.log(result.user);
+      const userObj = {
+        uid: result.user.uid,
+        email: result.user.email,
+        emailVerified: result.user.emailVerified,
+        phoneNumber: result.user.phoneNumber,
+        displayName: result.user.displayName,
+        photoURL: result.user.photoURL,
+        providerData: result.user.providerData,
+        createdAt: result.user.metadata.createdAt,
+        creationTime: result.user.metadata.creationTime,
+        lastLoginAt: result.user.metadata.lastLoginAt,
+        lastSignInTime: result.user.metadata.lastSignInTime,
+      };
+
+      await addDoco('members', result.user.uid, userObj);
       // Clear email from storage.
       window.localStorage.removeItem('emailForSignIn');
-      updatePassword(result.user, password);
-      // pick a profile pic from /assets/images/avatar/avatar_x
-      const pic = Math.floor(Math.random() * 25);
-      updateProfile(result.user, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+
+      try {
+        await updatePassword(result.user, password);
+        // pick a profile pic from /assets/images/avatar/avatar_x
+        const pic = Math.floor(Math.random() * 25);
+        await updateDoco('members', result.user.uid, { displayName: fname, phoneNumber: mobile, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+        // const credential = EmailAuthProvider.credential(result.user.email, password);
+        // await reauthenticateWithCredential(result.user, credential);
+        // updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+      } catch (error) {
+        console.log(error, error.message);
+      }
 
       dispatch({ type: 'END_LOADING' });
       dispatch({ type: 'MODAL', payload: { ...modal, open: false } });
@@ -72,7 +97,7 @@ const EmailSignInSetPassword = () => {
           ...alert,
           open: true,
           severity: 'success',
-          message: 'Your password has been secured. Your website members account is all setup! You can view your account specifics top right',
+          message: `Thank you. Your details have been secured. Your South Curl Curl SLSC website members account is all setup! You can view your account details via the fun avatar, top right. If you would like to be a content contributor to the SCC website and posts please speak with a member of our committee or contact webadamin@southcurlcurlslsc.com.au.`,
           duration: 12000,
         },
       });

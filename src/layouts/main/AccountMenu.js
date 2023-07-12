@@ -16,11 +16,12 @@ import { auth } from 'src/lib/createFirebaseApp';
 import { useSignOut } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/router';
 import { updateProfile } from 'firebase/auth';
+import { updateDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------
 
 export function MenuContent() {
-  const { themeMode, onToggleMode, user, avatar, setAvatar, client } = useSettingsContext();
+  const { themeMode, onToggleMode, user, avatar, setAvatar, member } = useSettingsContext();
   const theme = useTheme();
   const router = useRouter();
 
@@ -66,10 +67,7 @@ export function MenuContent() {
   const handleProfile = async () => {
     // pick a profile pic from /assets/images/avatar/avatar_x
     const pic = Math.floor(Math.random() * 25);
-    await updateProfile(user, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
-    setAvatar(user.photoURL);
-
-    // dispatch({ type: 'MODAL', payload: { ...modal, open: true } });
+    await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
   };
 
   return (
@@ -84,7 +82,7 @@ export function MenuContent() {
     >
       <Stack spacing={2} sx={{ p: 2, pb: 2 }}>
         <Stack spacing={2} direction="row" alignItems="center">
-          <Avatar src={avatar} sx={{ width: 64, height: 64 }} />
+          <Avatar src={member.photoURL} sx={{ width: 64, height: 64 }} />
           <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
             <IconButton onClick={handleProfile} sx={{ color: 'inherit' }}>
               <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
@@ -95,7 +93,7 @@ export function MenuContent() {
 
         <Stack spacing={0.5}>
           <TextMaxLine variant="subtitle1" line={1}>
-            {client?.acct_per_details?.fname || client?.name}
+            {member?.displayName || user?.displayName}
           </TextMaxLine>
           <TextMaxLine variant="caption" line={1} sx={{ color: 'text.secondary' }}>
             {user?.email}

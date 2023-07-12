@@ -36,8 +36,8 @@ export default async function handler(req, res) {
   }
   let currentUser = {}; // if user is a current client it will populate
   // mode and email vars
-  const { mode, currentUserEmail: email } = req.body;
-  const name = req.body?.currentUserName;
+  const { mode = '', currentUserEmail: email = '', currentUserName: name = '', currentUserPhone: mobile = '' } = req.body;
+  console.log('name', name);
   // will hold the correct link depending on mode
   let link = null;
 
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
       const actionCodeSettings = {
         // URL you want to redirect back to. The domain (www.example.com) for
         // this URL must be whitelisted in the Firebase Console.
-        url: host,
+        url: `${host}?fn=${encodeURI(name)}&em=${email}&ph=${mobile}`,
         // This must be true for email link sign-in.
         // handleCodeInApp: true,
         // iOS: {

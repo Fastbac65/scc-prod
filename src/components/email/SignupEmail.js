@@ -3,23 +3,22 @@ import { Body, Button, Container, Head, Html, Hr, Img, Link, Preview, Section, T
 const image = 'https://firebasestorage.googleapis.com/v0/b/sjbtherapy-365805.appspot.com/o/email.jpg?alt=media&token=5208b883-d055-4b40-9b08-9e2e07d88bc1';
 const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://simo-dev.vercel.app'; /* : 'https://www.sjtherapy.com'; */
 
-export const SJBTherapySignUpEmail = ({ email, link, name }) => (
+export const SignUpEmail = ({ email, link, name }) => (
   <Html>
     <Head />
-    <Preview>Welcome to SJB Therapy</Preview>
+    <Preview>Welcome to South Curl Curl SLSC</Preview>
     <Body style={main}>
       <div>
         <Container style={container}>
           <Link href={host}>
-            <Img style={img} src={image} width="350" alt="SJB Therapy" />
+            <Img style={img} src={image} height="80" alt="South Curl Curl SLSC" />
           </Link>
+          <Hr style={hr} />
           <Section>
             <Text style={text}>Hi {name},</Text>
-            <Text style={text}>
-              Welcome to SJB Therapy. Thank you for commiting to the next steps towards a better you. We look forward to providing you with the best possible outcome and care. To finalise your account setup please continue here:
-            </Text>
+            <Text style={text}>Welcome to South Curl Curl SLSC. To finalise your members access to the South Curl Curl SLSC website please continue here:</Text>
             <Button pY={10} style={button} href={link}>
-              Finalise Account Setup
+              Finalise SCC SLSC Website Account
             </Button>
             {/* <Text style={text}>If you didn&apos;t initwant to change your password or didn&apos;t request this, just ignore and delete this message.</Text> */}
             <Text style={text}>
@@ -29,15 +28,16 @@ export const SJBTherapySignUpEmail = ({ email, link, name }) => (
                 more security tips.
               </Link> */}
             </Text>
-            <Text style={text}>Simply Just Believe!</Text>
-            <Text style={text}>Simon</Text>
+            <Text style={text}>Have a great day!</Text>
+            <Text style={text}>The web team</Text>
             <Link style={anchor} href={host}>
-              @SJB Therapy
+              @ South Curl Curl SLSC
             </Link>
             <Hr style={hr} />
             <Text style={subtext}>
               This email was originally sent to {email}. Please do not click on any links you cannot verify. All links should have origin {host}
             </Text>
+            <Text style={subtext}>If you need further assistance: reply or reach us at webadmin@southcurlcurlslsc.com.au</Text>
           </Section>
         </Container>
       </div>
@@ -45,7 +45,7 @@ export const SJBTherapySignUpEmail = ({ email, link, name }) => (
   </Html>
 );
 
-export default SJBTherapySignUpEmail;
+export default SignUpEmail;
 
 const main = {
   backgroundColor: '#f6f9fc',

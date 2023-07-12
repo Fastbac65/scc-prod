@@ -55,16 +55,7 @@ export default function RegisterCoverView() {
         <AuthRegisterForm />
       </Box>
 
-      <AuthCarousel
-        title="member registration"
-        images={[
-          '/assets/images/scc-beach-pool.jpeg',
-          '/assets/images/scc-fb-grp.jpeg',
-          '/assets/images/scc-pool-waves.jpeg',
-          // '/assets/sjb-logo/Smobile.jpg',
-          // '/assets/sjb-logo/Sdoco-large.jpg',
-        ]}
-      />
+      <AuthCarousel title="member registration" images={['/assets/images/scc-beach-pool.jpeg', '/assets/images/scc-fb-grp.jpeg', '/assets/images/scc-pool-waves.jpeg']} />
     </Stack>
   );
 }

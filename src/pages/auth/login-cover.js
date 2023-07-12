@@ -27,7 +27,7 @@ export default function LoginCoverPage() {
   return (
     <>
       <Head>
-        <title>Login | SJB Therapy</title>
+        <title>Login | South Curl Curl SLSC</title>
       </Head>
 
       <LoginCoverView />

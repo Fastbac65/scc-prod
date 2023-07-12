@@ -15,7 +15,7 @@ export default function ResetPasswordPage() {
   return (
     <>
       <Head>
-        <title>Reset Password | SJB Therapy</title>
+        <title>Reset Password | South Curl Curl SLSC</title>
       </Head>
 
       <ResetPasswordView />

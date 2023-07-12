@@ -140,7 +140,7 @@ export default function Header() {
                       }),
                     }}
                   >
-                    <Image src="/assets/images/scc-logo-blue-sm2.png" alt="SJB logo" disabledEffect sx={{ height: 1 }} />
+                    <Image src="/assets/images/scc-logo-blue-sm2.png" alt="South Curl Curl SLSC logo" disabledEffect sx={{ height: 1 }} />
                   </Box>
                 </Tooltip>
               </Link>

@@ -15,7 +15,7 @@ export default function VerifyCodePage() {
   return (
     <>
       <Head>
-        <title>Verify Code | SJB Therapy</title>
+        <title>Verify Code | South Curl Curl SLSC</title>
       </Head>
 
       <VerifyCodeView />

@@ -6,7 +6,6 @@
 // node -e "console.log(crypto.randomBytes(32).toString('hex'))"
 
 import { Resend } from 'resend';
-import admin from 'firebase-admin';
 import { getAuth } from 'firebase-admin/auth';
 
 // import { getAuth } from 'firebase-admin/auth';
@@ -16,7 +15,7 @@ import SignUpEmail from 'src/components/email/SignupEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const { db } = createFirebaseAdminApp();
-const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://simo-dev.vercel.app'; /* : 'https://www.sjtherapy.com'; */
+const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.sjtherapy.com'; */
 
 // Lets connect the email API server to the customer database
 // const ref = db.ref('customers/');
@@ -67,10 +66,11 @@ export default async function handler(req, res) {
           link = await getAuth().generateSignInWithEmailLink(email, actionCodeSettings);
           try {
             const data = await resend.emails.send({
-              from: 'onboarding@sjbtherapy.com',
-              to: email,
-              subject: 'Welcome to SJB Therapy',
-              html: '<strong>Please finalise your account setup</strong>',
+              from: 'onboarding@resend.dev',
+              to: 'sccslsc.webdev@gmail.com',
+              // to: email,
+              subject: 'Welcome to South Curl Curl SLSC Members',
+              html: '<strong>Please finalise your members account setup</strong>',
               react: SignUpEmail({ link, email, name }),
             });
           } catch (error) {
@@ -84,23 +84,28 @@ export default async function handler(req, res) {
         //   return res.status(200).json({ signin: link });
         // }
         case 'resetPassword': {
-          link = await getAuth().generatePasswordResetLink(email, actionCodeSettings);
-          const user = customers.filter((cust) => cust.email === email);
-          const fullName = user[0]?.acct_per_details?.fname || user[0].name;
-          const firstName = fullName.split(/[ ]+/)[0];
-          try {
-            const data = await resend.emails.send({
-              from: 'support@sjbtherapy.com',
-              to: email,
-              subject: 'SJB Therapy - Reset Password',
-              html: '<strong>Request to reset password</strong>',
-              react: ResetPasswordEmail({ link, email, name: firstName }),
-            });
-          } catch (error) {
-            console.log(error);
+          currentUser = await getAuth().getUserByEmail(email);
+          if (currentUser) {
+            console.log(currentUser);
+            link = await getAuth().generatePasswordResetLink(email, actionCodeSettings);
+            console.log(link);
+            const firstName = currentUser?.displayName.split(/[ ]+/)[0];
+            try {
+              const data = await resend.emails.send({
+                from: 'support@resend.dev',
+                to: 'sccslsc.webdev@gmail.com',
+                // to: 'terry.durnin@yahoo.com',
+                // to: email,
+                subject: 'South Curl Curl SLSC - Reset Password',
+                html: '<strong>Request to reset password</strong>',
+                react: ResetPasswordEmail({ link, email, name: firstName }),
+              });
+            } catch (error) {
+              console.log(error);
+            }
+            // await db.ref('server_customers/').update({ ...customers });
+            return res.status(200).json({ signin: link, user: currentUser });
           }
-          // await db.ref('server_customers/').update({ ...customers });
-          return res.status(200).json({ signin: link, user: user[0], fullName, firstName });
         }
         // case 'changeEmail': {
         //   link = await getAuth().generateVerifyAndChangeEmailLink(email, newUserEmail, actionCodeSettings);

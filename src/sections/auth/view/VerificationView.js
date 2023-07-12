@@ -79,7 +79,6 @@ export default function VerificationView() {
                 duration: 8000,
               },
             });
-
             break;
           }
           case 'recoverEmail': {
@@ -101,7 +100,6 @@ export default function VerificationView() {
 
             router.push('/');
             signOut(auth);
-
             break;
           }
           case 'resetPassword': {
@@ -117,12 +115,24 @@ export default function VerificationView() {
                 content: <ResetPasswordVerification oobCode={oobCode} />,
               },
             });
-
             break;
           }
 
-          default:
+          default: {
+            dispatch({ type: 'END_LOADING' });
+            dispatch({
+              type: 'UPDATE_ALERT',
+              payload: {
+                ...alert,
+                open: true,
+                severity: 'error',
+                message: 'Verification failed. Unsupported mode',
+                duration: 6000,
+              },
+            });
+            router.push('/');
             break;
+          }
         }
       } catch (error) {
         dispatch({ type: 'END_LOADING' });
@@ -144,44 +154,6 @@ export default function VerificationView() {
 
   return (
     <Stack direction="row" sx={{ minHeight: 1 }}>
-      {/* <Box
-        sx={{
-          width: { xs: 1, md: 480 },
-          p: (theme) => ({
-            xs: theme.spacing(4, 2),
-            md: theme.spacing(5, 10),
-          }),
-        }}
-      >
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Logo />
-        </Box>
-        <Stack
-          sx={{
-            pb: 5,
-            pt: { xs: 5, md: 5 },
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
-          <Typography variant="h3" paragraph>
-            One Moment..
-          </Typography>{' '}
-          <Typography variant="h4" paragraph>
-            Verifying your details
-          </Typography>
-        </Stack> */}
-
-      {/* <AuthWithSocial /> */}
-
-      {/* <Divider sx={{ py: 3 }}>
-          <Typography variant="body2" sx={{ color: 'text.disabled' }}>
-            OR
-          </Typography>
-        </Divider> */}
-
-      {/* <AuthRegisterForm /> */}
-      {/* </Box> */}
-
       <AuthCarousel title="Member Verification" images={['/assets/images/scc-beach-pool.jpeg', '/assets/images/scc-fb-grp.jpeg', '/assets/images/scc-pool-waves.jpeg']} />
     </Stack>
   );

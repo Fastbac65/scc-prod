@@ -9,7 +9,7 @@ export default function RegisterCoverPage() {
   return (
     <>
       <Head>
-        <title>Verification | SJB Therapy</title>
+        <title>Verification | South Curl Curl SLSC</title>
       </Head>
 
       <VerificationView />

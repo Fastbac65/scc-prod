@@ -1,24 +1,25 @@
 import { Body, Button, Container, Head, Html, Hr, Img, Link, Preview, Section, Text } from '@react-email/components';
 
-const image = 'https://firebasestorage.googleapis.com/v0/b/sjbtherapy-365805.appspot.com/o/email.jpg?alt=media&token=5208b883-d055-4b40-9b08-9e2e07d88bc1';
-const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://simo-dev.vercel.app'; /* : 'https://www.sjtherapy.com'; */
+const image = 'https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/images%2Fscc-logo-blue-sm2.png?alt=media&token=4ac16294-1a4e-44e5-a71b-ad6c25b18f07';
+const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.southcurlcurlslsc.com.au'; */
 
-export const SJBTherapyResetPasswordEmail = ({ name, email, link }) => (
+export const ResetPasswordEmail = ({ name, email, link }) => (
   <Html>
     <Head />
-    <Preview>SJB Therapy - Reset your password</Preview>
+    <Preview>South Curl Curl SLSC - Reset your password</Preview>
     <Body style={main}>
       <Container style={container}>
         <Link href={host}>
-          <Img style={img} src={image} width="350" alt="SJB Therapy" />
+          <Img style={img} src={image} height="80" alt="South Curl Curl SLSC logo" />
         </Link>
+        <Hr style={hr} />
         <Section>
           <Text style={text}>Hi {name},</Text>
-          <Text style={text}>Someone recently requested a password change for your SJB Therapy account. If this was you, you can set a new password here:</Text>
+          <Text style={text}>Someone recently requested a password change for your South Curl Curl website members account. If this was you, you can set a new password here:</Text>
           <Button pX={10} pY={10} style={button} href={link}>
             Reset password
           </Button>
-          <Text style={text}>If you don&apos;t want to change your password or didn&apos;t request this, just ignore and delete this message.</Text>
+          <Text style={text}>If you do not want to change your password or didn&apos;t request this, just ignore and delete this message.</Text>
           <Text style={text}>
             To keep your account secure, please do not forward this email to anyone.{' '}
             {/* Head over to our Support page for{' '}
@@ -26,22 +27,23 @@ export const SJBTherapyResetPasswordEmail = ({ name, email, link }) => (
                 more security tips.
               </Link> */}
           </Text>
-          <Text style={text}>Simply Just Believe!</Text>
-          <Text style={text}>Simon</Text>
+          <Text style={text}>Have a great day!</Text>
+          <Text style={text}>The web team</Text>
           <Link style={anchor} href={host}>
-            @SJB Therapy
+            @ South Curl Curl SLSC
           </Link>
           <Hr style={hr} />
           <Text style={subtext}>
             This email was originally sent to {email}. Please do not click on any links you cannot verify. All links should have origin {host}
           </Text>
+          <Text style={subtext}>If you need further assistance: reply or reach us at webadmin@southcurlcurlslsc.com.au</Text>
         </Section>
       </Container>
     </Body>
   </Html>
 );
 
-export default SJBTherapyResetPasswordEmail;
+export default ResetPasswordEmail;
 
 const main = {
   backgroundColor: '#f6f9fc',

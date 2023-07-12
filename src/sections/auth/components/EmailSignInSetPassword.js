@@ -25,7 +25,6 @@ const EmailSignInSetPassword = () => {
   const [emailSaved, setEmailSaved] = useState(true);
 
   // check if this is same device and get email from local storage
-  // let email = window.localStorage.getItem('emailForSignIn');
   useEffect(() => {
     savedEmailRef.current = window.localStorage.getItem('emailForSignIn');
     // no email render the email input box

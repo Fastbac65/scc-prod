@@ -59,7 +59,7 @@ export default function AuthCarousel({ title, images }) {
         left: 0,
         right: 0,
         zIndex: 10,
-        top: 600,
+        bottom: 40,
         mx: 'auto',
         position: 'absolute',
       },

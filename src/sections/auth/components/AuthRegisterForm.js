@@ -154,7 +154,7 @@ export default function AuthRegisterForm() {
         /> */}
 
         <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
-          Register
+          Create my South Curly account
         </LoadingButton>
 
         <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>

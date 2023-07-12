@@ -76,7 +76,7 @@ const img = {
 };
 
 const button = {
-  backgroundColor: '#7987CB',
+  backgroundColor: '#004c98',
   borderRadius: '5px',
   color: '#fff',
   fontFamily: "'Roboto', 'Helvetica Neue', Arial",

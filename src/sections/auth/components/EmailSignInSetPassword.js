@@ -72,7 +72,7 @@ const EmailSignInSetPassword = () => {
           ...alert,
           open: true,
           severity: 'success',
-          message: 'Your password has been secured. Your account is all setup! You can view your account specifics top right',
+          message: 'Your password has been secured. Your website members account is all setup! You can view your account specifics top right',
           duration: 12000,
         },
       });

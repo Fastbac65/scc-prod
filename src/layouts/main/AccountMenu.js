@@ -27,30 +27,30 @@ export function MenuContent() {
 
   const navigations = [
     {
-      title: 'Personal Info',
+      title: 'My Profile',
       path: '/account/personal',
       icon: <Iconify icon="carbon:user" />,
     },
     {
-      title: 'Session Audio',
-      path: '/account/media',
-      icon: <Iconify icon="carbon:favorite" />,
-    },
-    {
       title: 'Account Settings',
-      path: '/account/settings',
+      path: '/account/media',
       icon: <Iconify icon="carbon:cut-out" />,
     },
     {
-      title: 'Account Orders',
-      path: '/account/orders',
-      icon: <Iconify icon="carbon:document" />,
+      title: 'Personal Info',
+      path: '/account/settings',
+      icon: <Iconify icon="carbon:favorite" />,
     },
-    {
-      title: 'Billing Details',
-      path: '/account/billing',
-      icon: <Iconify icon="carbon:receipt" />,
-    },
+    // {
+    //   title: 'Account Orders',
+    //   path: '/account/orders',
+    //   icon: <Iconify icon="carbon:document" />,
+    // },
+    // {
+    //   title: 'Billing Details',
+    //   path: '/account/billing',
+    //   icon: <Iconify icon="carbon:receipt" />,
+    // },
   ];
   const [signOut] = useSignOut(auth);
 

@@ -151,8 +151,8 @@ export default function Header() {
               <NavDesktop data={navConfig} />
             </Box>
           )}
-
-          <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ pr: { xs: 0, sm: 1, md: 2 } }}>
+          {/* set minWidth on stack to placehold space for Avatar - stops logo/menu moving around while loading */}
+          <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ minWidth: { xs: 56, sm: 64, md: 72 }, pr: { xs: 0, sm: 1, md: 2 } }}>
             {user && !loading && member.photoURL && (
               <>
                 <IconButton onClick={handleOpenUserMenu} color="inherit">

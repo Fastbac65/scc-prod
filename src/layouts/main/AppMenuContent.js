@@ -55,29 +55,6 @@ export default function AppMenuContent({ data }) {
         py: 0,
       }}
     >
-      <Stack spacing={2} sx={{ p: 2, pb: 2 }}>
-        <Stack spacing={2} direction="row" alignItems="center">
-          <Avatar src={avatar} sx={{ width: 64, height: 64 }} />
-          <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
-            <IconButton onClick={handleProfile} sx={{ color: 'inherit' }}>
-              <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
-            </IconButton>
-            lucky pic
-          </Stack>
-        </Stack>
-
-        <Stack spacing={0.5}>
-          <TextMaxLine variant="subtitle1" line={1}>
-            {client?.acct_per_details?.fname || client?.name}
-          </TextMaxLine>
-          <TextMaxLine variant="caption" line={1} sx={{ color: 'text.secondary' }}>
-            {user?.email}
-          </TextMaxLine>
-        </Stack>
-      </Stack>
-
-      <Divider sx={{ borderStyle: 'dashed' }} />
-
       <Stack sx={{ my: 1, px: 2 }}>
         {data.map((item) => (
           <MenuItem key={item.title} item={item} />

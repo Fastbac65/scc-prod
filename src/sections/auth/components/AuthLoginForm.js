@@ -58,7 +58,7 @@ export default function AuthLoginForm() {
           ...alert,
           open: true,
           severity: 'success',
-          message: 'Login Successful - Welcome back!',
+          message: 'Welcome back!',
           duration: 3000,
         },
       });

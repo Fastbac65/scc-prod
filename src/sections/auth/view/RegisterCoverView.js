@@ -19,8 +19,8 @@ export default function RegisterCoverView() {
         sx={{
           width: { xs: 1, md: 480 },
           p: (theme) => ({
-            xs: theme.spacing(4, 10),
-            sm: theme.spacing(5, 20),
+            xs: theme.spacing(2, 4),
+            sm: theme.spacing(3, 20),
             md: theme.spacing(5, 10),
           }),
         }}

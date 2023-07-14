@@ -25,7 +25,7 @@ const Favicon = () => (
 const Meta = () => (
   <>
     {/* PWA primary color */}
-    <meta name="theme-color" content={palette('dark').primary.dark} />
+    <meta name="theme-color" content={palette('dark').primary.main} />
     <meta name="description" content="South Curl Curl SLSC" />
     <meta name="keywords" content="surf lifesaving firstaid patrol" />
     <meta name="author" content="TezD" />

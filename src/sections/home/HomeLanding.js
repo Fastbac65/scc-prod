@@ -48,7 +48,7 @@ export default function HomeLanding(props) {
   return (
     <>
       <StyledRoot>
-        <Box mx={2} pt={10}>
+        <Box sx={{ mx: { xs: 0, sm: 2 } }} pt={10}>
           <Typography textAlign="center" variant="h2" m={2}>
             South Curl Curl Surf Life Saving Club
           </Typography>

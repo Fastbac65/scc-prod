@@ -43,12 +43,12 @@ export default function NavMobile({ data }) {
         anchorEl={anchorElMobMenu}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
         keepMounted
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'left',
+          horizontal: 'center',
         }}
         open={!!anchorElMobMenu}
         onClick={handleClose}

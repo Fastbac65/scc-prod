@@ -52,6 +52,7 @@ export default function AuthWithSocial() {
           }),
         1200
       );
+      dispatch({ type: 'END_LOADING' });
     }
   };
 

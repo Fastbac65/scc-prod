@@ -27,7 +27,7 @@ export const signInSocial = (auth, provider) => {
             deleteUser(newuser);
             throw new Error(`Failed to create a new member account - It appears there is already an account on our system with email address ${existingUser.email}`);
           }
-          updateEmail(newuser, newuser.providerData[0].email);
+          await updateEmail(newuser, newuser.providerData[0].email);
           // resolve new member so calling fct can write to member database
           resolve({ user: newuser, newUser: userInfo.isNewUser });
         } catch (error) {

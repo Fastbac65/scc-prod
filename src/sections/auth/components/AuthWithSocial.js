@@ -8,6 +8,7 @@ import Iconify from 'src/components/iconify';
 import { signInSocial } from 'src/lib/firebaseAuth';
 import { useSettingsContext } from 'src/components/settings';
 import { auth, providerFacebook, providerGoogle } from 'src/lib/createFirebaseApp';
+import { addDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------
 
@@ -24,6 +25,7 @@ export default function AuthWithSocial() {
     try {
       setHoldRouter(true);
       const { user, newUser } = await signInSocial(auth, provider);
+      console.log(user);
       let message = 'Welcome back to South Curl Curl Members!!';
       if (newUser)
         message =
@@ -41,6 +43,21 @@ export default function AuthWithSocial() {
       });
       setHoldRouter(false);
       dispatch({ type: 'END_LOADING' });
+      const userObj = {
+        uid: user.uid,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        phoneNumber: user.phoneNumber,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        providerData: user.providerData,
+        createdAt: user.metadata.createdAt,
+        creationTime: user.metadata.creationTime,
+        lastLoginAt: user.metadata.lastLoginAt,
+        lastSignInTime: user.metadata.lastSignInTime,
+      };
+
+      await addDoco('members', user.uid, userObj);
     } catch (error) {
       console.log(error);
       setTimeout(

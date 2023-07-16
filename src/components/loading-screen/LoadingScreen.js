@@ -14,7 +14,7 @@ import { useSettingsContext } from '../settings';
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgBlur({
     blur: 2,
-    opacity: 0.99,
+    // opacity: 0.99,
     color: theme.palette.mode === 'dark' ? '#111111' : '#fff',
   }),
   top: 0,

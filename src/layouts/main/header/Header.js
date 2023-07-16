@@ -153,10 +153,10 @@ export default function Header() {
           )}
           {/* set minWidth on stack to placehold space for Avatar - stops logo/menu moving around while loading */}
           <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ minWidth: { xs: 56, sm: 64, md: 72 }, pr: { xs: 0, sm: 1, md: 2 } }}>
-            {user && !loading && member.photoURL && (
+            {user && !loading && (
               <>
                 <IconButton onClick={handleOpenUserMenu} color="inherit">
-                  <Avatar src={member.photoURL} sx={{ width: 40, height: 40 }} />
+                  <Avatar src={user.photoURL || member.photoURL} sx={{ width: 40, height: 40 }} />
                 </IconButton>
               </>
             )}

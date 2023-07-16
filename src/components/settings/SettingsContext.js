@@ -49,7 +49,9 @@ export function SettingsProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [themeMode, setThemeMode] = useState(initialState.themeMode);
-  const [member, setMember] = useState(initialState.themeMode);
+  const [member, setMember] = useState({});
+  // allows us to hold a page switch in certain circumstances e.g. on social sign up we need time to check the backend for existing accounts before 'user' state changes the route
+  const [holdRouter, setHoldRouter] = useState(false);
 
   const [user, loading, error] = useAuthState(auth);
 
@@ -80,6 +82,7 @@ export function SettingsProvider({ children }) {
       // });
     } else {
       console.log('App logged out');
+      setMember({});
     }
     return () => listener();
   }, [user]);
@@ -108,6 +111,8 @@ export function SettingsProvider({ children }) {
       loading,
       user,
       member,
+      holdRouter,
+      setHoldRouter,
       host,
     }),
     [
@@ -121,6 +126,8 @@ export function SettingsProvider({ children }) {
       loading,
       user,
       member,
+      holdRouter,
+      setHoldRouter,
       host,
     ]
   );

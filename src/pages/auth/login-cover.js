@@ -10,18 +10,21 @@ import { useEffect } from 'react';
 // ----------------------------------------------------------------------
 
 export default function LoginCoverPage() {
-  const { loading, user } = useSettingsContext();
+  const { loading, user, holdRouter } = useSettingsContext();
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading && user) {
+    if (!loading && user && !holdRouter) {
       router.back();
     }
-  }, [user, loading]);
+  }, [user, loading, holdRouter]);
 
-  if (user || loading) {
-    return <LoadingScreen />;
+  if (!holdRouter) {
+    if (user || loading) {
+      return <LoadingScreen />;
+    }
   }
+
   // !loading !user
 
   return (

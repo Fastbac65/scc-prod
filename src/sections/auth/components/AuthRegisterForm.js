@@ -77,15 +77,13 @@ export default function AuthRegisterForm() {
       console.log(response);
       router.push('/');
 
-      // reset();
-      console.log('DATA', data);
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {
           ...alert,
           open: true,
           severity: 'success',
-          message: `Thank you.. nearly there. An account verification email has been sent to ${data.email}. To complete your account setup and verification, please follow the instructions in your email.`,
+          message: `Thank you.. we're almost there. An account verification email has been sent to ${data.email}. To complete your account setup and verification, please follow the instructions in your email.`,
           duration: 12000,
         },
       });

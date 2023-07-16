@@ -78,13 +78,13 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
       window.localStorage.removeItem('emailForSignIn');
 
       try {
-        await updatePassword(result.user, password);
         // pick a profile pic from /assets/images/avatar/avatar_x
         const pic = Math.floor(Math.random() * 25);
+        await updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+        await updatePassword(result.user, password);
         await updateDoco('members', result.user.uid, { displayName: fname, phoneNumber: mobile, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
         // const credential = EmailAuthProvider.credential(result.user.email, password);
         // await reauthenticateWithCredential(result.user, credential);
-        // updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
       } catch (error) {
         console.log(error, error.message);
       }

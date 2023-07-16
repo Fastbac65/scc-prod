@@ -25,7 +25,6 @@ export default function AuthWithSocial() {
     try {
       setHoldRouter(true);
       const { user, newUser } = await signInSocial(auth, provider);
-      console.log(user);
       let message = 'Welcome back to South Curl Curl Members!!';
       if (newUser)
         message =
@@ -56,6 +55,7 @@ export default function AuthWithSocial() {
         lastLoginAt: user.metadata.lastLoginAt,
         lastSignInTime: user.metadata.lastSignInTime,
       };
+      console.log(userObj);
 
       await addDoco('members', user.uid, userObj);
     } catch (error) {
@@ -80,7 +80,7 @@ export default function AuthWithSocial() {
       </Button>
 
       <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => useSocial(providerFacebook)}>
-        <Iconify icon="carbon:logo-facebook" width={24} sx={{ color: '#1877F2' }} />
+        <Iconify icon="carbon:logo-facebook" width={24} color="#1877F2" />
       </Button>
 
       {/* <Button color="inherit" fullWidth variant="outlined" size="large">

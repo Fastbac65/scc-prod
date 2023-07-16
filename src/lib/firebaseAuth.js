@@ -1,5 +1,4 @@
 import { deleteUser, getAdditionalUserInfo, signInWithPopup, updateEmail } from 'firebase/auth';
-// import { auth, providerFacebook, providerGoogle } from './createFirebaseApp';
 
 export const signInSocial = (auth, provider) => {
   return new Promise(async (resolve, reject) => {

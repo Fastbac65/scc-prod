@@ -20,6 +20,7 @@ export default function AuthWithSocial() {
   } = useSettingsContext();
 
   const useSocial = async (provider) => {
+    dispatch({ type: 'START_LOADING' });
     try {
       setHoldRouter(true);
       const { user, newUser } = await signInSocial(auth, provider);
@@ -39,6 +40,7 @@ export default function AuthWithSocial() {
         },
       });
       setHoldRouter(false);
+      dispatch({ type: 'END_LOADING' });
     } catch (error) {
       console.log(error);
       setTimeout(

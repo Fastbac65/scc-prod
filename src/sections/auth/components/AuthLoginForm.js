@@ -15,6 +15,7 @@ import { useSettingsContext } from 'src/components/settings';
 //
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'src/lib/createFirebaseApp';
+import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 // import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 // ----------------------------------------------------------------------
@@ -62,7 +63,33 @@ export default function AuthLoginForm() {
           duration: 3000,
         },
       });
-      // console.log(userDoc);
+      console.log(userDoc);
+      // update subset
+      // const userObj = {
+      //   uid: userDoc.user.uid,
+      //   email: userDoc.user.email,
+      //   emailVerified: userDoc.user.emailVerified,
+      //   phoneNumber: userDoc.user.phoneNumber,
+      //   displayName: userDoc.user.displayName,
+      //   photoURL: userDoc.user.photoURL,
+      //   providerData: userDoc.user.providerData,
+      //   createdAt: userDoc.user.metadata.createdAt,
+      //   creationTime: userDoc.user.metadata.creationTime,
+      //   lastLoginAt: userDoc.user.metadata.lastLoginAt,
+      //   lastSignInTime: userDoc.user.metadata.lastSignInTime,
+      // };
+      const userObj = {
+        // uid: userDoc.user.uid,
+        // email: userDoc.user.email,
+        // phoneNumber: userDoc.user.phoneNumber,
+        // displayName: userDoc.user.displayName,
+        // photoURL: userDoc.user.photoURL,
+        lastLoginAt: userDoc.user.metadata.lastLoginAt,
+        lastSignInTime: userDoc.user.metadata.lastSignInTime,
+      };
+      console.log(userObj);
+
+      await updateDoco('members', userDoc.user.uid, userObj);
       // reset();
       // router.push('/account/orders/');
     } catch (error) {

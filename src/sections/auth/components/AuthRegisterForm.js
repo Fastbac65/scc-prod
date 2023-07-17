@@ -23,7 +23,7 @@ export default function AuthRegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
-    fullName: Yup.string().required('Full name is required').min(8, 'Mininum 8 characters').max(15, 'Maximum 15 characters'),
+    fullName: Yup.string().required('Full name is required').min(6, 'Mininum 6 characters').max(20, 'Maximum 20 characters'),
     email: Yup.string().required('Email is required').email('Invalid email format'),
     mobile: Yup.string().required('Phone number is required'),
   });

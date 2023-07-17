@@ -59,11 +59,22 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
       // The client SDK will parse the code from the link for you.
       const result = await signInWithEmailLink(auth, email, window.location.href);
       console.log(result.user);
+      try {
+        // pick a profile pic from /assets/images/avatar/avatar_x
+        const pic = Math.floor(Math.random() * 25);
+        await updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+        await updatePassword(result.user, password);
+        // await updateDoco('members', result.user.uid, { displayName: fname, phoneNumber: mobile, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+        // const credential = EmailAuthProvider.credential(result.user.email, password);
+        // await reauthenticateWithCredential(result.user, credential);
+      } catch (error) {
+        console.log(error, error.message);
+      }
       const userObj = {
         uid: result.user.uid,
         email: result.user.email,
         emailVerified: result.user.emailVerified,
-        phoneNumber: result.user.phoneNumber,
+        phoneNumber: mobile,
         displayName: result.user.displayName,
         photoURL: result.user.photoURL,
         providerData: result.user.providerData,
@@ -72,22 +83,10 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
         lastLoginAt: result.user.metadata.lastLoginAt,
         lastSignInTime: result.user.metadata.lastSignInTime,
       };
-
+      // create the member doc
       await addDoco('members', result.user.uid, userObj);
       // Clear email from storage.
       window.localStorage.removeItem('emailForSignIn');
-
-      try {
-        // pick a profile pic from /assets/images/avatar/avatar_x
-        const pic = Math.floor(Math.random() * 25);
-        await updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
-        await updatePassword(result.user, password);
-        await updateDoco('members', result.user.uid, { displayName: fname, phoneNumber: mobile, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
-        // const credential = EmailAuthProvider.credential(result.user.email, password);
-        // await reauthenticateWithCredential(result.user, credential);
-      } catch (error) {
-        console.log(error, error.message);
-      }
 
       dispatch({ type: 'END_LOADING' });
       dispatch({ type: 'MODAL', payload: { ...modal, open: false } });
@@ -116,7 +115,10 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
           duration: 8000,
         },
       });
-      router.push('/auth/login-cover/');
+      // router.push('/auth/login-cover/');
+      // http://192.168.0.220:5002/auth/verification?mode=signIn&oobCode=uABwO_CtfyKvq8oBtTjE293g6Qa9-DYm58L_l90_TqYAAAGJZAuxkQ&apiKey=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&continueUrl=https%3A%2F%2Fscc-prod.vercel.app%3Ffn%3Dbobooo%2520atv%26em%3Dboboo%40bob.com%26ph%3D0456817076&lang=en
+
+      // http://192.168.0.220:5002/auth/verification?mode=signIn&oobCode=m5xrSip1zCWEV6jQl9Xyolsk-DUGP9CKuA4GNQEjEGsAAAGJZCaPlg&apiKey=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&continueUrl=http%3A%2F%2F192.168.0.220%3A5002%3Ffn%3DTerence%2520Durnin%26em%3Dbobo%40bob.com%26ph%3D0407945789&lang=en
     }
 
     dispatch({ type: 'END_LOADING' });

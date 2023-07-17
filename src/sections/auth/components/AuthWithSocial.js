@@ -8,7 +8,7 @@ import Iconify from 'src/components/iconify';
 import { signInSocial } from 'src/lib/firebaseAuth';
 import { useSettingsContext } from 'src/components/settings';
 import { auth, providerFacebook, providerGoogle } from 'src/lib/createFirebaseApp';
-import { addDoco } from 'src/lib/firestoreDocument';
+import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------
 
@@ -26,9 +26,39 @@ export default function AuthWithSocial() {
       setHoldRouter(true);
       const { user, newUser } = await signInSocial(auth, provider);
       let message = 'Welcome back to South Curl Curl Members!!';
-      if (newUser)
+      if (newUser) {
         message =
           'Awesome!!!  Your South Curl Curl members account has been created successfully. Your social profile details have been linked to this account. If you wish to update these details you must update them on your social account.';
+
+        const userObj = {
+          uid: user.uid,
+          email: user.email,
+          emailVerified: user.emailVerified,
+          phoneNumber: user.phoneNumber,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          providerData: user.providerData,
+          createdAt: user.metadata.createdAt,
+          creationTime: user.metadata.creationTime,
+          lastLoginAt: user.metadata.lastLoginAt,
+          lastSignInTime: user.metadata.lastSignInTime,
+        };
+        console.log(userObj);
+        // addDoco also adds timestamp
+        await addDoco('members', user.uid, userObj);
+      } else {
+        // update subset including items that could change in social account
+        const userObj = {
+          email: user.email,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+          lastLoginAt: user.metadata.lastLoginAt,
+          lastSignInTime: user.metadata.lastSignInTime,
+        };
+        console.log(userObj);
+
+        await updateDoco('members', user.uid, userObj);
+      }
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {
@@ -42,22 +72,6 @@ export default function AuthWithSocial() {
       });
       setHoldRouter(false);
       dispatch({ type: 'END_LOADING' });
-      const userObj = {
-        uid: user.uid,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        phoneNumber: user.phoneNumber,
-        displayName: user.displayName,
-        photoURL: user.photoURL,
-        providerData: user.providerData,
-        createdAt: user.metadata.createdAt,
-        creationTime: user.metadata.creationTime,
-        lastLoginAt: user.metadata.lastLoginAt,
-        lastSignInTime: user.metadata.lastSignInTime,
-      };
-      console.log(userObj);
-
-      await addDoco('members', user.uid, userObj);
     } catch (error) {
       console.log(error);
       setTimeout(

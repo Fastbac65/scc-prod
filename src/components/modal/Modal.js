@@ -14,7 +14,6 @@ const Modal = () => {
     if (modal.title.includes('Password')) {
       //  a user has just closed the reset password verification or email signin windown
       router.push('/');
-      window.localStorage.removeItem('emailForSignIn');
     }
     if (modal.title === 'Purchase Success') {
       // shallow routing to /services/

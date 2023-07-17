@@ -44,7 +44,6 @@ export default function AuthRegisterForm() {
 
   const onSubmit = async (data) => {
     dispatch({ type: 'START_LOADING' });
-    window.localStorage.setItem('emailForSignIn', data?.email);
     try {
       const user = await fetch('/api/email/send', {
         method: 'POST',

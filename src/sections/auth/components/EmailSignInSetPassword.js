@@ -12,40 +12,21 @@ import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 const EmailSignInSetPassword = ({ email, fname, mobile }) => {
   const router = useRouter();
 
-  console.log(email, fname);
-
   const {
     dispatch,
     state: { alert, modal },
   } = useSettingsContext();
-  const emailRef = useRef('');
-  const savedEmailRef = useRef('');
   const passwordRef = useRef('');
   const confirmPasswordRef = useRef('');
   const [emailError, setEmailError] = useState(false);
   const [pwordError, setPwordError] = useState(false);
   const [emailSaved, setEmailSaved] = useState(true);
 
-  // check if this is same device and get email from local storage
-  useEffect(() => {
-    savedEmailRef.current = window.localStorage.getItem('emailForSignIn');
-    // no email render the email input box
-    if (!savedEmailRef.current) setEmailSaved(false);
-    console.log('setEmail ran');
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // email is either the saved version or coming from the dialog
-    const email = emailSaved ? savedEmailRef.current : emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
 
-    // no email saved locally and no email input in email field
-    if (!email && !emailSaved) {
-      setEmailError(true);
-      throw new Error('Please provide an email');
-    }
     if (password !== confirmPassword) {
       setPwordError(true);
       throw new Error('Passwords do not match, please check for typos');
@@ -64,18 +45,15 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
         const pic = Math.floor(Math.random() * 25);
         await updateProfile(result.user, { displayName: fname, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
         await updatePassword(result.user, password);
-        // await updateDoco('members', result.user.uid, { displayName: fname, phoneNumber: mobile, photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
-        // const credential = EmailAuthProvider.credential(result.user.email, password);
-        // await reauthenticateWithCredential(result.user, credential);
       } catch (error) {
-        console.log(error, error.message);
+        console.log('error updating profile and pword ', error, error.message);
       }
       const userObj = {
         uid: result.user.uid,
         email: result.user.email,
         emailVerified: result.user.emailVerified,
         phoneNumber: mobile,
-        displayName: result.user.displayName,
+        displayName: fname,
         photoURL: result.user.photoURL,
         providerData: result.user.providerData,
         createdAt: result.user.metadata.createdAt,
@@ -85,8 +63,6 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
       };
       // create the member doc
       await addDoco('members', result.user.uid, userObj);
-      // Clear email from storage.
-      window.localStorage.removeItem('emailForSignIn');
 
       dispatch({ type: 'END_LOADING' });
       dispatch({ type: 'MODAL', payload: { ...modal, open: false } });
@@ -116,9 +92,6 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
         },
       });
       // router.push('/auth/login-cover/');
-      // http://192.168.0.220:5002/auth/verification?mode=signIn&oobCode=uABwO_CtfyKvq8oBtTjE293g6Qa9-DYm58L_l90_TqYAAAGJZAuxkQ&apiKey=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&continueUrl=https%3A%2F%2Fscc-prod.vercel.app%3Ffn%3Dbobooo%2520atv%26em%3Dboboo%40bob.com%26ph%3D0456817076&lang=en
-
-      // http://192.168.0.220:5002/auth/verification?mode=signIn&oobCode=m5xrSip1zCWEV6jQl9Xyolsk-DUGP9CKuA4GNQEjEGsAAAGJZCaPlg&apiKey=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&continueUrl=http%3A%2F%2F192.168.0.220%3A5002%3Ffn%3DTerence%2520Durnin%26em%3Dbobo%40bob.com%26ph%3D0407945789&lang=en
     }
 
     dispatch({ type: 'END_LOADING' });

@@ -43,7 +43,6 @@ export default function AuthWithSocial() {
           lastLoginAt: user.metadata.lastLoginAt,
           lastSignInTime: user.metadata.lastSignInTime,
         };
-        console.log(userObj);
         // addDoco also adds timestamp
         await addDoco('members', user.uid, userObj);
       } else {
@@ -55,8 +54,6 @@ export default function AuthWithSocial() {
           lastLoginAt: user.metadata.lastLoginAt,
           lastSignInTime: user.metadata.lastSignInTime,
         };
-        console.log(userObj);
-
         await updateDoco('members', user.uid, userObj);
       }
       dispatch({

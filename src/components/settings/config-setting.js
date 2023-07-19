@@ -3,6 +3,4 @@
 
 export const defaultSettings = {
   themeMode: 'dark',
-  themeDirection: 'ltr',
-  themeColorPresets: 'default',
 };

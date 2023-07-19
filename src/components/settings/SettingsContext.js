@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
 
 //
-import { defaultSettings } from './config-setting';
+// import { defaultSettings } from './config-setting';
 import reducer from './reducer';
 import { doc, onSnapshot } from 'firebase/firestore';
 
@@ -23,7 +23,7 @@ const initialState = {
   modal: { open: false, title: '', content: '' },
   loadingSpinner: false,
   // themeMode, themeDirection etc..
-  ...defaultSettings,
+  themeMode: 'dark',
   // toggle Mode
   onToggleMode: () => {},
   // Global state vars
@@ -67,7 +67,7 @@ export function SettingsProvider({ children }) {
 
       listener = onSnapshot(doc(db, 'members', user.uid), (snapshot) => {
         if (snapshot.data()) {
-          console.log('user loaded', snapshot.data());
+          console.log('members loaded', snapshot.data());
           setMember(snapshot.data());
         }
       });

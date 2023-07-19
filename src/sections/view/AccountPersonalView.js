@@ -125,35 +125,28 @@ export default function AccountPersonalView() {
           <Typography variant="h3" sx={{ mb: 0 }}>
             Personal Details
           </Typography>
-          <Typography sx={{ pb: 3 }}>Certain fields must remain as per billing information</Typography>
-          <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
-            <RHFTextField name="displayName" label="Name" />
+          <Typography sx={{ pb: 3 }}>Email as per member registration</Typography>
+          <Stack spacing={2.5}>
+            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
+              <RHFTextField name="displayName" label="Name" />
+              <RHFTextField name="phoneNumber" label="Mobile" />
+            </Box>
+            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
+              <RHFTextField name="email" label="Email" disabled />
+              <RHFTextField name="address.streetAddress" label="Address" />
+            </Box>
+            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
+              <RHFTextField name="address.city" label="Suburb" />
+              <RHFTextField name="address.state" label="State" />
+              <RHFTextField name="address.postCode" label="Post Code " />
+              <RHFTextField name="address.country" label="Country" disabled />
+            </Box>
+          </Stack>
 
-            <RHFTextField name="email" label="Email" disabled />
-
-            <RHFTextField name="phoneNumber" label="Mobile" />
-
-            <RHFTextField name="address.streetAddress" label="Address" />
-
-            <RHFTextField name="address.city" label="Suburb" />
-            <RHFTextField name="address.state" label="State" />
-            <RHFTextField name="address.postCode" label="Post Code " />
-
-            <RHFTextField name="address.country" label="Country" disabled />
-
-            {/* <RHFSelect native name="country" label="Country">
-              <option value="" />
-              {countries.map((country) => (
-                <option key={country.code} value={country.label}>
-                  {country.label}
-                </option>
-              ))}
-            </RHFSelect> */}
-          </Box>
-          <Typography paragraph variant="h5" sx={{ my: 3 }}>
+          <Typography paragraph variant="h5" sx={{ my: 2 }}>
             Optional Details
           </Typography>
-          <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
+          <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
             <Controller
               name="birthday"
               render={({ field, fieldState: { error } }) => (
@@ -180,7 +173,7 @@ export default function AccountPersonalView() {
             </RHFSelect>
           </Box>
 
-          <LoadingButton sx={{ my: 6 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+          <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
             Update Personal Details
           </LoadingButton>
         </FormProvider>

@@ -53,7 +53,7 @@ export default function AppMenuContent({ data }) {
 
       <Stack sx={{ my: 1, px: 2 }}>
         <ListItemButton onClick={onToggleMode} sx={{ px: 1, borderRadius: 1 }}>
-          <ListItemIcon>{themeMode === 'dark' ? <Iconify icon="mdi:brightness-7" /> : <Iconify icon="mdi:brightness-2" />}</ListItemIcon>
+          <ListItemIcon>{themeMode === 'dark' ? <Iconify icon="mdi:brightness-7" color="#f9de00" /> : <Iconify icon="mdi:brightness-2" />}</ListItemIcon>
           <ListItemText
             primary={themeMode === 'dark' ? 'Light Mode' : 'Dark Mode'}
             primaryTypographyProps={{

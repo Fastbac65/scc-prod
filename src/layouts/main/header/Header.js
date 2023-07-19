@@ -162,11 +162,13 @@ export default function Header() {
             {/* <Stack spacing={1} direction="row" alignItems="center" sx={{ pr: { xs: 0, md: 2 } }}> */}
             {!user && !loading && (
               <>
-                <Tooltip title={theme.palette.mode === 'dark' ? 'Light Mode' : 'Dark Mode'} arrow placement="bottom-end">
-                  <IconButton onClick={onToggleMode} sx={{ color: theme.palette.mode === 'dark' ? '#f9de00' : 'inherit' }}>
-                    {theme.palette.mode === 'dark' ? <Iconify icon="mdi:brightness-7" /> : <Iconify icon="mdi:brightness-2" />}
-                  </IconButton>
-                </Tooltip>
+                {isSmUp && (
+                  <Tooltip title={theme.palette.mode === 'dark' ? 'Light Mode' : 'Dark Mode'} arrow placement="bottom-end">
+                    <IconButton onClick={onToggleMode} sx={{ color: theme.palette.mode === 'dark' ? '#f9de00' : 'inherit' }}>
+                      {theme.palette.mode === 'dark' ? <Iconify icon="mdi:brightness-7" /> : <Iconify icon="mdi:brightness-2" />}
+                    </IconButton>
+                  </Tooltip>
+                )}
                 <Tooltip title="Sign in" arrow placement="bottom">
                   <Link component={NextLink} href="/auth/login-cover" underline="none" color="inherit">
                     <IconButton color="inherit" aria-label="search">

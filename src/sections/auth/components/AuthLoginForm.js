@@ -59,6 +59,7 @@ export default function AuthLoginForm() {
           severity: 'success',
           message: 'Welcome back!',
           duration: 3000,
+          posn: 'bottom',
         },
       });
       console.log(userDoc);

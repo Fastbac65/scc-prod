@@ -104,7 +104,7 @@ export default function AccountSettingsView() {
 
             <RHFTextField
               name="original"
-              label="Password ->"
+              label="Password"
               type={showPassword ? 'text' : 'password'}
               InputProps={{
                 endAdornment: (
@@ -119,7 +119,7 @@ export default function AccountSettingsView() {
 
             <RHFTextField
               name="password"
-              label="New Password -"
+              label="New Password"
               type={showPassword ? 'text' : 'password'}
               InputProps={{
                 endAdornment: (
@@ -134,7 +134,7 @@ export default function AccountSettingsView() {
 
             <RHFTextField
               name="confirmPassword"
-              label="Confirm Password -"
+              label="Confirm Password"
               type={showPassword ? 'text' : 'password'}
               InputProps={{
                 endAdornment: (

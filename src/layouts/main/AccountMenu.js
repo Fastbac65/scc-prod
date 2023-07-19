@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 // next
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Link, Stack, Drawer, Avatar, Divider, ListItemIcon, ListItemText, ListItemButton, Menu, useTheme, IconButton } from '@mui/material';
@@ -14,7 +15,6 @@ import TextMaxLine from 'src/components/text-max-line';
 import { useSettingsContext } from 'src/components/settings';
 import { auth } from 'src/lib/createFirebaseApp';
 import { useSignOut } from 'react-firebase-hooks/auth';
-import { useRouter } from 'next/router';
 import { updateProfile } from 'firebase/auth';
 import { updateDoco } from 'src/lib/firestoreDocument';
 
@@ -170,10 +170,13 @@ export default function AccountMenu({ anchorElUser, handleCloseUserMenu }) {
 // ----------------------------------------------------------------------
 
 function MenuItem({ item }) {
-  const { active } = useActiveLink(item.path);
+  const router = useRouter();
+  const { pathname } = router;
+
+  const active = pathname.includes(item.path);
 
   return (
-    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'primary' : 'inherit'} underline="none">
+    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'secondary.light' : 'inherit'} underline="none">
       <ListItemButton
         sx={{
           px: 1,

@@ -14,13 +14,13 @@ function Logo({ single = false, sx }) {
 
   const singleLogo = (
     <Box sx={{ position: 'relative', height: '100px' }}>
-      <Image src="/assets/images/scc-logo-blue-sm2.png" sx={{ height: 1 }} disabledEffect />
+      <Image src="/assets/images/scc-logo-blue-sm2.png" sx={{ height: 1 }} alt="South Curl Curl SLSC logo" disabledEffect />
     </Box>
   );
 
   const fullLogo = (
     <Tooltip arrow placement="bottom" title="home" enterDelay={100}>
-      <Box sx={{ lineHeight: 0, position: 'relative', height: '90px' }}>
+      <Box sx={{ lineHeight: 0, position: 'relative', width: '240px' }}>
         <Image src="/assets/images/scc-logo-blue-sm2.png" alt="South Curl Curl SLSC logo" disabledEffect sx={{ height: 1 }} />
       </Box>
     </Tooltip>

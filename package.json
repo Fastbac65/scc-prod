@@ -21,8 +21,6 @@
     "@mui/x-date-pickers": "^6.9.2",
     "@react-email/components": "^0.0.7",
     "date-fns": "^2.30.0",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
     "firebase": "^10.0.0",
     "firebase-admin": "^11.9.0",
     "framer-motion": "^10.12.18",
@@ -44,5 +42,11 @@
     "simplebar-react": "^3.2.4",
     "slick-carousel": "^1.8.1",
     "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-next": "^13.4.10",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0"
   }
 }

@@ -20,7 +20,7 @@ export default function AuthWithSocial() {
     setHoldRouter,
   } = useSettingsContext();
 
-  const useSocial = async (provider) => {
+  const authSocial = async (provider) => {
     dispatch({ type: 'START_LOADING' });
     try {
       setHoldRouter(true);
@@ -86,11 +86,11 @@ export default function AuthWithSocial() {
 
   return (
     <Stack direction="row" spacing={2}>
-      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => useSocial(providerGoogle)}>
+      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerGoogle)}>
         <Iconify icon="logos:google-icon" width={24} />
       </Button>
 
-      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => useSocial(providerFacebook)}>
+      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerFacebook)}>
         <Iconify icon="carbon:logo-facebook" width={24} color="#1877F2" />
       </Button>
 

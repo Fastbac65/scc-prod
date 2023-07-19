@@ -1,13 +1,13 @@
-import { Button, DialogActions, DialogContent, DialogContentText, TextField } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
-import { EmailAuthProvider, reauthenticateWithCredential, signInWithEmailLink, updatePassword, updateProfile } from 'firebase/auth';
+import { Button, DialogActions, DialogContent } from '@mui/material';
+import { useRef, useState } from 'react';
+import { signInWithEmailLink, updatePassword, updateProfile } from 'firebase/auth';
 
-import { auth, db } from 'src/lib/createFirebaseApp';
+import { auth } from 'src/lib/createFirebaseApp';
 import { useSettingsContext } from 'src/components/settings';
 import { useRouter } from 'next/router';
 import Iconify from 'src/components/iconify/Iconify';
 import PasswordField from './PasswordField';
-import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
+import { addDoco } from 'src/lib/firestoreDocument';
 
 const EmailSignInSetPassword = ({ email, fname, mobile }) => {
   const router = useRouter();
@@ -18,9 +18,9 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
   } = useSettingsContext();
   const passwordRef = useRef('');
   const confirmPasswordRef = useRef('');
-  const [emailError, setEmailError] = useState(false);
+  // const [emailError, setEmailError] = useState(false);
   const [pwordError, setPwordError] = useState(false);
-  const [emailSaved, setEmailSaved] = useState(true);
+  // const [emailSaved, setEmailSaved] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -99,13 +99,13 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {!emailSaved && (
+      {/* {!emailSaved && (
         <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <DialogContentText>It appears you are using a different device or browser to complete the signin process. For security reasons we need to confirm your email again.</DialogContentText>
           <TextField sx={{ my: 2 }} size="small" inputRef={emailRef} error={emailError} label="Email" />
-          {/* <DialogContentText>Confirm new password:</DialogContentText> */}
+          <DialogContentText>Confirm new password:</DialogContentText>
         </DialogContent>
-      )}
+      )} */}
       <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         {/* <DialogContentText>New password:</DialogContentText> */}
         <PasswordField sx={{ my: 2 }} size="small" inputRef={passwordRef} error={pwordError} label="New Password" />

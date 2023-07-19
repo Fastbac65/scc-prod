@@ -61,7 +61,7 @@ export default function AppMenuContent({ data }) {
             }}
           />
         </ListItemButton>
-        <ListItemButton onClick={handleLogout} sx={{ px: 1, borderRadius: 1, display: user ? 'flex' : 'none' }}>
+        {/* <ListItemButton onClick={handleLogout} sx={{ px: 1, borderRadius: 1, display: user ? 'flex' : 'none' }}>
           <ListItemIcon>
             <Iconify icon="carbon:logout" />
           </ListItemIcon>
@@ -71,7 +71,7 @@ export default function AppMenuContent({ data }) {
               typography: 'body2',
             }}
           />
-        </ListItemButton>
+        </ListItemButton> */}
       </Stack>
     </Stack>
   );

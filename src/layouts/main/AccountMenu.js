@@ -21,25 +21,25 @@ import { updateDoco } from 'src/lib/firestoreDocument';
 // ----------------------------------------------------------------------
 
 export function MenuContent() {
-  const { themeMode, onToggleMode, user, avatar, setAvatar, member } = useSettingsContext();
+  const { themeMode, onToggleMode, user, member } = useSettingsContext();
   const theme = useTheme();
   const router = useRouter();
 
   const navigations = [
     {
       title: 'My Profile',
-      path: '/account/personal',
+      path: '/account/media',
       icon: <Iconify icon="carbon:user" />,
     },
     {
-      title: 'Account Settings',
-      path: '/account/media',
-      icon: <Iconify icon="carbon:cut-out" />,
+      title: 'Personal Info',
+      path: '/account/personal',
+      icon: <Iconify icon="carbon:favorite" />,
     },
     {
-      title: 'Personal Info',
+      title: 'Account Settings',
       path: '/account/settings',
-      icon: <Iconify icon="carbon:favorite" />,
+      icon: <Iconify icon="carbon:cut-out" />,
     },
     // {
     //   title: 'Account Orders',

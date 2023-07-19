@@ -148,17 +148,15 @@ export default function Header() {
           {/* desktop nav on MdUp */}
           {isMdUp && (
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-              <NavDesktop data={navConfig} />
+              <NavDesktop data={navConfig} user={user} />
             </Box>
           )}
           {/* set minWidth on stack to placehold space for Avatar - stops logo/menu moving around while loading */}
           <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ minWidth: { xs: 56, sm: 64, md: 72 }, pr: { xs: 0, sm: 1, md: 2 } }}>
             {user && !loading && (
-              <>
-                <IconButton onClick={handleOpenUserMenu} color="inherit">
-                  <Avatar src={user.photoURL || member.photoURL} sx={{ width: 40, height: 40 }} />
-                </IconButton>
-              </>
+              <IconButton onClick={handleOpenUserMenu} color="inherit">
+                <Avatar src={user.photoURL || member.photoURL} sx={{ width: 40, height: 40 }} />
+              </IconButton>
             )}
 
             {/* <Stack spacing={1} direction="row" alignItems="center" sx={{ pr: { xs: 0, md: 2 } }}> */}

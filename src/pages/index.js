@@ -3,7 +3,7 @@ import Head from 'next/head';
 // layouts
 import MainLayout from 'src/layouts/main';
 // sections
-import { HomeView } from 'src/sections/views/';
+import { HomeView } from 'src/sections/view/';
 import { useSettingsContext } from 'src/components/settings';
 import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 

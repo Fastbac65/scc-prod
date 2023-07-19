@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 // next
-import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 // @mui
 import { LoadingButton } from '@mui/lab';
@@ -25,7 +24,6 @@ export default function AuthLoginForm() {
     state: { alert },
     dispatch,
   } = useSettingsContext();
-  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
@@ -41,7 +39,7 @@ export default function AuthLoginForm() {
     defaultValues,
   });
   const {
-    reset,
+    // reset,
     handleSubmit,
     formState: { isSubmitting },
   } = methods;

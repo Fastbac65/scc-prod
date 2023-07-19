@@ -16,7 +16,7 @@ export const NavItem = forwardRef(({ item, active, isExternalLink, ...other }, r
   const { title, path } = item;
 
   const renderContent = (
-    <StyledNavItem ref={ref} disableRipple active={active} {...other}>
+    <StyledNavItem ref={ref} disableRipple active={active}>
       {/* {title.toUpperCase()} */}
       {title}
     </StyledNavItem>

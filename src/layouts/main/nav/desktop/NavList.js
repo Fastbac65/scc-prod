@@ -14,15 +14,18 @@ import { NavItem } from './NavItem';
 
 // ----------------------------------------------------------------------
 
-export default function NavList({ item }) {
+export default function NavList({ item, ...other }) {
   const { path } = item;
+  const { user } = other;
 
   // const { pathname } = useRouter();
   // const [openMenu, setOpenMenu] = useState(false);
 
   const { active, isExternalLink } = useActiveLink(path, false);
 
-  return <NavItem item={item} active={active} isExternalLink={isExternalLink} />;
+  if (item.access === 'member' && !user) return;
+
+  return <NavItem item={item} active={active} isExternalLink={isExternalLink} {...other} />;
 }
 
 NavList.propTypes = {

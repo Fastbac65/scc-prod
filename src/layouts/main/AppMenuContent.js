@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 // @mui
 import { alpha } from '@mui/material/styles';
-import { Link, Stack, Avatar, Divider, ListItemIcon, ListItemText, ListItemButton, Menu, useTheme, IconButton } from '@mui/material';
+import { Link, Stack, Divider, ListItemIcon, ListItemText, ListItemButton, useTheme } from '@mui/material';
 // hooks
-import useResponsive from 'src/hooks/useResponsive';
 import useActiveLink from 'src/hooks/useActiveLink';
 
 // components
 import Iconify from 'src/components/iconify';
-import TextMaxLine from 'src/components/text-max-line';
 import { useSettingsContext } from 'src/components/settings';
 import { auth } from 'src/lib/createFirebaseApp';
 import { useSignOut } from 'react-firebase-hooks/auth';
@@ -20,7 +18,7 @@ import { updateProfile } from 'firebase/auth';
 // ----------------------------------------------------------------------
 
 export default function AppMenuContent({ data }) {
-  const { themeMode, onToggleMode, user, avatar, setAvatar, client } = useSettingsContext();
+  const { themeMode, onToggleMode, user } = useSettingsContext();
   const theme = useTheme();
   const router = useRouter();
 
@@ -28,21 +26,11 @@ export default function AppMenuContent({ data }) {
 
   const handleLogout = () => {
     router.push('/');
-    // router.reload();
     const success = signOut();
     if (success) {
       console.log('logged out');
       //
     }
-  };
-
-  const handleProfile = async () => {
-    // pick a profile pic from /assets/images/avatar/avatar_x
-    const pic = Math.floor(Math.random() * 25);
-    await updateProfile(user, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
-    setAvatar(user.photoURL);
-
-    // dispatch({ type: 'MODAL', payload: { ...modal, open: true } });
   };
 
   return (
@@ -57,7 +45,7 @@ export default function AppMenuContent({ data }) {
     >
       <Stack sx={{ my: 1, px: 2 }}>
         {data.map((item) => (
-          <MenuItem key={item.title} item={item} />
+          <MenuItem key={item.title} item={item} user={user} />
         ))}
       </Stack>
 
@@ -73,7 +61,7 @@ export default function AppMenuContent({ data }) {
             }}
           />
         </ListItemButton>
-        <ListItemButton onClick={handleLogout} sx={{ px: 1, borderRadius: 1 }}>
+        <ListItemButton onClick={handleLogout} sx={{ px: 1, borderRadius: 1, display: user ? 'flex' : 'none' }}>
           <ListItemIcon>
             <Iconify icon="carbon:logout" />
           </ListItemIcon>
@@ -92,7 +80,7 @@ export default function AppMenuContent({ data }) {
 
 // ----------------------------------------------------------------------
 
-function MenuItem({ item }) {
+function MenuItem({ item, user }) {
   const { active } = useActiveLink(item.path);
 
   return (
@@ -102,6 +90,7 @@ function MenuItem({ item }) {
           px: 1,
           height: 44,
           borderRadius: 1,
+          display: item.access === 'public' ? 'flex' : user ? 'flex' : 'none',
           // color: 'text.primary',
         }}
       >

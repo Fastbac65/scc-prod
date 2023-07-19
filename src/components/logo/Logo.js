@@ -13,7 +13,7 @@ function Logo({ single = false, sx }) {
   const theme = useTheme();
 
   const singleLogo = (
-    <Box sx={{ position: 'relative', height: '100px' }}>
+    <Box sx={{ position: 'relative', width: '250px' }}>
       <Image src="/assets/images/scc-logo-blue-sm2.png" sx={{ height: 1 }} alt="South Curl Curl SLSC logo" disabledEffect />
     </Box>
   );

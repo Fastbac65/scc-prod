@@ -19,14 +19,13 @@ import { AccountLayout } from '../layout';
 // ----------------------------------------------------------------------
 
 export default function AccountMediaView() {
-
   const OPTIONS = [
-    { link: '/assets/relax-mp3/fireflies.mp3', label: 'Fireflies' },
-    { link: '/assets/relax-mp3/catch-my-breath.mp3', label: 'Just Breath' },
-    { link: '/assets/relax-mp3/mindfulness-journey.mp3', label: 'Mindfulness Awaits' },
+    // { link: '/assets/relax-mp3/fireflies.mp3', label: 'Fireflies' },
+    // { link: '/assets/relax-mp3/catch-my-breath.mp3', label: 'Just Breath' },
+    // { link: '/assets/relax-mp3/mindfulness-journey.mp3', label: 'Mindfulness Awaits' },
     { link: 'https://storage.googleapis.com/media-session/elephants-dream/the-wires.mp3', label: 'Demo' },
     { link: `https://www.dropbox.com/s/odzycivuo9cy5rg/video_01.mp4?dl=0`, label: 'Video Demo' },
-    { link: `https://www.dropbox.com/s/7cx04n8rr4w5rbg/video_02.mp4?dl=0`, label: 'Silent Video' },
+    // { link: `https://www.dropbox.com/s/7cx04n8rr4w5rbg/video_02.mp4?dl=0`, label: 'Silent Video' },
   ];
 
   const [music, setMusic] = useState(OPTIONS[0]);

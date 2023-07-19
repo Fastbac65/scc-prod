@@ -28,7 +28,7 @@ export function MenuContent() {
   const navigations = [
     {
       title: 'My Profile',
-      path: '/account/media',
+      path: '/account/profile',
       icon: <Iconify icon="carbon:user" />,
     },
     {
@@ -40,6 +40,11 @@ export function MenuContent() {
       title: 'Account Settings',
       path: '/account/settings',
       icon: <Iconify icon="carbon:cut-out" />,
+    },
+    {
+      title: 'Featured Training',
+      path: '/account/media',
+      icon: <Iconify icon="carbon:document" />,
     },
     // {
     //   title: 'Account Orders',

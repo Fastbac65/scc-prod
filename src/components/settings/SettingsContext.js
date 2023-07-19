@@ -19,7 +19,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 // console.log(db, auth);
 const initialState = {
   // reducer
-  alert: { open: false, severity: 'info', message: '', variant: 'filled', color: '', duration: 1000 },
+  alert: { open: false, severity: 'info', message: '', variant: 'filled', color: '', duration: 1000, posn: 'bottom' },
   modal: { open: false, title: '', content: '' },
   loadingSpinner: false,
   // themeMode, themeDirection etc..

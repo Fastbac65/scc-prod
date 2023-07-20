@@ -101,7 +101,7 @@ export default function AccountPersonalView() {
       // await new Promise((resolve) => setTimeout(resolve, 500));
       // reset();
       console.log('DATA', data);
-      // await updateDoco(`members`, member.uid, data);
+      await updateDoco(`members`, member.uid, data);
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {
@@ -110,7 +110,6 @@ export default function AccountPersonalView() {
           severity: 'success',
           message: 'Your details have been updated.',
           duration: 1000,
-          posn: 'bottom',
         },
       });
     } catch (error) {

@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
 
 //
-// import { defaultSettings } from './config-setting';
+import { defaultSettings } from './config-setting';
 import reducer from './reducer';
 import { doc, onSnapshot } from 'firebase/firestore';
 

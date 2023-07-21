@@ -119,10 +119,13 @@ export default function AccountPersonalView() {
           <Typography variant="h3" sx={{ mb: 0 }}>
             Personal Details
           </Typography>
-          <Typography sx={{ pb: 3 }}>Email as per member registration</Typography>
+          <Typography sx={{ pb: 0 }}>name and email as per member registration</Typography>
+          <Typography variant="caption" sx={{ py: 1 }}>
+            set a preferred name via profile.
+          </Typography>
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
-              <RHFTextField name="displayName" label="Name" />
+              <RHFTextField name="displayName" label="Name" disabled />
               <RHFTextField name="phoneNumber" label="Mobile" />
             </Box>
             <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>

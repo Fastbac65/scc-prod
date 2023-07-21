@@ -63,10 +63,10 @@ export default function AccountPersonalView() {
     state: { alert },
   } = useSettingsContext();
 
-  const AccountPersonalSchema = Yup.object().shape({
+  const AccountProfileSchema = Yup.object().shape({
     profileName: Yup.string(),
     patrol: Yup.string(),
-    password: Yup.string(),
+    password: Yup.string().required(),
   });
   // safe defaults and necessary so that useEffect works properly to reset
   const defaultValues = {
@@ -75,7 +75,7 @@ export default function AccountPersonalView() {
     patrol: '',
   };
   const methods = useForm({
-    resolver: yupResolver(AccountPersonalSchema),
+    resolver: yupResolver(AccountProfileSchema),
     defaultValues,
   });
   const {

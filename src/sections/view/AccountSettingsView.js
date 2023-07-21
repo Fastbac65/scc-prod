@@ -6,7 +6,7 @@ import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField, RHFSelect } from 'src/components/hook-form';
 // import { add } from 'date-fns';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // @mui
 import { Divider, Typography, InputAdornment, Stack, IconButton, Container } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
@@ -25,17 +25,22 @@ export default function AccountSettingsView() {
     user,
     dispatch,
     state: { alert },
+    member,
   } = useSettingsContext();
+  const [passwordAuth, setPasswordAuth] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+  useEffect(() => {
+    if (!member) {
+      console.log('no member yet!');
+      return;
+    }
+    if (member.providerData[0].providerId !== 'password') setPasswordAuth(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [member]);
 
   const ResetPwSchema = Yup.object().shape({
     original: Yup.string().required('Current password required'),
-    // email: Yup.string().required('Email is required').email('Invalid email format'),
-    // mobile: Yup.string().required('Phone number is required'),
     password: Yup.string().required('Password is required').min(8, 'Password should be of minimum 8 characters length'),
     confirmPassword: Yup.string()
       .required('Confirm password is required')
@@ -99,59 +104,62 @@ export default function AccountSettingsView() {
           <Typography variant="h3" sx={{ mb: 3 }}>
             Account Settings
           </Typography>
-          <Stack spacing={3} sx={{ my: 4 }}>
-            <Typography variant="h5"> Change Password </Typography>
+          {passwordAuth && (
+            <Stack spacing={3} sx={{ my: 4 }}>
+              <Typography variant="h5"> Change Password </Typography>
 
-            <RHFTextField
-              name="original"
-              label="Password"
-              type={showPassword ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                      <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+              <RHFTextField
+                name="original"
+                label="Password"
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                        <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
 
-            <RHFTextField
-              name="password"
-              label="New Password"
-              type={showPassword ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                      <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+              <RHFTextField
+                name="password"
+                label="New Password"
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                        <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
 
-            <RHFTextField
-              name="confirmPassword"
-              label="Confirm Password"
-              type={showPassword ? 'text' : 'password'}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                      <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <Divider sx={{ borderStyle: 'dashed' }} />
+              <RHFTextField
+                name="confirmPassword"
+                label="Confirm Password"
+                type={showPassword ? 'text' : 'password'}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
+                        <Iconify icon={showPassword ? 'carbon:view' : 'carbon:view-off'} />
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Divider sx={{ borderStyle: 'dashed' }} />
 
-            <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
-              Change Password
-            </LoadingButton>
-          </Stack>
+              <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+                Change Password
+              </LoadingButton>
+            </Stack>
+          )}
+          {!passwordAuth && <Typography>Your account settings are managed via your Social account.</Typography>}
         </FormProvider>
       </Container>
     </AccountLayout>

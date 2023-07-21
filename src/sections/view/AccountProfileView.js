@@ -66,7 +66,7 @@ export default function AccountPersonalView() {
   const AccountProfileSchema = Yup.object().shape({
     profileName: Yup.string(),
     patrol: Yup.string(),
-    password: Yup.string().required(),
+    password: Yup.string().required('Password is required to update your profile'),
   });
   // safe defaults and necessary so that useEffect works properly to reset
   const defaultValues = {
@@ -163,9 +163,9 @@ export default function AccountPersonalView() {
             {needPassword && (
               <>
                 <RHFTextField name="password" label="Password" />
-                <Typography variant="caption" sx={{ pb: 3 }}>
+                {/* <Typography variant="caption" sx={{ pb: 3 }}>
                   Password is required to update profile.
-                </Typography>
+                </Typography> */}
               </>
             )}
           </Stack>

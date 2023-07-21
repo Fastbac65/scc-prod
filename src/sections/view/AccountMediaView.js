@@ -35,7 +35,7 @@ export default function AccountMediaView() {
     <AccountLayout>
       <Container>
         <Typography variant="h3" sx={{ mb: 5 }}>
-          Music and Therapy Session Audio
+          This months featured training
         </Typography>
         <Box
           gap={3}
@@ -45,7 +45,7 @@ export default function AccountMediaView() {
             lg: 'repeat(2, 1fr)',
           }}
         >
-          <Block label="Session Audio Recordings">
+          <Block label="featured training">
             <Autocomplete
               options={OPTIONS}
               getOptionLabel={(option) => option.label}
@@ -56,7 +56,7 @@ export default function AccountMediaView() {
                 setMusic(newValue);
                 setPlay(true);
               }}
-              renderInput={(params) => <TextField {...params} label="Music to help you relax!" />}
+              renderInput={(params) => <TextField {...params} label="Chief Training Officer recommended" />}
             />
           </Block>
 

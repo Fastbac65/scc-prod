@@ -98,7 +98,7 @@ export function MenuContent() {
 
         <Stack spacing={0.5}>
           <TextMaxLine variant="subtitle1" line={1}>
-            {member?.displayName || user?.displayName}
+            {member?.profileName || member?.displayName || user?.displayName}
           </TextMaxLine>
           <TextMaxLine variant="caption" line={1} sx={{ color: 'text.secondary' }}>
             {user?.email}

@@ -17,10 +17,10 @@ export const StyledReactPlayer = styled(ReactPlayer)(({ theme }) => ({
   overflow: 'hidden',
   '& audio': {
     '&::-webkit-media-controls-play-button': {
-      backgroundColor: theme.palette.primary.light,
+      backgroundColor: theme.palette.secondary.lighter,
     },
     '&::-webkit-media-controls-panel': {
-      backgroundColor: theme.palette.primary.light,
+      backgroundColor: theme.palette.secondary.lighter,
     },
   },
   '& video': {

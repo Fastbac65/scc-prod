@@ -64,7 +64,7 @@ export default function AccountMediaView() {
             controls
             playing={play}
             config={{ file: { attributes: { controlsList: 'nodownload' } } }} // Disable right click
-            onContextMenu={(e) => e.preventDefault()}
+            // onContextMenu={(e) => e.preventDefault()}
             volume={0.5}
             url={music?.link}
           />

@@ -160,14 +160,7 @@ export default function AccountPersonalView() {
                 ))}
               </RHFSelect>
             </Box>
-            {needPassword && (
-              <>
-                <RHFTextField name="password" label="Password" />
-                {/* <Typography variant="caption" sx={{ pb: 3 }}>
-                  Password is required to update profile.
-                </Typography> */}
-              </>
-            )}
+            {needPassword && <RHFTextField name="password" label="Password" />}
           </Stack>
 
           <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>

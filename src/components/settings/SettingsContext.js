@@ -82,7 +82,7 @@ export function SettingsProvider({ children }) {
       // });
     } else {
       console.log('App logged out');
-      setMember({});
+      setMember(null);
     }
     return () => listener();
   }, [user]);

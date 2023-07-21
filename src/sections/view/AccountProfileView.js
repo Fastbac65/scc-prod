@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // fb
 import { db } from 'src/lib/createFirebaseApp';
 import { ref, update } from 'firebase/database';
@@ -55,6 +55,8 @@ const patrol = [
 // ----------------------------------------------------------------------
 
 export default function AccountPersonalView() {
+  const [needPassword, setNeedPassword] = useState(true);
+
   const {
     member,
     dispatch,
@@ -83,13 +85,18 @@ export default function AccountPersonalView() {
   } = methods;
 
   useEffect(() => {
-    if (!member) return;
+    if (!member) {
+      console.log('no member yet!');
+      return;
+    }
     const resetValues = {
       profileName: member?.profileName || member.displayName || '',
       password: '',
       patrol: member?.patrol || '',
     };
     reset(resetValues);
+    console.log('member useEffect', member);
+    if (member.providerData[0].providerId !== 'password') setNeedPassword(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member]);
 
@@ -128,32 +135,39 @@ export default function AccountPersonalView() {
           <Typography variant="h3" sx={{ mb: 0 }}>
             Update Profile
           </Typography>
-          <Typography sx={{ pb: 3 }}>Email as per member registration</Typography>
+          <Typography variant="body2" sx={{ pb: 3 }}>
+            Ckick on avatar to upload a photo or go with a lucky pic
+          </Typography>
           <Stack spacing={2.5}>
-            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
+            <Box rowGap={2.5} columnGap={2} alignItems="center" display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
               <Stack direction="row" alignItems="center">
-                <Avatar src={member.photoURL} sx={{ width: 80, height: 80 }} />
+                <Avatar src={member?.photoURL} sx={{ width: 80, height: 80 }} />
                 <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
-                  <IconButton onClick={handleProfile} sx={{ color: 'inherit' }}>
-                    <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
+                  <IconButton onClick={handleProfile} sx={{ color: 'inherit', mx: 1 }}>
+                    <Iconify icon="mdi:edit" />
                   </IconButton>
                   lucky pic
                 </Stack>
               </Stack>
-              <RHFTextField name="profileName" label="Preferred Name" />
             </Box>
-            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}></Box>
-            <RHFSelect native name="patrol" label="Your Patrol">
-              {patrol.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </RHFSelect>
-            <RHFTextField name="password" label="Password" />
-            <Typography variant="caption" sx={{ pb: 3 }}>
-              Your password is required to update. If you authenticated via social then we will reauthenticate same
-            </Typography>
+            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
+              <RHFTextField name="profileName" label="Preferred Name" />
+              <RHFSelect native name="patrol" label="Your Patrol">
+                {patrol.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </RHFSelect>
+            </Box>
+            {needPassword && (
+              <>
+                <RHFTextField name="password" label="Password" />
+                <Typography variant="caption" sx={{ pb: 3 }}>
+                  Password is required to update profile.
+                </Typography>
+              </>
+            )}
           </Stack>
 
           <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>

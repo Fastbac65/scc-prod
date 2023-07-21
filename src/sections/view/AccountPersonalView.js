@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect } from 'react';
 // fb
@@ -7,13 +7,11 @@ import { db } from 'src/lib/createFirebaseApp';
 import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { DatePicker } from '@mui/x-date-pickers';
 
 import { Box, Typography, Stack, Container } from '@mui/material';
 // assets
 // components
-import Iconify from 'src/components/iconify';
-import FormProvider, { RHFTextField, RHFSelect } from 'src/components/hook-form';
+import FormProvider, { RHFTextField, RHFSelect, RHFDatePicker } from 'src/components/hook-form';
 //
 import { useSettingsContext } from 'src/components/settings';
 
@@ -47,9 +45,6 @@ export default function AccountPersonalView() {
       country: Yup.string(),
     }),
   });
-
-  // const { name = '', email = '', phone = '', address = {} } = member;
-  // const { phone } = productsTable.length ? productsTable[0]?.customer_details || '' : '';
 
   const defaultValues = {
     displayName: '',
@@ -146,23 +141,7 @@ export default function AccountPersonalView() {
             Optional Details
           </Typography>
           <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
-            <Controller
-              name="birthday"
-              render={({ field, fieldState: { error } }) => (
-                <DatePicker
-                  label="Birthday"
-                  slotProps={{
-                    textField: {
-                      helperText: error?.message,
-                      error: !!error?.message,
-                    },
-                  }}
-                  {...field}
-                  value={field.value}
-                />
-              )}
-            />
-
+            <RHFDatePicker name="birthday" label="Birthday" />
             <RHFSelect native name="gender" label="Gender">
               {GENDER_OPTIONS.map((option) => (
                 <option key={option} value={option}>
@@ -181,19 +160,19 @@ export default function AccountPersonalView() {
   );
 }
 
-function OverviewItem({ icon, label, text = '-' }) {
-  return (
-    <Stack spacing={1.5} direction="row" alignItems="flex-start">
-      <Iconify icon={icon} width={24} />
-      <Stack spacing={0.5}>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {label}
-        </Typography>
-        <Typography>{text}</Typography>
-      </Stack>
-    </Stack>
-  );
-}
+// function OverviewItem({ icon, label, text = '-' }) {
+//   return (
+//     <Stack spacing={1.5} direction="row" alignItems="flex-start">
+//       <Iconify icon={icon} width={24} />
+//       <Stack spacing={0.5}>
+//         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+//           {label}
+//         </Typography>
+//         <Typography>{text}</Typography>
+//       </Stack>
+//     </Stack>
+//   );
+// }
 
 // OverviewItem.propTypes = {
 //   icon: PropTypes.node,

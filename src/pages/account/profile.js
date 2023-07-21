@@ -7,7 +7,7 @@ import { useSettingsContext } from 'src/components/settings';
 // layouts
 import MainLayout from 'src/layouts/main';
 // sections
-import { AccountPersonalView } from 'src/sections/view';
+import { AccountProfileView } from 'src/sections/view';
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ export default function AccountPersonalPage() {
         <title>Account: Personal | SJB Therapy</title>
       </Head>
 
-      <AccountPersonalView />
+      <AccountProfileView />
     </>
   );
 }

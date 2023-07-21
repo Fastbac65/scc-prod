@@ -9,7 +9,7 @@ import { ref, update } from 'firebase/database';
 import { LoadingButton } from '@mui/lab';
 import { DatePicker } from '@mui/x-date-pickers';
 
-import { Box, Typography, Stack, Container } from '@mui/material';
+import { Box, Typography, Stack, Container, Avatar, IconButton } from '@mui/material';
 // assets
 // components
 import Iconify from 'src/components/iconify';
@@ -22,7 +22,35 @@ import { updateDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------
 
-const GENDER_OPTIONS = ['Female', 'Male', 'Other'];
+const patrol = [
+  '',
+  'Patrol 1',
+  'Patrol 2',
+  'Patrol 3',
+  'Patrol 4',
+  'Patrol 5',
+  'Patrol 6',
+  'Patrol 7',
+  'Patrol 8',
+  'Patrol 9',
+  'Patrol 10',
+  'Patrol 11',
+  'Patrol 12',
+  'Patrol 13',
+  'Patrol A',
+  'Patrol B',
+  'Patrol C',
+  'Patrol D',
+  'Patrol E',
+  'Patrol F',
+  'Patrol G',
+  'Patrol H',
+  'Patrol I',
+  'Patrol J',
+  'Patrol L',
+  'Patrol M',
+  'Patrol N',
+];
 
 // ----------------------------------------------------------------------
 
@@ -34,36 +62,15 @@ export default function AccountPersonalView() {
   } = useSettingsContext();
 
   const AccountPersonalSchema = Yup.object().shape({
-    displayName: Yup.string(),
-    email: Yup.string(),
-    phoneNumber: Yup.string(),
-    birthday: Yup.string(),
-    gender: Yup.string().required('Gender is required'),
-    address: Yup.object().shape({
-      streetAddress: Yup.string().required('Required to update your address'),
-      city: Yup.string().required('Required to update your address'),
-      state: Yup.string().required('Required to update your address'),
-      postCode: Yup.string().required('Required to update your address'),
-      country: Yup.string(),
-    }),
+    profileName: Yup.string(),
+    patrol: Yup.string(),
+    password: Yup.string(),
   });
-
-  // const { name = '', email = '', phone = '', address = {} } = member;
-  // const { phone } = productsTable.length ? productsTable[0]?.customer_details || '' : '';
-
+  // safe defaults and necessary so that useEffect works properly to reset
   const defaultValues = {
-    displayName: '',
-    email: '',
-    phoneNumber: '',
-    birthday: null,
-    gender: 'female',
-    address: {
-      streetAddress: '',
-      city: '',
-      state: '',
-      postCode: '',
-      country: 'AU',
-    },
+    profileName: '',
+    password: '',
+    patrol: '',
   };
   const methods = useForm({
     resolver: yupResolver(AccountPersonalSchema),
@@ -77,24 +84,20 @@ export default function AccountPersonalView() {
 
   useEffect(() => {
     if (!member) return;
-    const bday = member?.birthday ? new Date(member.birthday) : new Date('01-01-2001');
     const resetValues = {
-      displayName: member?.displayName || '',
-      email: member?.email || '',
-      phoneNumber: member?.phoneNumber || '',
-      birthday: bday,
-      gender: member?.gender || 'female',
-      address: {
-        streetAddress: member?.address?.streetAddress || '',
-        city: member?.address?.city || '',
-        state: member?.address?.state || '',
-        postCode: member?.address?.postCode || '',
-        country: member?.address?.country || 'AU',
-      },
+      profileName: member?.profileName || member.displayName || '',
+      password: '',
+      patrol: member?.patrol || '',
     };
     reset(resetValues);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member]);
+
+  const handleProfile = async () => {
+    // pick a profile pic from /assets/images/avatar/avatar_x
+    const pic = Math.floor(Math.random() * 25);
+    await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -123,58 +126,38 @@ export default function AccountPersonalView() {
       <Container>
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
           <Typography variant="h3" sx={{ mb: 0 }}>
-            Personal Details
+            Update Profile
           </Typography>
           <Typography sx={{ pb: 3 }}>Email as per member registration</Typography>
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
-              <RHFTextField name="displayName" label="Name" />
-              <RHFTextField name="phoneNumber" label="Mobile" />
+              <Stack direction="row" alignItems="center">
+                <Avatar src={member.photoURL} sx={{ width: 80, height: 80 }} />
+                <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
+                  <IconButton onClick={handleProfile} sx={{ color: 'inherit' }}>
+                    <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
+                  </IconButton>
+                  lucky pic
+                </Stack>
+              </Stack>
+              <RHFTextField name="profileName" label="Preferred Name" />
             </Box>
-            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
-              <RHFTextField name="email" label="Email" disabled />
-              <RHFTextField name="address.streetAddress" label="Address" />
-            </Box>
-            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
-              <RHFTextField name="address.city" label="Suburb" />
-              <RHFTextField name="address.state" label="State" />
-              <RHFTextField name="address.postCode" label="Post Code " />
-              <RHFTextField name="address.country" label="Country" disabled />
-            </Box>
-          </Stack>
-
-          <Typography paragraph variant="h5" sx={{ my: 2 }}>
-            Optional Details
-          </Typography>
-          <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
-            <Controller
-              name="birthday"
-              render={({ field, fieldState: { error } }) => (
-                <DatePicker
-                  label="Birthday"
-                  slotProps={{
-                    textField: {
-                      helperText: error?.message,
-                      error: !!error?.message,
-                    },
-                  }}
-                  {...field}
-                  value={field.value}
-                />
-              )}
-            />
-
-            <RHFSelect native name="gender" label="Gender">
-              {GENDER_OPTIONS.map((option) => (
+            <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}></Box>
+            <RHFSelect native name="patrol" label="Your Patrol">
+              {patrol.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
               ))}
             </RHFSelect>
-          </Box>
+            <RHFTextField name="password" label="Password" />
+            <Typography variant="caption" sx={{ pb: 3 }}>
+              Your password is required to update. If you authenticated via social then we will reauthenticate same
+            </Typography>
+          </Stack>
 
           <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
-            Update Personal Details
+            Update Profile
           </LoadingButton>
         </FormProvider>
       </Container>

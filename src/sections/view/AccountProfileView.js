@@ -132,11 +132,11 @@ export default function AccountPersonalView() {
     <AccountLayout>
       <Container>
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-          <Typography variant="h3" sx={{ mb: 0 }}>
+          <Typography variant="h3" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
             Update Profile
           </Typography>
           <Typography variant="body2" sx={{ pb: 3 }}>
-            Ckick on avatar to upload a photo or go with a lucky pic
+            Ckick on avatar/photo to upload a photo or go with a lucky pic
           </Typography>
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} alignItems="center" display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>

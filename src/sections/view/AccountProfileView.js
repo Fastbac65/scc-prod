@@ -122,7 +122,7 @@ export default function AccountPersonalView() {
       if (photoURL) {
         const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
         memberProfile.photoURL = url;
-        if (user.providerData[0].providerId !== 'password') memberProfile.socialURL = url; // de-sync social login with social URL etc
+        if (user?.providerData[0].providerId !== 'password') memberProfile.socialURL = url; // de-sync social login with social URL etc
         // <Avatar/> preference socialURL if it exists
       }
       await updateDoco(`members`, member.uid, memberProfile);
@@ -149,12 +149,12 @@ export default function AccountPersonalView() {
           <Typography variant="h3" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
             Update Profile
           </Typography>
-          {user.providerData[0].providerId !== 'password' && (
+          {user?.providerData[0].providerId !== 'password' && (
             <Typography variant="body2" sx={{ pb: 3 }}>
               Click on photo to update
             </Typography>
           )}
-          {user.providerData[0].providerId === 'password' && (
+          {user?.providerData[0].providerId === 'password' && (
             <Typography variant="body2" sx={{ pb: 3 }}>
               Click on avatar/photo to update or go with a quik pic
             </Typography>

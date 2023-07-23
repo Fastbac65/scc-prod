@@ -25,19 +25,18 @@ export default function AccountSettingsView() {
     user,
     dispatch,
     state: { alert },
-    member,
   } = useSettingsContext();
   const [passwordAuth, setPasswordAuth] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    if (!member) {
-      console.log('no member yet!');
+    if (!user) {
+      console.log('no user yet!');
       return;
     }
-    if (member.providerData[0].providerId !== 'password') setPasswordAuth(false);
+    if (user?.providerData[0].providerId !== 'password') setPasswordAuth(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [member]);
+  }, [user]);
 
   const ResetPwSchema = Yup.object().shape({
     original: Yup.string().required('Current password required'),

@@ -156,7 +156,7 @@ export default function AccountPersonalView() {
           )}
           {user.providerData[0].providerId === 'password' && (
             <Typography variant="body2" sx={{ pb: 3 }}>
-              Click on avatar/photo to update or go with a lucky pic
+              Click on avatar/photo to update or go with a quik pic
             </Typography>
           )}
           <Stack spacing={2.5}>
@@ -172,7 +172,7 @@ export default function AccountPersonalView() {
                     <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit', mx: 1 }}>
                       <Iconify icon="mdi:edit" />
                     </IconButton>
-                    lucky pic
+                    quik pic
                   </Stack>
                 )}
               </Stack>

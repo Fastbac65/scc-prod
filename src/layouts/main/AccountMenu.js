@@ -97,7 +97,7 @@ export function MenuContent() {
               <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit' }}>
                 <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
               </IconButton>
-              lucky pic
+              quik pic
             </Stack>
           )}
         </Stack>

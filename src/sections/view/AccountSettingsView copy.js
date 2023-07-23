@@ -8,7 +8,7 @@ import FormProvider, { RHFTextField, RHFSelect } from 'src/components/hook-form'
 
 import { useState } from 'react';
 // @mui
-import { Divider, Typography, InputAdornment, Stack, IconButton, Container } from '@mui/material';
+import { Divider, Typography, InputAdornment, Stack, IconButton, Container, CircularProgress } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
 //
@@ -151,7 +151,7 @@ export default function AccountSettingsView() {
           </Stack>
 
           <Divider sx={{ my: 3, borderStyle: 'dashed' }} />
-          <LoadingButton sx={{ my: 6 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+          <LoadingButton sx={{ my: 6 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
             Change Password
           </LoadingButton>
         </FormProvider>

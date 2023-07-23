@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
-import { Stack, FormHelperText } from '@mui/material';
+import { Stack, FormHelperText, CircularProgress } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
 import FormProvider, { RHFCodes } from 'src/components/hook-form';
@@ -54,26 +54,13 @@ export default function AuthVerifyCodeForm() {
       <Stack spacing={3}>
         <RHFCodes keyName="code" inputs={['code1', 'code2', 'code3', 'code4', 'code5', 'code6']} />
 
-        {(!!errors.code1 ||
-          !!errors.code2 ||
-          !!errors.code3 ||
-          !!errors.code4 ||
-          !!errors.code5 ||
-          !!errors.code6) && (
+        {(!!errors.code1 || !!errors.code2 || !!errors.code3 || !!errors.code4 || !!errors.code5 || !!errors.code6) && (
           <FormHelperText error sx={{ px: 2 }}>
             Code is required
           </FormHelperText>
         )}
 
-        <LoadingButton
-          fullWidth
-          size="large"
-          color="inherit"
-          type="submit"
-          variant="contained"
-          loading={isSubmitting}
-          sx={{ mt: 3 }}
-        >
+        <LoadingButton fullWidth size="large" color="inherit" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />} sx={{ mt: 3 }}>
           Verify
         </LoadingButton>
       </Stack>

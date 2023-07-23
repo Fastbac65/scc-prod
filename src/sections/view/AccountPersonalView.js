@@ -8,7 +8,7 @@ import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
 
-import { Box, Typography, Stack, Container } from '@mui/material';
+import { Box, Typography, Stack, Container, CircularProgress } from '@mui/material';
 // assets
 // components
 import FormProvider, { RHFTextField, RHFSelect, RHFDatePicker } from 'src/components/hook-form';
@@ -154,7 +154,7 @@ export default function AccountPersonalView() {
             </RHFSelect>
           </Box>
 
-          <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+          <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
             Update Personal Details
           </LoadingButton>
         </FormProvider>

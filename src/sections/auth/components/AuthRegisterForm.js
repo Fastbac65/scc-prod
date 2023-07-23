@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { Typography, Stack, Link, IconButton, InputAdornment } from '@mui/material';
+import { Typography, Stack, Link, IconButton, InputAdornment, CircularProgress } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField } from 'src/components/hook-form';
@@ -143,7 +143,7 @@ export default function AuthRegisterForm() {
           }}
         /> */}
 
-        <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+        <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
           Create my South Curly account
         </LoadingButton>
 

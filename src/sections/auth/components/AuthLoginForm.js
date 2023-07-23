@@ -6,7 +6,7 @@ import { useState } from 'react';
 import NextLink from 'next/link';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { Stack, Link, IconButton, InputAdornment } from '@mui/material';
+import { Stack, Link, IconButton, InputAdornment, CircularProgress } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField } from 'src/components/hook-form';
@@ -130,7 +130,7 @@ export default function AuthLoginForm() {
           Forgot password?
         </Link>
 
-        <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+        <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
           Login
         </LoadingButton>
       </Stack>

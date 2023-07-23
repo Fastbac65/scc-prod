@@ -7,6 +7,7 @@ import { LoadingButton } from '@mui/lab';
 import FormProvider, { RHFTextField } from 'src/components/hook-form';
 import { useSettingsContext } from 'src/components/settings';
 import { useRouter } from 'next/router';
+import { CircularProgress } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -99,7 +100,7 @@ export default function AuthResetPasswordForm() {
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <RHFTextField name="email" hiddenLabel placeholder="Email address" />
 
-      <LoadingButton fullWidth size="large" color="primary" type="submit" variant="contained" loading={isSubmitting} sx={{ mt: 2.5 }}>
+      <LoadingButton fullWidth size="large" color="primary" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />} sx={{ mt: 2.5 }}>
         Reset Password
       </LoadingButton>
     </FormProvider>

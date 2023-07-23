@@ -7,9 +7,8 @@ import { db } from 'src/lib/createFirebaseApp';
 import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { DatePicker } from '@mui/x-date-pickers';
 
-import { Box, Typography, Stack, Container, Avatar, IconButton } from '@mui/material';
+import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress } from '@mui/material';
 // assets
 // components
 import Iconify from 'src/components/iconify';
@@ -83,7 +82,7 @@ export default function AccountPersonalView() {
     handleSubmit,
     formState: { isSubmitting },
   } = methods;
-
+  // init form and needPassword once 'member' is loaded
   useEffect(() => {
     if (!member) {
       console.log('no member yet!');
@@ -163,7 +162,7 @@ export default function AccountPersonalView() {
             {needPassword && <RHFTextField name="password" label="Password" />}
           </Stack>
 
-          <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting}>
+          <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
             Update Profile
           </LoadingButton>
         </FormProvider>
@@ -172,19 +171,19 @@ export default function AccountPersonalView() {
   );
 }
 
-function OverviewItem({ icon, label, text = '-' }) {
-  return (
-    <Stack spacing={1.5} direction="row" alignItems="flex-start">
-      <Iconify icon={icon} width={24} />
-      <Stack spacing={0.5}>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {label}
-        </Typography>
-        <Typography>{text}</Typography>
-      </Stack>
-    </Stack>
-  );
-}
+// function OverviewItem({ icon, label, text = '-' }) {
+//   return (
+//     <Stack spacing={1.5} direction="row" alignItems="flex-start">
+//       <Iconify icon={icon} width={24} />
+//       <Stack spacing={0.5}>
+//         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+//           {label}
+//         </Typography>
+//         <Typography>{text}</Typography>
+//       </Stack>
+//     </Stack>
+//   );
+// }
 
 // OverviewItem.propTypes = {
 //   icon: PropTypes.node,

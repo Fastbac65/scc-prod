@@ -1,14 +1,14 @@
 import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // fb
 import { db } from 'src/lib/createFirebaseApp';
 import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
 
-import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress } from '@mui/material';
+import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress, Input } from '@mui/material';
 // assets
 // components
 import Iconify from 'src/components/iconify';
@@ -18,6 +18,8 @@ import { useSettingsContext } from 'src/components/settings';
 
 import { AccountLayout } from '../layout';
 import { updateDoco } from 'src/lib/firestoreDocument';
+import resizeImage from 'src/lib/resizeImage';
+import uploadFile from 'src/lib/uploadFile';
 
 // ----------------------------------------------------------------------
 
@@ -54,24 +56,27 @@ const patrol = [
 // ----------------------------------------------------------------------
 
 export default function AccountPersonalView() {
-  const [needPassword, setNeedPassword] = useState(true);
-
   const {
     member,
     dispatch,
     state: { alert },
   } = useSettingsContext();
 
+  // const [needPassword, setNeedPassword] = useState(true);
+  const [photoURL, setPhotoURL] = useState(null);
+  var resizedImg = useRef({});
+  const fileRef = useRef();
+
   const AccountProfileSchema = Yup.object().shape({
     profileName: Yup.string(),
     patrol: Yup.string(),
-    password: Yup.string().required('Password is required to update your profile'),
+    // password: Yup.string().required('Password is required to update your profile'),
   });
   // safe defaults and necessary so that useEffect works properly to reset
   const defaultValues = {
     profileName: '',
-    password: '',
     patrol: '',
+    // password: '',
   };
   const methods = useForm({
     resolver: yupResolver(AccountProfileSchema),
@@ -94,23 +99,46 @@ export default function AccountPersonalView() {
       patrol: member?.patrol || '',
     };
     reset(resetValues);
-    console.log('member useEffect', member);
-    if (member.providerData[0].providerId !== 'password') setNeedPassword(false);
+    // console.log('member useEffect', member);
+    // if (member.providerData[0].providerId !== 'password') setNeedPassword(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member]);
 
-  const handleProfile = async () => {
+  const handleLuckyPic = async () => {
     // pick a profile pic from /assets/images/avatar/avatar_x
+    setPhotoURL(null); // displays member.photoURL
     const pic = Math.floor(Math.random() * 25);
     await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+  };
+
+  // getting the new profile image file if one is selected
+  const handleChange = async (e) => {
+    const img = e.target.files[0];
+    if (img) {
+      resizedImg.current = await resizeImage(img, 80, 150);
+      console.log(resizedImg);
+      setPhotoURL(URL.createObjectURL(img)); // updates the screen
+    }
+  };
+
+  const handleClick = () => {
+    fileRef.current.value = null; //  reset input so same file can be picked after lucky pic
   };
 
   const onSubmit = async (data) => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
       // reset();
-      console.log('DATA', data);
-      // await updateDoco(`members`, member.uid, data);
+      const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL };
+      if (photoURL) {
+        const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
+        console.log(url);
+        memberProfile.photoURL = url;
+        console.log('photo url set', photoURL);
+        setPhotoURL(null);
+      }
+      console.log('DATA', memberProfile);
+      await updateDoco(`members`, member.uid, memberProfile);
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {
@@ -140,9 +168,13 @@ export default function AccountPersonalView() {
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} alignItems="center" display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
               <Stack direction="row" alignItems="center">
-                <Avatar src={member?.photoURL} sx={{ width: 80, height: 80 }} />
+                <label htmlFor="profilePhoto">
+                  <Input inputRef={fileRef} inputProps={{ accept: 'image/*' }} id="profilePhoto" type="file" style={{ display: 'none' }} onClick={handleClick} onChange={handleChange} />
+                  <Avatar src={photoURL || member?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
+                </label>
+
                 <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
-                  <IconButton onClick={handleProfile} sx={{ color: 'inherit', mx: 1 }}>
+                  <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit', mx: 1 }}>
                     <Iconify icon="mdi:edit" />
                   </IconButton>
                   lucky pic
@@ -159,7 +191,7 @@ export default function AccountPersonalView() {
                 ))}
               </RHFSelect>
             </Box>
-            {needPassword && <RHFTextField name="password" label="Password" />}
+            {/* {needPassword && <RHFTextField name="password" label="Password" />} */}
           </Stack>
 
           <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>

@@ -155,7 +155,7 @@ export default function Header() {
           <Stack spacing={0} direction="row" alignItems="center" justifyContent="flex-end" sx={{ minWidth: { xs: 56, sm: 64, md: 72 }, pr: { xs: 0, sm: 1, md: 2 } }}>
             {user && !loading && (
               <IconButton onClick={handleOpenUserMenu} color="inherit">
-                <Avatar src={member?.photoURL || user?.photoURL} sx={{ width: 40, height: 40 }} />
+                <Avatar src={member?.socialURL || member?.photoURL} sx={{ width: 40, height: 40 }} />
               </IconButton>
             )}
 

@@ -69,10 +69,14 @@ export function MenuContent() {
     }
   };
 
-  const handleProfile = async () => {
+  const handleLuckyPic = async () => {
     // pick a profile pic from /assets/images/avatar/avatar_x
     const pic = Math.floor(Math.random() * 25);
-    await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+    const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` };
+    // const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg`, socialURL: null };
+    // if (member.providerData[0].providerId !== 'password') updateObj.socialURL = `/assets/images/avatar/avatar_${pic}.jpg`;
+
+    await updateDoco('members', member.uid, updateObj);
   };
 
   return (
@@ -87,13 +91,15 @@ export function MenuContent() {
     >
       <Stack spacing={2} sx={{ p: 2, pb: 2 }}>
         <Stack direction="row" alignItems="center">
-          <Avatar src={member?.photoURL} sx={{ width: 64, height: 64 }} />
-          <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
-            <IconButton onClick={handleProfile} sx={{ color: 'inherit' }}>
-              <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
-            </IconButton>
-            lucky pic
-          </Stack>
+          <Avatar src={member?.socialURL || member?.photoURL} sx={{ width: 64, height: 64 }} />
+          {user?.providerData[0].providerId === 'password' && (
+            <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
+              <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit' }}>
+                <Iconify icon="mdi:edit" sx={{ mr: 1 }} />
+              </IconButton>
+              lucky pic
+            </Stack>
+          )}
         </Stack>
 
         <Stack spacing={0.5}>

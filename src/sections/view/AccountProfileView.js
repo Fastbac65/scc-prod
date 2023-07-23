@@ -53,6 +53,7 @@ const patrol = [
 export default function AccountPersonalView() {
   const {
     member,
+    user,
     dispatch,
     state: { alert },
   } = useSettingsContext();
@@ -117,10 +118,12 @@ export default function AccountPersonalView() {
   const onSubmit = async (data) => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
-      const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL };
+      const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL, socialURL: '' };
       if (photoURL) {
         const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
         memberProfile.photoURL = url;
+        if (user.providerData[0].providerId !== 'password') memberProfile.socialURL = url; // de-sync social login with social URL etc
+        // <Avatar/> preference socialURL if it exists
         setPhotoURL(null); // clear so we dont keep uploading after first upload
       }
       await updateDoco(`members`, member.uid, memberProfile);
@@ -146,9 +149,16 @@ export default function AccountPersonalView() {
           <Typography variant="h3" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
             Update Profile
           </Typography>
-          <Typography variant="body2" sx={{ pb: 3 }}>
-            Ckick on avatar/photo to upload a photo or go with a lucky pic
-          </Typography>
+          {user.providerData[0].providerId !== 'password' && (
+            <Typography variant="body2" sx={{ pb: 3 }}>
+              Click on photo to update
+            </Typography>
+          )}
+          {user.providerData[0].providerId === 'password' && (
+            <Typography variant="body2" sx={{ pb: 3 }}>
+              Click on avatar/photo to update or go with a lucky pic
+            </Typography>
+          )}
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} alignItems="center" display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
               <Stack direction="row" alignItems="center">
@@ -157,12 +167,14 @@ export default function AccountPersonalView() {
                   <Avatar src={photoURL || member?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
                 </label>
 
-                <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
-                  <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit', mx: 1 }}>
-                    <Iconify icon="mdi:edit" />
-                  </IconButton>
-                  lucky pic
-                </Stack>
+                {user?.providerData[0].providerId === 'password' && (
+                  <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
+                    <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit', mx: 1 }}>
+                      <Iconify icon="mdi:edit" />
+                    </IconButton>
+                    lucky pic
+                  </Stack>
+                )}
               </Stack>
             </Box>
             <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>
@@ -181,6 +193,14 @@ export default function AccountPersonalView() {
           <LoadingButton sx={{ my: 4 }} color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
             Update Profile
           </LoadingButton>
+          {user?.providerData[0].providerId !== 'password' && (
+            <>
+              <Typography variant="body2">Updates South Curl Curl website profile only.</Typography>
+              <Typography variant="body2" sx={{ pb: 3 }}>
+                Overrides sync with social profile photo if you update photo.
+              </Typography>
+            </>
+          )}
         </FormProvider>
       </Container>
     </AccountLayout>

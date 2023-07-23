@@ -2,14 +2,9 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect, useRef, useState } from 'react';
-// fb
-import { db } from 'src/lib/createFirebaseApp';
-import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
-
 import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress, Input } from '@mui/material';
-// assets
 // components
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField, RHFSelect } from 'src/components/hook-form';
@@ -70,13 +65,11 @@ export default function AccountPersonalView() {
   const AccountProfileSchema = Yup.object().shape({
     profileName: Yup.string(),
     patrol: Yup.string(),
-    // password: Yup.string().required('Password is required to update your profile'),
   });
   // safe defaults and necessary so that useEffect works properly to reset
   const defaultValues = {
     profileName: '',
     patrol: '',
-    // password: '',
   };
   const methods = useForm({
     resolver: yupResolver(AccountProfileSchema),
@@ -94,13 +87,10 @@ export default function AccountPersonalView() {
       return;
     }
     const resetValues = {
-      profileName: member?.profileName || member.displayName || '',
-      password: '',
+      profileName: member?.profileName || member.displayName,
       patrol: member?.patrol || '',
     };
     reset(resetValues);
-    // console.log('member useEffect', member);
-    // if (member.providerData[0].providerId !== 'password') setNeedPassword(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member]);
 
@@ -116,7 +106,6 @@ export default function AccountPersonalView() {
     const img = e.target.files[0];
     if (img) {
       resizedImg.current = await resizeImage(img, 80, 150);
-      console.log(resizedImg);
       setPhotoURL(URL.createObjectURL(img)); // updates the screen
     }
   };
@@ -128,16 +117,12 @@ export default function AccountPersonalView() {
   const onSubmit = async (data) => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
-      // reset();
       const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL };
       if (photoURL) {
         const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
-        console.log(url);
         memberProfile.photoURL = url;
-        console.log('photo url set', photoURL);
-        setPhotoURL(null);
+        setPhotoURL(null); // clear so we dont keep uploading after first upload
       }
-      console.log('DATA', memberProfile);
       await updateDoco(`members`, member.uid, memberProfile);
       dispatch({
         type: 'UPDATE_ALERT',
@@ -146,8 +131,7 @@ export default function AccountPersonalView() {
           open: true,
           severity: 'success',
           message: 'Your details have been updated.',
-          duration: 1000,
-          posn: 'bottom',
+          duration: 1500,
         },
       });
     } catch (error) {

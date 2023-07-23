@@ -164,7 +164,7 @@ export default function AccountPersonalView() {
               <Stack direction="row" alignItems="center">
                 <label htmlFor="profilePhoto">
                   <Input inputRef={fileRef} inputProps={{ accept: 'image/*' }} id="profilePhoto" type="file" style={{ display: 'none' }} onClick={handleClick} onChange={handleChange} />
-                  <Avatar src={photoURL || member?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
+                  <Avatar src={photoURL || member?.socialURL || member?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
                 </label>
 
                 {user?.providerData[0].providerId === 'password' && (

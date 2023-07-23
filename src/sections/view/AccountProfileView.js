@@ -126,7 +126,7 @@ export default function AccountPersonalView() {
         // <Avatar/> preference socialURL if it exists
       }
       await updateDoco(`members`, member.uid, memberProfile);
-      setTimeout(() => setPhotoURL(null), 1000); // clear so we dont keep uploading after first upload
+      setTimeout(() => setPhotoURL(null), 4000); // clear so we dont keep uploading after first upload
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {

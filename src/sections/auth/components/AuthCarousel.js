@@ -44,7 +44,7 @@ export default function AuthCarousel({ title, images }) {
   const theme = useTheme();
 
   const carouselSettings = {
-    autoplaySpeed: 10000,
+    autoplaySpeed: 5000,
     speed: 1000,
     fade: true,
     dots: true,

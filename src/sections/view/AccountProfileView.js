@@ -106,7 +106,7 @@ export default function AccountPersonalView() {
   const handleChange = async (e) => {
     const img = e.target.files[0];
     if (img) {
-      resizedImg.current = await resizeImage(img, 80, 150);
+      resizedImg.current = await resizeImage(img, 90, 300);
       setPhotoURL(URL.createObjectURL(img)); // updates the screen
     }
   };
@@ -124,9 +124,9 @@ export default function AccountPersonalView() {
         memberProfile.photoURL = url;
         if (user.providerData[0].providerId !== 'password') memberProfile.socialURL = url; // de-sync social login with social URL etc
         // <Avatar/> preference socialURL if it exists
-        setPhotoURL(null); // clear so we dont keep uploading after first upload
       }
       await updateDoco(`members`, member.uid, memberProfile);
+      setPhotoURL(null); // clear so we dont keep uploading after first upload
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {

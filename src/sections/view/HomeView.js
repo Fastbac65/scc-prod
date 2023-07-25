@@ -11,7 +11,6 @@ export default function HomeView({ staticPosts }) {
 
   return (
     <>
-      <Posts posts={staticPosts} />
       <HomeLanding />
       <Posts posts={staticPosts} />
       {/* <HomeHero />

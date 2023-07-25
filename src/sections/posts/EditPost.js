@@ -1,4 +1,4 @@
-import { Box, Button, DialogActions, DialogContent, DialogContentText, Paper, Stack, TextField } from '@mui/material';
+import { Box, Button, DialogActions, DialogContent, DialogContentText, Paper, Stack, TextField, useTheme } from '@mui/material';
 import { useRef, useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import AddImages from './AddImages';
@@ -10,9 +10,9 @@ import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
 
 const EditPost = ({ postDoc }) => {
+  const theme = useTheme();
   const {
-    theme,
-    currentUser,
+    user,
     dispatch,
     state: { alert, modal },
   } = useSettingsContext();
@@ -27,7 +27,7 @@ const EditPost = ({ postDoc }) => {
   const mainRef = useRef('');
   const collectionName = 'Posts';
   const storageName = 'posts';
-  // const postDocumentId = currentUser?.uid + '_' + uuidv4();
+  // const postDocumentId = user?.uid + '_' + uuidv4();
   const postDocumentId = postDoc.id;
 
   const uploadPostImages = () => {
@@ -52,7 +52,7 @@ const EditPost = ({ postDoc }) => {
 
         files.forEach(async (file, indx) => {
           const imageName = postDocumentId + '_' + indx + '.' + file.name.split('.').pop();
-          const storageFilePath = `${storageName}/${currentUser.uid}/` + imageName;
+          const storageFilePath = `${storageName}/${user.uid}/` + imageName;
           // const resizeFile = await resizeImage(file); // resize and compress the file
           imageUploadPromises.push(uploadFile(resizeBlobs[indx].blob, storageFilePath)); // upload the resized version
         });
@@ -98,11 +98,11 @@ const EditPost = ({ postDoc }) => {
       }
       // update database collection 'Posts'
       const postDocumentObj = {
-        userId: currentUser?.uid || '',
-        uName: currentUser?.displayName || '',
-        uEmail: currentUser?.email || currentUser?.providerData[0]?.email || '',
-        uAvatar: currentUser?.photoURL || '',
-        uMobile: currentUser?.phoneNumber || '',
+        userId: user?.uid || '',
+        uName: user?.displayName || '',
+        uEmail: user?.email || user?.providerData[0]?.email || '',
+        uAvatar: user?.photoURL || '',
+        uMobile: user?.phoneNumber || '',
         albumName: collectionName,
         postType: '',
         title: title,

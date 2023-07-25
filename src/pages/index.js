@@ -32,6 +32,7 @@ export async function getStaticProps() {
     props: {
       staticPosts: docs,
     },
+    revalidate: 2,
   };
 }
 

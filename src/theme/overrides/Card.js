@@ -14,12 +14,12 @@ export default function Card(theme) {
     },
     MuiCardHeader: {
       defaultProps: {
-        titleTypographyProps: { variant: 'h6' },
-        subheaderTypographyProps: { variant: 'body2', marginTop: theme.spacing(0.5) },
+        titleTypographyProps: { variant: 'body1' },
+        subheaderTypographyProps: { variant: 'body2' },
       },
       styleOverrides: {
         root: {
-          padding: theme.spacing(3, 3, 0),
+          padding: theme.spacing(1, 3, 0),
         },
       },
     },

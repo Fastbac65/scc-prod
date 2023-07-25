@@ -9,7 +9,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
-import { doc, onSnapshot } from 'firebase/firestore';
+import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -49,7 +49,9 @@ export function SettingsProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const [themeMode, setThemeMode] = useState(initialState.themeMode);
-  const [member, setMember] = useState({});
+  const [member, setMember] = useState(null);
+  const [members, setMembers] = useState(null);
+  const [posts, setPosts] = useState(null);
   // allows us to hold a page switch in certain circumstances e.g. on social sign up we need time to check the backend for existing accounts before 'user' state changes the route
   const [holdRouter, setHoldRouter] = useState(false);
 
@@ -61,31 +63,53 @@ export function SettingsProvider({ children }) {
 
   useEffect(() => {
     let listener = () => {};
-    let custlistener = () => {};
+
     if (user) {
       console.log('user loaded', user);
 
       listener = onSnapshot(doc(db, 'members', user.uid), (snapshot) => {
         if (snapshot.data()) {
-          console.log('members loaded', snapshot.data());
+          console.log('member loaded', snapshot.data());
           setMember(snapshot.data());
         }
       });
-      // custlistener = onValue(custRef, (snapshot) => {
-      //   if (snapshot.val()) {
-      //     const customers = Object?.values(snapshot.val());
-      //     console.log('custIds loaded');
-      //     const cust = customers.filter((item) => item.email === user.email);
-      //     setCustId(cust[0]?.id);
-      //     setClient({ ...cust[0] });
-      //   }
-      // });
     } else {
       console.log('App logged out');
       setMember(null);
     }
-    return () => listener();
+    return () => {
+      // unsubscribe listeners
+      listener();
+    };
   }, [user]);
+
+  useEffect(() => {
+    const membersListener = onSnapshot(collection(db, 'members'), (snapshot) => {
+      const docs = [];
+
+      snapshot.forEach((doc) => {
+        docs.push({ uid: doc.id, data: doc.data() });
+      });
+      console.log('members loaded', docs);
+      setMembers([...docs]);
+    });
+    const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+    const postsListener = onSnapshot(q, (snapshot) => {
+      const docs = [];
+
+      snapshot.forEach((doc) => {
+        docs.push({ id: doc.id, data: doc.data() });
+      });
+      console.log('posts loaded', docs);
+      setPosts([...docs]);
+    });
+
+    return () => {
+      // unsubscribe listeners
+      membersListener();
+      postsListener();
+    };
+  }, []);
 
   // looks for cookie in local storage with thememode - so that theme persists across tabs
   useEffect(() => {
@@ -111,6 +135,8 @@ export function SettingsProvider({ children }) {
       loading,
       user,
       member,
+      members,
+      posts,
       holdRouter,
       setHoldRouter,
       host,
@@ -126,6 +152,8 @@ export function SettingsProvider({ children }) {
       loading,
       user,
       member,
+      members,
+      posts,
       holdRouter,
       setHoldRouter,
       host,

@@ -11,6 +11,8 @@ import Iconify from 'src/components/iconify/Iconify';
 import ScrollProgress from 'src/components/scroll-progress/ScrollProgress';
 import Header from './header/Header';
 import Footer from './footer/Footer';
+import { useSettingsContext } from 'src/components/settings';
+import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 
 // ----------------------------------------------------------------------
 
@@ -18,8 +20,10 @@ import Footer from './footer/Footer';
 
 export default function MainLayout({ children }) {
   const { pathname } = useRouter();
-  // check if pathname is in the array
-  const actionPage = (arr) => arr.some((path) => pathname === path);
+
+  const { loading } = useSettingsContext();
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>

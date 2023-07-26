@@ -1,19 +1,11 @@
 import { memo, useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
+import { updateDoco } from 'src/lib/firestoreDocument';
 // import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
@@ -34,7 +26,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const [favorite, setFavorite] = useState(false);
   const [author, setAuthor] = useState(null);
   const theme = useTheme();
-  const { members } = useSettingsContext();
+  const { member, members } = useSettingsContext();
   const socials = [
     {
       value: 'facebook',
@@ -69,12 +61,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   useEffect(() => {
     if (!members) return;
     setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
-    //   //
-    //   // if (user) {
-    //   //   let like = user?.uPostLikes?.indexOf(doc.id) >= 0 ? 'red' : '';
-    //   //   setLike(like);
-    //   //   // console.log('setLikes initialised');
-    //   // }
+
+    const fav = member?.postLikes?.indexOf(doc.id) >= 0 ? true : false;
+    setFavorite(fav);
   }, [members, doc.data.userId]);
 
   const handleOpen = (event) => {
@@ -83,47 +72,25 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const handleClose = () => {
     setOpenShare(null);
   };
-  const handleChangeFavorite = (event) => {
+  const handleChangeFavorite = async (event) => {
     setFavorite(event.target.checked);
+    if (favorite) {
+      const newLikes = { postLikes: [...member?.postLikes] };
+      newLikes.postLikes.splice(newLikes.postLikes.indexOf(doc.id), 1);
+      await updateDoco('members', user.uid, newLikes);
+    } else {
+      let newLikes;
+      if (member?.postLikes?.length > 0) {
+        newLikes = { postLikes: [doc.id, ...member?.postLikes] };
+      } else {
+        newLikes = { postLikes: [doc.id] };
+      }
+      await updateDoco('members', user.uid, newLikes);
+    }
   };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-  };
-
-  const handleLikeClick = () => {
-    if (like === 'red') {
-      setLike('');
-      // let newLikes = { uPostLikes: [...user.uPostLikes] };
-      // newLikes.uPostLikes.splice(newLikes.uPostLikes.indexOf(doc.id), 1);
-      // console.log(newLikes);
-      // Object.assign(user, newLikes); // updates the currentUser object in memory
-      // updateUserRecords('Users', user.uid, newLikes)
-      //   .then((result) => console.log('User post likes updated', result))
-      //   .catch((error) => console.log('Error updating user roles', error));
-    } else {
-      setLike('red');
-      // let newLikes = {};
-      // if (user?.uPostLikes?.length > 0) {
-      //   newLikes = { uPostLikes: [doc.id, ...user?.uPostLikes] };
-      //   let userUpdateObj = Object.assign(user, newLikes);
-
-      //   console.log(newLikes);
-      // } else {
-      //   newLikes = { uPostLikes: [doc.id] };
-      //   console.log(newLikes);
-      //   let userUpdateObj = Object.assign(user, newLikes);
-      //   console.log(userUpdateObj);
-
-      //   // setCurrentUser(authUser);
-      //   // setCurrentUser(user);
-      // }
-      // updateUserRecords('Users', user.uid, newLikes)
-      //   .then((result) => console.log('User post likes updated', result))
-      //   .catch((error) => console.log('Error updated user roles', error));
-
-      console.log(user);
-    }
   };
 
   const handleShare = () => {

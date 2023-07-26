@@ -123,7 +123,7 @@ export default function AccountPersonalView() {
       if (photoURL) {
         const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
         memberProfile.photoURL = url;
-        updateProfile(user, { photoURL: url });
+        await updateProfile(user, { photoURL: url });
       }
 
       await updateDoco(`members`, member.uid, memberProfile);

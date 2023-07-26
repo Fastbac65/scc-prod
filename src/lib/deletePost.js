@@ -1,4 +1,4 @@
-import deleteDoco from './firestoreDocument';
+import { deleteDoco } from './firestoreDocument';
 import deleteFile from './deleteFile';
 
 const deletePost = (postDoc) => {

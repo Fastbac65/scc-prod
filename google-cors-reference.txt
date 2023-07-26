@@ -1,0 +1,20 @@
+Example gsutil command
+// add path
+export PATH=$PATH:/Users/tfd/MyDocuments/DevWorld/google-cloud-sdk/bin
+// auth gcloud
+glcoud auth login
+// set cors
+gsutil cors set scc-cors.json gs://scc-proto.appspot.com
+// check cors
+gsutil cors get gs://scc-proto.appspot.com
+Example JSON file containing the CORS configuration
+
+
+[
+    {
+      "origin": ["https://your-example-website.appspot.com", "http://192.168.0.220:5002"],
+      "method": ["GET", "POST"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+]

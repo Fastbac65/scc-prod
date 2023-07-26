@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 export default function HomeView({ staticPosts }) {
   const { posts } = useSettingsContext();
   const [allPosts, setAllPosts] = useState([...staticPosts]);
-  console.log(allPosts);
 
   useEffect(() => {
     if (!posts) {

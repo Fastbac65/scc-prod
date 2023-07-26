@@ -5,11 +5,16 @@ import { Stack, Container } from '@mui/material';
 import useOffSetTop from 'src/hooks/useOffSetTop';
 //
 import Header from './Header';
+import { useSettingsContext } from 'src/components/settings';
+import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 
 // ----------------------------------------------------------------------
 
 export default function CompactLayout({ children }) {
   const isOffset = useOffSetTop(2);
+  const { loading } = useSettingsContext();
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <>

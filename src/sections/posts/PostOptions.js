@@ -1,19 +1,13 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { ListItemIcon, ListItemText } from '@mui/material';
-
-import { Delete, Edit, MoreVert } from '@mui/icons-material';
+import { Menu, IconButton, Box, Tooltip, ListItemIcon, ListItemText, Stack, ListItemButton, alpha, useTheme } from '@mui/material';
 
 import EditPost from './EditPost';
 import deletePost from 'src/lib/deletePost';
 import { useSettingsContext } from 'src/components/settings';
+import Iconify from 'src/components/iconify/Iconify';
 
 function PostOptions({ postDoc }) {
+  const theme = useTheme();
   const {
     user,
     state: { alert, modal },
@@ -50,7 +44,6 @@ function PostOptions({ postDoc }) {
   };
 
   const handleEdit = async () => {
-    //delete
     setAnchorElUser(null); // close the menu after clicking
 
     dispatch({
@@ -69,15 +62,16 @@ function PostOptions({ postDoc }) {
             display: postDoc.data.userId === user?.uid ? 'in-line' : 'none',
           }}
         >
-          <MoreVert fontSize="medium" />
+          <Iconify icon="material-symbols:more-vert" />
         </IconButton>
       </Tooltip>
       <Menu
-        sx={{ mt: '25px' }}
+        // sx={{ mt: '25px' }}
+        MenuListProps={{ disablePadding: true }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
-          vertical: 'top',
+          vertical: 'bottom',
           horizontal: 'right',
         }}
         keepMounted
@@ -88,18 +82,40 @@ function PostOptions({ postDoc }) {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        <MenuItem onClick={handleEdit} aria-label="edit post">
-          <ListItemIcon>
-            <Edit />
-          </ListItemIcon>
-          <ListItemText>Edit</ListItemText>
-        </MenuItem>
-        <MenuItem onClick={handleDelete} aria-label="delete">
-          <ListItemIcon>
-            <Delete />
-          </ListItemIcon>
-          <ListItemText>Delete</ListItemText>
-        </MenuItem>
+        <Stack
+          sx={{
+            // flexShrink: 0,
+            borderRadius: 1,
+            width: 1,
+            bgcolor: alpha(theme.palette.primary.main, 0.25),
+            py: 0,
+          }}
+        >
+          <Stack sx={{ my: 1, px: 2 }}>
+            <ListItemButton onClick={handleEdit} sx={{ px: 1, height: 44, borderRadius: 1 }}>
+              <ListItemIcon>
+                <Iconify icon="mdi:edit" />
+              </ListItemIcon>
+              <ListItemText
+                primary="Edit Post"
+                primaryTypographyProps={{
+                  typography: 'body1',
+                }}
+              />
+            </ListItemButton>
+            <ListItemButton onClick={handleDelete} sx={{ px: 1, height: 44, borderRadius: 1 }}>
+              <ListItemIcon>
+                <Iconify icon="mdi:delete" />
+              </ListItemIcon>
+              <ListItemText
+                primary="Delete Post"
+                primaryTypographyProps={{
+                  typography: 'body1',
+                }}
+              />
+            </ListItemButton>
+          </Stack>
+        </Stack>
       </Menu>
     </Box>
   );

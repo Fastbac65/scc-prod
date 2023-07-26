@@ -1,5 +1,5 @@
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
-import { Box, CardMedia, IconButton, ImageList, ImageListItem, Tooltip } from '@mui/material';
+import { Box, CardMedia, IconButton, ImageList, ImageListItem, Stack, Tooltip } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import PostsLightBox from './PostsLightBox';
 
@@ -68,11 +68,11 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
   };
 
   return (
-    <div>
+    <Stack direction="row" justifyContent="center">
       {images.length !== 0 && (
         <ImageList
           gap={1}
-          sx={{ mt: 0, width: '100%', height: 'auto', maxHeight: 150, maxWidth: 350 }}
+          sx={{ mt: 0, width: '100%', height: 'auto', maxHeight: 150 }}
           rowHeight={150}
           // cols={layout[files.length - 1]}
           cols={images.length}
@@ -128,7 +128,7 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
           <PostsLightBox open={open} setOpen={setOpen} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} images={images} />
         </ImageList>
       )}
-    </div>
+    </Stack>
   );
 };
 export default PostImageList;

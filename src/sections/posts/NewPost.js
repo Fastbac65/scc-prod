@@ -132,13 +132,19 @@ const NewPost = () => {
 
   return (
     <form onSubmit={handleSubmitPost}>
-      <DialogContent sx={{ pt: 0, px: { xs: 0, sm: 1 }, width: { xs: 350, sm: 365 }, minHeight: 440 }}>
-        <DialogActions sx={{ my: 0, justifyContent: 'space-around' }}>
-          <AddImages files={files} setFiles={setFiles} />
-
-          {/* <Button type='submit' size='small' sx={{ borderRadius: 25 }} variant='contained' endIcon={<SendIcon />}>
+      <DialogContent sx={{ pt: 0, px: { xs: 0, sm: 1 }, width: { xs: 350, sm: 600, md: 600 }, minHeight: 440 }}>
+        <DialogContentText variant="caption">Click on photo to zoom.</DialogContentText>
+        <DialogContentText variant="caption">Add photos or go with the library option.</DialogContentText>
+        <DialogActions sx={{ my: 0, justifyContent: 'center' }}>
+          <Stack direction="row" spacing={2}>
+            <AddImages files={files} setFiles={setFiles} />
+            <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
+              Post
+            </Button>
+            {/* <Button type='submit' size='small' sx={{ borderRadius: 25 }} variant='contained' endIcon={<SendIcon />}>
             Save
           </Button> */}
+          </Stack>
         </DialogActions>
         <Paper elevation={15} sx={{ pt: 0, border: theme.palette.mode === 'dark' ? 0 : 1, borderColor: 'lightgray' }}>
           <PostImageList files={files} setFiles={setFiles} setPostDefaultImageURL={setPostDefaultImageURL} />
@@ -175,15 +181,13 @@ const NewPost = () => {
           </Box>
         </Paper>
 
-        <DialogActions sx={{ my: 2, justifyContent: 'space-around' }}>
+        <DialogActions sx={{ justifyContent: 'space-around' }}>
           {/* <AddImages files={files} setFiles={setFiles} /> */}
 
-          <Button type="submit" size="small" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
+          <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
             Post
           </Button>
         </DialogActions>
-        <DialogContentText variant="caption">Click on photo to zoom.</DialogContentText>
-        <DialogContentText variant="caption">Add photos or go with the library option.</DialogContentText>
       </DialogContent>
     </form>
   );

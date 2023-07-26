@@ -18,11 +18,11 @@ export async function getStaticProps() {
   const snapshot = await getDocs(q);
   const docs = [];
 
-  const datax = snapshot.docs.map((doc) => ({
-    ...doc.data(),
-    id: doc.id,
-    timestamp: doc.data().timestamp?.toDate().getTime(),
-  }));
+  // const datax = snapshot.docs.map((doc) => ({
+  //   ...doc.data(),
+  //   id: doc.id,
+  //   timestamp: doc.data().timestamp?.toDate().getTime(),
+  // }));
 
   snapshot.forEach((doc) => {
     docs.push({ id: doc.id, data: { ...doc.data(), timestamp: doc.data().timestamp?.toDate().getTime() } });

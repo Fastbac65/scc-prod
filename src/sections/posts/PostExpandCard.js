@@ -6,14 +6,14 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import { red } from '@mui/material/colors';
 // import FavoriteIcon from '@mui/icons-material/Favorite';
 // import ShareIcon from '@mui/icons-material/Share';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import { Fade, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem, Box } from '@mui/material';
+import { Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
+import { useSettingsContext } from 'src/components/settings';
 // import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
@@ -32,7 +32,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const [like, setLike] = useState('');
   const [openShare, setOpenShare] = useState(null);
   const [favorite, setFavorite] = useState(false);
+  const [author, setAuthor] = useState(null);
   const theme = useTheme();
+  const { members } = useSettingsContext();
   const socials = [
     {
       value: 'facebook',
@@ -64,14 +66,16 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     },
   ];
 
-  // useEffect(() => {
-  //   //
-  //   // if (user) {
-  //   //   let like = user?.uPostLikes?.indexOf(doc.id) >= 0 ? 'red' : '';
-  //   //   setLike(like);
-  //   //   // console.log('setLikes initialised');
-  //   // }
-  // }, []);
+  useEffect(() => {
+    if (!members) return;
+    setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
+    //   //
+    //   // if (user) {
+    //   //   let like = user?.uPostLikes?.indexOf(doc.id) >= 0 ? 'red' : '';
+    //   //   setLike(like);
+    //   //   // console.log('setLikes initialised');
+    //   // }
+  }, [members, doc.data.userId]);
 
   const handleOpen = (event) => {
     setOpenShare(event.currentTarget);
@@ -137,10 +141,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         </div>
         <CardHeader
           avatar={
-            <Tooltip enterTouchDelay={100} placement="top" title={doc.data?.uName}>
-              <Avatar sx={{ bgcolor: red[500] }} src={doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName}>
-                {doc.data?.uName?.charAt(0)}
-              </Avatar>
+            <Tooltip enterTouchDelay={100} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
+              <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
             </Tooltip>
           }
           action={<PostOptions postDoc={doc} />}

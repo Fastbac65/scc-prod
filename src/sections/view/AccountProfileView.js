@@ -118,13 +118,13 @@ export default function AccountPersonalView() {
   const onSubmit = async (data) => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
-      const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL, socialURL: '' };
+      const memberProfile = { profileName: data.profileName, patrol: data.patrol, photoURL: member.photoURL };
       if (photoURL) {
         const url = await uploadFile(resizedImg.current.blob, `members/${member.uid}/profile.jpeg`);
         memberProfile.photoURL = url;
-        if (user?.providerData[0].providerId !== 'password') memberProfile.socialURL = url; // de-sync social login with social URL etc
-        // <Avatar/> preference socialURL if it exists
+        updateProfile(user, { photoURL: url });
       }
+
       await updateDoco(`members`, member.uid, memberProfile);
       setTimeout(() => setPhotoURL(null), 4000); // clear so we dont keep uploading after first upload
       dispatch({
@@ -164,7 +164,7 @@ export default function AccountPersonalView() {
               <Stack direction="row" alignItems="center">
                 <label htmlFor="profilePhoto">
                   <Input inputRef={fileRef} inputProps={{ accept: 'image/*' }} id="profilePhoto" type="file" style={{ display: 'none' }} onClick={handleClick} onChange={handleChange} />
-                  <Avatar src={photoURL || member?.socialURL || member?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
+                  <Avatar src={photoURL || member?.photoURL || user?.photoURL} sx={{ width: 80, height: 80, cursor: 'pointer' }} />
                 </label>
 
                 {user?.providerData[0].providerId === 'password' && (

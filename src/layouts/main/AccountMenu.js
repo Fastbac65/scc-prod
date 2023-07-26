@@ -73,8 +73,6 @@ export function MenuContent() {
     // pick a profile pic from /assets/images/avatar/avatar_x
     const pic = Math.floor(Math.random() * 25);
     const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` };
-    // const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg`, socialURL: null };
-    // if (member.providerData[0].providerId !== 'password') updateObj.socialURL = `/assets/images/avatar/avatar_${pic}.jpg`;
 
     await updateDoco('members', member.uid, updateObj);
   };
@@ -91,7 +89,7 @@ export function MenuContent() {
     >
       <Stack spacing={2} sx={{ p: 2, pb: 2 }}>
         <Stack direction="row" alignItems="center">
-          <Avatar src={member?.socialURL || member?.photoURL} sx={{ width: 64, height: 64 }} />
+          <Avatar src={member?.photoURL || user?.photoURL} sx={{ width: 64, height: 64 }} />
           {user?.providerData[0].providerId === 'password' && (
             <Stack direction="row" alignItems="center" sx={{ typography: 'caption', '&:hover': { opacity: 0.65 } }}>
               <IconButton onClick={handleLuckyPic} sx={{ color: 'inherit' }}>

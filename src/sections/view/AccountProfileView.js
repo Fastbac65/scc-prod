@@ -15,6 +15,7 @@ import { AccountLayout } from '../layout';
 import { updateDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import uploadFile from 'src/lib/uploadFile';
+import { updateProfile } from 'firebase/auth';
 
 // ----------------------------------------------------------------------
 

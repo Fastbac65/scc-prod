@@ -1,11 +1,10 @@
-import NextLink from 'next/link';
-
-import { Box, Checkbox, Fab, Link, Stack, Tooltip, Typography, alpha, styled, useTheme } from '@mui/material';
+import { Box, Checkbox, Fab, Stack, Tooltip, Typography, alpha, styled, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import NewPost from './NewPost';
 import PostsList from './PostsList';
 // import { Add, FacebookOutlined, Instagram } from '@mui/icons-material';
 // import NewSocialPost from './uploadPost/NewSocialPost';
+import scc1 from 'src/assets/images/scc-fb-grp.jpeg';
 import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -64,25 +63,30 @@ export default function Posts({ posts }) {
   // console.log(posts);
 
   return (
-    <StyledRoot>
-      <Box sx={{ pt: 2 }}>
-        {user && (
-          <Stack spacing={1} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Tooltip arrow placement="top-start" title="home" enterDelay={2000}>
-              <Link component={NextLink} href="/">
+    <div>
+      <StyledRoot>
+        <Typography variant="h4" pt={1} mx={2}>
+          Recent News
+        </Typography>
+        <PostsList posts={posts.slice(0, 6)} />
+      </StyledRoot>
+      <StyledRoot>
+        <Box sx={{ pt: 1 }}>
+          {user && (
+            <Stack spacing={1} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Tooltip arrow placement="top-start" title="home" enterDelay={2000}>
                 <Fab size="small" color="primary" aria-label="add">
                   {/* <HomeIcon /> */}
                   <Iconify icon="mdi:home" />
                 </Fab>
-              </Link>
-            </Tooltip>
-            <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
-              <Fab size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
-                {/* <Add /> */}
-                <Iconify icon="mdi:plus" />
-              </Fab>
-            </Tooltip>
-            {/* <Tooltip arrow placement="top-start" title="instagram post" enterDelay={2000}>
+              </Tooltip>
+              <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
+                <Fab size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
+                  {/* <Add /> */}
+                  <Iconify icon="mdi:plus" />
+                </Fab>
+              </Tooltip>
+              {/* <Tooltip arrow placement="top-start" title="instagram post" enterDelay={2000}>
                   <Fab size="small" color="secondary" aria-label="edit" onClick={() => handleCreateSocialPost('Instagram')}>
                     <Instagram />
                   </Fab>
@@ -92,19 +96,30 @@ export default function Posts({ posts }) {
                     <FacebookOutlined />
                   </Fab>
                 </Tooltip> */}
-            <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
-              <Checkbox color="error" aria-label="add to favorites" checked={like} onChange={handleFavsClick} icon={<Iconify icon="carbon:favorite" />} checkedIcon={<Iconify icon="carbon:favorite-filled" />} />
-            </Tooltip>
-          </Stack>
-        )}
-      </Box>
-      <Typography variant="h4" py={3} mx={2}>
-        All News & Activities
-      </Typography>
-      {/* <Typography variant="h6" color="text" m={2} mb={4}>
+              <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
+                <Checkbox
+                  color="error"
+                  aria-label="add to favorites"
+                  checked={like}
+                  onChange={handleFavsClick}
+                  icon={<Iconify icon="carbon:favorite" />}
+                  checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+                />
+                {/* <Fab color="secondary" id="favourite" size="small" aria-label="like" onClick={handleFavsClick}>
+                    <FavoriteIcon sx={{ color: like }} />
+                  </Fab> */}
+              </Tooltip>
+            </Stack>
+          )}
+        </Box>
+        <Typography variant="h4" pt={1} mx={2}>
+          All News & Activities
+        </Typography>
+        {/* <Typography variant="h6" color="text" m={2} mb={4}>
           ..from our members, boaties and nippers
         </Typography> */}
-      <PostsList posts={like ? likePostDocs : posts.slice(6)} />
-    </StyledRoot>
+        <PostsList posts={like ? likePostDocs : posts} />
+      </StyledRoot>
+    </div>
   );
 }

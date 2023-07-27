@@ -2,6 +2,7 @@
 import HomeLanding from 'src/sections/home/HomeLanding';
 import { useSettingsContext } from 'src/components/settings';
 import Posts from '../posts/Posts';
+import RecentPosts from '../posts/RecentPosts';
 import { useEffect, useState } from 'react';
 // ----------------------------------------------------------------------
 
@@ -22,6 +23,7 @@ export default function HomeView({ staticPosts }) {
   return (
     <>
       <HomeLanding />
+      <RecentPosts posts={allPosts.slice(0, 6)} />
       <Posts posts={allPosts} />
       {/* <HomeHero />
       <HomeGuidedMeditation />

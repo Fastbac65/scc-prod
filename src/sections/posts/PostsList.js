@@ -15,18 +15,16 @@ const PostsList = ({ posts }) => {
   if (!posts) return;
 
   return (
-    <div>
-      <Box component="section" sx={{ mx: 0 }}>
-        <Box pr={{ xs: 0, sm: 2, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Masonry /* sx={{ border: '1px dotted red' }} */ columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={{ xs: 1 }}>
-            {posts.map((doc, indx) => (
-              <PostExpandCard key={doc.id} user={user} doc={doc} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} />
-            ))}
-          </Masonry>
-          <PostsLightBox open={open} setOpen={setOpen} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} images={images} />
-        </Box>
+    <Box component="section" sx={{ mx: 0 }}>
+      <Box pr={{ xs: 0, sm: 2, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Masonry /* sx={{ border: '1px dotted red' }} */ columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={{ xs: 1 }}>
+          {posts.map((doc, indx) => (
+            <PostExpandCard key={doc.id} user={user} doc={doc} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} />
+          ))}
+        </Masonry>
+        <PostsLightBox open={open} setOpen={setOpen} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} images={images} />
       </Box>
-    </div>
+    </Box>
   );
 };
 export default PostsList;

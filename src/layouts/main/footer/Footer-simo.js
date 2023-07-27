@@ -79,105 +79,102 @@ const Footer = () => {
   };
 
   return (
-    <>
-      <Grid container justifyContent={{ md: 'space-between' }}>
-        <Grid xs={12} md={5.5} sx={{ p: 4, bgcolor: 'background.neutral', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Stack spacing={{ xs: 3, md: 5 }}>
-            <Box display="grid" gridTemplateColumns="repeat(3, 1fr)">
-              <Stack spacing={1} alignItems="center">
-                <Link component={NextLink} href="/services" variant="body2" sx={{ color: 'text.primary' }}>
-                  Services
-                </Link>
-                <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
-                  About Simon
-                </Link>
-              </Stack>
-              <Stack spacing={1} alignItems="center">
-                <Link component={NextLink} href="/mission" variant="body2" sx={{ color: 'text.primary' }}>
-                  Our Mission
-                </Link>
-                <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
-                  Privacy
-                </Link>
-              </Stack>
-              <Stack spacing={1} alignItems="center">
-                <Link component={NextLink} href="/insights" variant="body2" sx={{ color: 'text.primary' }}>
-                  InSights
-                </Link>
-                <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
-                  Contact Us
-                </Link>
-              </Stack>
-            </Box>
-            <Stack alignItems="flex-start" spacing={0}>
-              <Typography variant="body2" textAlign="center" sx={{ color: 'text.secondary', opacity: 0.8 }}>
-                Simon Baker is a clinical hypnotherapist and mental strength coach, who is giving you the mental edge.{' '}
-              </Typography>
+    <Grid container justifyContent={{ md: 'space-between' }}>
+      <Grid xs={12} md={5.5} sx={{ p: 4, bgcolor: 'background.neutral', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Stack spacing={{ xs: 3, md: 5 }}>
+          <Box display="grid" gridTemplateColumns="repeat(3, 1fr)">
+            <Stack spacing={1} alignItems="center">
+              <Link component={NextLink} href="/services" variant="body2" sx={{ color: 'text.primary' }}>
+                Services
+              </Link>
+              <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
+                About Simon
+              </Link>
             </Stack>
-            <Stack direction="row" justifyContent="space-between">
-              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                Website by TezD
-              </Typography>
-
-              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                © 2023. All rights reserved
-              </Typography>
+            <Stack spacing={1} alignItems="center">
+              <Link component={NextLink} href="/mission" variant="body2" sx={{ color: 'text.primary' }}>
+                Our Mission
+              </Link>
+              <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
+                Privacy
+              </Link>
             </Stack>
-          </Stack>
-        </Grid>
-
-        {/* <Grid xs={12} md={6} sx={{ p: 4, backgroundColor: 'primary.main' }}> */}
-        <Grid xs={12} md={6.5} sx={{ p: 4, backgroundColor: alpha(theme.palette.primary.main, 0.1) }}>
-          <Stack spacing={2}>
-            <Stack spacing={1} sx={{ alignItems: 'center' }}>
-              <Typography variant="h5">InSights In Your Inbox</Typography>
-              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                <br />
-                The newsletter that will inspire you to continue your improvement journey.
-              </Typography>
+            <Stack spacing={1} alignItems="center">
+              <Link component={NextLink} href="/insights" variant="body2" sx={{ color: 'text.primary' }}>
+                InSights
+              </Link>
+              <Link component={NextLink} href="/" variant="body2" sx={{ color: 'text.primary' }}>
+                Contact Us
+              </Link>
             </Stack>
-            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-              <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
-                <RHFTextField name="fname" hiddenLabel placeholder="First Name" sx={{ minWidth: 160, maxWidth: 180 }} />
-                <RHFTextField
-                  name="email"
-                  fullWidth
-                  aria-label="email"
-                  hiddenLabel
-                  placeholder="Enter your email"
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <Button type="submit" size="large" color="primary" variant="contained" sx={{ p: 0, height: 53, borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
-                          <Iconify icon="carbon:send" />
-                        </Button>
-                      </InputAdornment>
-                    ),
-                    sx: { pr: 0 },
-                  }}
-                  // sx={{ maxWidth: 360 }}
-                />
-              </Stack>
-              {/* <FormHelperText id="my-helper-text">We will never share your details.</FormHelperText> */}
-            </FormProvider>
-          </Stack>
-
-          <Stack direction="row" alignItems="center" justifyContent="center" sx={{ pt: 4 }}>
-            <Typography variant="body2" sx={{ letterSpacing: '3px', mr: 3 }}>
-              FIND ME ON
+          </Box>
+          <Stack alignItems="flex-start" spacing={0}>
+            <Typography variant="body2" textAlign="center" sx={{ color: 'text.secondary', opacity: 0.8 }}>
+              Simon Baker is a clinical hypnotherapist and mental strength coach, who is giving you the mental edge.{' '}
             </Typography>
-            {/* {_socialsSimo.map((social) => (
+          </Stack>
+          <Stack direction="row" justifyContent="space-between">
+            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+              Website by TezD
+            </Typography>
+
+            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+              © 2023. All rights reserved
+            </Typography>
+          </Stack>
+        </Stack>
+      </Grid>
+
+      {/* <Grid xs={12} md={6} sx={{ p: 4, backgroundColor: 'primary.main' }}> */}
+      <Grid xs={12} md={6.5} sx={{ p: 4, backgroundColor: alpha(theme.palette.primary.main, 0.1) }}>
+        <Stack spacing={2}>
+          <Stack spacing={1} sx={{ alignItems: 'center' }}>
+            <Typography variant="h5">InSights In Your Inbox</Typography>
+            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+              <br />
+              The newsletter that will inspire you to continue your improvement journey.
+            </Typography>
+          </Stack>
+          <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
+            <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }} justifyContent="center">
+              <RHFTextField name="fname" hiddenLabel placeholder="First Name" sx={{ minWidth: 160, maxWidth: 180 }} />
+              <RHFTextField
+                name="email"
+                fullWidth
+                aria-label="email"
+                hiddenLabel
+                placeholder="Enter your email"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Button type="submit" size="large" color="primary" variant="contained" sx={{ p: 0, height: 53, borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
+                        <Iconify icon="carbon:send" />
+                      </Button>
+                    </InputAdornment>
+                  ),
+                  sx: { pr: 0 },
+                }}
+                // sx={{ maxWidth: 360 }}
+              />
+            </Stack>
+            {/* <FormHelperText id="my-helper-text">We will never share your details.</FormHelperText> */}
+          </FormProvider>
+        </Stack>
+
+        <Stack direction="row" alignItems="center" justifyContent="center" sx={{ pt: 4 }}>
+          <Typography variant="body2" sx={{ letterSpacing: '3px', mr: 3 }}>
+            FIND ME ON
+          </Typography>
+          {/* {_socialsSimo.map((social) => (
               <Link key={social.value} href={social.href} target="_blank">
                 <IconButton color="primary">
                   <Iconify icon={social.icon} />
                 </IconButton>
               </Link>
             ))} */}
-          </Stack>
-        </Grid>
+        </Stack>
       </Grid>
-
-    </>
+    </Grid>
   );
 };
 export default Footer;

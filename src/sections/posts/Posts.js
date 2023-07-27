@@ -1,6 +1,4 @@
-import NextLink from 'next/link';
-
-import { Box, Checkbox, Fab, Link, Stack, Tooltip, Typography, alpha, styled, useTheme } from '@mui/material';
+import { Box, Checkbox, Fab, Stack, Tooltip, Typography, alpha, styled, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import NewPost from './NewPost';
 import PostsList from './PostsList';
@@ -20,7 +18,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
 }));
 
 export default function Posts({ staticPosts }) {
-  const theme = useTheme();
   const {
     user,
     member,
@@ -72,7 +69,6 @@ export default function Posts({ staticPosts }) {
   const handleCreatePost = () => {
     dispatch({ type: 'MODAL', payload: { ...modal, open: true, title: 'Create Post', content: <NewPost /> } });
   };
-  // console.log(posts);
 
   return (
     <StyledRoot>
@@ -108,7 +104,7 @@ export default function Posts({ staticPosts }) {
       {/* <Typography variant="h6" color="text" m={2} mb={4}>
           ..from our members, boaties and nippers
         </Typography> */}
-      <PostsList posts={like ? likePostDocs : posts} />
+      <PostsList posts={like ? likePostDocs : allPosts} />
     </StyledRoot>
   );
 }

@@ -1,4 +1,4 @@
-import { Fab, Tooltip, Box, useTheme } from '@mui/material';
+import { Fab, Tooltip, Box, useTheme, alpha } from '@mui/material';
 import Lightbox from 'react-spring-lightbox';
 import { useMemo, useState } from 'react';
 import Iconify from 'src/components/iconify/Iconify';
@@ -69,7 +69,7 @@ const CloseLightBox = ({ handleClose }) => {
           color="primary"
           onClick={handleClose}
           sx={{
-            background: 'none',
+            background: alpha('#f9de00', 0.4),
             boxShadow: 'none',
             zIndex: theme.zIndex.modal + 2,
             '&:hover': {

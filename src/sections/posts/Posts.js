@@ -28,7 +28,7 @@ export default function Posts({ staticPosts }) {
 
   // const [files, setFiles] = useState([]);
   const [like, setLike] = useState(false);
-  const [likePostDocs, setLikePostDocs] = useState([]);
+  const [likePostDocs, setLikePostDocs] = useState(staticPosts);
 
   const [allPosts, setAllPosts] = useState(staticPosts);
 
@@ -54,9 +54,11 @@ export default function Posts({ staticPosts }) {
         });
         setLikePostDocs(likes);
         console.log('liked posts', likes);
+        setLike(!like);
       }
+    } else {
+      setLike(!like);
     }
-    setLike(!like);
   };
 
   // const handleCreateSocialPost = (type) => {
@@ -70,6 +72,7 @@ export default function Posts({ staticPosts }) {
     dispatch({ type: 'MODAL', payload: { ...modal, open: true, title: 'Create Post', content: <NewPost /> } });
   };
 
+  console.log('render', like, likePostDocs, allPosts);
   return (
     <StyledRoot>
       <Box sx={{ pt: 2 }}>

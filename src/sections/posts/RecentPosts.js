@@ -3,6 +3,7 @@ import { Typography, alpha, styled } from '@mui/material';
 import PostsList from './PostsList';
 
 import { bgGradient } from 'src/lib/cssStyles';
+import { useSettingsContext } from 'src/components/settings';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({

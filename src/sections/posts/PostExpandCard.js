@@ -20,7 +20,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, maxWidth = 380 }) {
+function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, maxWidth = 600 }) {
   const [expanded, setExpanded] = useState(false);
   const [openShare, setOpenShare] = useState(null);
   const [favorite, setFavorite] = useState(false);
@@ -103,7 +103,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   return (
     <>
-      <Fade timeout={500} in={true}>
+      <Fade timeout={1200} in={true}>
         <Card sx={{ maxWidth: maxWidth }}>
           <div style={{ position: 'relative' }}>
             <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>

@@ -14,13 +14,26 @@ const StyledRoot = styled('div')(({ theme }) => ({
 }));
 
 export default function RecentPosts({ staticPosts }) {
+  const { posts } = useSettingsContext();
+  const [allRecent, setAllRecent] = useState(staticPosts);
+
+  useEffect(() => {
+    if (!posts) {
+      console.log('no posts');
+      return;
+    } else {
+      setAllRecent([...posts.slice(6)]);
+      console.log('posts loaded', posts);
+    }
+  }, [posts]);
+
   return (
     <div>
       <StyledRoot>
         <Typography variant="h4" py={3} mx={2}>
           Recent News
         </Typography>
-        <PostsList posts={staticPosts} />
+        <PostsList posts={allRecent} />
       </StyledRoot>
     </div>
   );

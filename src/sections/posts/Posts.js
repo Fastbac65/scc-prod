@@ -37,7 +37,7 @@ export default function Posts({ staticPosts }) {
       console.log('no posts');
       return;
     } else {
-      setAllPosts([...posts]);
+      setAllPosts([...posts.slice(6)]);
       console.log('posts loaded', posts);
     }
   }, [posts]);

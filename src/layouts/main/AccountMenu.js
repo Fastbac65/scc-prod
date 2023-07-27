@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 // @mui
 import { alpha } from '@mui/material/styles';
-import { Link, Stack, Drawer, Avatar, Divider, ListItemIcon, ListItemText, ListItemButton, Menu, useTheme, IconButton } from '@mui/material';
+import { Link, Stack, Avatar, Divider, ListItemIcon, ListItemText, ListItemButton, Menu, useTheme, IconButton } from '@mui/material';
 // hooks
 import useResponsive from 'src/hooks/useResponsive';
 import useActiveLink from 'src/hooks/useActiveLink';
@@ -73,7 +73,7 @@ export function MenuContent() {
     // pick a profile pic from /assets/images/avatar/avatar_x
     const pic = Math.floor(Math.random() * 25);
     const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` };
-
+    updateProfile(user, updateObj);
     await updateDoco('members', member.uid, updateObj);
   };
 

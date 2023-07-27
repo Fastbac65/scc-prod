@@ -64,7 +64,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
     const fav = member?.postLikes?.indexOf(doc.id) >= 0 ? true : false;
     setFavorite(fav);
-  }, [members, doc.data.userId]);
+  }, [member, members, doc]);
 
   const handleOpen = (event) => {
     setOpenShare(event.currentTarget);
@@ -93,11 +93,11 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     setExpanded(!expanded);
   };
 
-  const handleShare = () => {
-    const postlink = '/posts/' + doc.id;
-    console.log('share post TODO');
-    // navigate(postlink);
-  };
+  // const handleShare = () => {
+  //   const postlink = '/posts/' + doc.id;
+  //   console.log('share post TODO');
+  //   // navigate(postlink);
+  // };
   // more pics is different for odd number of pics as we use full width so no gaps
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
 

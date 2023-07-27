@@ -100,7 +100,10 @@ export default function AccountPersonalView() {
     // pick a profile pic from /assets/images/avatar/avatar_x
     setPhotoURL(null); // displays member.photoURL
     const pic = Math.floor(Math.random() * 25);
-    await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
+    const updateObj = { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` };
+    updateProfile(user, updateObj);
+    await updateDoco('members', member.uid, updateObj);
+    // await updateDoco('members', member.uid, { photoURL: `/assets/images/avatar/avatar_${pic}.jpg` });
   };
 
   // getting the new profile image file if one is selected

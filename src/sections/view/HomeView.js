@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 export default function HomeView({ staticPosts }) {
   return (
     <>
+      <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
       <HomeLanding />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
       <Posts staticPosts={staticPosts.slice(6)} />

@@ -28,7 +28,7 @@ export default function Posts({ staticPosts }) {
 
   // const [files, setFiles] = useState([]);
   const [like, setLike] = useState(false);
-  const [likePostDocs, setLikePostDocs] = useState(staticPosts);
+  const [likePostDocs, setLikePostDocs] = useState();
 
   const [allPosts, setAllPosts] = useState(staticPosts);
 
@@ -72,7 +72,6 @@ export default function Posts({ staticPosts }) {
     dispatch({ type: 'MODAL', payload: { ...modal, open: true, title: 'Create Post', content: <NewPost /> } });
   };
 
-  console.log('render', like, likePostDocs, allPosts);
   return (
     <StyledRoot>
       <Box sx={{ pt: 2 }}>

@@ -67,19 +67,12 @@ export default function Posts({ posts }) {
     <StyledRoot>
       <Box sx={{ pt: 2 }}>
         {user && (
-          <Stack spacing={1} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Tooltip arrow placement="top-start" title="home" enterDelay={2000}>
-              <Link component={NextLink} href="/">
-                <Fab size="small" color="primary" aria-label="add">
-                  {/* <HomeIcon /> */}
-                  <Iconify icon="mdi:home" />
-                </Fab>
-              </Link>
-            </Tooltip>
+          <Stack spacing={1} direction="row" sx={{ justifyContent: 'center' }}>
             <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
-              <Fab size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
+              <Fab variant="extended" size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
                 {/* <Add /> */}
                 <Iconify icon="mdi:plus" />
+                POST
               </Fab>
             </Tooltip>
             {/* <Tooltip arrow placement="top-start" title="instagram post" enterDelay={2000}>

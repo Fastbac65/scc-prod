@@ -22,8 +22,8 @@ export default function RecentPosts({ staticPosts }) {
       console.log('no posts');
       return;
     } else {
-      setAllRecent([...posts.slice(6)]);
-      console.log('posts loaded', posts);
+      setAllRecent([...posts.slice(0, 6)]);
+      console.log('recent realtime posts loaded', posts);
     }
   }, [posts]);
 

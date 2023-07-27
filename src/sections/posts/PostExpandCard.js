@@ -103,7 +103,6 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   return (
     <>
-      {/* <Fade timeout={750} in={true}> */}
       <Card sx={{ maxWidth: maxWidth }}>
         <div style={{ position: 'relative' }}>
           <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>
@@ -193,7 +192,6 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-
         <CardContent>
           <Typography variant="body2" color="text.primary">
             {doc.data?.main[0]}
@@ -261,7 +259,6 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           </CardActions>
         </Collapse>
       </Card>
-      {/* </Fade> */}
       <Popover
         open={!!openShare} /* open is e.currenttarget so force it to boolean */
         onClose={handleClose}

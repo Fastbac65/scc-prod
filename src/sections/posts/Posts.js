@@ -113,7 +113,7 @@ export default function Posts({ posts }) {
       {/* <Typography variant="h6" color="text" m={2} mb={4}>
           ..from our members, boaties and nippers
         </Typography> */}
-      <PostsList posts={like ? likePostDocs : posts.slice(6)} />
+      <PostsList posts={like ? likePostDocs : posts} />
     </StyledRoot>
   );
 }

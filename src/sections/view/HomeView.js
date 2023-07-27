@@ -24,7 +24,7 @@ export default function HomeView({ staticPosts }) {
     <>
       <HomeLanding />
       <RecentPosts posts={staticPosts.slice(0, 6)} />
-      <Posts posts={allPosts} />
+      <Posts posts={staticPosts.slice(6)} />
       {/* <HomeHero />
       <HomeGuidedMeditation />
       <HomeBanner />

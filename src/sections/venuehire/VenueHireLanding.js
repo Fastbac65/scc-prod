@@ -15,7 +15,7 @@ const VenueHireLanding = () => {
           position: 'relative',
           ...bgGradient({
             startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,
-            endColor: `${theme.palette.background.default} 95%`,
+            endColor: `${theme.palette.background.default} 100%`,
             imgUrl: 'assets/images/scc-fb-grp.jpeg',
           }),
         }}
@@ -25,7 +25,7 @@ const VenueHireLanding = () => {
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
               <Typography variant="h2" component="h2">
                 {/* {title} */}
-                SCC Venue Hire
+                Venue Hire
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 An absolute must for your next party.. the best venue on the northern beaches.

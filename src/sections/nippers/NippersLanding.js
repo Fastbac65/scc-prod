@@ -25,7 +25,7 @@ const NippersLanding = () => {
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
               <Typography variant="h2" component="h2">
                 {/* {title} */}
-                SCC Nippers
+                Nippers
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 The only place to be on a sunny Sunday morning. Check our weekly update for latest news.

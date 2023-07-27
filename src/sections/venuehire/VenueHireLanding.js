@@ -11,7 +11,7 @@ const VenueHireLanding = () => {
       <Box
         sx={{
           pt: 10,
-          pb: 2,
+          pb: 10,
           position: 'relative',
           ...bgGradient({
             startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,

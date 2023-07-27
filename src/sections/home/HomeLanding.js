@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import Carousel from 'react-material-ui-carousel';
 import { CardMedia, Box, Typography } from '@mui/material';
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
 import scc1 from 'src/assets/images/scc-fb-grp.jpeg';

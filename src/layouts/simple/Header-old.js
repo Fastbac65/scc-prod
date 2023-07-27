@@ -7,7 +7,7 @@ import { AppBar, Toolbar, Link, Stack } from '@mui/material';
 // config
 import { HEADER } from 'src/config-global';
 // utils
-import { bgBlur } from 'src/utils/cssStyles';
+import { bgBlur } from 'src/lib/cssStyles';
 // routes
 import { paths } from 'src/routes/paths';
 // components

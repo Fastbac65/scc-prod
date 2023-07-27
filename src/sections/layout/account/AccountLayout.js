@@ -9,7 +9,7 @@ import { NAV } from 'src/config-global';
 // components
 // import Iconify from 'src/components/iconify';
 //
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from 'src/lib/cssStyles';
 import AccountMenu from './AccountMenu';
 
 // ----------------------------------------------------------------------

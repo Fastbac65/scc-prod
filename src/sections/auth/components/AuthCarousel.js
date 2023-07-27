@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 // utils
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from 'src/lib/cssStyles';
 // components
 import Image from 'src/components/image';
 import Carousel, { CarouselDots } from 'src/components/carousel';

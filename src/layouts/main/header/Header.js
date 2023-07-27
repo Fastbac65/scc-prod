@@ -26,7 +26,7 @@ import { HEADER } from 'src/config-global';
 import Image from 'src/components/image/Image';
 import Iconify from 'src/components/iconify/Iconify';
 
-import { bgBlur } from 'src/utils/cssStyles';
+import { bgBlur } from 'src/lib/cssStyles';
 import { useState } from 'react';
 import { NavMobile, NavDesktop, navConfig } from '../nav';
 import AccountMenu from '../AccountMenu';

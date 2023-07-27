@@ -27,7 +27,7 @@ import enAU from 'date-fns/locale/en-AU';
 // theme
 import ThemeProvider from 'src/theme';
 // utils
-import createEmotionCache from 'src/utils/createEmotionCache';
+import createEmotionCache from 'src/lib/createEmotionCache';
 // components
 import ProgressBar from 'src/components/progress-bar';
 import { SettingsProvider } from 'src/components/settings';

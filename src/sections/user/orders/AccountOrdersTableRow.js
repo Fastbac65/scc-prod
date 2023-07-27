@@ -4,8 +4,8 @@ import NextLink from 'next/link';
 // @mui
 import { Popover, Divider, TableRow, Checkbox, MenuItem, TableCell, IconButton, InputBase, Typography, Link } from '@mui/material';
 //  utils
-import { fDate } from 'src/utils/formatTime';
-import { fCurrency } from 'src/utils/formatNumber';
+import { fDate } from 'src/lib/formatTime';
+import { fCurrency } from 'src/lib/formatNumber';
 // components
 import Iconify from 'src/components/iconify';
 import Label from 'src/components/label';

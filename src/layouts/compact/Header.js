@@ -7,11 +7,6 @@ import { AppBar, Box, Toolbar, Link, Stack, Tooltip, IconButton } from '@mui/mat
 // config
 import { HEADER } from 'src/config-global';
 // utils
-// import { bgBlur } from 'src/utils/cssStyles';
-// routes
-// components
-// import Logo from 'src/components/logo';
-// import SettingsDrawer from 'src/components/settings/drawer';
 import Image from 'src/components/image/Image';
 // icons
 import Iconify from 'src/components/iconify/Iconify';

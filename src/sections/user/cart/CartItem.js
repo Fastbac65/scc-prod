@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // @mui
 import { Stack, TextField, IconButton, Typography } from '@mui/material';
 // utils
-import { fCurrency } from 'src/utils/formatNumber';
+import { fCurrency } from 'src/lib/formatNumber';
 // components
 import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import { Typography, Box, IconButton } from '@mui/material';
 // utils
-import { bgBlur } from 'src/utils/cssStyles';
+import { bgBlur } from 'src/lib/cssStyles';
 //
 import { LeftIcon, RightIcon } from './Icon';
 

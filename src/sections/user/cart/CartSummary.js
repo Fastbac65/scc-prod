@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import { alpha } from '@mui/material/styles';
 import { Box, Stack, Button, Divider, TextField, Typography, InputAdornment } from '@mui/material';
 // utils
-import { fCurrency, fPercent } from 'src/utils/formatNumber';
+import { fCurrency, fPercent } from 'src/lib/formatNumber';
 // routes
 import { paths } from 'src/routes/paths';
 

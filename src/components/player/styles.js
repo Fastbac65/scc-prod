@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 // utils
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from 'src/lib/cssStyles';
 //
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 

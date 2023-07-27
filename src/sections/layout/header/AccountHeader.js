@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import { Container, IconButton } from '@mui/material';
 // hooks
 // utils
-import { bgGradient } from 'src/utils/cssStyles';
+import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
 

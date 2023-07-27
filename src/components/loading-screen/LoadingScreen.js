@@ -4,7 +4,7 @@ import { m } from 'framer-motion';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // utils
-import { bgBlur } from 'src/utils/cssStyles';
+import { bgBlur } from 'src/lib/cssStyles';
 //
 import Logo from '../logo';
 import { useSettingsContext } from '../settings';

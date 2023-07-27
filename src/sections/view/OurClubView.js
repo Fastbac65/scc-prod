@@ -22,7 +22,7 @@ export default function OurClubLandingView({ staticPosts }) {
   return (
     <>
       <OurClubLanding />
-      <RecentPosts posts={allPosts.slice(0, 6)} />
+      <RecentPosts staticPosts={allPosts.slice(0, 6)} />
     </>
   );
 }

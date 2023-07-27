@@ -12,18 +12,19 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
-    color: alpha(theme.palette.background.default, 0.65),
+    color: alpha(theme.palette.background.default, 0.95),
     imgUrl: '/assets/background/overlay_2.jpg',
   }),
   position: 'relative',
   overflow: 'hidden',
 }));
 
-export default function Posts({ posts }) {
+export default function Posts({ staticPosts }) {
   const theme = useTheme();
   const {
     user,
     member,
+    posts,
     dispatch,
     state: { modal },
   } = useSettingsContext();
@@ -32,23 +33,17 @@ export default function Posts({ posts }) {
   const [like, setLike] = useState(false);
   const [likePostDocs, setLikePostDocs] = useState([]);
 
+  const [allPosts, setAllPosts] = useState(staticPosts);
+
   useEffect(() => {
-    //
-    if (!member) return;
-    if (!like) {
-      console.log(member?.postLikes);
-      if (member?.postLikes?.length > 0) {
-        let likes = [];
-        posts.forEach((doc) => {
-          if (member?.postLikes.indexOf(doc.id) >= 0) {
-            likes.push(doc);
-          }
-        });
-        setLikePostDocs(likes);
-        console.log('liked posts', likes);
-      }
+    if (!posts) {
+      console.log('no posts');
+      return;
+    } else {
+      setAllPosts([...posts]);
+      console.log('posts loaded', posts);
     }
-  }, [member]);
+  }, [posts]);
 
   const handleFavsClick = () => {
     if (!like) {

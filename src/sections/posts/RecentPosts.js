@@ -13,14 +13,14 @@ const StyledRoot = styled('div')(({ theme }) => ({
   overflow: 'hidden',
 }));
 
-export default function RecentPosts({ posts }) {
+export default function RecentPosts({ staticPosts }) {
   return (
     <div>
       <StyledRoot>
         <Typography variant="h4" py={3} mx={2}>
           Recent News
         </Typography>
-        <PostsList posts={posts} />
+        <PostsList posts={staticPosts} />
       </StyledRoot>
     </div>
   );

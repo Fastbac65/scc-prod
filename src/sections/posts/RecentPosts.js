@@ -4,6 +4,7 @@ import PostsList from './PostsList';
 
 import { bgGradient } from 'src/lib/cssStyles';
 import { useSettingsContext } from 'src/components/settings';
+import { useState } from 'react';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({

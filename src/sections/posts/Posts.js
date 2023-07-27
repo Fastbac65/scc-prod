@@ -47,7 +47,7 @@ export default function Posts({ staticPosts }) {
       console.log(member?.postLikes);
       if (member?.postLikes?.length > 0) {
         let likes = [];
-        posts.forEach((doc) => {
+        allPosts.forEach((doc) => {
           if (member?.postLikes.indexOf(doc.id) >= 0) {
             likes.push(doc);
           }

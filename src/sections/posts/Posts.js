@@ -1,5 +1,5 @@
-import { Box, Fab, Stack, Tooltip, useTheme } from '@mui/material';
-import { useState } from 'react';
+import { Box, Checkbox, Fab, Stack, Tooltip, useTheme } from '@mui/material';
+import { useEffect, useState } from 'react';
 import NewPost from './NewPost';
 import PostsList from './PostsList';
 // import { Add, FacebookOutlined, Instagram } from '@mui/icons-material';
@@ -12,32 +12,46 @@ export default function Posts({ posts }) {
   const theme = useTheme();
   const {
     user,
+    member,
     dispatch,
     state: { modal },
   } = useSettingsContext();
 
   // const [files, setFiles] = useState([]);
-  const [like, setLike] = useState('');
+  const [like, setLike] = useState(false);
   const [likePostDocs, setLikePostDocs] = useState([]);
 
-  // useEffect(() => {
-  //   //
-  // }, [user?.uPostLikes?.length]);
-
-  const handleFavsClick = () => {
-    if (like === 'red') setLike('');
-    else setLike('red');
-
-    console.log(user?.uPostLikes);
-    if (user?.uPostLikes?.length > 0) {
+  useEffect(() => {
+    //
+    console.log(member?.postLikes);
+    if (member?.postLikes?.length > 0) {
       let likes = [];
       posts.forEach((doc) => {
-        if (user?.uPostLikes.indexOf(doc.id) >= 0) {
+        if (member?.postLikes.indexOf(doc.id) >= 0) {
           likes.push(doc);
         }
       });
       setLikePostDocs(likes);
       console.log('liked posts', likes);
+    }
+  }, [member, posts]);
+
+  const handleFavsClick = () => {
+    if (like) {
+      setLike(false);
+    } else {
+      setLike(true);
+      // console.log(member?.postLikes);
+      // if (member?.postLikes?.length > 0) {
+      //   let likes = [];
+      //   posts.forEach((doc) => {
+      //     if (member?.postLikes.indexOf(doc.id) >= 0) {
+      //       likes.push(doc);
+      //     }
+      //   });
+      //   setLikePostDocs(likes);
+      //   console.log('liked posts', likes);
+      // }
     }
   };
 
@@ -94,19 +108,23 @@ export default function Posts({ posts }) {
                     <FacebookOutlined />
                   </Fab>
                 </Tooltip> */}
-                {/* <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
-                  <Fab color="secondary" id="favourite" size="small" aria-label="like" onClick={handleFavsClick}>
+                <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
+                  <Checkbox
+                    color="error"
+                    aria-label="add to favorites"
+                    checked={like}
+                    onChange={handleFavsClick}
+                    icon={<Iconify icon="carbon:favorite" />}
+                    checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+                  />
+                  {/* <Fab color="secondary" id="favourite" size="small" aria-label="like" onClick={handleFavsClick}>
                     <FavoriteIcon sx={{ color: like }} />
-                  </Fab>
-                </Tooltip> */}
+                  </Fab> */}
+                </Tooltip>
               </Stack>
             )}
-            <PostsList
-              posts={like === '' ? posts : likePostDocs}
-              // posts={posts}
-            />
 
-            {/* <ContentCardMasonryPosts /> */}
+            <PostsList posts={like ? likePostDocs : posts} />
           </Box>
         </Box>
       </Box>

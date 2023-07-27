@@ -16,18 +16,18 @@ const StyledRoot = styled('div')(({ theme }) => ({
 }));
 
 export default function RecentPosts({ staticPosts }) {
-  // const { posts } = useSettingsContext();
-  // const [allRecent, setAllRecent] = useState(staticPosts);
+  const { posts } = useSettingsContext();
+  const [allRecent, setAllRecent] = useState(staticPosts);
 
-  // useEffect(() => {
-  //   if (!posts) {
-  //     console.log('no posts');
-  //     return;
-  //   } else {
-  //     setAllRecent([...posts.slice(0, 6)]);
-  //     console.log('recent realtime posts loaded', posts.slice(0, 6));
-  //   }
-  // }, [posts]);
+  useEffect(() => {
+    if (!posts) {
+      console.log('no posts');
+      return;
+    } else {
+      setAllRecent([...posts.slice(0, 6)]);
+      console.log('recent realtime posts loaded', posts.slice(0, 6));
+    }
+  }, [posts]);
 
   return (
     <div>
@@ -35,7 +35,7 @@ export default function RecentPosts({ staticPosts }) {
         <Typography variant="h4" py={3} mx={2}>
           Recent News
         </Typography>
-        <PostsList posts={staticPosts} />
+        <PostsList posts={allRecent} />
       </StyledRoot>
     </div>
   );

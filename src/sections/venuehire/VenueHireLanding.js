@@ -15,7 +15,7 @@ const VenueHireLanding = () => {
           position: 'relative',
           ...bgGradient({
             startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,
-            endColor: `${theme.palette.background.default} 105%`,
+            endColor: `${theme.palette.background.default} 95%`,
             imgUrl: 'assets/images/scc-fb-grp.jpeg',
           }),
         }}

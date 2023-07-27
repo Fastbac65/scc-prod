@@ -72,7 +72,7 @@ export default function Posts({ posts }) {
               <Fab variant="extended" size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
                 {/* <Add /> */}
                 <Iconify icon="mdi:plus" />
-                POST
+                Post
               </Fab>
             </Tooltip>
             {/* <Tooltip arrow placement="top-start" title="instagram post" enterDelay={2000}>

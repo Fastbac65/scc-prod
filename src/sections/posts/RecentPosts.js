@@ -6,7 +6,7 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
-    color: alpha(theme.palette.background.default, 0.65),
+    color: alpha(theme.palette.background.default, 0.95),
     imgUrl: '/assets/background/overlay_2.jpg',
   }),
   position: 'relative',

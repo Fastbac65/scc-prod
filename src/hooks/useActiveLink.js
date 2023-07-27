@@ -13,7 +13,7 @@ export default function useActiveLink(path, deep = true) {
 
   const checkPath = path.startsWith('#');
 
-  const currentPath = path === '/' ? '/' : `${path}/`;
+  const currentPath = path === '/' ? '/' : `${path}`;
 
   const normalActive = (!checkPath && pathname === currentPath) || (!checkPath && asPath === currentPath);
 

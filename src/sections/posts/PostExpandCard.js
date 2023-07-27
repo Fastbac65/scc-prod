@@ -103,7 +103,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   return (
     <>
-      <Fade timeout={250} in={true}>
+      <Fade timeout={750} in={true}>
         <Card sx={{ maxWidth: maxWidth }}>
           <div style={{ position: 'relative' }}>
             <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>

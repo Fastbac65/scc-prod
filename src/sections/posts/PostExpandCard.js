@@ -103,101 +103,139 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   return (
     <>
-      <Fade timeout={750} in={true}>
-        <Card sx={{ maxWidth: maxWidth }}>
-          <div style={{ position: 'relative' }}>
-            <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>
-          </div>
-          <CardHeader
-            avatar={
-              <Tooltip enterTouchDelay={100} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
-                <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
-              </Tooltip>
-            }
-            action={<PostOptions postDoc={doc} />}
-            title={doc.data?.title}
-            subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
-          />
-          <ImageList
-            gap={1}
-            sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
-            rowHeight={150}
-            // cols={layout[files.length - 1]}
-            cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
-          >
-            {doc.data.images.map((image, indx) => (
-              <ImageListItem key={image.src}>
-                <CardMedia
-                  component="img"
-                  height="150"
-                  src={image.src}
-                  alt={image.alt}
-                  sx={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    setCurrentImageIndex(indx);
-                    setImages(doc.data?.images);
-                    setOpen(true);
+      {/* <Fade timeout={750} in={true}> */}
+      <Card sx={{ maxWidth: maxWidth }}>
+        <div style={{ position: 'relative' }}>
+          <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>
+        </div>
+        <CardHeader
+          avatar={
+            <Tooltip enterTouchDelay={100} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
+              <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
+            </Tooltip>
+          }
+          action={<PostOptions postDoc={doc} />}
+          title={doc.data?.title}
+          subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
+        />
+        <ImageList
+          gap={1}
+          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
+          rowHeight={150}
+          // cols={layout[files.length - 1]}
+          cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
+        >
+          {doc.data.images.map((image, indx) => (
+            <ImageListItem key={image.src}>
+              <CardMedia
+                component="img"
+                height="150"
+                src={image.src}
+                alt={image.alt}
+                sx={{ cursor: 'pointer' }}
+                onClick={() => {
+                  setCurrentImageIndex(indx);
+                  setImages(doc.data?.images);
+                  setOpen(true);
+                }}
+              />
+              {indx === 0 && (
+                <Typography
+                  variant="caption"
+                  component="span"
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    color: 'white',
+                    bgcolor: 'rgba(0,0,0,0.5)',
+                    p: '3px',
+                    borderBottomRightRadius: 10,
                   }}
-                />
-                {indx === 0 && (
-                  <Typography
-                    variant="caption"
-                    component="span"
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      color: 'white',
-                      bgcolor: 'rgba(0,0,0,0.5)',
-                      p: '3px',
-                      borderBottomRightRadius: 10,
-                    }}
-                  >
-                    {fToNow(doc.data?.timestamp?.seconds * 1000)}
-                  </Typography>
-                )}
-                {indx === 1 && doc.data.images.length === 3 && (
-                  <Typography
-                    variant="body1"
-                    component="span"
-                    sx={{
-                      position: 'absolute',
-                      right: 0,
-                      Top: 0,
-                      color: 'white',
-                      bgcolor: 'rgba(0,0,0,0.5)',
-                      p: '3px',
-                      borderBottomLeftRadius: 10,
-                    }}
-                  >
-                    {`+1 photo`}
-                  </Typography>
-                )}
-                {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
-                  <Typography
-                    variant="body2"
-                    component="span"
-                    sx={{
-                      position: 'absolute',
-                      right: 0,
-                      Top: 0,
-                      color: 'white',
-                      bgcolor: 'rgba(0,0,0,0.5)',
-                      p: '3px',
-                      borderBottomLeftRadius: 10,
-                    }}
-                  >
-                    {`+${morePics} photos`}
-                  </Typography>
-                )}
-              </ImageListItem>
-            ))}
-          </ImageList>
+                >
+                  {fToNow(doc.data?.timestamp?.seconds * 1000)}
+                </Typography>
+              )}
+              {indx === 1 && doc.data.images.length === 3 && (
+                <Typography
+                  variant="body1"
+                  component="span"
+                  sx={{
+                    position: 'absolute',
+                    right: 0,
+                    Top: 0,
+                    color: 'white',
+                    bgcolor: 'rgba(0,0,0,0.5)',
+                    p: '3px',
+                    borderBottomLeftRadius: 10,
+                  }}
+                >
+                  {`+1 photo`}
+                </Typography>
+              )}
+              {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
+                <Typography
+                  variant="body2"
+                  component="span"
+                  sx={{
+                    position: 'absolute',
+                    right: 0,
+                    Top: 0,
+                    color: 'white',
+                    bgcolor: 'rgba(0,0,0,0.5)',
+                    p: '3px',
+                    borderBottomLeftRadius: 10,
+                  }}
+                >
+                  {`+${morePics} photos`}
+                </Typography>
+              )}
+            </ImageListItem>
+          ))}
+        </ImageList>
 
-          <CardContent>
-            <Typography variant="body2" color="text.primary">
-              {doc.data?.main[0]}
-            </Typography>
+        <CardContent>
+          <Typography variant="body2" color="text.primary">
+            {doc.data?.main[0]}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing sx={{ py: 0 }}>
+          {user && (
+            <>
+              <Checkbox
+                color="error"
+                aria-label="add to favorites"
+                checked={favorite}
+                onChange={handleChangeFavorite}
+                icon={<Iconify icon="carbon:favorite" />}
+                checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+              />
+              <IconButton aria-label="share post" onClick={handleOpen}>
+                <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
+              </IconButton>
+            </>
+          )}
+          {doc.data.main.length > 1 && (
+            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+              {/* <ExpandMoreIcon /> */}
+              <Iconify icon="mdi:chevron-down" />
+            </ExpandMore>
+          )}
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent sx={{ py: 0 }}>
+            {doc.data.main.map(
+              (
+                paragraf,
+                indx // being explicit not to confuse with Typography paragraph prop
+              ) => (
+                <Typography key={indx} variant="body2" paragraph color="text.secondary">
+                  {
+                    indx !== 0 && paragraf // skip first paragraf as its alreay above
+                  }
+                </Typography>
+              )
+            )}
           </CardContent>
           <CardActions disableSpacing sx={{ py: 0 }}>
             {user && (
@@ -215,53 +253,15 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 </IconButton>
               </>
             )}
-            {doc.data.main.length > 1 && (
-              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                {/* <ExpandMoreIcon /> */}
-                <Iconify icon="mdi:chevron-down" />
-              </ExpandMore>
-            )}
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent sx={{ py: 0 }}>
-              {doc.data.main.map(
-                (
-                  paragraf,
-                  indx // being explicit not to confuse with Typography paragraph prop
-                ) => (
-                  <Typography key={indx} variant="body2" paragraph color="text.secondary">
-                    {
-                      indx !== 0 && paragraf // skip first paragraf as its alreay above
-                    }
-                  </Typography>
-                )
-              )}
-            </CardContent>
-            <CardActions disableSpacing sx={{ py: 0 }}>
-              {user && (
-                <>
-                  <Checkbox
-                    color="error"
-                    aria-label="add to favorites"
-                    checked={favorite}
-                    onChange={handleChangeFavorite}
-                    icon={<Iconify icon="carbon:favorite" />}
-                    checkedIcon={<Iconify icon="carbon:favorite-filled" />}
-                  />
-                  <IconButton aria-label="share post" onClick={handleOpen}>
-                    <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
-                  </IconButton>
-                </>
-              )}
 
-              <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                <Iconify icon="mdi:chevron-down" />
-                {/* <ExpandMoreIcon /> */}
-              </ExpandMore>
-            </CardActions>
-          </Collapse>
-        </Card>
-      </Fade>
+            <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+              <Iconify icon="mdi:chevron-down" />
+              {/* <ExpandMoreIcon /> */}
+            </ExpandMore>
+          </CardActions>
+        </Collapse>
+      </Card>
+      {/* </Fade> */}
       <Popover
         open={!!openShare} /* open is e.currenttarget so force it to boolean */
         onClose={handleClose}

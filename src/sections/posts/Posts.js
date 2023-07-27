@@ -34,7 +34,21 @@ export default function Posts({ posts }) {
 
   useEffect(() => {
     //
-  }, [member, posts]);
+    if (!member) return;
+    if (!like) {
+      console.log(member?.postLikes);
+      if (member?.postLikes?.length > 0) {
+        let likes = [];
+        posts.forEach((doc) => {
+          if (member?.postLikes.indexOf(doc.id) >= 0) {
+            likes.push(doc);
+          }
+        });
+        setLikePostDocs(likes);
+        console.log('liked posts', likes);
+      }
+    }
+  }, [member]);
 
   const handleFavsClick = () => {
     if (!like) {

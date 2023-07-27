@@ -1,5 +1,6 @@
 export { default as HomeView } from './HomeView';
 export { default as OurClubView } from './OurClubView';
+export { default as NippersView } from './NippersView';
 
 // export { default as ContactView } from './ContactView';
 

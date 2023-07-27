@@ -1,12 +1,12 @@
 // ----------------------------------------------------------------------
 import RecentPosts from '../posts/RecentPosts';
-import OurClubLanding from '../ourclub/OurClubLanding';
+import NippersLanding from '../nippers/NippersLanding';
 // ----------------------------------------------------------------------
 
-export default function OurClubView({ staticPosts }) {
+export default function NippersView({ staticPosts }) {
   return (
     <>
-      <OurClubLanding />
+      <NippersLanding />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

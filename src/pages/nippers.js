@@ -8,11 +8,11 @@ import MainLayout from 'src/layouts/main';
 // sections
 import { useSettingsContext } from 'src/components/settings';
 // import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
-import { OurClubView } from 'src/sections/view';
+import { NippersView } from 'src/sections/view';
 
 // ----------------------------------------------------------------------
 
-OurClub.getLayout = (page) => <MainLayout>{page}</MainLayout>;
+Nippers.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
   const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
@@ -39,7 +39,7 @@ export async function getStaticProps() {
 
 // ----------------------------------------------------------------------
 
-export default function OurClub({ staticPosts }) {
+export default function Nippers({ staticPosts }) {
   const { loading, host } = useSettingsContext();
   // if (loading) {
   //   return <LoadingScreen />;
@@ -52,7 +52,7 @@ export default function OurClub({ staticPosts }) {
         <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
       </Head>
 
-      <OurClubView staticPosts={staticPosts} />
+      <NippersView staticPosts={staticPosts} />
     </>
   );
 }

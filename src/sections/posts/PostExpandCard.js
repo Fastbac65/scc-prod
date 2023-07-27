@@ -103,7 +103,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   return (
     <>
-      <Fade timeout={1200} in={true}>
+      <Fade timeout={250} in={true}>
         <Card sx={{ maxWidth: maxWidth }}>
           <div style={{ position: 'relative' }}>
             <div id={doc.id} style={{ position: 'absolute', top: '-80px' }}></div>
@@ -116,11 +116,11 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             }
             action={<PostOptions postDoc={doc} />}
             title={doc.data?.title}
-            subheader={(author?.data?.profileName || author?.data?.displayName) + ', ' + doc.data?.subtitle}
+            subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
           />
           <ImageList
             gap={1}
-            sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, maxWidth: 400, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
+            sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
             rowHeight={150}
             // cols={layout[files.length - 1]}
             cols={doc.data.images.length % 2 !== 0 ? 1 : 2}

@@ -6,10 +6,11 @@ import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { updateDoco } from 'src/lib/firestoreDocument';
+import { fToNow } from 'src/lib/formatTime';
 // import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
+  const { ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
@@ -97,6 +98,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     console.log('share post TODO');
     // navigate(postlink);
   };
+  // more pics is different for odd number of pics as we use full width so no gaps
+  const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
 
   return (
     <>
@@ -113,7 +116,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           }
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
-          subheader={doc.data?.subtitle}
+          subheader={(author?.data?.profileName || author?.data?.displayName) + ', ' + doc.data?.subtitle}
         />
         <ImageList
           gap={1}
@@ -145,30 +148,46 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                     top: 0,
                     left: 0,
                     color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.3)',
+                    bgcolor: 'rgba(0,0,0,0.5)',
                     p: '3px',
                     borderBottomRightRadius: 10,
                   }}
                 >
-                  TODO date dateFns
-                  {/* {moment(doc?.data?.timestamp?.toDate()).fromNow()} */}
+                  {fToNow(doc.data?.timestamp?.seconds * 1000)}
                 </Typography>
               )}
-              {indx === 1 && doc.data.images.length > 4 && (
+              {indx === 1 && doc.data.images.length === 3 && (
                 <Typography
-                  variant="caption"
+                  variant="body1"
                   component="span"
                   sx={{
                     position: 'absolute',
                     right: 0,
                     Top: 0,
                     color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.3)',
+                    bgcolor: 'rgba(0,0,0,0.5)',
                     p: '3px',
                     borderBottomLeftRadius: 10,
                   }}
                 >
-                  {`+${doc.data.images.length - 4} photos`}
+                  {`+1 photo`}
+                </Typography>
+              )}
+              {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
+                <Typography
+                  variant="body2"
+                  component="span"
+                  sx={{
+                    position: 'absolute',
+                    right: 0,
+                    Top: 0,
+                    color: 'white',
+                    bgcolor: 'rgba(0,0,0,0.5)',
+                    p: '3px',
+                    borderBottomLeftRadius: 10,
+                  }}
+                >
+                  {`+${morePics} photos`}
                 </Typography>
               )}
             </ImageListItem>
@@ -191,16 +210,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 icon={<Iconify icon="carbon:favorite" />}
                 checkedIcon={<Iconify icon="carbon:favorite-filled" />}
               />
-              <IconButton aria-label="share post" onClick={handleOpen} color={open ? 'primary' : 'default'}>
-                <Iconify icon="carbon:share" />
+              <IconButton aria-label="share post" onClick={handleOpen}>
+                <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
               </IconButton>
-              {/* <IconButton onClick={handleLikeClick} aria-label="add to favorites">
-                  <FavoriteIcon sx={{ color: like }} />
-                </IconButton> */}
-
-              {/* <IconButton aria-label="share post" onClick={handleShare}>
-                  <ShareIcon />
-                </IconButton> */}
             </>
           )}
           {doc.data.main.length > 1 && (
@@ -236,16 +248,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   icon={<Iconify icon="carbon:favorite" />}
                   checkedIcon={<Iconify icon="carbon:favorite-filled" />}
                 />
-                <IconButton aria-label="share post" onClick={handleOpen} color={open ? 'primary' : 'default'}>
-                  <Iconify icon="carbon:share" />
+                <IconButton aria-label="share post" onClick={handleOpen}>
+                  <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
                 </IconButton>
-                {/* <IconButton onClick={handleLikeClick} aria-label="add to favorites">
-                  <FavoriteIcon sx={{ color: like }} />
-                </IconButton> */}
-
-                {/* <IconButton aria-label="share post" onClick={handleShare}>
-                  <ShareIcon />
-                </IconButton> */}
               </>
             )}
 
@@ -269,7 +274,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
       >
         {socials.map((social) => (
           <Link key={social.value} href={social.href} target="_blank" underline="none">
-            <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.main }}>
+            <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.light }}>
               <Iconify icon={social.icon} width={24} sx={{ mr: 1 }} />
               Share via {social.label}
             </MenuItem>

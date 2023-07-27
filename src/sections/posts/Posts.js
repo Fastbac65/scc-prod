@@ -34,20 +34,22 @@ export default function Posts({ posts }) {
 
   useEffect(() => {
     //
-    console.log(member?.postLikes);
-    if (member?.postLikes?.length > 0) {
-      let likes = [];
-      posts.forEach((doc) => {
-        if (member?.postLikes.indexOf(doc.id) >= 0) {
-          likes.push(doc);
-        }
-      });
-      setLikePostDocs(likes);
-      console.log('liked posts', likes);
-    }
   }, [member, posts]);
 
   const handleFavsClick = () => {
+    if (!like) {
+      console.log(member?.postLikes);
+      if (member?.postLikes?.length > 0) {
+        let likes = [];
+        posts.forEach((doc) => {
+          if (member?.postLikes.indexOf(doc.id) >= 0) {
+            likes.push(doc);
+          }
+        });
+        setLikePostDocs(likes);
+        console.log('liked posts', likes);
+      }
+    }
     setLike(!like);
   };
 

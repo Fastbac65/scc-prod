@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-export default function ScrollProgress({ color = 'primary', size = 3, sx, ...other }) {
+export default function ScrollProgress({ color = 'secondary', size = 3, sx, ...other }) {
   const { scrollYProgress } = useScroll();
 
   const scaleX = useSpring(scrollYProgress, {

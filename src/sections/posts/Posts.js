@@ -1,4 +1,4 @@
-import { Box, Checkbox, Fab, Stack, Tooltip, useTheme } from '@mui/material';
+import { Box, Checkbox, Fab, Stack, Tooltip, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import NewPost from './NewPost';
 import PostsList from './PostsList';
@@ -83,6 +83,10 @@ export default function Posts({ posts }) {
             minHeight: 800,
           }}
         >
+          <Typography variant="h4" pt={1} mx={2}>
+            Recent News
+          </Typography>
+          <PostsList posts={posts.slice(0, 6)} />
           <Box sx={{ pt: 1 }}>
             {user && (
               <Stack spacing={1} direction="row" sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -124,6 +128,12 @@ export default function Posts({ posts }) {
               </Stack>
             )}
 
+            <Typography variant="h4" pt={1} mx={2}>
+              All News & Activities
+            </Typography>
+            {/* <Typography variant="h6" color="text" m={2} mb={4}>
+          ..from our members, boaties and nippers
+        </Typography> */}
             <PostsList posts={like ? likePostDocs : posts} />
           </Box>
         </Box>

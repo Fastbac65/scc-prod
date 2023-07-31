@@ -22,7 +22,7 @@ const bookingOptions = ['Evening Event', 'Morning Event', 'All Day'];
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
     startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
-    endColor: `${alpha(theme.palette.background.default, 0.8)} 30%`,
+    endColor: `${alpha(theme.palette.background.default, 0.85)} 30%`,
     imgUrl: '/assets/images/scc-party2.jpg',
   }),
   position: 'relative',
@@ -103,7 +103,7 @@ const VenueHireBooking = () => {
 
   return (
     <StyledRoot>
-      <Box sx={{ px: 2, pt: 2 }} columnGap={3} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
+      <Box sx={{ px: 2 }} rowGap={3} columnGap={3} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
         <Stack>
           <Typography variant="h3" sx={{ mb: 3 }}>
             Venue Details

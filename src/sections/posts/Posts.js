@@ -1,4 +1,4 @@
-import { Box, Checkbox, Fab, Stack, Tooltip, Typography, alpha, styled, useTheme } from '@mui/material';
+import { Box, Checkbox, Fab, Stack, Tooltip, Typography, alpha, styled } from '@mui/material';
 import { useEffect, useState } from 'react';
 import NewPost from './NewPost';
 import PostsList from './PostsList';

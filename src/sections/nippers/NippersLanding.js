@@ -1,7 +1,6 @@
-import { Stack, Divider, Container, Typography, IconButton, Unstable_Grid2 as Grid, Box, alpha, Link, useTheme } from '@mui/material';
+import { Stack, Container, Typography, Unstable_Grid2 as Grid, Box, alpha, useTheme } from '@mui/material';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
-import Iconify from 'src/components/iconify/Iconify';
-import { socials } from 'src/config-global';
+
 import { bgGradient } from 'src/lib/cssStyles';
 
 const NippersLanding = () => {

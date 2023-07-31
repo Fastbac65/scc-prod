@@ -55,7 +55,7 @@ export function SettingsProvider({ children }) {
   // allows us to hold a page switch in certain circumstances e.g. on social sign up we need time to check the backend for existing accounts before 'user' state changes the route
   const [holdRouter, setHoldRouter] = useState(false);
 
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   // const purchaseRef = ref(db, 'purchases/');
   // const custRef = ref(db, 'customers/');

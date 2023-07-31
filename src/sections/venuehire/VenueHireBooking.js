@@ -39,7 +39,7 @@ const VenueHireBooking = () => {
   } = useSettingsContext();
 
   const bookingSchema = Yup.object().shape({
-    fullName: Yup.string().required(),
+    fullName: Yup.string().required('Please provide your full name'),
     email: Yup.string().required('Please provide your email'),
     phoneNumber: Yup.string().required('Please provide your mobile'),
     occasion: Yup.string().required('What is the occasion'),

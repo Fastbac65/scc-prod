@@ -17,7 +17,7 @@ const VenueHireLanding = () => {
           position: 'relative',
           ...bgGradient({
             startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,
-            endColor: `${theme.palette.background.default} 100%`,
+            endColor: `${alpha(theme.palette.background.default, 1)} 90%`,
             imgUrl: 'assets/images/scc-fb-grp.jpeg',
           }),
         }}
@@ -30,7 +30,8 @@ const VenueHireLanding = () => {
                 Venue Hire
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                An absolute must for your next party.. the best venue on the northern beaches.
+                Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings, fundraisers and other similar
+                functions.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

@@ -2,9 +2,6 @@ import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect } from 'react';
-// fb
-import { db } from 'src/lib/createFirebaseApp';
-import { ref, update } from 'firebase/database';
 // @mui
 import { LoadingButton } from '@mui/lab';
 

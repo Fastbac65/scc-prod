@@ -43,19 +43,18 @@ export default function RecentPosts({ staticPosts }) {
   return (
     <div>
       <StyledRoot>
-        <Box sx={{ pt: 2 }}>
+        {/* <Box sx={{ pt: 2 }}>
           {user && (
             <Stack spacing={1} direction="row" sx={{ justifyContent: 'center' }}>
               <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
                 <Fab variant="extended" size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
-                  {/* <Add /> */}
                   <Iconify icon="mdi:plus" />
                   Post
                 </Fab>
               </Tooltip>
             </Stack>
           )}
-        </Box>
+        </Box> */}
         <Typography variant="h4" py={3} mx={2}>
           Recent News
         </Typography>

@@ -55,7 +55,7 @@ export default function RecentPosts({ staticPosts }) {
             </Stack>
           )}
         </Box> */}
-        <Typography variant="h4" py={3} mx={2}>
+        <Typography variant="h2" py={3} mx={2}>
           Recent News
         </Typography>
         <PostsList posts={allRecent} />

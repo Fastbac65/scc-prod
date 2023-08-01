@@ -13,6 +13,9 @@ import 'slick-carousel/slick/slick-theme.css';
 // lazy image
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
+// fullcalendar over-rides
+import 'src/theme/fullcalendar.css';
+
 // ----------------------------------------------------------------------
 
 import PropTypes from 'prop-types';

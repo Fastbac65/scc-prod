@@ -41,7 +41,7 @@ const CalendarDefault = () => {
       setSocial(true);
     } else if (event.target.labels[0].innerText.includes('NSW')) {
       setHolidays(!holidays);
-    } else if (event.target.labels[0].innerText.includes('Public')) {
+    } else if (event.target.labels[0].innerText.includes('Venue')) {
       setBooking(!booking);
       // } else if (event.target.labels[0].innerText.includes('Patrol')) {
       //   setPatrolTraining(!patrolTraining);
@@ -67,7 +67,7 @@ const CalendarDefault = () => {
                 </Typography>
                 <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
                 <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
-                <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Public Bookings" />
+                <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" />
                 <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Socials" />
               </FormGroup>
             </Box>

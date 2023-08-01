@@ -322,7 +322,7 @@ const CalendarVenueHire = ({ holidays, important, patrolTraining, social }) => {
     <div>
       <Box className="wrapper">
         <FullCalendar
-          height={600}
+          height={610}
           // plugins={[listPlugin, interactionPlugin, googleCalendarPlugin]}
           plugins={[listPlugin, googleCalendarPlugin]}
           googleCalendarApiKey="AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM"

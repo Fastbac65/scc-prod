@@ -8,11 +8,20 @@ import { bgGradient } from 'src/lib/cssStyles';
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
     startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
-    endColor: `${alpha(theme.palette.background.default, 0.85)} 40%`,
+    endColor: `${alpha(theme.palette.background.default, 0.65)} 30%`,
     imgUrl: '/assets/images/scc-venue.jpeg',
   }),
   position: 'relative',
   overflow: 'hidden',
+}));
+
+const Styled2ndLayer = styled('div')(({ theme }) => ({
+  ...bgGradient({
+    startColor: `${alpha(theme.palette.background.default, 0.65)} 70%`,
+    endColor: `${alpha(theme.palette.background.default, 1)} 100%`,
+  }),
+  // position: 'relative',
+  // overflow: 'hidden',
 }));
 
 // ----------------------------------------------------------------------
@@ -45,37 +54,39 @@ const CalendarDefault = () => {
 
   return (
     <StyledRoot>
-      <Container maxWidth="lg" sx={{ py: 3, px: '6px', textAlign: 'center', justifyContent: 'center' }}>
-        <Typography variant="h3" sx={{ mb: 3 }}>
-          Current Bookings
-        </Typography>
-        <Box sx={{ display: 'flex', py: 2 }}>
-          <Box sx={{ pt: 0, display: { xs: 'none', sm: 'inline' } }}>
-            <FormGroup>
-              <Typography sx={{ fontWeight: '500', fontSize: '1.25em' }} variant="h5">
-                Filter
-              </Typography>
-              <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && important && social} color="primary" />} label="View All" disabled={holidays && important && social} />
-              <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
-              <FormControlLabel onChange={handleChange} control={<Checkbox checked={important} color="success" />} label="Important Dates" />
-              {/* <FormControlLabel
+      <Styled2ndLayer>
+        <Container maxWidth="lg" sx={{ py: 3, px: '6px', textAlign: 'center', justifyContent: 'center' }}>
+          <Typography variant="h3" sx={{ mb: 3 }}>
+            Current Bookings
+          </Typography>
+          <Box sx={{ display: 'flex', py: 2 }}>
+            <Box sx={{ pt: 0, display: { xs: 'none', sm: 'inline' } }}>
+              <FormGroup>
+                <Typography sx={{ fontWeight: '500', fontSize: '1.25em' }} variant="h5">
+                  Filter
+                </Typography>
+                <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && important && social} color="primary" />} label="View All" disabled={holidays && important && social} />
+                <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
+                <FormControlLabel onChange={handleChange} control={<Checkbox checked={important} color="success" />} label="Important Dates" />
+                {/* <FormControlLabel
                 onChange={handleChange}
                 control={<Checkbox checked={patrolTraining} color='error' />}
                 label='Patrol/Training'
               /> */}
-              <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="Social Events" />
-            </FormGroup>
+                <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="Social Events" />
+              </FormGroup>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+              <CalendarVenueHire
+                holidays={holidays}
+                important={important}
+                // patrolTraining={patrolTraining}
+                social={social}
+              />
+            </Box>
           </Box>
-          <Box sx={{ flexGrow: 1 }}>
-            <CalendarVenueHire
-              holidays={holidays}
-              important={important}
-              // patrolTraining={patrolTraining}
-              social={social}
-            />
-          </Box>
-        </Box>
-      </Container>
+        </Container>
+      </Styled2ndLayer>
     </StyledRoot>
   );
 };

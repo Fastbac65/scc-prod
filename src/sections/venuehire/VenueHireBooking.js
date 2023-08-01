@@ -109,7 +109,7 @@ const VenueHireBooking = () => {
             Venue Details
           </Typography>
           <Stack spacing={1}>
-            <OverviewItem icon="carbon:bar" label="Stylish Wooden Bar" text="Beautiful tables and stools. BYO drinks for you and your guests. Bar service also avilable." />
+            <OverviewItem icon="carbon:bar" label="Stylish Wooden Bar" text="Beautiful tables and stools. BYO drinks for you and your guests. Bar service also available." />
             <OverviewItem icon="material-symbols:soup-kitchen" label="Large Commercial Grade Kitchen" text="Available for all your entertaining requirements. " />
             <OverviewItem
               icon="carbon:music"
@@ -128,7 +128,7 @@ const VenueHireBooking = () => {
             <Typography variant="h3">Book your next party now!!</Typography>
 
             <Typography variant="body2" color="text.secondary" mb={2}>
-              Please fill out your details below and we will be back to you ASAP!
+              Your details please, check out our current booking below. Submit and we&apos;ll be back to you ASAP!
             </Typography>
 
             <Stack spacing={1.5}>

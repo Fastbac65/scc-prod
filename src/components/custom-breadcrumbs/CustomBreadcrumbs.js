@@ -6,15 +6,7 @@ import LinkItem from './LinkItem';
 
 // ----------------------------------------------------------------------
 
-export default function CustomBreadcrumbs({
-  links,
-  action,
-  heading,
-  moreLink,
-  activeLast,
-  sx,
-  ...other
-}) {
+export default function CustomBreadcrumbs({ links, action, heading, moreLink, activeLast, sx, ...other }) {
   const lastLink = links[links.length - 1].name;
 
   return (
@@ -32,12 +24,7 @@ export default function CustomBreadcrumbs({
           {!!links.length && (
             <Breadcrumbs separator={<Separator />} {...other}>
               {links.map((link) => (
-                <LinkItem
-                  key={link.name || ''}
-                  link={link}
-                  activeLast={activeLast}
-                  disabled={link.name === lastLink}
-                />
+                <LinkItem key={link.name || ''} link={link} activeLast={activeLast} disabled={link.name === lastLink} />
               ))}
             </Breadcrumbs>
           )}
@@ -50,15 +37,7 @@ export default function CustomBreadcrumbs({
       {!!moreLink && (
         <Box sx={{ mt: 2 }}>
           {moreLink.map((href) => (
-            <Link
-              noWrap
-              key={href}
-              href={href}
-              variant="body2"
-              target="_blank"
-              rel="noopener"
-              sx={{ display: 'table' }}
-            >
+            <Link noWrap key={href} href={href} variant="body2" target="_blank" rel="noopener" sx={{ display: 'table' }}>
               {href}
             </Link>
           ))}
@@ -81,9 +60,15 @@ CustomBreadcrumbs.propTypes = {
 
 function Separator() {
   return (
-    <Box
-      component="span"
-      sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
-    />
+    <Stack
+      sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#39008f', alignItems: 'center', justifyContent: 'center' }}
+      // sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
+    >
+      <Box
+        component="div"
+        sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: '#ffdc09', zIndex: 100 }}
+        // sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
+      ></Box>
+    </Stack>
   );
 }

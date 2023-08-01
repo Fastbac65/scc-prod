@@ -11,10 +11,12 @@ export const StyledNavItem = styled(ListItemButton, {
     content: '""',
     borderRadius: '50%',
     position: 'absolute',
-    width: 6,
-    height: 6,
+    width: 8,
+    height: 8,
     left: -10,
-    backgroundColor: theme.palette.mode === 'light' ? theme.palette.common.black : theme.palette.common.white,
+    backgroundColor: '#ffdc09',
+    border: '0.5px solid blue',
+    // backgroundColor: theme.palette.mode === 'light' ? theme.palette.common.black : theme.palette.common.white,
   };
 
   return {

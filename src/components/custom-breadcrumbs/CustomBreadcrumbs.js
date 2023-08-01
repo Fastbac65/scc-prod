@@ -61,12 +61,12 @@ CustomBreadcrumbs.propTypes = {
 function Separator() {
   return (
     <Stack
-      sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#39008f', alignItems: 'center', justifyContent: 'center' }}
+      sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: 'blue', alignItems: 'center', justifyContent: 'center' }}
       // sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
     >
       <Box
         component="div"
-        sx={{ width: 7, height: 7, borderRadius: '50%', bgcolor: '#ffdc09', zIndex: 100 }}
+        sx={{ width: 5, height: 5, borderRadius: '50%', bgcolor: '#ffdc09', zIndex: 100 }}
         // sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
       ></Box>
     </Stack>

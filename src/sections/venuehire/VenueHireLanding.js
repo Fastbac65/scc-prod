@@ -11,7 +11,7 @@ const VenueHireLanding = () => {
       <Box
         sx={{
           pt: 8,
-          pb: 2,
+          // pb: 2,
           mt: { sm: '16px' },
 
           position: 'relative',
@@ -51,7 +51,7 @@ const VenueHireLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Venue Details' }]} />
+          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Venue Details' }]} />
         </Container>
       </Box>
 

@@ -103,7 +103,7 @@ const VenueHireBooking = () => {
 
   return (
     <StyledRoot>
-      <Box sx={{ px: 4, py: 8 }} rowGap={3} columnGap={3} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}>
+      <Box sx={{ px: 4, pt: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}>
         <Stack>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="h3">Book your next party now!!</Typography>
@@ -145,7 +145,7 @@ const VenueHireBooking = () => {
         </Stack>
       </Box>
       <Stack alignItems="center">
-        <Typography variant="body2" color="text.secondary" m={2} mb={4}>
+        <Typography variant="body2" color="text.secondary" px={2} pb={8}>
           Otherwise feel free to drop us an email at scccaretaker@gmail.com or call us on the mobile 0432066292.
         </Typography>
       </Stack>

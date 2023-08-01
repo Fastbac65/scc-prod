@@ -103,7 +103,26 @@ const VenueHireBooking = () => {
 
   return (
     <StyledRoot>
-      <Box sx={{ px: 4, py: 8 }} rowGap={3} columnGap={3} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}>
+      <Box sx={{ px: 2 }} rowGap={3} columnGap={3} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)' }}>
+        <Stack>
+          <Typography variant="h3" sx={{ mb: 3 }}>
+            Venue Details
+          </Typography>
+          <Stack spacing={1}>
+            <OverviewItem icon="carbon:bar" label="Stylish Wooden Bar" text="Beautiful tables and stools. BYO drinks for you and your guests. Bar service also available." />
+            <OverviewItem icon="material-symbols:soup-kitchen" label="Large Commercial Grade Kitchen" text="Available for all your entertaining requirements. " />
+            <OverviewItem
+              icon="carbon:music"
+              label="State Of The Art Audio/Video Facilities"
+              text="For your music, movies, presentations and conferencing. Everything you could possibly need and easy to setup."
+            />
+            <OverviewItem
+              icon="material-symbols:restaurant"
+              label="Large Bar Servery Area"
+              text="Large private outdoor balcony adjoining the hall. Capacity for up to 120 people. Inside and outside dining with BBQs. "
+            />
+          </Stack>
+        </Stack>
         <Stack>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="h3">Book your next party now!!</Typography>

@@ -64,7 +64,7 @@ const CalendarVenueHire = ({ holidays, important, patrolTraining, social }) => {
     state: { modal },
   } = useSettingsContext();
 
-  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.success.main}`, `${theme.palette.error.main}`];
+  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.info.main}`, `${theme.palette.error.main}`];
   const allEvents = useRef([]); // Will be a copy of all events so we can filter
 
   // responsive workaround for buttons on the FC header
@@ -83,40 +83,42 @@ const CalendarVenueHire = ({ holidays, important, patrolTraining, social }) => {
 
     if (!holidays) {
       allEvents.current.forEach((event) => {
-        // if (event?.borderColor === `${theme.palette.info.main}`) {
         if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
+          event.setProp('display', 'none');
+        }
+        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (holidays) {
       allEvents.current.forEach((event) => {
-        // if (event?.borderColor === `${theme.palette.info.main}`) {
         if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
+          event.setProp('display', 'auto');
+        }
+        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
           event.setProp('display', 'auto');
         }
       });
     }
   }, [holidays]);
 
-  useEffect(() => {
-    console.log('useEffect important');
+  // useEffect(() => {
+  //   console.log('useEffect important');
 
-    if (!important) {
-      allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
-          // if (event.borderColor === `${theme.palette.success.main}`) {
-          event.setProp('display', 'none');
-        }
-      });
-    } else if (important) {
-      allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
-          // if (event.borderColor === `${theme.palette.success.main}`) {
-          event.setProp('display', 'auto');
-        }
-      });
-    }
-  }, [important]);
+  //   if (!important) {
+  //     allEvents.current.forEach((event) => {
+  //       if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+  //         event.setProp('display', 'none');
+  //       }
+  //     });
+  //   } else if (important) {
+  //     allEvents.current.forEach((event) => {
+  //       if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+  //         event.setProp('display', 'auto');
+  //       }
+  //     });
+  //   }
+  // }, [important]);
 
   // useEffect(() => {
   //   if (!patrolTraining) {
@@ -302,13 +304,16 @@ const CalendarVenueHire = ({ holidays, important, patrolTraining, social }) => {
       if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
         calEventInfo.event.setProp('display', 'none');
       }
-    }
-    if (!important) {
-      // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
       if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
         calEventInfo.event.setProp('display', 'none');
       }
     }
+    // if (!important) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
+    //   if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+    //     calEventInfo.event.setProp('display', 'none');
+    //   }
+    // }
     // if (!patrolTraining) {
     //   // if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
     //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {

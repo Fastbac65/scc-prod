@@ -20,7 +20,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
 const VenueHireDetails = () => {
   return (
     <StyledRoot>
-      <Box sx={{ px: 4, py: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 2fr', md: 'repeat(2, 1fr)' }}>
+      <Box sx={{ px: 4, py: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
         <Stack></Stack>
         <Stack>
           <Typography variant="h3" sx={{ mb: 3 }}>

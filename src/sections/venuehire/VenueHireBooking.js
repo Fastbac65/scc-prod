@@ -103,7 +103,7 @@ const VenueHireBooking = () => {
 
   return (
     <StyledRoot>
-      <Box sx={{ px: 4, pt: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}>
+      <Box sx={{ px: 4, pt: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: '3fr 2fr', md: 'repeat(2, 1fr)' }}>
         <Stack>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="h3">Book your next party now!!</Typography>

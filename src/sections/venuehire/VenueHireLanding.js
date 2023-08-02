@@ -30,8 +30,7 @@ const VenueHireLanding = () => {
                 Venue Hire
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings, fundraisers and other similar
-                functions.
+                Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings and other similar functions.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

@@ -18,7 +18,7 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
 
-const bookingOptions = ['Evening Event', 'Morning Event', 'All Day'];
+const bookingOptions = ['Evening', 'Morning', 'All Day'];
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
     startColor: `${alpha(theme.palette.background.default, 1)} 0%`,

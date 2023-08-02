@@ -71,7 +71,9 @@ const CalendarDefault = () => {
                 <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Socials" />
               </FormGroup>
             </Box>
-            <Box sx={{ ml: '2px', flexGrow: 1 }}>
+            <Box sx={{ ml: '-4px', flexGrow: 1 }}>
+              {' '}
+              {/* margin seems to fix scroll issue on mobile */}
               <CalendarVenueHire
                 holidays={holidays}
                 booking={booking}

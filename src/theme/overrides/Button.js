@@ -100,7 +100,7 @@ export default function Button(theme) {
       }),
       ...(largeSize && {
         height: 48,
-        fontSize: 15,
+        fontSize: 16,
         ...(softVariant && {
           padding: '8px 22px',
         }),

@@ -50,7 +50,7 @@ const VenueHireLanding = () => {
             </Stack>
           </Grid>
         </Grid>
-        <Container>
+        <Container sx={{ pt: 2 }}>
           <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Venue Details' }]} />
         </Container>
       </Box>

@@ -2,6 +2,7 @@ import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useT
 import { useState } from 'react';
 import CalendarVenueHire from './CalendarVenueHire';
 import { bgGradient } from 'src/lib/cssStyles';
+import useResponsive from 'src/hooks/useResponsive';
 
 // ----------------------------------------------------------------------
 
@@ -32,6 +33,7 @@ const CalendarDefault = () => {
   const [booking, setBooking] = useState(true);
   // const [patrolTraining, setPatrolTraining] = useState(false);
   const [social, setSocial] = useState(true);
+  const isSmUp = useResponsive('up', 'sm');
 
   const handleChange = (event) => {
     if (event.target.labels[0].innerText.includes('View')) {
@@ -55,23 +57,26 @@ const CalendarDefault = () => {
   return (
     <StyledRoot>
       <Styled2ndLayer>
-        <Container maxWidth="lg" sx={{ py: 3, px: '6px', textAlign: 'center', justifyContent: 'center' }}>
-          <Typography variant="h3" sx={{ mb: 3 }}>
-            Current Bookings
+        <Container maxWidth="lg" sx={{ py: 3, textAlign: 'center', justifyContent: 'center' }}>
+          <Typography variant="h3">SCC Venue Bookings</Typography>{' '}
+          <Typography variant="caption" sx={{ mb: 3 }}>
+            scroll within calendar to view
           </Typography>
           <Box sx={{ display: 'flex', py: 2 }}>
-            <Box sx={{ pt: 0, display: { xs: 'none', sm: 'inline' } }}>
-              <FormGroup>
-                <Typography sx={{ fontWeight: '500', fontSize: '1.25em' }} variant="h5">
-                  Filter
-                </Typography>
-                <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
-                <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
-                <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" />
-                <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Socials" />
-              </FormGroup>
-            </Box>
-            <Box sx={{ ml: '-4px', flexGrow: 1 }}>
+            {isSmUp && (
+              <Box>
+                <FormGroup>
+                  <Typography sx={{ fontWeight: '500', fontSize: '1.25em' }} variant="h5">
+                    Filter
+                  </Typography>
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Socials" />
+                </FormGroup>
+              </Box>
+            )}
+            <Box sx={{ flexGrow: 1 }}>
               {' '}
               {/* margin seems to fix scroll issue on mobile */}
               <CalendarVenueHire

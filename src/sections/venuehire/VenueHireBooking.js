@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 // @mui
 import { LoadingButton } from '@mui/lab';
 
-import { Box, Typography, Stack, Container, CircularProgress, styled, alpha } from '@mui/material';
+import { Box, Typography, Stack, Container, CircularProgress, styled, alpha, Divider } from '@mui/material';
 // assets
 // components
 import FormProvider, { RHFTextField, RHFSelect, RHFDatePicker } from 'src/components/hook-form';
@@ -18,11 +18,37 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
 
-const bookingOptions = ['Evening Event', 'Morning Event', 'All Day'];
+const bookingOptions = ['Evening', 'Morning', 'All Day'];
+
+const StyledRootResponsive = styled('div')(({ theme }) => ({
+  padding: theme.spacing(8, 0),
+  ...bgGradient({
+    direction: 'to top',
+
+    startColor: `${alpha(theme.palette.background.neutral, 0.7)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.85)} 70%`,
+    // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
+    // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
+    imgUrl: '/assets/images/scc-party2.jpg',
+  }),
+  [theme.breakpoints.up('sm')]: {
+    ...bgGradient({
+      direction: 'to left',
+      startColor: `${alpha(theme.palette.background.neutral, 0)} 0%`,
+      endColor: `${alpha(theme.palette.background.neutral, 0.98)} 65%`,
+      // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
+      // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
+      imgUrl: '/assets/images/scc-venue.jpeg',
+    }),
+    // backgroundPosition: 'center, left ',
+    // backgroundSize: 'cover, auto 100%',
+  },
+}));
+
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
-    startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
-    endColor: `${alpha(theme.palette.background.default, 0.85)} 30%`,
+    startColor: `${alpha(theme.palette.background.neutral, 1)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.85)} 30%`,
     imgUrl: '/assets/images/scc-party2.jpg',
   }),
   position: 'relative',
@@ -52,7 +78,7 @@ const VenueHireBooking = () => {
     phoneNumber: '',
     occasion: '',
     bookingDate: new Date(),
-    bookingType: 'Evening Event',
+    bookingType: 'Evening',
   };
   const methods = useForm({
     resolver: yupResolver(bookingSchema),
@@ -92,7 +118,7 @@ const VenueHireBooking = () => {
           ...alert,
           open: true,
           severity: 'success',
-          message: 'Your booking details have been saved, we will be in touch shortly',
+          message: 'Your details have been saved, we will be in touch shortly',
           duration: 4000,
         },
       });
@@ -102,14 +128,14 @@ const VenueHireBooking = () => {
   };
 
   return (
-    <StyledRoot>
-      <Box sx={{ px: 4, pt: 8 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: '3fr 2fr', md: 'repeat(2, 1fr)' }}>
+    <StyledRootResponsive>
+      <Box sx={{ px: 2 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: '3fr 2fr', md: 'repeat(2, 1fr)' }}>
         <Stack>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="h3">Book your next party now!!</Typography>
 
             <Typography variant="body2" color="text.secondary" mb={2}>
-              Your details please, check out our current booking below. Submit and we&apos;ll be back to you ASAP!
+              Your details please, check availability below. Submit and we&apos;ll be back to you ASAP!
             </Typography>
 
             <Stack spacing={1.5}>
@@ -142,14 +168,15 @@ const VenueHireBooking = () => {
               </LoadingButton>
             </Stack>
           </FormProvider>
+          <Divider sx={{ mb: 2 }}>Or Contact Us</Divider>
+          <Stack alignItems="center">
+            <Typography variant="body2" color="text.secondary" px={2}>
+              email: scccaretaker@gmail.com or mobile: 0432066292.
+            </Typography>
+          </Stack>
         </Stack>
       </Box>
-      <Stack alignItems="center">
-        <Typography variant="body2" color="text.secondary" px={2} pb={8}>
-          Otherwise feel free to drop us an email at scccaretaker@gmail.com or call us on the mobile 0432066292.
-        </Typography>
-      </Stack>
-    </StyledRoot>
+    </StyledRootResponsive>
   );
 };
 export default VenueHireBooking;

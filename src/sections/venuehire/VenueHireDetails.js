@@ -4,22 +4,51 @@ import Iconify from 'src/components/iconify/Iconify';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
-
-const StyledRoot = styled('div')(({ theme }) => ({
+const StyledRootResponsive = styled('div')(({ theme }) => ({
+  padding: theme.spacing(8, 0),
   ...bgGradient({
-    startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
-    endColor: `${alpha(theme.palette.background.default, 0.85)} 30%`,
+    direction: 'to top',
+
+    startColor: `${alpha(theme.palette.background.neutral, 0.7)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.85)} 70%`,
+    // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
+    // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
     imgUrl: '/assets/images/scc-party2.jpg',
   }),
-  position: 'relative',
-  overflow: 'hidden',
+  [theme.breakpoints.up('sm')]: {
+    ...bgGradient({
+      direction: 'to right',
+      startColor: `${alpha(theme.palette.background.neutral, 0)} 0%`,
+      endColor: `${alpha(theme.palette.background.neutral, 0.98)} 65%`,
+      // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
+      // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
+      imgUrl: '/assets/images/scc-party2.jpg',
+    }),
+    // backgroundPosition: 'center, left ',
+    // backgroundSize: 'cover, auto 100%',
+  },
 }));
+
+// const StyledRoot = styled('div')(({ theme }) => ({
+//   ...bgGradient({
+//     startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
+//     endColor: `${alpha(theme.palette.background.default, 0.65)} 30%`,
+//   }),
+// }));
+
+// const Styled2ndLayer = styled('div')(({ theme }) => ({
+//   ...bgGradient({
+//     startColor: `${alpha(theme.palette.background.default, 0.65)} 70%`,
+//     endColor: `${alpha(theme.palette.background.default, 1)} 100%`,
+//   }),
+// }));
 
 // ----------------------------------------------------------------------
 
 const VenueHireDetails = () => {
   return (
-    <StyledRoot>
+    <StyledRootResponsive>
+      {/* <StyledRoot> */}
       <Box sx={{ px: 1, pb: 2 }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
         <Stack></Stack>
         <Stack>
@@ -42,7 +71,8 @@ const VenueHireDetails = () => {
           </Stack>
         </Stack>
       </Box>
-    </StyledRoot>
+      {/* </StyledRoot> */}
+    </StyledRootResponsive>
   );
 };
 export default VenueHireDetails;

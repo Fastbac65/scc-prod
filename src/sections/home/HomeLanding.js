@@ -5,8 +5,6 @@ import { CardMedia, Box, Typography } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 
-import scc1 from 'src/assets/images/scc-fb-grp.jpeg';
-
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
     color: alpha(theme.palette.background.default, 0.5),
@@ -20,28 +18,52 @@ export default function HomeLanding(props) {
   const theme = useTheme();
   var items = [
     {
-      src: '/assets/images/header2.jpeg',
-      description: 'What ever!',
+      src: '/assets/images/header1.jpeg',
+      description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header3.jpeg',
-      description: 'Hello World!',
+      src: '/assets/images/header12.jpeg',
+      description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header4.jpeg',
-      description: 'Hello Terry!',
-    },
-    {
-      src: '/assets/images/header5.jpeg',
-      description: 'Hello Terry!',
-    },
-    {
-      src: '/assets/images/header7.jpeg',
-      description: 'Hello Terry!',
+      src: '/assets/images/header13.jpeg',
+      description: 'South Curl Curl SLSC',
     },
     {
       src: '/assets/images/header8.jpeg',
-      description: 'Hello Terry!',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header10.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header11.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header14.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header4.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header5.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header7.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header3.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/header2.jpeg',
+      description: 'South Curl Curl SLSC',
     },
   ];
 

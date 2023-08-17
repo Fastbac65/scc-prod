@@ -4,7 +4,6 @@ import NewPost from './NewPost';
 import PostsList from './PostsList';
 // import { Add, FacebookOutlined, Instagram } from '@mui/icons-material';
 // import NewSocialPost from './uploadPost/NewSocialPost';
-import scc1 from 'src/assets/images/scc-fb-grp.jpeg';
 import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { bgGradient } from 'src/lib/cssStyles';

@@ -8,9 +8,9 @@ import useResponsive from 'src/hooks/useResponsive';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
-    startColor: `${alpha(theme.palette.background.default, 1)} 0%`,
-    endColor: `${alpha(theme.palette.background.default, 0.65)} 30%`,
-    imgUrl: '/assets/images/scc-venue.jpeg',
+    startColor: `${alpha(theme.palette.background.neutral, 1)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.65)} 30%`,
+    imgUrl: '/assets/images/scc-party2.jpg',
   }),
   position: 'relative',
   overflow: 'hidden',
@@ -18,8 +18,8 @@ const StyledRoot = styled('div')(({ theme }) => ({
 
 const Styled2ndLayer = styled('div')(({ theme }) => ({
   ...bgGradient({
-    startColor: `${alpha(theme.palette.background.default, 0.65)} 70%`,
-    endColor: `${alpha(theme.palette.background.default, 1)} 100%`,
+    startColor: `${alpha(theme.palette.background.neutral, 0.65)} 70%`,
+    endColor: `${alpha(theme.palette.background.neutral, 1)} 100%`,
   }),
   // position: 'relative',
   // overflow: 'hidden',
@@ -27,7 +27,7 @@ const Styled2ndLayer = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const CalendarDefault = () => {
+const VenueHireCalendar = () => {
   const theme = useTheme();
   const [holidays, setHolidays] = useState(true);
   const [booking, setBooking] = useState(true);
@@ -93,4 +93,4 @@ const CalendarDefault = () => {
   );
 };
 
-export default CalendarDefault;
+export default VenueHireCalendar;

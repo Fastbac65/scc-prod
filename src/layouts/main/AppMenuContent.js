@@ -84,7 +84,7 @@ function MenuItem({ item, user }) {
   const { active } = useActiveLink(item.path);
 
   return (
-    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'primary' : 'inherit'} underline="none">
+    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'primary.light' : 'inherit'} underline="none">
       <ListItemButton
         sx={{
           px: 1,

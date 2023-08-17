@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, styled, alpha } from '@mui/material';
+import { Box, Typography, Stack, styled, alpha, Container } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify/Iconify';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -13,19 +13,19 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.98)} 70%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/scc-party2.jpg',
+    imgUrl: '/assets/images/gusto2.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
       direction: 'to right',
       startColor: `${alpha(theme.palette.background.neutral, 0)} 0%`,
-      endColor: `${alpha(theme.palette.background.neutral, 0.98)} 65%`,
+      endColor: `${alpha(theme.palette.background.neutral, 1)} 55%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/scc-party2.jpg',
+      imgUrl: '/assets/images/gusto2.jpeg',
     }),
-    // backgroundPosition: 'center, left',
-    // backgroundSize: 'cover, auto 100%',
+    backgroundPosition: 'center, left',
+    backgroundSize: 'cover, auto 100%',
   },
 }));
 
@@ -45,37 +45,43 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const VenueHireDetails = () => {
+const OurClubMembership = () => {
   return (
     <StyledRootResponsive>
       {/* <StyledRoot> */}
-      <Box sx={{ px: 1, pb: 2 }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
-        <Stack></Stack>
-        <Stack>
-          <Typography variant="h3" sx={{ mb: 3 }}>
-            Venue Details
-          </Typography>
-          <Stack spacing={1}>
-            <OverviewItem icon="carbon:bar" label="Stylish Wooden Bar" text="Beautiful tables and stools. BYO drinks for you and your guests. Bar service also available." />
-            <OverviewItem icon="material-symbols:soup-kitchen" label="Large Commercial Grade Kitchen" text="Available for all your entertaining requirements. " />
-            <OverviewItem
-              icon="carbon:music"
-              label="State Of The Art Audio/Video Facilities"
-              text="For your music, movies, presentations and conferencing. Everything you could possibly need and easy to setup."
-            />
-            <OverviewItem
-              icon="material-symbols:restaurant"
-              label="Large Bar Servery Area"
-              text="Large private outdoor balcony adjoining the hall. Capacity for up to 120 people. Inside and outside dining with BBQs. "
-            />
+      <Container maxWidth="lg" sx={{ textAlign: 'center', justifyContent: 'center' }}>
+        <Typography variant="h2">SCC Membership</Typography>{' '}
+        <Typography variant="caption" sx={{ mb: 3 }}>
+          scroll within calendar to view
+        </Typography>
+        <Box sx={{ px: 1, p: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
+          <Stack></Stack>
+          <Stack>
+            <Typography variant="h3" sx={{ mb: 3 }}>
+              Venue Details
+            </Typography>
+            <Stack spacing={1}>
+              <OverviewItem icon="carbon:bar" label="Stylish Wooden Bar" text="Beautiful tables and stools. BYO drinks for you and your guests. Bar service also available." />
+              <OverviewItem icon="material-symbols:soup-kitchen" label="Large Commercial Grade Kitchen" text="Available for all your entertaining requirements. " />
+              <OverviewItem
+                icon="carbon:music"
+                label="State Of The Art Audio/Video Facilities"
+                text="For your music, movies, presentations and conferencing. Everything you could possibly need and easy to setup."
+              />
+              <OverviewItem
+                icon="material-symbols:restaurant"
+                label="Large Bar Servery Area"
+                text="Large private outdoor balcony adjoining the hall. Capacity for up to 120 people. Inside and outside dining with BBQs. "
+              />
+            </Stack>
           </Stack>
-        </Stack>
-      </Box>
+        </Box>
+      </Container>
       {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };
-export default VenueHireDetails;
+export default OurClubMembership;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

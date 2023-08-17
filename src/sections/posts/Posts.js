@@ -100,7 +100,7 @@ export default function Posts({ staticPosts }) {
           </Stack>
         )}
       </Box>
-      <Typography variant="h4" py={3} mx={2}>
+      <Typography variant="h2" py={3} mx={2}>
         All News & Activities
       </Typography>
       {/* <Typography variant="h6" color="text" m={2} mb={4}>

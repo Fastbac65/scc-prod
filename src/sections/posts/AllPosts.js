@@ -105,9 +105,6 @@ export default function Posts({ posts }) {
                   icon={<Iconify icon="carbon:favorite" />}
                   checkedIcon={<Iconify icon="carbon:favorite-filled" />}
                 />
-                {/* <Fab color="secondary" id="favourite" size="small" aria-label="like" onClick={handleFavsClick}>
-                    <FavoriteIcon sx={{ color: like }} />
-                  </Fab> */}
               </Tooltip>
             </Stack>
           )}

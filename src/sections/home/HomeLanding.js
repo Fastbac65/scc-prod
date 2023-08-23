@@ -117,9 +117,9 @@ export default function HomeLanding(props) {
 
 function Item({ item }) {
   return (
-    <Box sx={{ height: '250', overflow: 'hidden' }}>
+    <Box sx={{ height: '275', overflow: 'hidden' }}>
       {/* <Image alt={item.description} src={item.src} fill objectFit="cover" /> */}
-      <CardMedia height={250} component="img" alt={item.description} src={item.src} />
+      <CardMedia height={275} component="img" alt={item.description} src={item.src} />
     </Box>
   );
 }

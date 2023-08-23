@@ -54,7 +54,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header7.jpeg',
+      src: '/assets/images/champs7.jpeg',
       description: 'South Curl Curl SLSC',
     },
     {
@@ -62,7 +62,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header2.jpeg',
+      src: '/assets/images/header15.jpeg',
       description: 'South Curl Curl SLSC',
     },
   ];
@@ -78,7 +78,19 @@ export default function HomeLanding(props) {
         </Typography>
         {/* <PreloadImg /> */}
 
-        <Carousel interval={6000} duration={4000} height={250} autoPlay={true} sx={{ borderRadius: 2 }}>
+        <Carousel
+          interval={6000}
+          duration={4000}
+          height={250}
+          autoPlay={true}
+          sx={{ borderRadius: 2 }}
+          indicatorIconButtonProps={{
+            style: {
+              display: 'none',
+              // color: 'blue', // 3
+            },
+          }}
+        >
           {items.map((item, i) => (
             <Item key={i} item={item} />
           ))}

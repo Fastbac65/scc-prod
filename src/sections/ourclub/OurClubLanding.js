@@ -29,7 +29,8 @@ const OurClubLanding = () => {
                 Our Club
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                Club member registration, members information and our rich club history are all here.
+                South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of
+                lifesaving expertise.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

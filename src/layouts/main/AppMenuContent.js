@@ -10,10 +10,7 @@ import useActiveLink from 'src/hooks/useActiveLink';
 // components
 import Iconify from 'src/components/iconify';
 import { useSettingsContext } from 'src/components/settings';
-import { auth } from 'src/lib/createFirebaseApp';
-import { useSignOut } from 'react-firebase-hooks/auth';
 import { useRouter } from 'next/router';
-import { updateProfile } from 'firebase/auth';
 
 // ----------------------------------------------------------------------
 
@@ -21,17 +18,6 @@ export default function AppMenuContent({ data }) {
   const { themeMode, onToggleMode, user } = useSettingsContext();
   const theme = useTheme();
   const router = useRouter();
-
-  const [signOut] = useSignOut(auth);
-
-  const handleLogout = () => {
-    router.push('/');
-    const success = signOut();
-    if (success) {
-      console.log('logged out');
-      //
-    }
-  };
 
   return (
     <Stack

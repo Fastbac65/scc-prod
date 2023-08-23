@@ -54,7 +54,7 @@ const membershipContent = [
   },
 ];
 console.log(membershipContent);
-const OurClubMembership = () => {
+const HomeMembership = () => {
   return (
     <StyledRootResponsive>
       {/* <StyledRoot> */}
@@ -94,7 +94,7 @@ const OurClubMembership = () => {
     </StyledRootResponsive>
   );
 };
-export default OurClubMembership;
+export default HomeMembership;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

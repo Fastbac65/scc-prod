@@ -81,7 +81,7 @@ export default function AccountOrdersTableRow({ row, onSelectRow, selected }) {
           sx: { p: 1, width: 160 },
         }}
       >
-        <Link underline="none" target="_blank" component={NextLink} href={row.receipt_url}>
+        <Link underline="none" target="_blank" rel='noopener' component={NextLink} href={row.receipt_url}>
           <MenuItem onClick={handleClose}>
             <Iconify icon="carbon:document" sx={{ mr: 10 }} />
             <Typography variant="body2" sx={{ pl: 1 }}>

@@ -27,7 +27,7 @@ const Footer = () => {
           <Grid container sx={{ px: 2, display: 'flex', alignItems: 'center' }}>
             {sponsors.map((sponsor) => (
               <Grid item key={sponsor.src} xs={12} sm={4}>
-                <Link href={sponsor.href} target="_blank" rel="noreferrer">
+                <Link href={sponsor.href} target="_blank" rel="noopener">
                   <CardMedia href={sponsors.href} component="img" alt="" src={sponsor.src} />
                 </Link>
               </Grid>

@@ -1,6 +1,5 @@
 import { Stack, Container, Typography, Unstable_Grid2 as Grid, Box, alpha, useTheme } from '@mui/material';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
-
 import { bgGradient } from 'src/lib/cssStyles';
 
 const NippersLanding = () => {
@@ -10,7 +9,7 @@ const NippersLanding = () => {
       <Box
         sx={{
           pt: 8,
-          pb: 2,
+          pb: 1,
           mt: { sm: '16px' },
           position: 'relative',
           ...bgGradient({
@@ -28,7 +27,7 @@ const NippersLanding = () => {
                 Nippers
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                The only place to be on a sunny Sunday morning. Check our weekly update for latest news.
+                The best place to be on a Sunday morning, maximum fun and the highest level of competitive and water safety training for our little ones. Check our weekly update for latest news.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}
@@ -48,7 +47,7 @@ const NippersLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
         </Container>
       </Box>
 

@@ -1,33 +1,6 @@
-import { Stack, Divider, Container, Typography, IconButton, Unstable_Grid2 as Grid, Box, alpha, Link, useTheme, styled } from '@mui/material';
+import { Stack, Container, Typography, Unstable_Grid2 as Grid, Box, alpha, Link, useTheme, styled } from '@mui/material';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
-import Iconify from 'src/components/iconify/Iconify';
-import { socials } from 'src/config-global';
 import { bgGradient } from 'src/lib/cssStyles';
-
-const StyledRootResponsive = styled('div')(({ theme }) => ({
-  padding: theme.spacing(10, 0, 1),
-  ...bgGradient({
-    direction: 'to top',
-
-    startColor: `${alpha(theme.palette.background.neutral, 0.7)} 0%`,
-    endColor: `${alpha(theme.palette.background.neutral, 0.85)} 70%`,
-    // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
-    // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/scc-party2.jpg',
-  }),
-  [theme.breakpoints.up('sm')]: {
-    ...bgGradient({
-      // direction: 'to right',
-      startColor: `${alpha(theme.palette.background.neutral, 0)} 0%`,
-      endColor: `${alpha(theme.palette.background.neutral, 0.98)} 65%`,
-      // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
-      // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: 'assets/images/scc-fb-grp.jpeg',
-    }),
-    // backgroundPosition: 'center, left ',
-    // backgroundSize: 'cover, auto 100%',
-  },
-}));
 
 const VenueHireLanding = () => {
   const theme = useTheme();
@@ -38,7 +11,6 @@ const VenueHireLanding = () => {
           pt: 8,
           pb: 1,
           mt: { sm: '16px' },
-
           position: 'relative',
           ...bgGradient({
             startColor: `${alpha(theme.palette.background.neutral, 0.4)} 0%`,
@@ -74,7 +46,7 @@ const VenueHireLanding = () => {
             </Stack>
           </Grid>
         </Grid>
-        <Container sx={{ pt: 2 }}>
+        <Container>
           <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Venue Details' }]} />
         </Container>
       </Box>

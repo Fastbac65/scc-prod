@@ -1,7 +1,5 @@
-import { Stack, Divider, Container, Typography, IconButton, Unstable_Grid2 as Grid, Box, alpha, Link, useTheme } from '@mui/material';
+import { Stack, Container, Typography, Unstable_Grid2 as Grid, Box, alpha, useTheme } from '@mui/material';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
-import Iconify from 'src/components/iconify/Iconify';
-import { socials } from 'src/config-global';
 import { bgGradient } from 'src/lib/cssStyles';
 
 const OurClubLanding = () => {
@@ -11,7 +9,7 @@ const OurClubLanding = () => {
       <Box
         sx={{
           pt: 8,
-          pb: 2,
+          pb: 1,
           mt: { sm: '16px' },
           position: 'relative',
           ...bgGradient({
@@ -50,7 +48,7 @@ const OurClubLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
         </Container>
       </Box>
 

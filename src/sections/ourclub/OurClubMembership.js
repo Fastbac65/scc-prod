@@ -39,7 +39,7 @@ const membershipContent = [
   },
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'Nippers & Nippers Parents Renewal',
+    label: 'Nippers & Nipper Parents Renewal',
     text: 'Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details',
   },
   // {

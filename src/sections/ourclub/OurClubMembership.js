@@ -35,7 +35,7 @@ const membershipContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'Membership Renewal',
-    text: 'Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadel (u18) $30 and Family Membership $250.',
+    text: 'Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250.',
   },
   {
     icon: 'mdi:flag-variant-outline',

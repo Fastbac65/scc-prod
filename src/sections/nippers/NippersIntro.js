@@ -1,4 +1,5 @@
 import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '@mui/material';
+import NextLink from 'next/link';
 // components
 import Iconify from 'src/components/iconify/Iconify';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -31,40 +32,40 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const membershipContent = [
+const nippersIntroContent = [
   {
-    icon: 'mdi:flag-variant-outline',
-    label: 'Membership Renewal',
-    text: 'Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250.',
+    icon: 'mdi:umbrella-beach',
+    label: 'Family Focus',
+    text: 'South Curly promotes a family-oriented environment, ensuring Nipper activities are enjoyable, secure, and educational for children, parents, and caregivers',
   },
   {
-    icon: 'mdi:flag-variant-outline',
-    label: 'Nippers & Nipper Parents Renewal',
-    text: 'Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details',
+    icon: 'mdi:umbrella-beach',
+    label: 'Beach Craft, Fun and Passion',
+    text: 'Our goal is to impart safe beach skills and cultivate a lifelong love for the ocean among kids, nurturing their connection to the sea.',
   },
-  // {
-  //   icon: 'mdi:flag-variant-outline',
-  //   label: 'New members Welcome',
-  //   text: 'South Curl Curl Surf Life Saving Club welcomes new membership enquiries from all-comers regardless of age and skill levels. Training is available in all facets of surf life saving and members are encouraged to obtain the various life saving qualifications. Registration',
-  // },
   {
-    icon: 'mdi:flag-variant-outline',
-    label: 'New Member & Nipper Registration',
-    text: 'Create a new account for each member at SLS members portal below. Within members portal, pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).',
+    icon: 'mdi:umbrella-beach',
+    label: 'Inclusive Community',
+    text: 'We embrace inclusivity, offering Nipper opportunities to all skill levels and abilities. Our Additional Needs (Rippers) program is a great example and has thrived for years.',
+  },
+  {
+    icon: 'mdi:umbrella-beach',
+    label: 'Vibrant Social Scene',
+    text: 'From lively BBQs and Sippers gatherings to camping trips and more, our club thrives socially, fostering camaraderie and connection among members.',
   },
 ];
-console.log(membershipContent);
-const OurClubMembership = () => {
+console.log(nippersIntroContent);
+const NippersIntro = () => {
   return (
     <StyledRootResponsive>
       {/* <StyledRoot> */}
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Membership</Typography>
+            <Typography variant="h3">Welcome to Nippers 2023/24</Typography>
             <Typography variant="body2">
-              South Curl Curl Surf Life Saving Club welcomes all new membership enquiries from all-comers regardless of age and skill levels. For our new Nippers and parents, an amazing fun program awaits you.
-              For those aspiring to compete, you are in the right place. The Club has a relatively small and friendly membership base and all interests are catered for, especially social.
+              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2023/2024 season. So what is South Curly
+              Nippers all about?
             </Typography>
           </Stack>
         </Box>
@@ -73,28 +74,28 @@ const OurClubMembership = () => {
           <Stack></Stack>
           <Stack>
             <Stack spacing={1}>
-              {membershipContent.map((item) => (
+              {nippersIntroContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>
           </Stack>
         </Stack>
-        <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">
-          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-            SLS Members Portal
-          </Button>
-        </Link>
         <Box display="flex" justifyContent="center">
-          <Stack sx={{ pt: 2, maxWidth: '800px' }}>
-            <Typography variant="caption">If you experience difficulties in setting up an online account or renewal, please email the club at mail@southcurlcurlslsc.org.</Typography>
+          <Stack sx={{ py: 2, maxWidth: '800px' }}>
+            <Typography variant="caption">All membership renewals and new Nipper registrations are now online. Please follow link below for full instructions.</Typography>
           </Stack>
         </Box>
+        <Link component={NextLink} href="/ourclub">
+          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+            SCC Membership
+          </Button>
+        </Link>
       </Container>
       {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };
-export default OurClubMembership;
+export default NippersIntro;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

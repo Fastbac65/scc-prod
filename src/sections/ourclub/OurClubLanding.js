@@ -13,8 +13,8 @@ const OurClubLanding = () => {
           mt: { sm: '16px' },
           position: 'relative',
           ...bgGradient({
-            startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,
-            endColor: `${theme.palette.background.default} 105%`,
+            startColor: `${alpha(theme.palette.background.neutral, 0.4)} 0%`,
+            endColor: `${alpha(theme.palette.background.neutral, 0.98)} 100%`,
             imgUrl: 'assets/images/scc-fb-grp.jpeg',
           }),
         }}

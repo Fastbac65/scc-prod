@@ -13,8 +13,8 @@ const NippersLanding = () => {
           mt: { sm: '16px' },
           position: 'relative',
           ...bgGradient({
-            startColor: `${alpha(theme.palette.background.default, 0.4)} 0%`,
-            endColor: `${theme.palette.background.default} 105%`,
+            startColor: `${alpha(theme.palette.background.neutral, 0.4)} 0%`,
+            endColor: `${alpha(theme.palette.background.neutral, 0.98)} 100%`,
             imgUrl: 'assets/images/scc-fb-grp.jpeg',
           }),
         }}
@@ -27,7 +27,8 @@ const NippersLanding = () => {
                 Nippers
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                The best place to be on a Sunday morning, maximum fun and the highest level of competitive and water safety training for our little ones. Check our weekly update for latest news.
+                For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400
+                little caps adorning our glorious beach.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}
@@ -47,7 +48,7 @@ const NippersLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Nippers' }]} />
         </Container>
       </Box>
 

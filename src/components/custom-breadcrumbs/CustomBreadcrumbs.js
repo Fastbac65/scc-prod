@@ -62,7 +62,7 @@ function Separator() {
   return (
     <Box
       component="div"
-      sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: '#ffdc09', zIndex: 100, border: '0.5px solid blue' }}
+      sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#ffdc09', zIndex: 100, border: '0.5px solid blue' }}
       // sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'text.disabled' }}
     />
   );

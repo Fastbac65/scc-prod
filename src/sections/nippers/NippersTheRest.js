@@ -21,8 +21,8 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     // padding: theme.spacing(6, 0, 4),
     ...bgGradient({
       direction: 'to bottom',
-      startColor: `${alpha(theme.palette.background.neutral, 0.8)} 30%`,
-      endColor: `${alpha(theme.palette.background.neutral, 1)} 95%`,
+      startColor: `${alpha(theme.palette.background.neutral, 0.6)} 30%`,
+      endColor: `${alpha(theme.palette.background.neutral, 1)} 98%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
       imgUrl: '/assets/images/gusto1.jpeg',

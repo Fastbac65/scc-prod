@@ -18,7 +18,7 @@ const StyledMarkdown = styled('div', {
   '& h4': { ...MARGIN, ...theme.typography.h4 },
   '& h5': { ...MARGIN, ...theme.typography.h5 },
   '& h6': { ...MARGIN, ...theme.typography.h6 },
-  '& p': { ...MARGIN, ...theme.typography.body1, color: theme.palette.text.secondary, fontSize: '15px' },
+  '& p': { ...MARGIN, ...theme.typography.body2, color: theme.palette.text.secondary },
 
   // Link
   a: {
@@ -36,10 +36,11 @@ const StyledMarkdown = styled('div', {
 
   // List
   '& ul, & ol': {
-    ...theme.typography.body1,
-    paddingLeft: theme.spacing(5),
+    ...theme.typography.body2,
+    color: theme.palette.text.secondary,
+    paddingLeft: theme.spacing(4),
     '& li': {
-      lineHeight: 2,
+      lineHeight: 1.5,
     },
   },
 

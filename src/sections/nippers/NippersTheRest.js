@@ -21,7 +21,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     // padding: theme.spacing(6, 0, 4),
     ...bgGradient({
       direction: 'to bottom',
-      startColor: `${alpha(theme.palette.background.neutral, 0.6)} 30%`,
+      startColor: `${alpha(theme.palette.background.neutral, 0.6)} 20%`,
       endColor: `${alpha(theme.palette.background.neutral, 1)} 98%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,

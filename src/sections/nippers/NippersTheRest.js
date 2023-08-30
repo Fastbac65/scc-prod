@@ -64,7 +64,7 @@ const NippersTheRest = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">Nippers - What Else?</Typography>
+            <Typography variant="h3">Nippers Information Booklet</Typography>
             <Typography variant="body2">
               A couple of other keys points below. For everything else we have created the ultimate Nippers Information Booklet, link below. We also use TeamApp to provide members up to date information on
               carnivals and events. Instructions to install TeamApp also provided within the booklet.

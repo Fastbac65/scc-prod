@@ -58,7 +58,6 @@ console.log(nippersIntroContent);
 const NippersIntro = () => {
   return (
     <StyledRootResponsive>
-      {/* <StyledRoot> */}
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
@@ -91,7 +90,6 @@ const NippersIntro = () => {
           </Button>
         </Link>
       </Container>
-      {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };

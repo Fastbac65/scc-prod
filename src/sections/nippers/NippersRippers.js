@@ -58,7 +58,10 @@ console.log(rippersContent);
 const NippersRippers = () => {
   return (
     <StyledRootResponsive>
-      {/* <StyledRoot> */}
+      <div style={{ position: 'relative' }}>
+        <div id="rippers" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
+
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
@@ -86,7 +89,6 @@ const NippersRippers = () => {
           </Stack>
         </Box>
       </Container>
-      {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };

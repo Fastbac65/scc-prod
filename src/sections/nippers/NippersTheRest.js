@@ -60,7 +60,9 @@ console.log(nippersTheRestContent);
 const NippersTheRest = () => {
   return (
     <StyledRootResponsive>
-      {/* <StyledRoot> */}
+      <div style={{ position: 'relative' }}>
+        <div id="booklet" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
@@ -99,7 +101,6 @@ const NippersTheRest = () => {
           </Button>
         </Link>
       </Container>
-      {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };

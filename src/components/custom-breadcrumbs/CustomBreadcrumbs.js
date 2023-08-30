@@ -24,7 +24,7 @@ export default function CustomBreadcrumbs({ links, action, heading, moreLink, ac
           {!!links.length && (
             <Breadcrumbs separator={<Separator />} {...other}>
               {links.map((link) => (
-                <LinkItem key={link.name || ''} link={link} activeLast={activeLast} disabled={link.name === lastLink} />
+                <LinkItem key={link.name || ''} link={link} activeLast={activeLast} /*disabled={link.name === lastLink}*/ />
               ))}
             </Breadcrumbs>
           )}

@@ -57,7 +57,6 @@ console.log(membershipContent);
 const HomeMembership = () => {
   return (
     <StyledRootResponsive>
-      {/* <StyledRoot> */}
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
@@ -90,7 +89,6 @@ const HomeMembership = () => {
           </Stack>
         </Box>
       </Container>
-      {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };

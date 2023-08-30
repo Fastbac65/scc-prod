@@ -48,7 +48,6 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const VenueHireDetails = () => {
   return (
     <StyledRootResponsive>
-      {/* <StyledRoot> */}
       <Box sx={{ px: 1, pb: 2 }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
         <Stack></Stack>
         <Stack>
@@ -71,7 +70,6 @@ const VenueHireDetails = () => {
           </Stack>
         </Stack>
       </Box>
-      {/* </StyledRoot> */}
     </StyledRootResponsive>
   );
 };

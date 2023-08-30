@@ -48,7 +48,14 @@ const NippersLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Nippers' }]} />
+          <CustomBreadcrumbs
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Information for Nippers/Parents', href: '/nippers/#info' },
+              { name: 'Rippers', href: '/nippers/#rippers' },
+              { name: 'Nippers Information Booklet', href: '/nippers/#booklet' },
+            ]}
+          />
         </Container>
       </Box>
 

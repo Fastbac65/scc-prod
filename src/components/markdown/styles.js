@@ -8,6 +8,11 @@ const MARGIN = {
   marginBottom: 16,
 };
 
+const pMargin = {
+  marginTop: 0,
+  marginBottom: 0,
+};
+
 const StyledMarkdown = styled('div', {
   shouldForwardProp: (prop) => prop !== 'firstLetter',
 })(({ firstLetter, theme }) => ({
@@ -18,11 +23,11 @@ const StyledMarkdown = styled('div', {
   '& h4': { ...MARGIN, ...theme.typography.h4 },
   '& h5': { ...MARGIN, ...theme.typography.h5 },
   '& h6': { ...MARGIN, ...theme.typography.h6 },
-  '& p': { ...MARGIN, ...theme.typography.body2, color: theme.palette.text.secondary },
+  '& p': { ...pMargin, ...theme.typography.body2, color: theme.palette.text.secondary },
 
   // Link
   a: {
-    color: theme.palette.primary.main,
+    color: theme.palette.mode === 'light' ? theme.palette.primary.light : theme.palette.primary.lighter,
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'underline',

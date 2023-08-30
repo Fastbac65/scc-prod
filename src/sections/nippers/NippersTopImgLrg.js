@@ -6,27 +6,28 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
 const StyledRootResponsive = styled('div')(({ theme }) => ({
-  padding: theme.spacing(4, 0),
+  padding: theme.spacing(4, 0, 4),
   ...bgGradient({
-    direction: 'to top',
+    direction: 'to bottom',
 
-    startColor: `${alpha(theme.palette.background.neutral, 0.6)} 0%`,
-    endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
+    startColor: `${alpha(theme.palette.background.neutral, 0.7)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.95)} 80%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/gusto2.jpeg',
+    imgUrl: '/assets/images/gusto1.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
+    padding: theme.spacing(6, 0, 4),
     ...bgGradient({
-      direction: 'to right',
-      startColor: `${alpha(theme.palette.background.neutral, 0)} 5%`,
-      endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
+      direction: 'to bottom',
+      startColor: `${alpha(theme.palette.background.neutral, 0.8)} 30%`,
+      endColor: `${alpha(theme.palette.background.neutral, 1)} 95%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/gusto2.jpeg',
+      imgUrl: '/assets/images/gusto1.jpeg',
     }),
-    backgroundPosition: 'center, left',
-    backgroundSize: 'cover, auto 100%',
+    backgroundPosition: 'center, top',
+    // backgroundSize: 'cover',
   },
 }));
 
@@ -55,7 +56,7 @@ const nippersIntroContent = [
   },
 ];
 console.log(nippersIntroContent);
-const NippersIntro = () => {
+const NippersTopImgLrg = () => {
   return (
     <StyledRootResponsive>
       {/* <StyledRoot> */}
@@ -70,8 +71,7 @@ const NippersIntro = () => {
           </Stack>
         </Box>
 
-        <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 3fr' }}>
-          <Stack></Stack>
+        <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr' }}>
           <Stack>
             <Stack spacing={1}>
               {nippersIntroContent.map((item) => (
@@ -95,16 +95,16 @@ const NippersIntro = () => {
     </StyledRootResponsive>
   );
 };
-export default NippersIntro;
+export default NippersTopImgLrg;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (
     <Stack spacing={2.5} direction="row" alignItems="flex-start">
-      <Box sx={{ width: 24, height: 24 }}>
+      {/* <Box sx={{ width: 24, height: 24 }}>
         <Iconify icon={icon} />
-      </Box>
+      </Box> */}
       <Stack spacing={0.5}>
-        <Typography>{label}</Typography>
+        <Typography variant="h4">{label}</Typography>
         <Typography color="text.secondary" variant="body2">
           {text}
         </Typography>

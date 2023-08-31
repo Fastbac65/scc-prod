@@ -14,7 +14,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/gusto2.jpeg',
+    imgUrl: '/assets/images/gusto3.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
@@ -23,7 +23,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
       endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/gusto2.jpeg',
+      imgUrl: '/assets/images/gusto3.jpeg',
     }),
     backgroundPosition: 'center, left',
     backgroundSize: 'cover, auto 100%',

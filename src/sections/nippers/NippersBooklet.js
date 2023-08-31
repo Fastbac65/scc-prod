@@ -34,7 +34,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const nippersTheRestContent = [
+const nippersBookletContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'Uniform & Gear Sales',
@@ -56,7 +56,7 @@ const nippersTheRestContent = [
     text: `<p>Any parent assisting on the beach should be registered as an associate member to cover insurance issues. Age Managers and Water Safety (where outside your own child’s age group) also need to apply for and show proof of approval for “Working With Children Check” for child protection. Please complete the registration process at: <a target='_blank' rel='noopener' href='https://www.service.nsw.gov.au/transaction/apply-for-a-working-with-children-check' >Working With Children Check</a></p>`,
   },
 ];
-console.log(nippersTheRestContent);
+console.log(nippersBookletContent);
 const NippersTheRest = () => {
   return (
     <StyledRootResponsive>
@@ -77,7 +77,7 @@ const NippersTheRest = () => {
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr' }}>
           <Stack>
             <Stack spacing={1}>
-              {nippersTheRestContent.map((item) => (
+              {nippersBookletContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>

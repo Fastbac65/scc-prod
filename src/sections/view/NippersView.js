@@ -3,7 +3,7 @@ import RecentPosts from '../posts/RecentPosts';
 import NippersLanding from '../nippers/NippersLanding';
 import NippersIntro from '../nippers/NippersIntro';
 import NippersInformation from '../nippers/NippersInformation';
-import NippersTheRest from '../nippers/NippersTheRest';
+import NippersBooklet from '../nippers/NippersBooklet';
 import NippersRippers from '../nippers/NippersRippers';
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ export default function NippersView({ staticPosts }) {
       <NippersIntro />
       <NippersInformation />
       <NippersRippers />
-      <NippersTheRest />
+      <NippersBooklet />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

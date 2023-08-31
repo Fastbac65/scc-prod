@@ -33,22 +33,22 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 const membershipContent = [
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'tdesign:member',
     label: 'Membership Renewal',
     text: 'Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250.',
   },
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'tdesign:member',
     label: 'Nippers & Nipper Parents Renewal',
     text: 'Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details',
   },
   // {
-  //   icon: 'mdi:flag-variant-outline',
+  //   icon: 'tdesign:member',
   //   label: 'New members Welcome',
   //   text: 'South Curl Curl Surf Life Saving Club welcomes new membership enquiries from all-comers regardless of age and skill levels. Training is available in all facets of surf life saving and members are encouraged to obtain the various life saving qualifications. Registration',
   // },
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'tdesign:member',
     label: 'New Member & Nipper Registration',
     text: 'Create a new account for each member at SLS members portal below. Within members portal, pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).',
   },

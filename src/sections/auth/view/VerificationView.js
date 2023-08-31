@@ -24,7 +24,7 @@ export default function VerificationView() {
     const { oobCode, mode, continueUrl } = router.query;
 
     if (!oobCode || !mode) {
-      router.back();
+      router.push('/');
       return;
     }
     verifyUser(oobCode, mode, continueUrl);

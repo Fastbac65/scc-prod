@@ -15,7 +15,7 @@ export default function LoginCoverPage() {
 
   useEffect(() => {
     if (!loading && user && !holdRouter) {
-      router.back();
+      router.push('/');
     }
   }, [user, loading, holdRouter]);
 

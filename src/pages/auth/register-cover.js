@@ -16,7 +16,7 @@ export default function RegisterCoverPage() {
 
   useEffect(() => {
     if (!loading && user && !holdRouter) {
-      router.back();
+      router.push('/');
     }
   }, [user, loading, holdRouter]);
 

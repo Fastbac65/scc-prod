@@ -103,7 +103,7 @@ function OverviewItem({ icon, label, text = '-' }) {
         <Iconify icon={icon} />
       </Box>
       <Stack spacing={0.5}>
-        <Typography variant="h4">{label}</Typography>
+        <Typography variant="h5">{label}</Typography>
         <Markdown content={text} />
         {/* <Typography color="text.secondary" variant="body2">
           {text}

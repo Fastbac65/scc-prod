@@ -14,14 +14,16 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/boaties1.jpeg',
+    imgUrl: '/assets/images/patrol4.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
       direction: 'to left',
       startColor: `${alpha(theme.palette.background.neutral, 0)} 5%`,
       endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
-      imgUrl: '/assets/images/boaties1.jpeg',
+      // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
+      // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
+      imgUrl: '/assets/images/patrol4.jpeg',
     }),
     backgroundPosition: 'center, right',
     backgroundSize: 'cover, auto 100%',
@@ -30,48 +32,50 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const boatiesContent = [
+const patrolInfoContent = [
   {
-    icon: 'material-symbols:rowing-rounded',
+    icon: 'mdi:flag-variant-outline',
     label: 'Skill Development Focus',
-    text: `boaties are awesome this and that`,
+    text: `The programs core objective is to impart crucial skills such as surf awareness and beach safety. Through carefully structured sessions, participants develop a strong foundation in ocean safety while boosting their self-assurance in a supportive setting.`,
   },
   {
-    icon: 'material-symbols:rowing-rounded',
-    label: 'State and National Success',
-    text: `Molly hadn’t seen the dead girl’s face swirl like smoke, to take on the wall between the bookcases, its distorted face sagging to the Tank War, mouth touched with hot gold as a gliding cursor struck sparks from the wall between the bookcases, its distorted face sagging to the bare concrete floor. `,
+    icon: 'mdi:flag-variant-outline',
+    label: 'Engaging Activities',
+    text: `Alongside skill acquisition, the program engages participants in a variety of enjoyable activities including beach races, friendly flags, ocean wades and progressive introduction to using nipper surfboards as confidence in the water grows.`,
   },
   {
-    icon: 'material-symbols:rowing-rounded',
+    icon: 'mdi:flag-variant-outline',
     label: 'Family-Centered Approach',
-    text: `Now this quiet courtyard, Sunday afternoon, this girl with a hand on his chest. She put his pistol down, picked up her fletcher, dialed the barrel over to single shot, and very carefully put a toxin dart through the center of a heroin factory. `,
+    text: `Parents and guardians are welcomed to join their children during sessions. This family-oriented approach ensures that everyone shares in the excitement as participants master new skills throughout the season.`,
   },
   {
-    icon: 'material-symbols:rowing-rounded',
+    icon: 'mdi:flag-variant-outline',
     label: 'Dual Participation Opportunities',
     text: `Members of the 'Rippers' group are also given the option to participate in their mainstream age groups if they wish, fostering a sense of belonging and integration. Its all about providing an active learning and fun environment for all participants.`,
   },
 ];
-console.log(boatiesContent);
-const CompetitorsBoaties = () => {
+console.log(patrolInfoContent);
+const PatrolInformation = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="boaties" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="patrolinfo" style={{ position: 'absolute', top: '-80px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Boaties</Typography>
-            <Typography variant="body2">South Curl Curl has a long heritage of extremely successful rowing teams......</Typography>
+            <Typography variant="h3">SCC Patrol</Typography>
+            <Typography variant="body2">
+              All active members are required to be rostered onto patrol duty throughout the season on a rotational basis usually one day per month, which equates to 5-6 half day patrols per season.
+            </Typography>
           </Stack>
         </Box>
 
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
-              {boatiesContent.map((item) => (
+              {patrolInfoContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>
@@ -80,14 +84,14 @@ const CompetitorsBoaties = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
-            <Typography variant="caption">Email Boat Captain - Boatiesemailhere@southcurlynippers.com.</Typography>
+            <Typography variant="caption">Email Patrol Capt - patrol@southcurlynippers.com if you have any requirements for this program or would like to help out.</Typography>
           </Stack>
         </Box>
       </Container>
     </StyledRootResponsive>
   );
 };
-export default CompetitorsBoaties;
+export default PatrolInformation;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

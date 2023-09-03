@@ -10,7 +10,7 @@ export default function OurClubView({ staticPosts }) {
     <>
       <OurClubLanding />
       <OurClubMembership />
-      <OurClubTest />
+      {/* <OurClubTest /> */}
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

@@ -1,12 +1,15 @@
 import Image from 'next/image';
 
-import { CardMedia, Grid, Link, Paper, Typography, Box } from '@mui/material';
+import { CardMedia, Grid, Link, Paper, Typography, Box, useTheme } from '@mui/material';
 
 const Footer = () => {
+  const theme = useTheme();
+
   const sponsors = [
     {
       href: 'https://sydneybeachhomes.com.au/',
-      src: 'https://southcurlcurlslsc.org/wp-content/uploads/2018/02/Sydney-Beach-Homes-LOGO.jpg',
+      // src: '/assets/sponsors/sbh-white.jpeg',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/sbh-dark.webp' : '/assets/sponsors/sbh-white.jpeg',
     },
     {
       href: 'http://www.bendigobank.com.au/about_us/locate_us/locator_detail.asp?BranchNumber=9238',
@@ -22,7 +25,7 @@ const Footer = () => {
   return (
     //sponsors
     <Box sx={{ textAlign: 'center', justifyContent: 'center' }}>
-      <Paper sx={{ background: 'white', boxShadow: 0, borderRadius: 0 }}>
+      <Paper sx={{ background: theme.palette.mode === 'dark' ? '#000' : 'white', boxShadow: 0, borderRadius: 0 }}>
         <Grid container sx={{ px: 2, display: 'flex', alignItems: 'center' }}>
           {sponsors.map((sponsor) => (
             <Grid item key={sponsor.src} xs={12} sm={4}>

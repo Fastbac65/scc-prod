@@ -52,8 +52,9 @@ const nippersIntroContent = [
     text: `
     <p>To give the little ones a chance to use the beach & pool without being "crashed" by the big kids, we have different starting times for the younger age groups as follows:</p>
     <ul>
-    <li>8.45am to 9.45am - Under 6, 7 and 8 and SRC</li>
-    <li>10am to 11am - Under 9–13 and Rippers (Additional Needs Nippers)</li>
+    <li>8am to 9am - Surf Rescue Cadets (Under 15-17 years)</li>
+    <li>8.45am to 9.45am - Under 6, 7 and 8 years</li>
+    <li>10am to 11am - Under 9–13 years and Rippers (Additional Needs Nippers)</li>
     </ul>
     <p>The younger age groups can take longer than the allocated hour depending on numbers and helpers available. Nippers assemble behind their age marker on the beach for roll call and must be wearing their age-colour nipper cap and have sunscreen applied before Nippers starts. At the end of the nippers session, each child must be marked off the roll prior to leaving with parent. Nipper caps are to be removed once Nippers has finished.</p>
     `,

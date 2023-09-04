@@ -39,7 +39,7 @@ const Footer = () => {
       <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={1} paragraph color="text-primary" variant="caption">
           Email:{' '}
-          <Link color="secondary" href="mailto:mail@southcurlcurlslsc.org">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.org">
             {' '}
             mail@southcurlcurlslsc.org
           </Link>
@@ -47,11 +47,11 @@ const Footer = () => {
         </Typography>
         <Typography color="text-primary" pb={1} paragraph variant="caption">
           © Copyright 2023 | South Curl Curl Surf Lifesaving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color="secondary" target="_blank" href="https://southcurlcurlslsc.org/terms-conditions">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.org/terms-conditions">
             Terms & Conditions
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color="secondary" target="_blank" href="https://southcurlcurlslsc.org/privacy">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.org/privacy">
             Privacy
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Site by TezD

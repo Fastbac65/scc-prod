@@ -54,7 +54,8 @@ const CompetitorsLanding = () => {
             links={[
               { name: 'Home', href: '/' },
               { name: 'Champs', href: '/competitors/#champs' },
-              { name: 'SRC', href: '/competitors/#champs' },
+              { name: 'SRC', href: '/competitors/#cadets' },
+              { name: 'Boaties', href: '/competitors/#boaties' },
             ]}
           />
         </Container>

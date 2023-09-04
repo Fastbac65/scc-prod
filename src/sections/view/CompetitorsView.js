@@ -10,8 +10,8 @@ export default function VenueHireView({ staticPosts }) {
   return (
     <>
       <CompetitorsLanding />
-      <CompetitorsBoaties />
       <CompetitorsChamps />
+      <CompetitorsBoaties />
       <CompetitorsCadets />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>

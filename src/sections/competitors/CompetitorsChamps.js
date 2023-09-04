@@ -61,7 +61,7 @@ const champsContent = [
     icon: 'mdi:run',
     label: 'Follow Us',
     text: `
-    <p>For all the latest updates and posts, follow out Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/scchampionlifesavers/'   >@scchampionlifesavers</a></p>`,
+    <p>For all the latest updates and posts, follow our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/scchampionlifesavers/'   >@scchampionlifesavers</a></p>`,
   },
 ];
 console.log(champsContent);

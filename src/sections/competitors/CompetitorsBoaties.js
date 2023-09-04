@@ -66,7 +66,7 @@ const CompetitorsBoaties = () => {
             <Typography variant="h3">SCC Boaties</Typography>
             <Typography variant="body2">
               Our mission with the South Curl Curl SLSC Rowing Teams is to champion competitive excellence. We strive to nurture a deep passion for rowing, foster camaraderie, and instill discipline while
-              representing our club with pride on regional, state and national waters.
+              representing our club with pride on branch, state and national waters.
             </Typography>
           </Stack>
         </Box>

@@ -78,7 +78,7 @@ const CompetitorsChamps = () => {
             <Typography variant="h3">SCC Championship Lifesavers</Typography>
             <Typography variant="body2">
               Championing the development of elite lifesavers, we strive to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful beaches,
-              all while fostering a culture of unwavering dedication to water safety.
+              come join the best of the best..
             </Typography>
           </Stack>
         </Box>

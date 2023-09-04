@@ -76,7 +76,10 @@ const CompetitorsChamps = () => {
         <Box display="flex" justifyContent="center">
           <Stack>
             <Typography variant="h3">SCC Championship Lifesavers</Typography>
-            <Typography variant="body2">South Curl Curl are epic.. can we have more medals pls</Typography>
+            <Typography variant="body2">
+              Championing the development of elite lifesavers, our mission is to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful
+              beaches, all while fostering a culture of unwavering dedication to water safety.
+            </Typography>
           </Stack>
         </Box>
 

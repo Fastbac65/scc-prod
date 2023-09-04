@@ -13,7 +13,7 @@ const Footer = () => {
     },
     {
       href: 'http://www.bendigobank.com.au/about_us/locate_us/locator_detail.asp?BranchNumber=9238',
-      src: theme.palette.mode === 'dark' ? '/assets/sponsors/white-bendigo.jpeg' : '/assets/sponsors/white-bendigo.jpeg',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/light-bendigo.jpeg' : '/assets/sponsors/white-bendigo.jpeg',
     },
 
     {

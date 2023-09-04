@@ -59,7 +59,6 @@ const CompetitorsBoaties = () => {
       <div style={{ position: 'relative' }}>
         <div id="boaties" style={{ position: 'absolute', top: '-80px' }} />
       </div>
-
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>

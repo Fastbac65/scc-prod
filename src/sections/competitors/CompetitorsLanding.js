@@ -49,7 +49,14 @@ const CompetitorsLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs
+            sx={{ mb: 3 }}
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Champs', href: '/competitors/#champs' },
+              { name: 'SRC', href: '/competitors/#champs' },
+            ]}
+          />
         </Container>
       </Box>
 

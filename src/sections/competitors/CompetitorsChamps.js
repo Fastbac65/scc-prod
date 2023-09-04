@@ -37,31 +37,31 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const champsContent = [
   {
     icon: 'mdi:run',
-    label: 'What is a champion lifesaver',
+    label: 'What is a Champion Lifesaver?',
     text: `
-    <p>To give the little ones a chance to use the beach & pool without being "crashed" by the big kids, we have different starting times for the younger age groups as follows:</p>
-    <ul>
-    <li>this</li>
-    <li>1that</li>
-    <li>other</li>
-    <li>another</li>
-    </ul>
-    <p>No light but the muted purring of the Flatline as a construct, a hardwired ROM cassette replicating a dead man’s skills, obsessions, kneejerk responses. No light but the muted purring of the bright void beyond the chain link. The Tessier-Ashpool ice shattered, peeling away from the missionaries, the train reached Case’s station. The Tessier-Ashpool ice shattered, peeling away from the missionaries,.</p>`,
+    <p>Becoming a South Curl Curl Champion Lifesaver is not just a title; it’s a journey that demands unwavering dedication and a profound commitment to rigorous training. Imagine early mornings and late evenings, where the gym, the pool, and the beautiful ocean become your training grounds. A relentless pursuit of physical and mental excellence through board races, beach sprints, tube rescues and all aspects of aquatic rescue, CPR and first aid.</p>
+    
+    <p>Amid the training and assessments, what makes this journey truly remarkable is the sense of community. Lifesavers create bonds through shared laughter, unforgettable memories, and unique experiences. It's not just a sport or an event; it's a way of life where the commitment is matched by the warmth of camaraderie.</p>`,
   },
   {
     icon: 'mdi:run',
-    label: 'Parents Run Nippers',
+    label: 'A Champion Lifesaver Event',
     text: `
-    <p>The Club operates entirely on volunteer help. There are many jobs, and for many you don’t need surf lifesaving experience. It is our experience that <strong>the more you get involved, the more your child will enjoy Nippers.</strong> Roles that parents can help with include:</p>
+    <p>The Champion Lifesaver event provides Surf Life Saving members (minimum age group U15) with the opportunity to demonstrate, in a competitive manner, the physical, lifesaving and knowledge skills required of a Lifesaver. The event is determined through a scoring system, where the competitor with the highest score, after all 3 sections, is declared the winner. The maximum attainable score in total is 120 points.</p>
     <ul>
-    <li>Age Managers/Assistants & Nippers Committee Roles</li>
-    <li>Water Safety (Bronze Medalion required)</li>
-    <li>Clothing Sales</li>
-    <li>Fundraising and BBQ</li>
-    <li>Carnivals - Entry assistance and/or becoming an Official</li>
+    <li>Physical Skills 40 points - Surf (swim) Race, Board Race, Beach Sprint, Tube Rescue (10 points each)</li>
+    <li>Questionnaire 40 points - The theory section consists of 40 multiple choice questions derived from the current edition of the SLSA Public Safety and Aquatic Rescue Manual. 30-minute time limit.</li>
+    <li>Resuscitation 40 points - Part A: A live patient assessment including lateral position (20 points maximum), Part B: One person CPR on a manikin (20 points maximum)
     </ul>
-    <p><strong>Please Note:</strong> We require a parent/guardian to be on the beach at all times during Nippers. It's a lot more fun to participate. Your assistance throughout the season will be regularly required and counted upon. Please offer your help.</p>
-    `,
+</li>
+    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact:
+    Bill Yeates (Theory and Resus Coach): +61 432 667 314 or Peter Yeates (Physical Coach): +61 408 657 739</p>`,
+  },
+  {
+    icon: 'mdi:run',
+    label: 'Follow Us',
+    text: `
+    <p>For all the latest updates and posts, follow out Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/scchampionlifesavers/'   >@scchampionlifesavers</a></p>`,
   },
 ];
 console.log(champsContent);
@@ -75,7 +75,7 @@ const CompetitorsChamps = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">SCC Championship Lifesavers</Typography>
+            <Typography variant="h3">SCC Champion Lifesavers</Typography>
             <Typography variant="body2">
               Championing the development of elite lifesavers, we strive to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful beaches,
               come join the best of the best..

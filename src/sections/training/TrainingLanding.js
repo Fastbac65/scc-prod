@@ -29,8 +29,8 @@ const TrainingLanding = () => {
                 Training
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                At South Curl Curl SLSC, our training is dedicated to equipping members with essential skills and knowledge for effective lifesaving. We prioritize continuous learning and development, ensuring
-                readiness to protect lives on our beautiful and challenging beach.
+                Our training is dedicated to equipping members with essential skills and knowledge for effective lifesaving. We prioritize continuous learning and development, ensuring readiness to protect
+                lives on our beautiful and challenging beach.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

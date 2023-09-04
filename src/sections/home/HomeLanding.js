@@ -42,7 +42,15 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
+      src: '/assets/images/header15.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
       src: '/assets/images/header14.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
+      src: '/assets/images/champs7.jpeg',
       description: 'South Curl Curl SLSC',
     },
     {
@@ -54,15 +62,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/champs7.jpeg',
-      description: 'South Curl Curl SLSC',
-    },
-    {
       src: '/assets/images/header3.jpeg',
-      description: 'South Curl Curl SLSC',
-    },
-    {
-      src: '/assets/images/header15.jpeg',
       description: 'South Curl Curl SLSC',
     },
   ];

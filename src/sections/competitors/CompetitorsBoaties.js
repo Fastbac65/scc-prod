@@ -64,7 +64,10 @@ const CompetitorsBoaties = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
             <Typography variant="h3">SCC Boaties</Typography>
-            <Typography variant="body2">South Curl Curl has a long heritage of extremely successful rowing teams......</Typography>
+            <Typography variant="body2">
+              Our mission with the South Curl Curl SLSC Rowing Teams is to champion competitive excellence. We strive to nurture a deep passion for rowing, foster camaraderie, and instill discipline while
+              representing our club with pride on regional, state and national waters.
+            </Typography>
           </Stack>
         </Box>
 

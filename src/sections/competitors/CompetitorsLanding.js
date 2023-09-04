@@ -28,7 +28,8 @@ const CompetitorsLanding = () => {
                 Competitors
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                The only place to be on a sunny Sunday morning. Check our weekly update for latest news.
+                Our competitors at South Curl Curl SLSC share a unified mission: To excel in the waters, on the sand, and beyond. We commit to relentless training, unwavering dedication, and embodying the
+                values of lifesaving.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

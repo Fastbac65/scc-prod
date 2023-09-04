@@ -35,23 +35,23 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const cadetsContent = [
   {
     icon: 'mingcute:hat-2-line',
-    label: 'Family Focus',
-    text: 'South Curly promotes a family-oriented environment, ensuring Nipper activities are enjoyable, secure, and educational for children, parents, and caregivers',
+    label: 'Comprehensive Training and Skill Development',
+    text: 'Surf Life Saving Cadets at South Curl Curl SLSC undergo rigorous and comprehensive training. They learn vital skills like water rescue techniques, CPR, first aid, and surf awareness, ensuring they are well-prepared to respond effectively in emergency situations.',
   },
   {
     icon: 'mingcute:hat-2-line',
-    label: 'Beach Craft, Fun and Passion',
-    text: 'Our goal is to impart safe beach skills and cultivate a lifelong love for the ocean among kids, nurturing their connection to the sea.',
+    label: 'Community-Centric Values',
+    text: 'Our cadets program places a strong emphasis on community values. Cadets are just beginning their journey to teens and beyond and with a great sense of adventure they are taught to prioritize the safety and well-being of beachgoers whilst embodying the ethos of Surf Life Saving.',
   },
   {
     icon: 'mingcute:hat-2-line',
-    label: 'Inclusive Community',
-    text: 'We embrace inclusivity, offering Nipper opportunities to all skill levels and abilities. Our Additional Needs (Rippers) program is another great example of this and has thrived for years.',
+    label: 'Leadership Cultivation',
+    text: 'Beyond skills, cadets are mentored to develop leadership qualities. They gain experience in teamwork, communication, and decision-making, preparing them to take on leadership roles within the Surf Life Saving movement and other areas of life.',
   },
   {
     icon: 'mingcute:hat-2-line',
-    label: 'Vibrant Social Scene',
-    text: 'From lively BBQs and Sippers gatherings to camping trips and more, our club thrives socially, fostering camaraderie and connection among members.',
+    label: 'Lifelong Dedication',
+    text: 'The Surf Life Saving Cadet experience is designed to instill a lifelong commitment to ocean safety and community service. It fosters a deep and enduring passion for lifesaving, encouraging cadets to remain engaged and make a lasting impact in their communities.',
   },
 ];
 console.log(cadetsContent);
@@ -63,8 +63,8 @@ const CompetitorsCadets = () => {
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3">SCC Surf Rescue Cadets</Typography>
             <Typography variant="body2">
-              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2023/2024 season. So what is South Curly
-              Nippers all about?
+              At South Curl Curl SLSC, our Surf Life Saving Cadets are empowered with the skills, knowledge, and values to become dedicated and community-focused lifesavers, committed to beach safety and
+              well-being.
             </Typography>
           </Stack>
         </Box>
@@ -81,7 +81,7 @@ const CompetitorsCadets = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '500px' }}>
-            <Typography variant="body2">All membership renewals and new Nipper registrations are now online. Please follow link below for full instructions.</Typography>
+            <Typography variant="body2">All membership renewals and new member registrations are now online. Please follow link below for full instructions.</Typography>
           </Stack>
         </Box>
         <Link component={NextLink} href="/ourclub">

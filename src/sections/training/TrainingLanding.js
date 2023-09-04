@@ -4,7 +4,7 @@ import Iconify from 'src/components/iconify/Iconify';
 import { socials } from 'src/config-global';
 import { bgGradient } from 'src/lib/cssStyles';
 
-const PatrolLanding = () => {
+const TrainingLanding = () => {
   const theme = useTheme();
   return (
     <>
@@ -26,10 +26,11 @@ const PatrolLanding = () => {
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
               <Typography variant="h2" component="h2">
                 {/* {title} */}
-                Members
+                Training
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                The only place to be on a sunny Sunday morning. Check our weekly update for latest news.
+                At South Curl Curl SLSC, our training is dedicated to equipping members with essential skills and knowledge for effective lifesaving. We prioritize continuous learning and development, ensuring
+                readiness to protect lives on our beautiful and challenging beach.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}
@@ -58,4 +59,4 @@ const PatrolLanding = () => {
   );
 };
 
-export default PatrolLanding;
+export default TrainingLanding;

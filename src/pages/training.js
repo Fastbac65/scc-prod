@@ -6,12 +6,12 @@ import MainLayout from 'src/layouts/main';
 // sections
 import { useSettingsContext } from 'src/components/settings';
 // import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
-import { MembersView } from 'src/sections/view';
+import { TrainingView } from 'src/sections/view';
 import { getPosts } from 'src/lib/getStaticDocs';
 
 // ----------------------------------------------------------------------
 
-Members.getLayout = (page) => <MainLayout>{page}</MainLayout>;
+Training.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
   const posts = await getPosts();
@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
 // ----------------------------------------------------------------------
 
-export default function Members({ staticPosts }) {
+export default function Training({ staticPosts }) {
   const { host } = useSettingsContext();
   // if (loading) {
   //   return <LoadingScreen />;
@@ -40,7 +40,7 @@ export default function Members({ staticPosts }) {
         <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
       </Head>
 
-      <MembersView staticPosts={staticPosts} />
+      <TrainingView staticPosts={staticPosts} />
     </>
   );
 }

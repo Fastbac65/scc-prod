@@ -69,7 +69,7 @@ const CompetitorsChamps = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="champs" style={{ position: 'absolute', top: '-160px' }} />
+        <div id="champs" style={{ position: 'absolute', top: '-260px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>

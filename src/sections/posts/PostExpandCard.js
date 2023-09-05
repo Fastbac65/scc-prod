@@ -213,7 +213,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </IconButton>
               <Link component={NextLink} href={`/posts/${doc.id}`}>
                 <IconButton aria-label="share post">
-                  <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
+                  <Iconify icon="carbon:send" color={open ? theme.palette.primary.light : 'default'} />
                 </IconButton>
               </Link>
             </>

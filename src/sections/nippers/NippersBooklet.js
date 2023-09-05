@@ -57,7 +57,7 @@ const nippersBookletContent = [
   },
 ];
 console.log(nippersBookletContent);
-const NippersTheRest = () => {
+const NippersBooklet = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -104,7 +104,7 @@ const NippersTheRest = () => {
     </StyledRootResponsive>
   );
 };
-export default NippersTheRest;
+export default NippersBooklet;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

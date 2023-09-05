@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-
+import NextLink from 'next/link';
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
@@ -211,7 +211,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               <IconButton aria-label="share post" onClick={handleOpen}>
                 <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
               </IconButton>
-              <Link href={`/posts/${doc.id}`}>
+              <Link component={NextLink} href={`/posts/${doc.id}`}>
                 <IconButton aria-label="share post">
                   <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
                 </IconButton>

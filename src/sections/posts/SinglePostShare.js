@@ -1,4 +1,4 @@
-import { Box, Fade } from '@mui/material';
+import { Box, Fade, Typography } from '@mui/material';
 // import Options from './Options';
 // import PostExpandCard from './PostExpandCard';
 import SinglePostCard from './SinglePostCard';
@@ -24,7 +24,14 @@ const SinglePostShare = ({ post }) => {
     }
   }, [posts, post.id]);
 
-  if (!post.id) return <Box sx={{ pt: 10 }}></Box>;
+  if (!post.id)
+    return (
+      <Box sx={{ pt: 10 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>
+          It seems this post no longer exists
+        </Typography>
+      </Box>
+    );
 
   return (
     <Box component="section" sx={{ display: 'flex', justifyContent: 'center', pt: 10, mx: 0 }}>

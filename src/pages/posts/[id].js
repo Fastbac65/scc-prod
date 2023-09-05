@@ -34,7 +34,7 @@ export async function getStaticPaths() {
         id: post.id,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 

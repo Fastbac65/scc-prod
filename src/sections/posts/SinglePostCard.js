@@ -57,9 +57,9 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
       href: 'https://facebook.com',
     },
   ];
-
+  // need to take care of doc coming in as {} empty - for example if its deleted else where
   useEffect(() => {
-    if (!members) return;
+    if (!members || !doc?.id) return;
     setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
 
     const fav = member?.postLikes?.indexOf(doc.id) >= 0 ? true : false;
@@ -99,6 +99,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   //   // navigate(postlink);
   // };
   // more pics is different for odd number of pics as we use full width so no gaps
+  if (!doc) return;
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
 
   return (

@@ -24,7 +24,7 @@ const SinglePostShare = ({ post }) => {
     }
   }, [posts, post.id]);
 
-  if (!post) return;
+  if (!post.id) return <Box sx={{ pt: 10 }}></Box>;
 
   return (
     <Box component="section" sx={{ display: 'flex', justifyContent: 'center', pt: 10, mx: 0 }}>

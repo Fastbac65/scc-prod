@@ -6,9 +6,6 @@ import SinglePostShare from '../posts/SinglePostShare';
 // ----------------------------------------------------------------------
 
 export default function PostsView({ staticPosts, staticPost }) {
-  console.log(staticPost, staticPosts);
-  const filtered = staticPosts.filter((post) => post.id !== staticPost.id);
-  console.log(filtered);
   return (
     <>
       {/* <RecentPosts staticPosts={staticPosts.slice(0, 6)} /> */}

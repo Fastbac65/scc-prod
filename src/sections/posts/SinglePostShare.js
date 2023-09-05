@@ -1,23 +1,37 @@
 import { Box, Fade } from '@mui/material';
 // import Options from './Options';
-import PostExpandCard from './PostExpandCard';
-import { useState } from 'react';
+// import PostExpandCard from './PostExpandCard';
+import SinglePostCard from './SinglePostCard';
+import { useEffect, useState } from 'react';
 import PostsLightBox from './PostsLightBox';
 import { useSettingsContext } from 'src/components/settings';
 
 const SinglePostShare = ({ post }) => {
-  const { user } = useSettingsContext();
+  const [realtimePost, setRealtimePost] = useState(post);
+
+  const { user, posts } = useSettingsContext();
   const [images, setImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!posts) {
+      console.log('SinglePostShare - no posts');
+      return;
+    } else {
+      setRealtimePost(posts.filter((doc) => doc.id === post.id)[0]);
+      console.log('SinglePostShare - set', posts.filter((doc) => doc.id === post.id)[0]);
+    }
+  }, [posts, post.id]);
 
   if (!post) return;
 
   return (
     <Box component="section" sx={{ display: 'flex', justifyContent: 'center', pt: 10, mx: 0 }}>
       <Fade timeout={750} in={true}>
-        <Box>
-          <PostExpandCard user={user} doc={post} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} maxWidth={1000} />
+        <Box sx={{ width: { xs: '99vw', sm: '80vw', md: '70vw' } }}>
+          <SinglePostCard user={user} doc={realtimePost} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} maxWidth={1000} />
+          {/* <PostExpandCard user={user} doc={post} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} maxWidth={1000} /> */}
         </Box>
       </Fade>
       <PostsLightBox open={open} setOpen={setOpen} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} images={images} />

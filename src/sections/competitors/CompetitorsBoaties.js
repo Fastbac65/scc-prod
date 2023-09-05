@@ -52,7 +52,6 @@ const boatiesContent = [
     text: `Members of the 'Rippers' group are also given the option to participate in their mainstream age groups if they wish, fostering a sense of belonging and integration. Its all about providing an active learning and fun environment for all participants.`,
   },
 ];
-console.log(boatiesContent);
 const CompetitorsBoaties = () => {
   return (
     <StyledRootResponsive>

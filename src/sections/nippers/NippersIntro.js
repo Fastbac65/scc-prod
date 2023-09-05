@@ -54,7 +54,6 @@ const nippersIntroContent = [
     text: 'From lively BBQs and Sippers gatherings to camping trips and more, our club thrives socially, fostering camaraderie and connection among members.',
   },
 ];
-console.log(nippersIntroContent);
 const NippersIntro = () => {
   return (
     <StyledRootResponsive>

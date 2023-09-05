@@ -56,7 +56,6 @@ const nippersBookletContent = [
     text: `<p>Any parent assisting on the beach should be registered as an associate member to cover insurance issues. Age Managers and Water Safety (where outside your own child’s age group) also need to apply for and show proof of approval for “Working With Children Check” for child protection. Please complete the registration process at: <a target='_blank' rel='noopener' href='https://www.service.nsw.gov.au/transaction/apply-for-a-working-with-children-check' >Working With Children Check</a></p>`,
   },
 ];
-console.log(nippersBookletContent);
 const NippersBooklet = () => {
   return (
     <StyledRootResponsive>

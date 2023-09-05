@@ -34,11 +34,9 @@ export default function Posts({ staticPosts }) {
 
   useEffect(() => {
     if (!posts) {
-      console.log('no posts');
       return;
     } else {
       setAllPosts([...posts.slice(6)]);
-      console.log('all realtime posts loaded', posts.slice(6));
     }
   }, [posts]);
 

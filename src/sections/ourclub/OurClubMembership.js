@@ -53,7 +53,6 @@ const membershipContent = [
     text: 'Create a new account for each member at SLS members portal below. Within members portal, pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).',
   },
 ];
-console.log(membershipContent);
 const OurClubMembership = () => {
   return (
     <StyledRootResponsive>

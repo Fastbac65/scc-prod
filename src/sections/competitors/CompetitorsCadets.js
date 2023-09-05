@@ -54,7 +54,6 @@ const cadetsContent = [
     text: 'The Surf Life Saving Cadet experience is designed to instill a lifelong commitment to ocean safety and community service. It fosters a deep and enduring passion for lifesaving, encouraging cadets to remain engaged and make a lasting impact in their communities.',
   },
 ];
-console.log(cadetsContent);
 const CompetitorsCadets = () => {
   return (
     <StyledRootResponsive>

@@ -20,6 +20,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
 export default function RecentPosts({ staticPosts }) {
   const {
     user,
+    member,
     posts,
     dispatch,
     state: { modal },

@@ -53,7 +53,7 @@ const NippersLanding = () => {
               { name: 'Home', href: '/' },
               { name: 'Information for Nippers/Parents', href: '/nippers/#info' },
               { name: 'Rippers', href: '/nippers/#rippers' },
-              { name: 'Nippers Information Booklet', href: '/nippers/#booklet' },
+              { name: 'Information Booklet', href: '/nippers/#booklet' },
             ]}
           />
         </Container>

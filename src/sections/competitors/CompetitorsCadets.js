@@ -38,11 +38,11 @@ const cadetsContent = [
     label: 'Comprehensive Training and Skill Development',
     text: 'Surf Life Saving Cadets at South Curl Curl SLSC undergo rigorous and comprehensive training. They learn vital skills like water rescue techniques, CPR, first aid, and surf awareness, ensuring they are well-prepared to respond effectively in emergency situations.',
   },
-  {
-    icon: 'mingcute:hat-2-line',
-    label: 'Community-Centric Values',
-    text: 'Our cadets program places a strong emphasis on community values. Cadets are just beginning their journey to teens and beyond and with a great sense of adventure they are taught to prioritize the safety and well-being of beachgoers whilst embodying the ethos of Surf Life Saving.',
-  },
+  // {
+  //   icon: 'mingcute:hat-2-line',
+  //   label: 'Community-Centric Values',
+  //   text: 'Our cadets program places a strong emphasis on community values. Cadets are just beginning their journey to teens and beyond and with a great sense of adventure they are taught to prioritize the safety and well-being of beachgoers whilst embodying the ethos of Surf Life Saving.',
+  // },
   {
     icon: 'mingcute:hat-2-line',
     label: 'Leadership Cultivation',

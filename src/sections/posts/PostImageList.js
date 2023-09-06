@@ -72,8 +72,8 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
       {images.length !== 0 && (
         <ImageList
           gap={1}
-          sx={{ mt: 0, width: '100%', height: 'auto', maxHeight: 150 }}
-          rowHeight={150}
+          sx={{ mt: 0, width: '100%', height: 'auto', maxHeight: images.length === 1 ? 400 : 200 }}
+          rowHeight={images.length === 1 ? 400 : 200}
           // cols={layout[files.length - 1]}
           cols={images.length}
         >
@@ -84,7 +84,7 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
                   <CardMedia
                     component="img"
                     // height={height[files.length - 1]}
-                    height={150}
+                    height={images.length === 1 ? 400 : 200}
                     src={image.src}
                     alt={image?.alt}
                     loading="lazy"

@@ -132,7 +132,7 @@ const NewPost = () => {
 
   return (
     <form onSubmit={handleSubmitPost}>
-      <DialogContent sx={{ pt: 0, px: { xs: 0, sm: 1 }, width: { xs: 350, sm: 600, md: 600 }, minHeight: 440 }}>
+      <DialogContent sx={{ pt: 0, px: { xs: 0, sm: 1 }, width: { xs: 350, sm: 500, md: 500 }, minHeight: 440 }}>
         <DialogContentText variant="caption">Click on photo to zoom.</DialogContentText>
         <DialogContentText variant="caption">Add photos or go with the library option.</DialogContentText>
         <DialogActions sx={{ my: 0, justifyContent: 'center' }}>

@@ -36,7 +36,7 @@ const SinglePostShare = ({ post }) => {
   return (
     <Box component="section" sx={{ display: 'flex', justifyContent: 'center', pt: 10, mx: 0 }}>
       <Fade timeout={750} in={true}>
-        <Box sx={{ width: { xs: '99vw', sm: '60vw', md: '50vw' } }}>
+        <Box sx={{ width: { xs: '99vw', sm: '55vw', md: '45vw' } }}>
           <SinglePostCard user={user} doc={realtimePost} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} maxWidth={1000} />
           {/* <PostExpandCard user={user} doc={post} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} maxWidth={1000} /> */}
         </Box>

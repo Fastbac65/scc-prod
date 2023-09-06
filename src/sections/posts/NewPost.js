@@ -13,7 +13,7 @@ const NewPost = () => {
   const theme = useTheme();
 
   const {
-    user,
+    member,
     dispatch,
     state: { alert, modal },
   } = useSettingsContext();
@@ -28,7 +28,7 @@ const NewPost = () => {
   const mainRef = useRef('');
   const collectionName = 'Posts';
   const storageName = 'posts';
-  const postDocumentId = user?.uid + '_' + uuidv4();
+  const postDocumentId = member?.uid + '_' + uuidv4();
   const date = new Date();
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const defaultDate = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
@@ -55,7 +55,7 @@ const NewPost = () => {
 
         files.forEach(async (file, indx) => {
           const imageName = postDocumentId + '_' + indx + '.' + file.name.split('.').pop(); // doc.id_indx.jpeg - last split gets the right file ext
-          const storageFilePath = `${storageName}/${user.uid}/` + imageName;
+          const storageFilePath = `${storageName}/${member.uid}/` + imageName;
           // const resizeFile = await resizeImage(file); // resize and compress the file
           imageUploadPromises.push(uploadFile(resizeBlobs[indx].blob, storageFilePath)); // upload the resized version
         });
@@ -95,11 +95,11 @@ const NewPost = () => {
       }
       // update database collection 'Posts'
       const postDocumentObj = {
-        userId: user?.uid || '',
-        uName: user?.displayName || '',
-        uEmail: user?.email || user?.providerData[0]?.email || '',
-        uAvatar: user?.photoURL || '',
-        uMobile: user?.phoneNumber || '',
+        userId: member?.uid || '',
+        uName: member?.displayName || '',
+        uEmail: member?.email || member?.providerData[0]?.email || '',
+        uAvatar: member?.photoURL || '',
+        uMobile: member?.phoneNumber || '',
         albumName: collectionName,
         postType: '',
         title: title,

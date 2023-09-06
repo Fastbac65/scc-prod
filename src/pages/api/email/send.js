@@ -15,7 +15,7 @@ import SignUpEmail from 'src/components/email/SignupEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const { db } = createFirebaseAdminApp();
-const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.sjtherapy.com'; */
+const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.scc.com'; */
 
 // Lets connect the email API server to the customer database
 // const ref = db.ref('customers/');
@@ -36,8 +36,7 @@ export default async function handler(req, res) {
   }
   let currentUser = {}; // if user is a current client it will populate
   // mode and email vars
-  const { mode = '', currentUserEmail: email = '', currentUserName: name = '', currentUserPhone: mobile = '' } = req.body;
-  console.log('name', name);
+  const { mode = '', currentUserEmail: email = '', currentUserName: name = '', currentUserPhone: mobile = '', booking = '' } = req.body;
   // will hold the correct link depending on mode
   let link = null;
 
@@ -65,7 +64,7 @@ export default async function handler(req, res) {
         case 'signInWithEmail': {
           link = await getAuth().generateSignInWithEmailLink(email, actionCodeSettings);
           try {
-            const data = await resend.emails.send({
+            await resend.emails.send({
               from: 'onboarding@resend.dev',
               to: 'sccslsc.webdev@gmail.com',
               // to: email,
@@ -78,6 +77,23 @@ export default async function handler(req, res) {
           }
           // await db.ref('server_customers/').update({ ...customers }); // sends update to db - lets us know the server is in sync
           return res.status(200).json({ signin: link });
+        }
+        case 'bookingInquiry': {
+          try {
+            // const data = await resend.emails.send({
+            //   from: 'onboarding@resend.dev',
+            //   to: 'sccslsc.webdev@gmail.com',
+            //   // to: email,
+            //   subject: 'Venue Booking Inquiry',
+            //   html: '<strong>Venue Booking Inquiry Received</strong>',
+            //   react: BookingEmail({ booking }),
+            // });
+            console.log('BookingInquiry', booking);
+          } catch (error) {
+            console.log(error);
+          }
+          // await db.ref('server_customers/').update({ ...customers }); // sends update to db - lets us know the server is in sync
+          return res.status(200).json({ booking: 'Received OK' });
         }
         // case 'emailVerify': {
         //   link = await getAuth().generateEmailVerificationLink(email, actionCodeSettings);

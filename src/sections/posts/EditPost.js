@@ -12,7 +12,7 @@ import { useSettingsContext } from 'src/components/settings';
 const EditPost = ({ postDoc }) => {
   const theme = useTheme();
   const {
-    user,
+    member,
     dispatch,
     state: { alert, modal },
   } = useSettingsContext();
@@ -27,7 +27,7 @@ const EditPost = ({ postDoc }) => {
   const mainRef = useRef('');
   const collectionName = 'Posts';
   const storageName = 'posts';
-  // const postDocumentId = user?.uid + '_' + uuidv4();
+  // const postDocumentId = member?.uid + '_' + uuidv4();
   const postDocumentId = postDoc.id;
 
   const uploadPostImages = () => {
@@ -52,7 +52,7 @@ const EditPost = ({ postDoc }) => {
 
         files.forEach(async (file, indx) => {
           const imageName = postDocumentId + '_' + indx + '.' + file.name.split('.').pop();
-          const storageFilePath = `${storageName}/${user.uid}/` + imageName;
+          const storageFilePath = `${storageName}/${member.uid}/` + imageName;
           // const resizeFile = await resizeImage(file); // resize and compress the file
           imageUploadPromises.push(uploadFile(resizeBlobs[indx].blob, storageFilePath)); // upload the resized version
         });
@@ -98,11 +98,11 @@ const EditPost = ({ postDoc }) => {
       }
       // update database collection 'Posts'
       const postDocumentObj = {
-        userId: user?.uid || '',
-        uName: user?.displayName || '',
-        uEmail: user?.email || user?.providerData[0]?.email || '',
-        uAvatar: user?.photoURL || '',
-        uMobile: user?.phoneNumber || '',
+        userId: member?.uid || '',
+        uName: member?.profileName || member?.displayName || '',
+        uEmail: member?.email || member?.providerData[0]?.email || '',
+        uAvatar: member?.photoURL || '',
+        uMobile: member?.phoneNumber || '',
         albumName: collectionName,
         postType: '',
         title: title,

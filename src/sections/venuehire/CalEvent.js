@@ -8,6 +8,7 @@ const CalEvent = ({ eventInfo }) => {
   const router = useRouter();
   const {
     posts,
+    host,
     dispatch,
     state: { modal },
   } = useSettingsContext();
@@ -45,8 +46,8 @@ const CalEvent = ({ eventInfo }) => {
   } else startEnd = fDateTime(eventInfo.start, 'MMMM do yyyy,') + ' all-day';
 
   var location = '';
-  if (eventInfo?.extendedProps?.location && eventInfo.extendedProps?.location.includes('scc-proto.web.app/posts/')) {
-    let postId = eventInfo.extendedProps.location.split('scc-proto.web.app/posts/')[1];
+  if (eventInfo?.extendedProps?.location && eventInfo.extendedProps?.location.includes(`${host}/posts/`)) {
+    let postId = eventInfo.extendedProps.location.split('/posts/')[1];
     console.log(posts);
     var postDoc = posts.filter((doc) => doc.id === postId);
     // location = 'SCC Post: ' + eventInfo.extendedProps.location.split('scc-proto.web.app/posts/')[1].split('_')[0];

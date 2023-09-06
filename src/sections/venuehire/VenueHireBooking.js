@@ -112,6 +112,18 @@ const VenueHireBooking = () => {
       // reset();
       console.log('DATA', data, bookingRef);
       // await addDoco(`bookings`, bookingRef , data);
+      const response = await fetch('/api/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          booking: data,
+          mode: 'bookingInquiry',
+          api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+        }),
+      }).then((res) => res.json());
+      console.log(response);
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {

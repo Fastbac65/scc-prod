@@ -262,7 +262,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </>
             )}
 
-            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+            <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               {/* <ExpandMoreIcon /> */}
               <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>

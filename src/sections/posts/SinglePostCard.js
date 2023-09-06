@@ -121,7 +121,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         <ImageList
           gap={1}
           sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 501, zIndex: 100 }} // height 501 allows for 1px gap so no scroll bars show up
-          rowHeight={250}
+          rowHeight={doc.data.images.length === 1 ? 550 : 250}
           // cols={layout[files.length - 1]}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
@@ -129,7 +129,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <ImageListItem key={image.src}>
               <CardMedia
                 component="img"
-                height="250"
+                height={doc.data.images.length === 1 ? '550' : '250'}
                 src={image.src}
                 alt={image.alt}
                 sx={{ cursor: 'pointer' }}

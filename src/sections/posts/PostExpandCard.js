@@ -120,7 +120,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         <ImageList
           gap={1}
           sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
-          rowHeight={150}
+          rowHeight={doc.data.images.length === 1 ? 300 : 150}
           // cols={layout[files.length - 1]}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
@@ -128,7 +128,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <ImageListItem key={image.src}>
               <CardMedia
                 component="img"
-                height="150"
+                height={doc.data.images.length === 1 ? '300' : '150'}
                 src={image.src}
                 alt={image.alt}
                 sx={{ cursor: 'pointer' }}
@@ -209,20 +209,23 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 checkedIcon={<Iconify icon="carbon:favorite-filled" />}
               />
               <IconButton aria-label="share post" onClick={handleOpen}>
-                <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
+                <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
               </IconButton>
               <Link component={NextLink} href={`/posts/${doc.id}`}>
-                <IconButton aria-label="share post">
-                  <Iconify icon="carbon:launch" color={open ? theme.palette.primary.light : 'default'} />
+                <IconButton aria-label="view post">
+                  <Iconify icon="carbon:launch" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
                 </IconButton>
               </Link>
             </>
           )}
           {doc.data.main.length > 1 && (
-            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-              {/* <ExpandMoreIcon /> */}
-              <Iconify icon="mdi:chevron-down" />
-            </ExpandMore>
+            <>
+              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                {/* <ExpandMoreIcon /> */}
+                <Iconify icon="fluent:chevron-down-24-filled" />
+              </ExpandMore>
+              <Typography variant="caption">read on</Typography>
+            </>
           )}
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -252,7 +255,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   checkedIcon={<Iconify icon="carbon:favorite-filled" />}
                 />
                 <IconButton aria-label="share post" onClick={handleOpen}>
-                  <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
+                  <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
                 </IconButton>
               </>
             )}

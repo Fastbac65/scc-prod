@@ -53,7 +53,7 @@ const CalEvent = ({ eventInfo }) => {
     // location = 'SCC Post: ' + eventInfo.extendedProps.location.split('scc-proto.web.app/posts/')[1].split('_')[0];
     if (postDoc.length !== 0) {
       location = 'SCC Post: ' + postDoc[0].data.title + ' by ' + postDoc[0].data.uName;
-    } else location = 'This post seems to no longer exist.';
+    } else location = 'This post seems to no longer exist. Please update/check calendar event location';
   } else location = eventInfo?.extendedProps?.location;
 
   const handleClickLocation = (event) => {

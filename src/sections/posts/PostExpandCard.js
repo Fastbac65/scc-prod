@@ -192,8 +192,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-        <CardContent>
-          <Typography variant="body2" color="text.primary">
+        <CardContent sx={{ py: 1 }}>
+          <Typography variant="body2" color="text.secondary">
             {doc.data?.main[0]}
           </Typography>
         </CardContent>
@@ -260,10 +260,11 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </>
             )}
 
-            <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-              <Iconify icon="mdi:chevron-down" />
+            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               {/* <ExpandMoreIcon /> */}
+              <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>
+            <Typography variant="caption">read on</Typography>
           </CardActions>
         </Collapse>
       </Card>

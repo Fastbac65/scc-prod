@@ -7,6 +7,7 @@ import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { updateDoco } from 'src/lib/firestoreDocument';
 import { fToNow } from 'src/lib/formatTime';
+import useResponsive from 'src/hooks/useResponsive';
 // import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
@@ -59,6 +60,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   ];
   // need to take care of doc coming in as {} empty - for example if its deleted else where
   useEffect(() => {
+    setExpanded(false); //  basically if the doc changes
     if (!members || !doc?.id) return;
     setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
 
@@ -93,11 +95,10 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     setExpanded(!expanded);
   };
 
-  // const handleShare = () => {
-  //   const postlink = '/posts/' + doc.id;
-  //   console.log('share post TODO');
-  //   // navigate(postlink);
-  // };
+  const isSmUp = useResponsive('up', 'sm');
+  let rowHeight = doc.data.images.length === 1 ? '301' : '200';
+  if (isSmUp) rowHeight = doc.data.images.length === 1 ? '401' : '200';
+
   // more pics is different for odd number of pics as we use full width so no gaps
   if (!doc) return;
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
@@ -120,8 +121,8 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         />
         <ImageList
           gap={1}
-          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 501, zIndex: 100 }} // height 501 allows for 1px gap so no scroll bars show up
-          rowHeight={doc.data.images.length === 1 ? 550 : 250}
+          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 401, zIndex: 100 }} // height 501 allows for 1px gap so no scroll bars show up
+          rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
@@ -129,7 +130,8 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <ImageListItem key={image.src}>
               <CardMedia
                 component="img"
-                height={doc.data.images.length === 1 ? '550' : '250'}
+                height={rowHeight}
+                // height={doc.data.images.length === 1 ? '400' : '200'}
                 src={image.src}
                 alt={image.alt}
                 sx={{ cursor: 'pointer' }}
@@ -153,6 +155,8 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                     borderBottomRightRadius: 10,
                   }}
                 >
+                  last updated..
+                  <br />
                   {fToNow(doc.data?.timestamp?.seconds * 1000)}
                 </Typography>
               )}
@@ -193,7 +197,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-        <CardContent>
+        <CardContent sx={{ py: 1 }}>
           <Typography variant="body2" color="text.primary">
             {doc.data?.main[0]}
           </Typography>

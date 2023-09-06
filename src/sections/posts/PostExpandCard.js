@@ -152,7 +152,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                     borderBottomRightRadius: 10,
                   }}
                 >
-                  Last Updated
+                  last updated..
                   <br />
                   {fToNow(doc.data?.timestamp?.seconds * 1000)}
                 </Typography>

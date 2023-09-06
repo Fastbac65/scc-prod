@@ -46,7 +46,7 @@ const CalEvent = ({ eventInfo }) => {
   } else startEnd = fDateTime(eventInfo.start, 'MMMM do yyyy,') + ' all-day';
 
   var location = '';
-  if (eventInfo?.extendedProps?.location && eventInfo.extendedProps?.location.includes(`${host}/posts/`)) {
+  if (eventInfo?.extendedProps?.location && eventInfo.extendedProps?.location.includes(`/posts/`)) {
     let postId = eventInfo.extendedProps.location.split('/posts/')[1];
     console.log(posts);
     var postDoc = posts.filter((doc) => doc.id === postId);
@@ -59,9 +59,9 @@ const CalEvent = ({ eventInfo }) => {
   const handleClickLocation = (event) => {
     dispatch({ type: 'MODAL', payload: { ...modal, open: false } });
     // if (eventInfo.extendedProps.location.includes('/posts/')) {
-    if (eventInfo.extendedProps.location.includes('scc-proto.web.app/posts/')) {
+    if (eventInfo.extendedProps.location.includes('/posts/')) {
       // let link = `/posts/${eventInfo.extendedProps.location.split('/posts/')[1]}`;
-      let link = `/posts/${eventInfo.extendedProps.location.split('scc-proto.web.app/posts/')[1]}`;
+      let link = `/posts/${eventInfo.extendedProps.location.split('/posts/')[1]}`;
       router.push(link);
     } else if (eventInfo.extendedProps.location.includes('http')) {
       window.open(eventInfo.extendedProps.location);

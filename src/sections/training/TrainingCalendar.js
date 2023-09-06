@@ -51,7 +51,7 @@ const TrainingCalendar = () => {
         <Container maxWidth="lg" sx={{ py: 3, textAlign: 'center', justifyContent: 'center' }}>
           <Typography variant="h3">SCC Training Calendar</Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
-            scroll within calendar to view
+            scroll within calendar to view more
           </Typography>
           <Box sx={{ display: 'flex', py: 2 }}>
             {isSmUp && (

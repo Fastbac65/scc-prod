@@ -145,9 +145,7 @@ const CalendarTraining = ({ holidays, training }) => {
     return size;
   }
 
-  var winWidth = useWindowSize(); // dynamically sets the calendar list menu statefully
-  if (winWidth < screenWidth.sm) console.log('win < sm');
-  else console.log('win > sm');
+  useWindowSize(); // dynamically sets the calendar list menu statefully
 
   const handleEventSet = (events) => {
     allEvents.current = [...events];

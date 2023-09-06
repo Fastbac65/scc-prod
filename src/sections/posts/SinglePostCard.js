@@ -215,10 +215,15 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </>
           )}
           {doc.data.main.length > 1 && (
-            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-              {/* <ExpandMoreIcon /> */}
-              <Iconify icon="mdi:chevron-down" />
-            </ExpandMore>
+            <>
+              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                {/* <ExpandMoreIcon /> */}
+                <Iconify icon="fluent:chevron-down-24-filled" />
+              </ExpandMore>
+              {/* <Typography variant="caption">more...</Typography> */}
+              {!expanded && <Typography variant="caption">more...</Typography>}
+              {expanded && <Typography variant="caption">less...</Typography>}
+            </>
           )}
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -253,10 +258,13 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </>
             )}
 
-            <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-              <Iconify icon="mdi:chevron-down" />
+            <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               {/* <ExpandMoreIcon /> */}
+              <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>
+            {/* <Typography variant="caption">more...</Typography> */}
+            {!expanded && <Typography variant="caption">more...</Typography>}
+            {expanded && <Typography variant="caption">less...</Typography>}
           </CardActions>
         </Collapse>
       </Card>

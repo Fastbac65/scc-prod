@@ -224,7 +224,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 {/* <ExpandMoreIcon /> */}
                 <Iconify icon="fluent:chevron-down-24-filled" />
               </ExpandMore>
-              <Typography variant="caption">read on</Typography>
+              {/* <Typography variant="caption">more...</Typography> */}
+              {!expanded && <Typography variant="caption">more...</Typography>}
+              {expanded && <Typography variant="caption">less...</Typography>}
             </>
           )}
         </CardActions>
@@ -235,7 +237,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 paragraf,
                 indx // being explicit not to confuse with Typography paragraph prop
               ) => (
-                <Typography key={indx} variant="body2" paragraph color="text.secondary">
+                <Typography key={indx} style={{ wordWrap: 'break-word' }} variant="body2" paragraph color="text.secondary">
                   {
                     indx !== 0 && paragraf // skip first paragraf as its alreay above
                   }
@@ -264,7 +266,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               {/* <ExpandMoreIcon /> */}
               <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>
-            <Typography variant="caption">read on</Typography>
+            {!expanded && <Typography variant="caption">more...</Typography>}
+            {expanded && <Typography variant="caption">less...</Typography>}
           </CardActions>
         </Collapse>
       </Card>

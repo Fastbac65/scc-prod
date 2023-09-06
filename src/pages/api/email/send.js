@@ -12,6 +12,7 @@ import { getAuth } from 'firebase-admin/auth';
 import { createFirebaseAdminApp } from 'src/lib/createFireBaseAdminApp';
 import ResetPasswordEmail from 'src/components/email/ResetPasswordEmail';
 import SignUpEmail from 'src/components/email/SignupEmail';
+import BookingEmail from 'src/components/email/BookingEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const { db } = createFirebaseAdminApp();
@@ -80,14 +81,15 @@ export default async function handler(req, res) {
         }
         case 'bookingInquiry': {
           try {
-            // const data = await resend.emails.send({
-            //   from: 'onboarding@resend.dev',
-            //   to: 'sccslsc.webdev@gmail.com',
-            //   // to: email,
-            //   subject: 'Venue Booking Inquiry',
-            //   html: '<strong>Venue Booking Inquiry Received</strong>',
-            //   react: BookingEmail({ booking }),
-            // });
+            await resend.emails.send({
+              from: 'support@resend.dev',
+              to: ['sccslsc.webdev@gmail.com', booking.email],
+              bcc: ['fastbac65@gmail.com'],
+              // to: email,
+              subject: 'Venue Booking Inquiry',
+              html: '<strong>Venue Booking Inquiry Received</strong>',
+              react: BookingEmail({ booking }),
+            });
             console.log('BookingInquiry', booking);
           } catch (error) {
             console.log(error);

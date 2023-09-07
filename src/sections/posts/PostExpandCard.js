@@ -60,8 +60,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   ];
 
   useEffect(() => {
-    if (!members) return;
-    setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
+    // if (!members) return;
+    // setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
 
     const fav = member?.postLikes?.indexOf(doc.id) >= 0 ? true : false;
     setFavorite(fav);
@@ -117,13 +117,13 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         </div>
         <CardHeader
           avatar={
-            <Tooltip enterTouchDelay={100} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
-              <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
+            <Tooltip enterTouchDelay={100} placement="top" title={/*author?.data?.profileName || author?.data?.displayName ||*/ doc.data?.uName}>
+              <Avatar src={/*author?.data?.photoURL ||*/ doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
             </Tooltip>
           }
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
-          subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
+          subheader={/*author?.data?.profileName || author?.data?.displayName ||*/ doc.data?.uName + ', ' + doc.data?.subtitle}
         />
         <ImageList
           gap={1}

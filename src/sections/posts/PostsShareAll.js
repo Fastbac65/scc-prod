@@ -34,9 +34,10 @@ export default function PostsShareAll({ staticPosts, sharedPostId }) {
 
   useEffect(() => {
     if (!posts) {
+      setAllPosts(staticPosts); // staticPosts already filtered for the shared post
       return;
     } else {
-      setAllPosts([...posts.filter((post) => post.id !== sharedPostId)]);
+      setAllPosts([...posts.filter((post) => post.id !== sharedPostId)]); // so we can filter realtime posts if we are using
     }
   }, [posts, sharedPostId]);
 

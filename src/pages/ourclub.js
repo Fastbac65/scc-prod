@@ -20,7 +20,7 @@ export async function getStaticProps() {
       staticPosts: posts,
       // staticMembers: members,
     },
-    revalidate: 2,
+    revalidate: 10,
   };
 }
 

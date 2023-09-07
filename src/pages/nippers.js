@@ -9,31 +9,21 @@ import MainLayout from 'src/layouts/main';
 import { useSettingsContext } from 'src/components/settings';
 // import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 import { NippersView } from 'src/sections/view';
+import { getPosts } from 'src/lib/getStaticDocs';
 
 // ----------------------------------------------------------------------
 
 Nippers.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
-  const snapshot = await getDocs(q);
-  const docs = [];
-
-  // const datax = snapshot.docs.map((doc) => ({
-  //   ...doc.data(),
-  //   id: doc.id,
-  //   timestamp: doc.data().timestamp?.toDate().getTime(),
-  // }));
-
-  snapshot.forEach((doc) => {
-    docs.push({ id: doc.id, data: { ...doc.data(), timestamp: doc.data().timestamp?.toDate().getTime() } });
-  });
+  const posts = await getPosts();
+  // const members = await getMembers();
 
   return {
     props: {
-      staticPosts: docs,
+      staticPosts: posts,
     },
-    revalidate: 2,
+    revalidate: 10,
   };
 }
 

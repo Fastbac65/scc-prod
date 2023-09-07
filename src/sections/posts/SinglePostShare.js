@@ -26,13 +26,14 @@ const SinglePostShare = ({ post }) => {
 
   useEffect(() => {
     if (!posts) {
-      console.log('SinglePostShare - no posts');
+      console.log('SinglePostShare - no posts, using staticPost');
+      setRealtimePost(post);
       return;
     } else {
       setRealtimePost(posts.filter((doc) => doc.id === post.id)[0]);
       console.log('SinglePostShare - set', posts.filter((doc) => doc.id === post.id)[0]);
     }
-  }, [posts, post.id]);
+  }, [posts, post]);
 
   if (!post.id)
     return (

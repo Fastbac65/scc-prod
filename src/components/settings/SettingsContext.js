@@ -10,6 +10,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
 import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { getDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -62,11 +63,9 @@ export function SettingsProvider({ children }) {
   const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app';
 
   useEffect(() => {
-    let listener = () => {};
-
+    let listener = () => {}; // member account details listener needed so that account pages reflect updates
     if (user) {
       console.log('user loaded', user);
-
       listener = onSnapshot(doc(db, 'members', user.uid), (snapshot) => {
         if (snapshot.data()) {
           console.log('member loaded', snapshot.data());
@@ -83,33 +82,48 @@ export function SettingsProvider({ children }) {
     };
   }, [user]);
 
-  useEffect(() => {
-    const membersListener = onSnapshot(collection(db, 'members'), (snapshot) => {
-      const docs = [];
+  // useEffect(() => {
+  //   try {
+  //     const membersListener = onSnapshot(
+  //       collection(db, 'members'),
+  //       (snapshot) => {
+  //         const docs = [];
 
-      snapshot.forEach((doc) => {
-        docs.push({ uid: doc.id, data: doc.data() });
-      });
-      console.log('members loaded', docs);
-      setMembers([...docs]);
-    });
-    const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
-    const postsListener = onSnapshot(q, (snapshot) => {
-      const docs = [];
+  //         snapshot.forEach((doc) => {
+  //           docs.push({ uid: doc.id, data: doc.data() });
+  //         });
+  //         console.log('members loaded', docs);
+  //         setMembers([...docs]);
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     );
+  //     const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+  //     const postsListener = onSnapshot(
+  //       q,
+  //       (snapshot) => {
+  //         const docs = [];
 
-      snapshot.forEach((doc) => {
-        docs.push({ id: doc.id, data: doc.data() });
-      });
-      console.log('posts loaded', docs);
-      setPosts([...docs]);
-    });
-
-    return () => {
-      // unsubscribe listeners
-      membersListener();
-      postsListener();
-    };
-  }, []);
+  //         snapshot.forEach((doc) => {
+  //           docs.push({ id: doc.id, data: doc.data() });
+  //         });
+  //         console.log('posts loaded', docs);
+  //         setPosts([...docs]);
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       }
+  //     );
+  //     return () => {
+  //       // unsubscribe listeners
+  //       membersListener();
+  //       postsListener();
+  //     };
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   // looks for cookie in local storage with thememode - so that theme persists across tabs
   useEffect(() => {

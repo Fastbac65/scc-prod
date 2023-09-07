@@ -75,7 +75,6 @@ const nippersIntroContent = [
     `,
   },
 ];
-console.log(nippersIntroContent);
 const NippersInformation = () => {
   return (
     <StyledRootResponsive>

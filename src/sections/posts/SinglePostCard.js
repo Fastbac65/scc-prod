@@ -96,8 +96,17 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   };
 
   const isSmUp = useResponsive('up', 'sm');
-  let rowHeight = doc.data.images.length === 1 ? 301 : 200;
-  if (isSmUp) rowHeight = doc.data.images.length === 1 ? 401 : 200;
+  const isMdUp = useResponsive('up', 'md');
+  let maxHeightImg = 301;
+  let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 200;
+  if (isSmUp) {
+    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
+    maxHeightImg = 401;
+  }
+  if (isMdUp) {
+    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
+    maxHeightImg = 481;
+  }
 
   // more pics is different for odd number of pics as we use full width so no gaps
   if (!doc) return;
@@ -121,7 +130,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         />
         <ImageList
           gap={1}
-          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 401, zIndex: 100 }} // height 401 allows for 1px gap so no scroll bars show up
+          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: maxHeightImg, zIndex: 100 }} // height 401 allows for 1px gap so no scroll bars show up
           rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}

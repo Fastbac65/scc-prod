@@ -18,7 +18,7 @@ const PostsList = ({ posts }) => {
     <Box component="section" sx={{ mx: 0 }}>
       <Fade timeout={750} in={true}>
         <Box pr={{ xs: 0, sm: 2, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Masonry /* sx={{ border: '1px dotted red' }} */ columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={{ xs: 1 }}>
+          <Masonry /* sx={{ border: '1px dotted red' }} */ columns={{ xs: 1, sm: 2, md: 2, lg: 3 }} spacing={{ xs: 1 }}>
             {posts.map((doc, indx) => (
               <PostExpandCard key={doc.id} user={user} doc={doc} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} />
             ))}

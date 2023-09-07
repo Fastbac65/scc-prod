@@ -7,6 +7,7 @@ import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
 import { updateDoco } from 'src/lib/firestoreDocument';
 import { fToNow } from 'src/lib/formatTime';
+import useResponsive from 'src/hooks/useResponsive';
 // import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
@@ -93,11 +94,18 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     setExpanded(!expanded);
   };
 
-  // const handleShare = () => {
-  //   const postlink = '/posts/' + doc.id;
-  //   console.log('share post TODO');
-  //   // navigate(postlink);
-  // };
+  const isSmUp = useResponsive('up', 'sm');
+  const isMdUp = useResponsive('up', 'md');
+  let maxHeightImg = 301;
+  let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 200;
+  if (isSmUp) {
+    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
+    maxHeightImg = 401;
+  }
+  if (isMdUp) {
+    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
+    maxHeightImg = 481;
+  }
   // more pics is different for odd number of pics as we use full width so no gaps
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
 
@@ -119,8 +127,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         />
         <ImageList
           gap={1}
-          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: 301, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
-          rowHeight={doc.data.images.length === 1 ? 300 : 150}
+          sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: maxHeightImg, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
+          rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
@@ -128,7 +136,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <ImageListItem key={image.src}>
               <CardMedia
                 component="img"
-                height={doc.data.images.length === 1 ? '300' : '150'}
+                height={rowHeight}
                 src={image.src}
                 alt={image.alt}
                 sx={{ cursor: 'pointer' }}

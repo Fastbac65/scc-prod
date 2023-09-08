@@ -8,6 +8,7 @@ import uploadFile from 'src/lib/uploadFile';
 import { addDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
+import { addRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
 const NewPost = () => {
   const theme = useTheme();
@@ -110,7 +111,9 @@ const NewPost = () => {
         tags: {},
         likes: 0,
       };
+      const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await addDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
+      await addRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj); // also adds timestamp automatically
     } catch (error) {
       console.log(error.message);
     }

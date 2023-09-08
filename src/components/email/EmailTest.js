@@ -7,7 +7,6 @@ const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002
 export const EmailTest = ({ name, email, link, booking }) => {
   const { fullName, phoneNumber, bookingType, bookingDate, occasion } = booking;
   const date = new Date(bookingDate).toDateString();
-  console.log(bookingDate, date);
   return (
     // <Html>
     // <Head />

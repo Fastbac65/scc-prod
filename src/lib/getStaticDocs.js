@@ -28,6 +28,26 @@ export function getPosts() {
   });
 }
 
+export function getPostsApi() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await fetch('http://192.168.0.220:5002/api/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+        }),
+      }).then((res) => res.json());
+
+      resolve(response);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+}
+
 export async function getMembers() {
   return new Promise(async (resolve, reject) => {
     try {

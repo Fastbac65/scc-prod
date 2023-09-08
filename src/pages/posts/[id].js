@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
       staticPosts: posts,
       staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
     },
-    revalidate: 10,
+    // revalidate: 10,
   };
 }
 

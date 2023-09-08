@@ -1,5 +1,6 @@
 import { deleteDoco } from './firestoreDocument';
 import deleteFile from './deleteFile';
+import { deleteRealtimeDoc } from './firebaseRealtimeDatabase';
 
 const deletePost = (postDoc) => {
   return new Promise(async (resolve, reject) => {
@@ -21,6 +22,7 @@ const deletePost = (postDoc) => {
         }
       }
       await deleteDoco('Posts', postDoc.id);
+      await deleteRealtimeDoc('Posts', postDoc.id);
       resolve();
     } catch (error) {
       console.log(error.message, error);

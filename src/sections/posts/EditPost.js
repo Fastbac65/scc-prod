@@ -8,6 +8,7 @@ import deleteFile from 'src/lib/deleteFile';
 import { addDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
+import { updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
 const EditPost = ({ postDoc }) => {
   const theme = useTheme();
@@ -113,7 +114,9 @@ const EditPost = ({ postDoc }) => {
         tags: {},
         likes: 0,
       };
+      const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await addDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
+      await updateRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj);
     } catch (error) {
       console.log(error.message);
     }

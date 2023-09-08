@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
@@ -14,6 +15,8 @@ export const firebaseConfig = {
   storageBucket: firebaseKeys.storageBucket,
   messagingSenderId: firebaseKeys.messagingSenderId,
   appId: firebaseKeys.appId,
+  databaseURL: 'https://scc-proto-default-rtdb.asia-southeast1.firebasedatabase.app',
+
   // measurementId: firebaseKeys.measurementId,
 };
 
@@ -23,4 +26,5 @@ export const auth = getAuth(app);
 export const providerGoogle = new GoogleAuthProvider();
 export const providerFacebook = new FacebookAuthProvider();
 export const db = getFirestore(app);
+export const rtdb = getDatabase(app);
 export const storage = getStorage(app);

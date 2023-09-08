@@ -97,7 +97,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const isSmUp = useResponsive('up', 'sm');
   const isMdUp = useResponsive('up', 'md');
   let maxHeightImg = 301;
-  let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 200;
+  let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 150;
   if (isSmUp) {
     rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
     maxHeightImg = 401;
@@ -162,7 +162,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 >
                   last updated..
                   <br />
-                  {fToNow(doc.data?.timestamp?.seconds * 1000)}
+                  {fToNow(doc.data?.timestamp)}
                 </Typography>
               )}
               {indx === 1 && doc.data.images.length === 3 && (

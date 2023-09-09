@@ -3,12 +3,12 @@ import { getPostsApi } from 'src/lib/getStaticDocs';
 import { rtdb } from 'src/lib/createFirebaseApp';
 import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
-// const posts = await getPostsApi();
-// // console.log(posts[0]);
+const posts = await getPostsApi();
+// console.log(posts[0]);
 
-// async function rtPosts() {
-//   await Promise.all(posts.map((post) => updateRealtimeDoc(`/posts/${post.id}`, post)));
-// }
+async function rtPosts() {
+  await Promise.all(posts.map((post) => updateRealtimeDoc(`/Posts/${post.id}`, post)));
+}
 
 // deleteRealtimeDoc('/', 'posts');
 
@@ -24,7 +24,7 @@ import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } 
 
 // console.log(Object.values(read.val()));
 
-// rtPosts();
+rtPosts();
 
 const test = () => (
   <EmailTest

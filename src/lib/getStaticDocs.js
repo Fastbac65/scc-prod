@@ -31,8 +31,9 @@ export function getPosts() {
 export function getPostsApi() {
   return new Promise(async (resolve, reject) => {
     try {
-      const response = await fetch('http://192.168.0.220:5002/api/posts', {
+      const response = await fetch('http://192.168.0.220:3000/api/posts', {
         method: 'POST',
+        // mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },

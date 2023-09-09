@@ -97,13 +97,14 @@ const NewPost = () => {
       // update database collection 'Posts'
       const postDocumentObj = {
         userId: member?.uid || '',
-        uName: member?.displayName || '',
+        uName: member?.profileName || member?.displayName,
         uEmail: member?.email || member?.providerData[0]?.email || '',
         uAvatar: member?.photoURL || '',
         uMobile: member?.phoneNumber || '',
         albumName: collectionName,
-        postType: '',
+        postType: member?.role || '',
         title: title,
+        timestamp: new Date().getTime(),
         subtitle: subtitle,
         main: main.split(/\r?\n/).filter((para) => para !== ''), // array of paragraphs.
         images: postImagesURLs, // array of images objects [{src: url, alt: url,},.. ]

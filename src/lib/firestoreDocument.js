@@ -7,7 +7,7 @@ import { db } from './createFirebaseApp';
 export const addDoco = (collectionName, documentId, documentObj) => {
   const docRef = doc(collection(db, collectionName), documentId);
   // const docRef = doc(db, collectionName, documentId);
-  return setDoc(docRef, { ...documentObj, timestamp: serverTimestamp() });
+  return setDoc(docRef, { ...documentObj });
 };
 
 export const updateDoco = (collectionName, documentId, documentObj) => {

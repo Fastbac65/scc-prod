@@ -5,7 +5,7 @@ import AddImages from './AddImages';
 import EditPostImageList from './EditPostImageList';
 import uploadFile from 'src/lib/uploadFile';
 import deleteFile from 'src/lib/deleteFile';
-import { addDoco } from 'src/lib/firestoreDocument';
+import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
 import { updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
@@ -107,6 +107,7 @@ const EditPost = ({ postDoc }) => {
         albumName: collectionName,
         postType: '',
         title: title,
+        timestamp: new Date().getTime(),
         subtitle: subtitle,
         main: main.split(/\r?\n/).filter((para) => para !== ''), // array of paragraphs filtered for empty ones
         images: postImagesURLs, // array of images objects [{src: url, alt: url,},.. ]
@@ -115,7 +116,7 @@ const EditPost = ({ postDoc }) => {
         likes: 0,
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
-      await addDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
+      await updateDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
       await updateRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj);
     } catch (error) {
       console.log(error.message);

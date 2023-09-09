@@ -4,7 +4,7 @@ import { rtdb } from 'src/lib/createFirebaseApp';
 import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
 const posts = await getPostsApi();
-// console.log(posts[0]);
+console.log(posts[0]);
 
 async function rtPosts() {
   await Promise.all(posts.map((post) => updateRealtimeDoc(`/Posts/${post.id}`, post)));

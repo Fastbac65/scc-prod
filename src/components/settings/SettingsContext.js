@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useMemo, useState, useEffect, useContext, useCallback, createContext, useReducer } from 'react';
 // firebase
-import { auth, db } from 'src/lib/createFirebaseApp';
+import { auth, db, rtdb } from 'src/lib/createFirebaseApp';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
@@ -9,8 +9,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
-import { collection, doc, onSnapshot, orderBy, query } from 'firebase/firestore';
-import { getDoco } from 'src/lib/firestoreDocument';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { onValue, orderByChild, orderByValue, query, ref } from 'firebase/database';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -81,6 +81,38 @@ export function SettingsProvider({ children }) {
       listener();
     };
   }, [user]);
+
+  useEffect(() => {
+    // realtime db posts listener
+
+    const postsRef = ref(rtdb, 'Posts');
+    const rtPostListener = onValue(
+      postsRef,
+      (snapshot) => {
+        if (snapshot.val()) {
+          const posts = Object?.values(snapshot.val());
+          const sortedPosts = posts.toSorted(compareFn);
+          setPosts([...sortedPosts]);
+        }
+      },
+      (error) => {
+        console.log(error, error.message);
+      }
+    );
+    function compareFn(a, b) {
+      if (a.data.timestamp > b.data.timestamp) {
+        return -1;
+      } else if (a.data.timestamp < b.data.timestamp) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    }
+
+    return () => {
+      rtPostListener();
+    };
+  }, []);
 
   // useEffect(() => {
   //   try {

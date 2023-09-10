@@ -113,8 +113,8 @@ const NewPost = () => {
         likes: 0,
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
-      await addDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
-      await addRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj); // also adds timestamp automatically
+      await addDoco(collectionName, postDocumentId, postDocumentObj); // timestamp simplified
+      await addRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj); // timestamp simplified
     } catch (error) {
       console.log(error.message);
     }

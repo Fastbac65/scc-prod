@@ -7,7 +7,7 @@ import { rtdb } from './createFirebaseApp';
 export const addRealtimeDoc = (realtimeDbPath, documentObj) => {
   const docRef = ref(rtdb, realtimeDbPath);
   // const docRef = ref(rtdb, realtimeDbPath, );
-  return set(docRef, { ...documentObj, data: { ...documentObj.data, timestamp: new Date().getTime() } });
+  return set(docRef, documentObj);
 };
 
 export const updateRealtimeDoc = (realtimeDbPath, documentObj) => {

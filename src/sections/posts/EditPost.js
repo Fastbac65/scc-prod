@@ -147,7 +147,7 @@ const EditPost = ({ postDoc }) => {
 
   return (
     <form onSubmit={handleSubmitPost}>
-      <DialogContent sx={{ pt: 0, px: { xs: 1, sm: 1 }, width: { xs: '100vw', sm: 500, md: 500 }, minHeight: 440 }}>
+      <DialogContent sx={{ pt: 0, px: { xs: 1, sm: 1 }, width: { xs: '100vw', sm: 500, md: 600 }, minHeight: 440 }}>
         <DialogContentText variant="caption">Click on photo to zoom. Add/delete photos & content.</DialogContentText>
         <DialogContentText variant="caption"> Update when you are done!</DialogContentText>
         <DialogActions sx={{ my: 0, justifyContent: 'center' }}>

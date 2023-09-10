@@ -108,6 +108,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   }
   // more pics is different for odd number of pics as we use full width so no gaps
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
+  const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
 
   return (
     <>
@@ -123,7 +124,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           }
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
-          subheader={doc.data?.uName + ', ' + doc.data?.subtitle}
+          // subheader={doc.data?.uName + ', ' + doc.data?.subtitle}
+          subheader={authorPost + ', ' + doc.data?.subtitle}
           // subheader={author?.data?.profileName || author?.data?.displayName || doc.data?.uName + ',vbnfjdksl;fvkblvcndkmslkbnvcdskmlk ' + doc.data?.subtitle}
         />
         <ImageList

@@ -91,21 +91,23 @@ export function SettingsProvider({ children }) {
       (snapshot) => {
         if (snapshot.val()) {
           const posts = Object?.values(snapshot.val());
-          const sortedPosts = posts.toSorted(compareFn);
-          setPosts([...sortedPosts]);
+          // const sortedPosts = posts.toSorted(compareFn);
+          posts.sort(compareFn);
+          console.log(posts);
+          setPosts([...posts]);
         }
       },
       (error) => {
         console.log(error, error.message);
       }
     );
+    // sort desc funct.. bigger stays lowest in array
     function compareFn(a, b) {
       if (a.data.timestamp > b.data.timestamp) {
         return -1;
       } else if (a.data.timestamp < b.data.timestamp) {
         return 1;
       }
-      // a must be equal to b
       return 0;
     }
 

@@ -1,13 +1,19 @@
 import EmailTest from 'src/components/email/EmailTest';
-import { getPostsApi } from 'src/lib/getStaticDocs';
-import { rtdb } from 'src/lib/createFirebaseApp';
+import { getPosts, getPostsApi } from 'src/lib/getStaticDocs';
+// import { rtdb } from 'src/lib/createFirebaseApp';
 import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
+import { updateDoco } from 'src/lib/firestoreDocument';
 
-// const posts = await getPostsApi();
-// console.log(posts[0]);
+// const posts = await getPosts();
+// console.log(posts);
+// posts.map((post) => {
+//   post.data.data = null;
+//   post.data.id = null;
+// });
+// console.log(posts);
 
 async function rtPosts() {
-  await Promise.all(posts.map((post) => updateRealtimeDoc(`/Posts/${post.id}`, post)));
+  await Promise.all(posts.map((post) => updateDoco('/Posts', post.id, post.data)));
 }
 
 // deleteRealtimeDoc('/', 'posts');
@@ -43,3 +49,4 @@ const test = () => (
 );
 
 export default test;
+//

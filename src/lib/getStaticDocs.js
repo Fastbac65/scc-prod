@@ -2,38 +2,37 @@
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from 'src/lib/createFirebaseApp';
 
+// export function getPosts() {
+//   return new Promise(async (resolve, reject) => {
+//     try {
+//       // const response = await fetch('http://192.168.0.220:5002/api/posts', {
+//       //   method: 'POST',
+//       //   headers: {
+//       //     'Content-Type': 'application/json',
+//       //   },
+//       //   body: JSON.stringify({
+//       //     api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+//       //   }),
+//       // }).then((res) => res.json());
+//       const docs = [];
+//       const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+//       const snapshot = await getDocs(q);
+//       snapshot.forEach((doc) => {
+//         docs.push({ id: doc.id, data: { ...doc.data() } });
+//       });
+
+//       resolve(docs);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   });
+// }
+
 export function getPosts() {
   return new Promise(async (resolve, reject) => {
     try {
-      // const response = await fetch('http://192.168.0.220:5002/api/posts', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
-      //   }),
-      // }).then((res) => res.json());
-      const docs = [];
-      const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
-      const snapshot = await getDocs(q);
-      snapshot.forEach((doc) => {
-        docs.push({ id: doc.id, data: { ...doc.data(), timestamp: doc.data().timestamp?.toDate().getTime() } });
-      });
-
-      resolve(docs);
-    } catch (error) {
-      console.log(error);
-    }
-  });
-}
-
-export function getPostsApi() {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const response = await fetch('http://192.168.0.220:3000/api/posts', {
+      const response = await fetch('https://scc-serverapi.vercel.app/api/posts', {
         method: 'POST',
-        // mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },

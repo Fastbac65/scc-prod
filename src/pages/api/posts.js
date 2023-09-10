@@ -4,7 +4,7 @@ const { db } = createFirebaseAdminApp();
 const postDocs = [];
 
 try {
-  const postRef = db.collection('Posts').orderBy('timestamp', 'desc').limit(25);
+  const postRef = db.collection('Posts').orderBy('timestamp', 'desc');
   // running an initial get to setup first getStaticProps otherwise they are [] empty, then listener can take over below
   const initSnap = await postRef.get();
   initSnap.forEach((doc) => {

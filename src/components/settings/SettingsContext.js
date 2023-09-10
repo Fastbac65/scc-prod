@@ -9,7 +9,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
-import { doc, onSnapshot } from 'firebase/firestore';
+import { collection, doc, onSnapshot } from 'firebase/firestore';
 import { onValue, orderByChild, orderByValue, query, ref } from 'firebase/database';
 
 // ----------------------------------------------------------------------
@@ -114,48 +114,48 @@ export function SettingsProvider({ children }) {
     };
   }, []);
 
-  // useEffect(() => {
-  //   try {
-  //     const membersListener = onSnapshot(
-  //       collection(db, 'members'),
-  //       (snapshot) => {
-  //         const docs = [];
+  useEffect(() => {
+    try {
+      const membersListener = onSnapshot(
+        collection(db, 'members'),
+        (snapshot) => {
+          const docs = [];
 
-  //         snapshot.forEach((doc) => {
-  //           docs.push({ uid: doc.id, data: doc.data() });
-  //         });
-  //         console.log('members loaded', docs);
-  //         setMembers([...docs]);
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     );
-  //     const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
-  //     const postsListener = onSnapshot(
-  //       q,
-  //       (snapshot) => {
-  //         const docs = [];
+          snapshot.forEach((doc) => {
+            docs.push({ uid: doc.id, data: doc.data() });
+          });
+          console.log('members loaded', docs);
+          setMembers([...docs]);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      // const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+      // const postsListener = onSnapshot(
+      //   q,
+      //   (snapshot) => {
+      //     const docs = [];
 
-  //         snapshot.forEach((doc) => {
-  //           docs.push({ id: doc.id, data: doc.data() });
-  //         });
-  //         console.log('posts loaded', docs);
-  //         setPosts([...docs]);
-  //       },
-  //       (error) => {
-  //         console.log(error);
-  //       }
-  //     );
-  //     return () => {
-  //       // unsubscribe listeners
-  //       membersListener();
-  //       postsListener();
-  //     };
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, []);
+      //     snapshot.forEach((doc) => {
+      //       docs.push({ id: doc.id, data: doc.data() });
+      //     });
+      //     console.log('posts loaded', docs);
+      //     setPosts([...docs]);
+      //   },
+      //   (error) => {
+      //     console.log(error);
+      //   }
+      // );
+      return () => {
+        // unsubscribe listeners
+        membersListener();
+        // postsListener();
+      };
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   // looks for cookie in local storage with thememode - so that theme persists across tabs
   useEffect(() => {

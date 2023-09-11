@@ -75,7 +75,11 @@ export function SettingsProvider({ children }) {
 
   const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
 
-  console.log(isLoading ? 'loading' : data);
+  useEffect(() => {
+    if (isLoading) return;
+    setPosts(data);
+    console.log('useSWR set posts');
+  }, [data, isLoading]);
 
   useEffect(() => {
     let listener = () => {}; // member account details listener needed so that account pages reflect updates

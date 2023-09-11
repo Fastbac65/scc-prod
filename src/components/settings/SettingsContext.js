@@ -73,8 +73,8 @@ export function SettingsProvider({ children }) {
       }),
     }).then((res) => res.json());
 
+  // useSWR against API listener
   const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
-
   useEffect(() => {
     if (isLoading) return;
     setPosts(data);

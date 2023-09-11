@@ -9,8 +9,8 @@ import useSWR from 'swr';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
-import { collection, doc, onSnapshot } from 'firebase/firestore';
-import { onValue, ref } from 'firebase/database';
+import { collection, doc, onSnapshot, query, orderBy } from 'firebase/firestore';
+// import { onValue, ref } from 'firebase/database';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -74,12 +74,12 @@ export function SettingsProvider({ children }) {
     }).then((res) => res.json());
 
   // useSWR against API listener
-  const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
-  useEffect(() => {
-    if (isLoading) return;
-    setPosts(data);
-    console.log('useSWR set posts');
-  }, [data, isLoading]);
+  // const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
+  // useEffect(() => {
+  //   if (isLoading) return;
+  //   setPosts(data);
+  //   console.log('useSWR set posts');
+  // }, [data, isLoading]);
 
   useEffect(() => {
     let listener = () => {}; // member account details listener needed so that account pages reflect updates
@@ -151,26 +151,26 @@ export function SettingsProvider({ children }) {
           console.log(error);
         }
       );
-      // const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
-      // const postsListener = onSnapshot(
-      //   q,
-      //   (snapshot) => {
-      //     const docs = [];
+      const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+      const postsListener = onSnapshot(
+        q,
+        (snapshot) => {
+          const docs = [];
 
-      //     snapshot.forEach((doc) => {
-      //       docs.push({ id: doc.id, data: doc.data() });
-      //     });
-      //     console.log('posts loaded', docs);
-      // setPosts([...docs]);
-      //   },
-      //   (error) => {
-      //     console.log(error);
-      //   }
-      // );
+          snapshot.forEach((doc) => {
+            docs.push({ id: doc.id, data: doc.data() });
+          });
+          console.log('posts loaded', docs);
+          setPosts([...docs]);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
       return () => {
         // unsubscribe listeners
         membersListener();
-        // postsListener();
+        postsListener();
       };
     } catch (error) {
       console.log(error);

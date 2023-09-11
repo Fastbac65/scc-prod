@@ -86,11 +86,13 @@ export default function AuthWithSocial() {
 
   return (
     <Stack direction="row" spacing={2}>
-      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerGoogle)}>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        {/* <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerGoogle)}> */}
         <Iconify icon="logos:google-icon" width={24} />
       </Button>
 
-      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerFacebook)}>
+      <Button fullWidth size="large" color="inherit" variant="outlined">
+        {/* <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerFacebook)}> */}
         <Iconify icon="carbon:logo-facebook" width={24} color="#1877F2" />
       </Button>
 

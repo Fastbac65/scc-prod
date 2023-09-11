@@ -60,20 +60,23 @@ export default function AuthRegisterForm() {
       console.log(user);
       if (user.uid) throw new Error('Error - It appears there is already an account on our system with that email address.');
       // await new Promise((resolve) => setTimeout(resolve, 500));
-      const response = await fetch('/api/email/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          currentUserEmail: data.email,
-          currentUserName: data.fullName,
-          currentUserPhone: data.mobile,
-          mode: 'signInWithEmail',
-          api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
-        }),
-      }).then((res) => res.json());
-      console.log(response);
+
+      // comment out for now
+
+      // const response = await fetch('/api/email/send', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     currentUserEmail: data.email,
+      //     currentUserName: data.fullName,
+      //     currentUserPhone: data.mobile,
+      //     mode: 'signInWithEmail',
+      //     api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+      //   }),
+      // }).then((res) => res.json());
+      // console.log(response);
       router.push('/');
 
       dispatch({
@@ -82,7 +85,8 @@ export default function AuthRegisterForm() {
           ...alert,
           open: true,
           severity: 'success',
-          message: `Thank you.. we're almost there. An account verification email has been sent to ${data.email}. To complete your account setup and verification, please follow the instructions in your email.`,
+          message: `Thank you.. we're almost there.. still in test mode for now so no account created yet. To login use demo account on login page`,
+          // message: `Thank you.. we're almost there. An account verification email has been sent to ${data.email}. To complete your account setup and verification, please follow the instructions in your email.`,
           duration: 12000,
         },
       });

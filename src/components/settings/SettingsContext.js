@@ -5,12 +5,12 @@ import { auth, db, rtdb } from 'src/lib/createFirebaseApp';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
-
+import useSWR from 'swr';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';
 import { collection, doc, onSnapshot } from 'firebase/firestore';
-import { onValue, orderByChild, orderByValue, query, ref } from 'firebase/database';
+import { onValue, ref } from 'firebase/database';
 
 // ----------------------------------------------------------------------
 // if (process.env.NODE_ENV_T === 'development') {
@@ -62,6 +62,21 @@ export function SettingsProvider({ children }) {
   // const custRef = ref(db, 'customers/');
   const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app';
 
+  const fetcher = (url) =>
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+      }),
+    }).then((res) => res.json());
+
+  const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
+
+  console.log(isLoading ? 'loading' : data);
+
   useEffect(() => {
     let listener = () => {}; // member account details listener needed so that account pages reflect updates
     if (user) {
@@ -82,39 +97,38 @@ export function SettingsProvider({ children }) {
     };
   }, [user]);
 
-  useEffect(() => {
-    // realtime db posts listener
+  // realtime db posts listener
+  // useEffect(() => {
+  //   const postsRef = ref(rtdb, 'Posts');
+  //   const rtPostListener = onValue(
+  //     postsRef,
+  //     (snapshot) => {
+  //       if (snapshot.val()) {
+  //         const posts = Object?.values(snapshot.val());
+  //         // const sortedPosts = posts.toSorted(compareFn);
+  //         posts.sort(compareFn);
+  //         console.log(posts);
+  //         setPosts([...posts]);
+  //       }
+  //     },
+  //     (error) => {
+  //       console.log(error, error.message);
+  //     }
+  //   );
+  //   // sort desc funct.. bigger stays lowest in array
+  //   function compareFn(a, b) {
+  //     if (a.data.timestamp > b.data.timestamp) {
+  //       return -1;
+  //     } else if (a.data.timestamp < b.data.timestamp) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   }
 
-    const postsRef = ref(rtdb, 'Posts');
-    const rtPostListener = onValue(
-      postsRef,
-      (snapshot) => {
-        if (snapshot.val()) {
-          const posts = Object?.values(snapshot.val());
-          // const sortedPosts = posts.toSorted(compareFn);
-          posts.sort(compareFn);
-          console.log(posts);
-          setPosts([...posts]);
-        }
-      },
-      (error) => {
-        console.log(error, error.message);
-      }
-    );
-    // sort desc funct.. bigger stays lowest in array
-    function compareFn(a, b) {
-      if (a.data.timestamp > b.data.timestamp) {
-        return -1;
-      } else if (a.data.timestamp < b.data.timestamp) {
-        return 1;
-      }
-      return 0;
-    }
-
-    return () => {
-      rtPostListener();
-    };
-  }, []);
+  //   return () => {
+  //     rtPostListener();
+  //   };
+  // }, []);
 
   useEffect(() => {
     try {
@@ -143,7 +157,7 @@ export function SettingsProvider({ children }) {
       //       docs.push({ id: doc.id, data: doc.data() });
       //     });
       //     console.log('posts loaded', docs);
-      //     setPosts([...docs]);
+      // setPosts([...docs]);
       //   },
       //   (error) => {
       //     console.log(error);

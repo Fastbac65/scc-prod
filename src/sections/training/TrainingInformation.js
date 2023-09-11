@@ -35,17 +35,17 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 const patrolInfoContent = [
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'icon-park-outline:degree-hat',
     label: 'Season Starts Sept 23rd',
     text: `<p>All active members are required to be rostered onto patrol duty throughout the season on a rotational basis usually one day per month, which equates to 5-6 half day patrols per season. Due to the strength of our patrolling membership and our patrol hours, this is one of the lightest patrolling commitments across the Sydney Northern Beaches Branch.</p>`,
   },
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'icon-park-outline:degree-hat',
     label: 'Patrol Roster',
     text: `<p>Current SCC Patrol roster can be seen below in the calendar section. This version on the public website does not include telephone numbers due to privacy reasons. Patrolling Members can access the Patrol Roster with telephone number on TeamApp under ‘Information for Patrolling Members’.</p>`,
   },
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'icon-park-outline:degree-hat',
     label: 'Gym Access',
     text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk.  Those Patrolling Members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link on <a rel='noopener' target='_blank' href=' https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' >here</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.org/wp-content/uploads/2023/08/SCC-Gym-agreement-FINAL.pdf' >here</a>. Email mail@southcurlcurlslsc.org to arrange FOB collection or activation.</p>`,
   },

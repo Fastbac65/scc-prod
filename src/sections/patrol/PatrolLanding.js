@@ -50,7 +50,14 @@ const PatrolLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs
+            sx={{ mb: 3 }}
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Patrol Info', href: '/patrol/#patrolinfo' },
+              { name: 'Patrol Calendar', href: '/patrol/#patrolcalendar' },
+            ]}
+          />
         </Container>
       </Box>
 

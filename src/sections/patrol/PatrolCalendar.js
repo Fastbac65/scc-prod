@@ -1,4 +1,4 @@
-import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled } from '@mui/material';
+import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled, Link } from '@mui/material';
 import { useState } from 'react';
 import CalendarPatrol from './CalendarPatrol';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -71,6 +71,15 @@ const PatrolCalendar = () => {
               {/* margin seems to fix scroll issue on mobile */}
               <CalendarPatrol holidays={holidays} patrol={patrol} />
             </Box>
+          </Box>
+          <Box>
+            <Typography>
+              {' '}
+              Public version of full patrol roster: &nbsp;
+              <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.org/wp-content/uploads/2023/08/SCC-2023-2024-PATROLS-No-Tel-as-at-23-Aug-23.pdf">
+                SCC 2023-2024 PATROLS as at 23 Aug’23.
+              </Link>
+            </Typography>
           </Box>
         </Container>
       </Styled2ndLayer>

@@ -29,7 +29,8 @@ const PatrolLanding = () => {
                 Patrols
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                The only place to be on a sunny Sunday morning. Check our weekly update for latest news.
+                The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and
+                nippers. Always swim between the flags.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

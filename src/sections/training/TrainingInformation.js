@@ -15,7 +15,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/patrol4.jpeg',
+    imgUrl: '/assets/images/patrol1.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
@@ -24,7 +24,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
       endColor: `${alpha(theme.palette.background.neutral, 1)} 45%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/patrol4.jpeg',
+      imgUrl: '/assets/images/patrol1.jpeg',
     }),
     backgroundPosition: 'center, right',
     backgroundSize: 'cover, auto 100%',
@@ -50,7 +50,7 @@ const patrolInfoContent = [
     text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk.  Those Patrolling Members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link on <a rel='noopener' target='_blank' href=' https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' >here</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.org/wp-content/uploads/2023/08/SCC-Gym-agreement-FINAL.pdf' >here</a>. Email mail@southcurlcurlslsc.org to arrange FOB collection or activation.</p>`,
   },
 ];
-const PatrolInformation = () => {
+const TrainingInformation = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -60,8 +60,8 @@ const PatrolInformation = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Patrol</Typography>
-            <Typography variant="body2">Our favourite time of year is here again. South Curly patrol season start Sept 23rd.</Typography>
+            <Typography variant="h3">SCC Training</Typography>
+            <Typography variant="body2">All your training info here from Nat our chief instructor</Typography>
           </Stack>
         </Box>
 
@@ -84,7 +84,7 @@ const PatrolInformation = () => {
     </StyledRootResponsive>
   );
 };
-export default PatrolInformation;
+export default TrainingInformation;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

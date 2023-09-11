@@ -49,7 +49,7 @@ const PatrolCalendar = () => {
     <StyledRoot>
       <Styled2ndLayer>
         <div style={{ position: 'relative' }}>
-          <div id="patrolcalendar" style={{ position: 'absolute', top: '-80px' }} />
+          <div id="patrolcalendar" style={{ position: 'absolute', top: '-60px' }} />
         </div>
         <Container maxWidth="lg" sx={{ py: 3, textAlign: 'center', justifyContent: 'center' }}>
           <Typography variant="h3">SCC Patrol Calendar</Typography>{' '}

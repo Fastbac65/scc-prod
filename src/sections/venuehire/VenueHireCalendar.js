@@ -57,10 +57,13 @@ const VenueHireCalendar = () => {
   return (
     <StyledRoot>
       <Styled2ndLayer>
-        <Container maxWidth="lg" sx={{ py: 3, textAlign: 'center', justifyContent: 'center' }}>
+        <div style={{ position: 'relative' }}>
+          <div id="venuecalendar" style={{ position: 'absolute', top: '-80px' }} />
+        </div>
+        <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', justifyContent: 'center' }}>
           <Typography variant="h3">SCC Venue Bookings</Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
-            scroll within calendar to view
+            scroll within calendar to view more..
           </Typography>
           <Box sx={{ display: 'flex', py: 2 }}>
             {isSmUp && (
@@ -70,9 +73,9 @@ const VenueHireCalendar = () => {
                     Filter
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Socials" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>
             )}

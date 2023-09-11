@@ -50,7 +50,13 @@ const TrainingLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs sx={{ mb: 3 }} links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs
+            sx={{ mb: 3 }}
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Training Calendar', href: '/training/#trainingcalendar' },
+            ]}
+          />
         </Container>
       </Box>
 

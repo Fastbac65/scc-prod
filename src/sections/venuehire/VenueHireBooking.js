@@ -141,6 +141,9 @@ const VenueHireBooking = () => {
 
   return (
     <StyledRootResponsive>
+      <div style={{ position: 'relative' }}>
+        <div id="venuebooking" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Box sx={{ px: 2 }} rowGap={3} columnGap={0} display="grid" gridTemplateColumns={{ xs: 'repeat(1, 1fr)', sm: '3fr 2fr', md: 'repeat(2, 1fr)' }}>
         <Stack>
           <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>

@@ -48,7 +48,10 @@ const TrainingCalendar = () => {
   return (
     <StyledRoot>
       <Styled2ndLayer>
-        <Container maxWidth="lg" sx={{ py: 3, textAlign: 'center', justifyContent: 'center' }}>
+        <div style={{ position: 'relative' }}>
+          <div id="trainingcalendar" style={{ position: 'absolute', top: '-60px' }} />
+        </div>
+        <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', justifyContent: 'center' }}>
           <Typography variant="h3">SCC Training Calendar</Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
             scroll within calendar to view more

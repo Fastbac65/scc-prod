@@ -54,7 +54,7 @@ const PatrolLanding = () => {
             sx={{ mb: 3 }}
             links={[
               { name: 'Home', href: '/' },
-              { name: 'Patrol Info', href: '/patrol/#patrolinfo' },
+              // { name: 'Patrol Info', href: '/patrol/#patrolinfo' },
               { name: 'Patrol Calendar', href: '/patrol/#patrolcalendar' },
             ]}
           />

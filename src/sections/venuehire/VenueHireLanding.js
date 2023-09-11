@@ -47,7 +47,13 @@ const VenueHireLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Venue Details' }]} />
+          <CustomBreadcrumbs
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Booking Inquiry', href: '/venuehire/#venuebooking' },
+              { name: 'Venue Bookings', href: '/venuehire/#venuecalendar' },
+            ]}
+          />
         </Container>
       </Box>
 

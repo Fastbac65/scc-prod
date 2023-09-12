@@ -73,7 +73,7 @@ export default function Posts({ staticPosts }) {
   return (
     <StyledRoot>
       <Box sx={{ pt: 2 }}>
-        {user && (
+        {member?.role?.posts && (
           <Stack spacing={1} direction="row" sx={{ justifyContent: 'center' }}>
             <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
               <Fab variant="extended" size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>

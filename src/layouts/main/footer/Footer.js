@@ -19,10 +19,10 @@ const Footer = () => {
       href: 'https://www.communicloud.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/comcloud.jpeg' : '/assets/sponsors/comcloud.jpeg',
     },
-    {
-      href: 'https://www.humel.com.au/',
-      src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark2.jpeg' : '/assets/sponsors/humel-light.jpeg',
-    },
+    // {
+    //   href: 'https://www.humel.com.au/',
+    //   src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark2.jpeg' : '/assets/sponsors/humel-light.jpeg',
+    // },
     {
       href: 'https://www.humel.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark1.jpeg' : '/assets/sponsors/humel-light.jpeg',
@@ -32,7 +32,7 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/afis.jpeg' : '/assets/sponsors/afis.jpeg',
     },
     {
-      href: 'https://www.cooks.com.au/',
+      href: 'https://www.cooksplumbing.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/cooks.jpeg' : '/assets/sponsors/cooks.jpeg',
     },
   ];

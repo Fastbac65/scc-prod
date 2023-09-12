@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { CardMedia, Grid, Link, Paper, Typography, Box, useTheme } from '@mui/material';
+import CarouselBasic1 from './CarouselBasic1';
 
 const Footer = () => {
   const theme = useTheme();
@@ -8,24 +9,38 @@ const Footer = () => {
   const sponsors = [
     {
       href: 'https://sydneybeachhomes.com.au/',
-      // src: '/assets/sponsors/sbh-white.jpeg',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/sbh-dark.webp' : '/assets/sponsors/sbh-white.jpeg',
     },
     {
       href: 'http://www.bendigobank.com.au/about_us/locate_us/locator_detail.asp?BranchNumber=9238',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/light-bendigo.jpeg' : '/assets/sponsors/light-bendigo.jpeg',
     },
-
+    {
+      href: 'https://www.communicloud.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/comcloud.jpeg' : '/assets/sponsors/comcloud.jpeg',
+    },
     {
       href: 'https://www.humel.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark2.jpeg' : '/assets/sponsors/humel-light.jpeg',
+    },
+    {
+      href: 'https://www.humel.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark1.jpeg' : '/assets/sponsors/humel-light.jpeg',
+    },
+    {
+      href: 'https://www.afis.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/afis.jpeg' : '/assets/sponsors/afis.jpeg',
+    },
+    {
+      href: 'https://www.cooks.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/cooks.jpeg' : '/assets/sponsors/cooks.jpeg',
     },
   ];
 
   return (
     //sponsors
     <Box sx={{ textAlign: 'center', justifyContent: 'center' }}>
-      <Paper sx={{ background: theme.palette.mode === 'dark' ? '#000' : 'white', boxShadow: 0, borderRadius: 0 }}>
+      {/* <Paper sx={{ background: theme.palette.mode === 'dark' ? '#000' : 'white', boxShadow: 0, borderRadius: 0 }}>
         <Grid container sx={{ px: 0, display: 'flex', alignItems: 'center' }}>
           {sponsors.map((sponsor) => (
             <Grid item key={sponsor.src} xs={12} sm={4}>
@@ -35,7 +50,10 @@ const Footer = () => {
             </Grid>
           ))}
         </Grid>
-      </Paper>
+      </Paper> */}
+      <Box sx={{ height: '200px', overflow: 'hidden', borderRadius: 2 }}>
+        <CarouselBasic1 data={sponsors} />
+      </Box>
       <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={1} paragraph color="text-primary" variant="caption">
           Email:{' '}

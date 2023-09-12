@@ -1,5 +1,4 @@
 // ----------------------------------------------------------------------
-import CompetitorsCadets from '../competitors/CompetitorsCadets';
 import PatrolCalendar from '../patrol/PatrolCalendar';
 import PatrolInformation from '../patrol/PatrolInfomation';
 import RecentPosts from '../posts/RecentPosts';
@@ -12,7 +11,6 @@ export default function PatrolView({ staticPosts }) {
       <PatrolLanding />
       <PatrolInformation />
       <PatrolCalendar />
-      <CompetitorsCadets />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

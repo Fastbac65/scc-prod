@@ -30,7 +30,7 @@ const PatrolLanding = () => {
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and
-                nippers. Always swim between the flags.
+                nippers.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}
@@ -56,6 +56,7 @@ const PatrolLanding = () => {
               { name: 'Home', href: '/' },
               // { name: 'Patrol Info', href: '/patrol/#patrolinfo' },
               { name: 'Patrol Calendar', href: '/patrol/#patrolcalendar' },
+              // { name: 'SRC', href: '/patrol/#cadets' },
             ]}
           />
         </Container>

@@ -16,7 +16,7 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/light-bendigo.jpeg' : '/assets/sponsors/light-bendigo.jpeg',
     },
     {
-      href: 'https://www.communicloud.com.au/',
+      href: 'https://www.communicloud.com/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/comcloud.jpeg' : '/assets/sponsors/comcloud.jpeg',
     },
     // {

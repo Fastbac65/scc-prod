@@ -89,6 +89,10 @@ export default function Header() {
             //   md: HEADER.H_MAIN_DESKTOP,
             // },
           }),
+          ...(isOffset &&
+            !isSmUp && {
+              ...bgBlur({ color: theme.palette.primary.darker, blur: 7, opacity: 0.1 }),
+            }),
         }}
       >
         <Box sx={{ height: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -128,9 +132,9 @@ export default function Header() {
                     sx={{
                       lineHeight: 0,
                       position: 'relative',
-                      height: isOffset ? '64px' : '54px',
+                      height: isOffset ? '54px' : '54px',
                       width: '170px',
-                      borderRadius: isOffset ? 0 : 1,
+                      borderRadius: isOffset ? 1 : 1,
                       overflow: 'hidden',
                       transition: theme.transitions.create(['height'], {
                         easing: theme.transitions.easing.easeInOut,

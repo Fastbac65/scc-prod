@@ -55,7 +55,7 @@ const CompetitorsLanding = () => {
               { name: 'Home', href: '/' },
               { name: 'Champs', href: '/competitors/#champs' },
               { name: 'SRC', href: '/competitors/#cadets' },
-              { name: 'Boaties', href: '/competitors/#boaties' },
+              { name: 'Boat Crews', href: '/competitors/#boatcrews' },
             ]}
           />
         </Container>

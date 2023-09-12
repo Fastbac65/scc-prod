@@ -68,7 +68,7 @@ const CompetitorsBoatiesCrews = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="champs" style={{ position: 'absolute', top: '-260px' }} />
+        <div id="boatcrews" style={{ position: 'absolute', top: '-260px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>

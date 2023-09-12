@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import { useState, useRef } from 'react';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Box, Card, CardMedia, Link, Unstable_Grid2 as Grid } from '@mui/material';
+import { Card, CardMedia, Link } from '@mui/material';
 // components
-import Image from 'src/components/image';
-import Carousel, { CarouselArrowIndex } from 'src/components/carousel';
+import Carousel from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +14,7 @@ export default function CarouselBasic1({ data }) {
 
   const carouselRef = useRef(null);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
   const carouselSettings = {
     dots: false,
@@ -34,16 +33,16 @@ export default function CarouselBasic1({ data }) {
       },
     ],
 
-    beforeChange: (current, next) => setCurrentIndex(next),
+    // beforeChange: (current, next) => setCurrentIndex(next),
   };
 
-  const handlePrev = () => {
-    carouselRef.current?.slickPrev();
-  };
+  // const handlePrev = () => {
+  //   carouselRef.current?.slickPrev();
+  // };
 
-  const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+  // const handleNext = () => {
+  //   carouselRef.current?.slickNext();
+  // };
 
   return (
     <Card>

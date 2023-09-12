@@ -19,6 +19,9 @@ export default async function handler(req, res) {
   // mode and email vars
   const { mode, email } = req.body;
 
+  const obj = { a: 'test', b: [{ nam: 'ter', addr: 'curly' }] };
+  console.log(JSON.stringify(obj), obj);
+
   if (req.method === 'POST') {
     try {
       switch (mode) {
@@ -28,7 +31,7 @@ export default async function handler(req, res) {
         }
 
         case 'role': {
-          const user = members.filter((member) => member.email === email);
+          const user = members.filter((member) => member.email === email[0]);
           // await db.ref('server_customers/').update({ ...customers });
           return res.status(200).json({ request: email, member: user.length ? user[0] : 'empty' });
         }

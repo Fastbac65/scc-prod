@@ -70,11 +70,11 @@ const CompetitorsBoaties = () => {
           </Stack>
           <Stack></Stack>
         </Stack>
-        <Box display="flex" justifyContent="center">
+        {/* <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
             <Typography variant="caption">Email Boat Captain - Boatiesemailhere@southcurlynippers.com.</Typography>
           </Stack>
-        </Box>
+        </Box> */}
       </Container>
     </StyledRootResponsive>
   );

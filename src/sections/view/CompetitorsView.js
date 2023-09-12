@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------
-import CompetitorsBoaties from '../competitors/CompetitorsBoaties';
-import CompetitorsBoatiesWin from '../competitors/CompetitorsBoatiesWins';
-import CompetitorsCadets from '../competitors/CompetitorsCadets';
-import CompetitorsChamps from '../competitors/CompetitorsChamps';
-import RecentPosts from '../posts/RecentPosts';
 import CompetitorsLanding from 'src/sections/competitors/CompetitorsLanding';
+import CompetitorsBoaties from '../competitors/CompetitorsBoaties';
+import CompetitorsBoatiesCrews from '../competitors/CompetitorsBoatiesCrews';
+import CompetitorsChamps from '../competitors/CompetitorsChamps';
+import CompetitorsCadets from '../competitors/CompetitorsCadets';
+import RecentPosts from '../posts/RecentPosts';
 // ----------------------------------------------------------------------
 
 export default function VenueHireView({ staticPosts }) {
@@ -12,7 +12,7 @@ export default function VenueHireView({ staticPosts }) {
     <>
       <CompetitorsLanding />
       <CompetitorsBoaties />
-      <CompetitorsBoatiesWin />
+      <CompetitorsBoatiesCrews />
       <CompetitorsChamps />
       <CompetitorsCadets />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />

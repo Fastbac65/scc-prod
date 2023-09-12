@@ -17,8 +17,8 @@ const Footer = () => {
     },
 
     {
-      href: 'https://www.stonerealestate.com.au',
-      src: 'https://southcurlcurlslsc.org/wp-content/uploads/2018/10/Stone-Dee-Why-Logo.png',
+      href: 'https://www.humel.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark2.jpeg' : '/assets/sponsors/humel-light.jpeg',
     },
   ];
 
@@ -26,11 +26,11 @@ const Footer = () => {
     //sponsors
     <Box sx={{ textAlign: 'center', justifyContent: 'center' }}>
       <Paper sx={{ background: theme.palette.mode === 'dark' ? '#000' : 'white', boxShadow: 0, borderRadius: 0 }}>
-        <Grid container sx={{ px: 2, display: 'flex', alignItems: 'center' }}>
+        <Grid container sx={{ px: 0, display: 'flex', alignItems: 'center' }}>
           {sponsors.map((sponsor) => (
             <Grid item key={sponsor.src} xs={12} sm={4}>
               <Link href={sponsor.href} target="_blank" rel="noopener">
-                <CardMedia href={sponsors.href} component="img" alt="" src={sponsor.src} />
+                <CardMedia height="200px" href={sponsors.href} component="img" alt="" src={sponsor.src} />
               </Link>
             </Grid>
           ))}

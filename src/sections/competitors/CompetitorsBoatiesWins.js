@@ -34,7 +34,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const boatiesWinContent = [
+const boatiesCrewsContent = [
   {
     icon: 'material-symbols:rowing-rounded',
     label: 'Our Crews',
@@ -42,7 +42,7 @@ const boatiesWinContent = [
     
     <p>- Open Male - Death Riders, Echidnas, Sneaky Nuts<br/>
     - Open Female - Shakers<br/>
-    - Reserve Male - <br/>
+    - Reserve Male - tbd<br/>
     - Reserve Female - Milk<br/>
     - U23 Male - Underdogs, Burley, Whompa<br/>
     - U23 Female - Crumpets*<br/>
@@ -64,7 +64,7 @@ const boatiesWinContent = [
     <p>For all the latest South Curly rowing updates, check us out on our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/southcurlyboaties/'   >@southcurlyboaties</a></p>`,
   },
 ];
-const CompetitorsBoatiesWin = () => {
+const CompetitorsBoatiesCrews = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -83,7 +83,7 @@ const CompetitorsBoatiesWin = () => {
         </Box>
 
         <Stack spacing={1} sx={{ px: 1, py: 2, textAlign: 'left' }}>
-          {boatiesWinContent.map((item) => (
+          {boatiesCrewsContent.map((item) => (
             <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
           ))}
         </Stack>
@@ -96,7 +96,7 @@ const CompetitorsBoatiesWin = () => {
     </StyledRootResponsive>
   );
 };
-export default CompetitorsBoatiesWin;
+export default CompetitorsBoatiesCrews;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

@@ -2,6 +2,7 @@ import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '
 import NextLink from 'next/link';
 // components
 import Iconify from 'src/components/iconify/Iconify';
+import Markdown from 'src/components/markdown/Markdown';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
@@ -19,8 +20,8 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
       direction: 'to left',
-      startColor: `${alpha(theme.palette.background.neutral, 0)} 5%`,
-      endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
+      startColor: `${alpha(theme.palette.background.neutral, 0)} 10%`,
+      endColor: `${alpha(theme.palette.background.neutral, 1)} 40%`,
       imgUrl: '/assets/images/boaties1.jpeg',
     }),
     backgroundPosition: 'center, right',
@@ -33,23 +34,13 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const boatiesContent = [
   {
     icon: 'material-symbols:rowing-rounded',
-    label: 'Skill Development Focus',
-    text: `boaties are awesome this and that`,
+    label: 'A Family Environment',
+    text: `<p>The majority of our rowing competitors have never been involved in any sort of rowing environment before, mostly coming from Nippers, old club members/family or associated friends in the community. We welcome people from all walks of life into the boaties family, but they always stay for the warm and fun atmosphere we champion at South Curly, and are happy to walk away with some silverware at the end of each season.</p>`,
   },
   {
     icon: 'material-symbols:rowing-rounded',
-    label: 'State and National Success',
-    text: `Molly hadn’t seen the dead girl’s face swirl like smoke, to take on the wall between the bookcases, its distorted face sagging to the Tank War, mouth touched with hot gold as a gliding cursor struck sparks from the wall between the bookcases, its distorted face sagging to the bare concrete floor. `,
-  },
-  {
-    icon: 'material-symbols:rowing-rounded',
-    label: 'Family-Centered Approach',
-    text: `Now this quiet courtyard, Sunday afternoon, this girl with a hand on his chest. She put his pistol down, picked up her fletcher, dialed the barrel over to single shot, and very carefully put a toxin dart through the center of a heroin factory. `,
-  },
-  {
-    icon: 'material-symbols:rowing-rounded',
-    label: 'Dual Participation Opportunities',
-    text: `Members of the 'Rippers' group are also given the option to participate in their mainstream age groups if they wish, fostering a sense of belonging and integration. Its all about providing an active learning and fun environment for all participants.`,
+    label: 'Branch, State and National Accolades',
+    text: `<p>South Curly rowing has been a force to be reckoned with across Branch, State and National (SLSA/ASRL) carnivals for a number of years and are hoping to add to our current records of success. Currently standing at 11 Aussie Golds, 8 ASRL Golds, Numerous State & Branch medals, as well as regular appearances as part of the NSW state team when competing in the Interstate Championships. Together with 3 time representation in the National Selection event competing in a Test series against New Zealand, SCC boaties are proud to keep producing quality season after season.</p> `,
   },
 ];
 const CompetitorsBoaties = () => {
@@ -61,10 +52,10 @@ const CompetitorsBoaties = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Boaties</Typography>
+            <Typography variant="h3">South Curly Boaties</Typography>
             <Typography variant="body2">
-              Our mission with the South Curl Curl SLSC Rowing Teams is to champion competitive excellence. We strive to nurture a deep passion for rowing, foster camaraderie, and instill discipline while
-              representing our club with pride on branch, state and national waters.
+              With a focus on producing some of the best surf boat rowing athletes in the country, not afraid to crack into an 8ft swell in a boat, South Curly Boaties have been one of Australia’s most dominant
+              competitive clubs in the sport for the better part of 85 years.
             </Typography>
           </Stack>
         </Box>
@@ -98,9 +89,10 @@ function OverviewItem({ icon, label, text = '-' }) {
       </Box>
       <Stack spacing={0.5}>
         <Typography>{label}</Typography>
-        <Typography color="text.secondary" variant="body2">
+        <Markdown content={text} />
+        {/* <Typography color="text.secondary" variant="body2">
           {text}
-        </Typography>
+        </Typography> */}
       </Stack>
     </Stack>
   );

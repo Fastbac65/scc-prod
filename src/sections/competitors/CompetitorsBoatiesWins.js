@@ -15,7 +15,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.95)} 80%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/champs3.jpeg',
+    imgUrl: '/assets/images/boaties3.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     padding: theme.spacing(25, 0, 4),
@@ -25,7 +25,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
       endColor: `${alpha(theme.palette.background.neutral, 1)} 35%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/header15.jpeg',
+      imgUrl: '/assets/images/boaties3wide.jpeg',
     }),
     backgroundPosition: 'center, top',
     backgroundSize: '100%',
@@ -34,37 +34,37 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const champsContent = [
+const boatiesWinContent = [
   {
-    icon: 'mdi:run',
-    label: 'What is a Champion Lifesaver?',
-    text: `
-    <p>Becoming a South Curl Curl Champion Lifesaver is not just a title; it’s a journey that demands unwavering dedication and a profound commitment to rigorous training. Imagine early mornings and late evenings, where the gym, the pool, and the beautiful ocean become your training grounds. A relentless pursuit of physical and mental excellence through board races, beach sprints, tube rescues and all aspects of aquatic rescue, CPR and first aid.</p>
+    icon: 'material-symbols:rowing-rounded',
+    label: 'Our Crews',
+    text: `<p>Our club is stronger than ever with a number of crews across every division this season, all with formidable records & success over the years. This season our competitors include;</p><br/>
     
-    <p>Amid the training and assessments, what makes this journey truly remarkable is the sense of community. Lifesavers create bonds through shared laughter, unforgettable memories, and unique experiences. It's not just a sport or an event; it's a way of life where the commitment is matched by the warmth of camaraderie.</p>`,
+    <p>- Open Male - Death Riders, Echidnas, Sneaky Nuts<br/>
+    - Open Female - Shakers<br/>
+    - Reserve Male - <br/>
+    - Reserve Female - Milk<br/>
+    - U23 Male - Underdogs, Burley, Whompa<br/>
+    - U23 Female - Crumpets*<br/>
+    - U19 Male - Tickles*, New Un-Named Crew*<br/>
+    - U19 Female - Cruisers*, New Un-Named Crew*<br/><br/>
+
+    *denotes on Debut to scare the competition for the first time this season.</p>`,
   },
   {
-    icon: 'mdi:run',
-    label: 'A Champion Lifesaver Event',
-    text: `
-    <p>The Champion Lifesaver event provides Surf Life Saving members (minimum age group U15) with the opportunity to demonstrate, in a competitive manner, the physical, lifesaving and knowledge skills required of a Lifesaver. The event is determined through a scoring system, where the competitor with the highest score, after all 3 sections, is declared the winner. The maximum attainable score in total is 120 points.</p>
-    <ul>
-    <li>Physical Skills 40 points - Surf (swim) Race, Board Race, Beach Sprint, Tube Rescue (10 points each)</li>
-    <li>Questionnaire 40 points - The theory section consists of 40 multiple choice questions derived from the current edition of the SLSA Public Safety and Aquatic Rescue Manual. 30-minute time limit.</li>
-    <li>Resuscitation 40 points - Part A: A live patient assessment including lateral position (20 points maximum), Part B: One person CPR on a manikin (20 points maximum)
-    </ul>
-</li>
-    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact:
-    Bill Yeates (Theory and Resus Coach): +61 432 667 314 or Peter Yeates (Physical Coach): +61 408 657 739</p>`,
+    icon: 'material-symbols:rowing-rounded',
+    label: 'Interested In Joining SCC Boaties',
+    text: `<p>For more information on how to join the South Curl Curl rowing community, please do not hesitate to contact:
+    Boat Captains Jules & Mali: @ ....</p>`,
   },
   {
-    icon: 'mdi:run',
-    label: 'Follow Us',
+    icon: 'material-symbols:rowing-rounded',
+    label: 'Socials',
     text: `
-    <p>For all the latest updates and posts, follow our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/scchampionlifesavers/'   >@scchampionlifesavers</a></p>`,
+    <p>For all the latest South Curly rowing updates, check us out on our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/southcurlyboaties/'   >@southcurlyboaties</a></p>`,
   },
 ];
-const CompetitorsChamps = () => {
+const CompetitorsBoatiesWin = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -74,16 +74,16 @@ const CompetitorsChamps = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">SCC Champion Lifesavers</Typography>
-            <Typography variant="body2">
+            <Typography variant="h3">South Curly Crews</Typography>
+            {/* <Typography variant="body2">
               Championing the development of elite lifesavers, we strive to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful beaches,
               come join the best of the best..
-            </Typography>
+            </Typography> */}
           </Stack>
         </Box>
 
         <Stack spacing={1} sx={{ px: 1, py: 2, textAlign: 'left' }}>
-          {champsContent.map((item) => (
+          {boatiesWinContent.map((item) => (
             <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
           ))}
         </Stack>
@@ -96,7 +96,7 @@ const CompetitorsChamps = () => {
     </StyledRootResponsive>
   );
 };
-export default CompetitorsChamps;
+export default CompetitorsBoatiesWin;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

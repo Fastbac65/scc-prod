@@ -6,7 +6,7 @@ import LinkItem from './LinkItem';
 
 // ----------------------------------------------------------------------
 
-export default function CustomBreadcrumbs({ links, action, heading, moreLink, activeLast, sx, ...other }) {
+export default function CustomBreadcrumbs({ links, action, heading = 'Quik links on this page', moreLink, activeLast, sx, ...other }) {
   const lastLink = links[links.length - 1].name;
 
   return (
@@ -15,7 +15,7 @@ export default function CustomBreadcrumbs({ links, action, heading, moreLink, ac
         <Box sx={{ flexGrow: 1 }}>
           {/* HEADING */}
           {heading && (
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="caption" gutterBottom>
               {heading}
             </Typography>
           )}

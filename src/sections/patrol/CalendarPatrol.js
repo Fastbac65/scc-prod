@@ -176,12 +176,11 @@ const CalendarPatrol = ({ holidays, patrol }) => {
         calEventInfo.event.setProp('display', 'none');
       }
     }
-    // if (!important) {
-    //   // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
-    //   if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
-    //     calEventInfo.event.setProp('display', 'none');
-    //   }
-    // }
+    if (!patrol) {
+      if (calEventInfo.event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+    }
     // if (!patrolTraining) {
     //   // if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
     //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {

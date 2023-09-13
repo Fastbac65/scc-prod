@@ -164,7 +164,7 @@ const nippersContactsContent = [
 const NippersContacts = () => {
   return (
     <StyledRootResponsive>
-      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+      <Container maxWidth="lg" sx={{ textAlign: 'center', px: 0 }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3">Nippers Committee & Age Managers</Typography>
@@ -192,7 +192,7 @@ function OverviewItem({ icon, label, text = '-' }) {
   return (
     // <Stack spacing={2.5} direction="row" alignItems="flex-start">
 
-    <Stack spacing={0.5} sx={{ ml: -2, width: { xs: '98vw', sm: 'auto' }, overflow: 'scroll', alignItems: { xs: 'left', sm: 'center' } }}>
+    <Stack spacing={0.5} sx={{ width: { xs: '100vw', sm: 'auto' }, overflow: 'scroll', alignItems: { xs: 'left', sm: 'center' } }}>
       {/* <Typography>{label}</Typography> */}
       <Markdown content={text} />
     </Stack>

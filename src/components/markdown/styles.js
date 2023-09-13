@@ -1,5 +1,5 @@
 // @mui
-import { styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
@@ -110,18 +110,10 @@ const StyledMarkdown = styled('div', {
     },
 
     'tbody tr:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
-      opacity: '0.6',
-      wordWrap: 'break-word',
-
-      // backgroundColor: theme.palette.background.neutral,
+      backgroundColor: alpha(theme.palette.background.neutral, 0.8),
     },
     'tbody tr:nth-of-type(even)': {
-      backgroundColor: theme.palette.background.default,
-      opacity: '0.8',
-      wordWrap: 'break-word',
-
-      // backgroundColor: theme.palette.background.neutral,
+      backgroundColor: alpha(theme.palette.background.default, 0.8),
     },
   },
 

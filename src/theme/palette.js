@@ -119,7 +119,7 @@ export default function palette(themeMode) {
     background: {
       paper: GREY[800],
       default: GREY[900],
-      neutral: alpha(GREY[800], 0.12),
+      neutral: GREY[800],
     },
     action: {
       ...COMMON.action,

@@ -99,15 +99,29 @@ const StyledMarkdown = styled('div', {
 
   // Table
   table: {
-    width: '100%',
+    // width: '100%',
+
     borderCollapse: 'collapse',
     border: `1px solid ${theme.palette.divider}`,
     'th, td': {
-      padding: theme.spacing(1),
+      padding: theme.spacing(0.5),
       border: `1px solid ${theme.palette.divider}`,
+      fontSize: '14px',
     },
+
     'tbody tr:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.neutral,
+      backgroundColor: theme.palette.background.default,
+      opacity: '0.6',
+      wordWrap: 'break-word',
+
+      // backgroundColor: theme.palette.background.neutral,
+    },
+    'tbody tr:nth-of-type(even)': {
+      backgroundColor: theme.palette.background.default,
+      opacity: '0.8',
+      wordWrap: 'break-word',
+
+      // backgroundColor: theme.palette.background.neutral,
     },
   },
 

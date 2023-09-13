@@ -9,9 +9,6 @@ import Carousel from 'src/components/carousel';
 // ----------------------------------------------------------------------
 
 export default function CarouselBasic1({ data }) {
-  const theme = useTheme();
-  console.log(theme);
-
   const carouselRef = useRef(null);
 
   // const [currentIndex, setCurrentIndex] = useState(0);

@@ -164,6 +164,9 @@ const nippersContactsContent = [
 const NippersContacts = () => {
   return (
     <StyledRootResponsive>
+      <div style={{ position: 'relative' }}>
+        <div id="nipperscommittee" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center', px: 0 }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>

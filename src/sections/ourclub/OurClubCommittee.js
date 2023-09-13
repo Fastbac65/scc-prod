@@ -189,11 +189,17 @@ const columns = [
 const OurClubCommitee = () => {
   return (
     <StyledRootResponsive>
+      <div style={{ position: 'relative' }}>
+        <div id="clubcommittee" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center', px: 0 }}>
         <Box display="flex" justifyContent="center">
-          <Stack sx={{ maxWidth: '700px' }}>
+          <Stack sx={{ maxWidth: '1000px' }}>
             <Typography variant="h3">South Curl Curl Committee</Typography>
-            <Typography variant="body2">A massive Thank You to all our volunteer Nippers Committee members and Age managers. Nippers is just not possible without you</Typography>
+            <Typography variant="body2">
+              A massive Thank You to all our volunteer South Curl Curl SLSC Committee members. SCC SLSC is a volunteer organisation with a large member base and we could not exit without the amazing hard work
+              put in by all involved in running the club
+            </Typography>
           </Stack>
         </Box>
         <Stack sx={{ px: 0, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr' }}>

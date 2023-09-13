@@ -51,9 +51,10 @@ const NippersLanding = () => {
           <CustomBreadcrumbs
             links={[
               { name: 'Home', href: '/' },
-              { name: 'Information for Nippers/Parents', href: '/nippers/#info' },
+              { name: 'Nippers/Parents Info', href: '/nippers/#info' },
               { name: 'Rippers', href: '/nippers/#rippers' },
-              { name: 'Information Booklet', href: '/nippers/#booklet' },
+              { name: 'Info Booklet', href: '/nippers/#booklet' },
+              { name: 'Nipper Contacts', href: '/nippers/#nipperscommittee' },
             ]}
           />
         </Container>

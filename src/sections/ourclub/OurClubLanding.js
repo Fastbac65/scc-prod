@@ -48,7 +48,12 @@ const OurClubLanding = () => {
           </Grid>
         </Grid>
         <Container>
-          <CustomBreadcrumbs links={[{ name: 'Home', href: '/' }, { name: 'Our Club' }]} />
+          <CustomBreadcrumbs
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
+            ]}
+          />
         </Container>
       </Box>
 

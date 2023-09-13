@@ -52,6 +52,7 @@ const OurClubLanding = () => {
             links={[
               { name: 'Home', href: '/' },
               { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
+              { name: 'SCC Cafe - Gusto', href: '/ourclub/#gustocafe' },
             ]}
           />
         </Container>

@@ -54,7 +54,7 @@ const OurClubCafe = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="cafe" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="gustocafe" style={{ position: 'absolute', top: '-80px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>

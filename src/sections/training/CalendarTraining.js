@@ -110,13 +110,13 @@ const CalendarTraining = ({ holidays, training }) => {
 
     if (!training) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+        if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (training) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+        if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
           event.setProp('display', 'auto');
         }
       });
@@ -165,6 +165,31 @@ const CalendarTraining = ({ holidays, training }) => {
     });
   };
 
+  const handleEventDidMount = (calEventInfo) => {
+    console.log(calEventInfo);
+    if (!holidays) {
+      // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
+      if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+      if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+    }
+    if (!training) {
+      // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
+      if (calEventInfo.event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+    }
+    // if (!patrolTraining) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
+    //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {
+    //     calEventInfo.event.setProp('display', 'none');
+    //   }
+    // }
+  };
+
   // className wrapper is used to override FC defauls CSS styles to SCC colors and work better with dark mode
   return (
     <div>
@@ -189,6 +214,7 @@ const CalendarTraining = ({ holidays, training }) => {
           titleFormat={{ year: 'numeric', month: 'short' }}
           eventClick={handleEventClick}
           eventsSet={handleEventSet} // called after events are initialized/added/changed/removed
+          eventDidMount={handleEventDidMount}
         />
       </Box>
     </div>

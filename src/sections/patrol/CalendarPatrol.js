@@ -165,6 +165,31 @@ const CalendarPatrol = ({ holidays, patrol }) => {
     });
   };
 
+  const handleEventDidMount = (calEventInfo) => {
+    console.log(calEventInfo);
+    if (!holidays) {
+      // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
+      if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+      if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+        calEventInfo.event.setProp('display', 'none');
+      }
+    }
+    // if (!important) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
+    //   if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+    //     calEventInfo.event.setProp('display', 'none');
+    //   }
+    // }
+    // if (!patrolTraining) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
+    //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {
+    //     calEventInfo.event.setProp('display', 'none');
+    //   }
+    // }
+  };
+
   // className wrapper is used to override FC defauls CSS styles to SCC colors and work better with dark mode
   return (
     <div>
@@ -189,6 +214,7 @@ const CalendarPatrol = ({ holidays, patrol }) => {
           titleFormat={{ year: 'numeric', month: 'short' }}
           eventClick={handleEventClick}
           eventsSet={handleEventSet} // called after events are initialized/added/changed/removed
+          eventDidMount={handleEventDidMount}
         />
       </Box>
     </div>

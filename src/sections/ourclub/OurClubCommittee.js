@@ -1,7 +1,6 @@
-import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { Box, Typography, Stack, styled, alpha, Container } from '@mui/material';
+
 // components
-import Iconify from 'src/components/iconify/Iconify';
 import Markdown from 'src/components/markdown/Markdown';
 import { bgGradient } from 'src/lib/cssStyles';
 
@@ -31,169 +30,153 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
   // },
 }));
 
-// ------------------------Data Grid Setup----------------------------------------------
-const committee = [
+const ourCommittee = [
   {
-    id: 1,
-    role: 'President',
-    name: 'Matthew Campbell',
-    email: 'President@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 2,
-    role: 'Deputy President',
-    name: 'Dave Alldis',
-    email: 'Deputypresident@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 3,
-    role: 'Secretary',
-    name: 'Jono Beavon',
-    email: 'Secretary@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 4,
-    role: 'Treasurer',
-    name: 'Paul Brittain',
-    email: 'Treasurer@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 5,
-    role: 'Club Captain',
-    name: 'Kevin Moffat',
-    email: 'Captain@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 6,
-    role: 'Nippers President',
-    name: 'Frank Tol',
-    email: 'Nippers@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 7,
-    role: 'Nippers Deputy',
-    name: 'Steve Rudd',
-    email: 'Nippers@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 8,
-    role: 'Patrol Supervisor',
-    name: "David O'Reilly",
-    email: 'PatrolSup@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 9,
-    role: 'Chief Instructor',
-    name: 'Natalie Neary',
-    email: 'Chiefinstructor@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 10,
-    role: 'Boat Captain 1',
-    name: 'Julian McKay',
-    email: 'Boatcaptain@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 12,
-    role: 'Boat Captain 2',
-    name: 'Mali Warneford',
-    email: 'Boatcaptain@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 13,
-    role: 'First Aid Officer',
-    name: 'Lisa Holland',
-    email: 'Firstaid@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 14,
-    role: 'Safety Officer',
-    name: 'Guy Waddilove',
-    email: 'OHS@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 15,
-    role: 'Gym Officer',
-    name: 'Bjorn Shearer',
-    email: 'Gym@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 16,
-    role: 'Powercraft Captain',
-    name: 'Michael Berry',
-    email: 'IRB@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 17,
-    role: 'IRB Engineer',
-    name: 'Terry Durnin',
-    email: 'IRB@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 18,
-    role: 'Craft Captain',
-    name: 'Peter Allen',
-    email: 'Craft@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 19,
-    role: 'Social Secretary',
-    name: 'Trish Byrne',
-    email: 'Social@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 20,
-    role: 'Cadets',
-    name: 'Saul Carroll',
-    email: 'Cadets@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 21,
-    role: 'Sponsor Coordinator',
-    name: 'Graeme Dominish',
-    email: 'Sponsorship@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 22,
-    role: 'Club Admin',
-    name: 'Lisa Settree',
-    email: 'Mail@southcurlcurlslsc.org',
-  },
-  {
-    id: 23,
-    role: 'Technology Officer',
-    name: 'Graham Smith',
-    email: 'ICT@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 24,
-    role: 'Gear Steward',
-    name: 'Steve Birch',
-    email: 'Gear@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 25,
-    role: 'Handicapper',
-    name: 'Dave Platter',
-    email: 'Handicapper@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 26,
-    role: 'Tour Manager',
-    name: 'Michelle Lowery',
-    email: 'TourManager@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 27,
-    role: 'Competition Manager',
-    name: 'Michela Verwey',
-    email: 'Competition@southcurlcurlslsc.com.au',
-  },
-  {
-    id: 28,
-    role: 'Complaints or Grievances',
-    name: 'Jenny Drury',
-    email: 'Complaints@southcurlcurlslsc.com.au',
+    text: `<table>
+	<tbody>
+		<tr>
+			<td><strong>Role</strong></td>
+			<td><strong>Name</strong></td>
+			<td><strong>Contact Details</strong></td>
+		</tr>
+		<tr>
+			<td>President</td>
+			<td>Matthew Campbell</td>
+			<td><a href="mailto:President@southcurlcurlslsc.com.au">President@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Deputy President</td>
+			<td>Dave Alldis</td>
+			<td><a href="mailto:davidalldis13@gmail.com">Deputypresident@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Secretary</td>
+			<td>Jono Beavon</td>
+			<td><a href="mailto:jono.beavon@sydneybeachhomes.com.au">Secretary@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Treasurer</td>
+			<td>Paul Brittain</td>
+			<td><a href="mailto:paul_brittain@ymail.com">Treasurer@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Club Captain</td>
+			<td>Kevin Moffat</td>
+			<td><a href="mailto:lianehm1@gmail.com">Captain@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Nippers President</td>
+			<td>Frank Tol</td>
+			<td><a href="mailto:tolfm@hotmail.com">Nippers@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Nippers Deputy</td>
+			<td>Steve Rudd</td>
+			<td><a href="mailto:steverudd1@hotmail.com">Nippers@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Patrol Supervisor</td>
+			<td>David O&rsquo;Reilly</td>
+			<td><a href="mailto:PatrolSup@southcurlcurlslsc.com.au">PatrolSup@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Chief Instructor</td>
+			<td>Natalie Neary</td>
+			<td><a href="mailto:Chiefinstructor@southcurlcurlslsc.com.au">Chiefinstructor@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Boat Captain 1</td>
+			<td>Julian McKay</td>
+			<td><a href="mailto:Julian.McKay18@gmail.com">Boatcaptain@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Boat Captain 2</td>
+			<td>Mali Warneford</td>
+			<td><a href="mailto:MaliWarneford@icloud.com">Boatcaptain@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>First Aid Officer</td>
+			<td>Lisa Holland</td>
+			<td><a href="mailto:Lisa.Holland99@gmail.com">Firstaid@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Safety Officer</td>
+			<td>Guy Waddilove</td>
+			<td><a href="mailto:guy@waddiloveyachts.com">OHS@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Gym Officer</td>
+			<td>Bjorn Shearer</td>
+			<td><a href="mailto:bjorn_shearer@hotmail.com">Gym@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Powercraft Captain</td>
+			<td>Michael Berry</td>
+			<td><a href="mailto:IRB@southcurlcurlslsc.com.au">IRB@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>IRB Engineer</td>
+			<td>Terry Durnin</td>
+			<td><a href="mailto:terry.durnin@yahoo.com">IRB@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Craft Captain</td>
+			<td>Peter Allen</td>
+			<td><a href="mailto:freshiepete@gmail.com">Craft@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Social Secretary</td>
+			<td>Trish Byrne</td>
+			<td><a href="mailto:Social@southcurlcurlslsc.com.au">Social@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Cadets</td>
+			<td>Saul Carroll</td>
+			<td><a href="mailto:Cadets@southcurlcurlslsc.com.au">Cadets@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Sponsor Coordinator</td>
+			<td>Graeme Dominish</td>
+			<td><a href="mailto:DominGr@cba.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Club Admin</td>
+			<td>Lisa Settree</td>
+			<td><a href="mailto:Mail@southcurlcurlslsc.org">Mail@southcurlcurlslsc.org</a></td>
+		</tr>
+		<tr>
+			<td>Technology Officer</td>
+			<td>Graham Smith</td>
+			<td><a href="mailto:ICT@southcurlcurlslsc.com.au">ICT@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Gear Steward</td>
+			<td>Steve Birch</td>
+			<td><a href="mailto:SBirch@flamestop.com.au">Gear@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Handicapper</td>
+			<td>Dave Platter</td>
+			<td><a href="mailto:Dave@daveplatter.com">Handicapper@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Tour Manager</td>
+			<td>Michelle Lowery</td>
+			<td><a href="mailto:Michelle@limephotography.com.au">TourManager@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Competition Manager</td>
+			<td>Michela Verwey</td>
+			<td><a href="mailto:MichelaVerwey@gmail.com">Competition@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Complaints or Grievances</td>
+			<td>Jenny Drury</td>
+			<td><a href="mailto:jennydrury@statcom.com.au">Complaints@southcurlcurlslsc.com.au</a></td>
+		</tr>
+	</tbody>
+</table>
+`,
   },
 ];
 
@@ -213,37 +196,23 @@ const OurClubCommitee = () => {
             <Typography variant="body2">A massive Thank You to all our volunteer Nippers Committee members and Age managers. Nippers is just not possible without you</Typography>
           </Stack>
         </Box>
-        <Stack sx={{ width: { xs: '98vw', sm: 'auto' }, overflow: 'scroll', alignItems: { xs: 'left', sm: 'center' } }}>
-          <DataGrid
-            rows={committee}
-            columns={columns}
-            density="compact"
-            pageSizeOptions={[14, 28]}
-            initialState={{
-              pagination: {
-                paginationModel: { page: 0, pageSize: 14 },
-              },
-            }}
-          />
-        </Stack>
-
-        {/* <Stack sx={{ px: 0, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr' }}>
+        <Stack sx={{ px: 0, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr' }}>
           <Stack></Stack>
           <Stack>
             <Stack spacing={1}>
-              {nippersContactsContent.map((item) => (
-                <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
+              {ourCommittee.map((item) => (
+                <OverviewItem key={item.label} text={item.text} />
               ))}
             </Stack>
           </Stack>
-        </Stack> */}
+        </Stack>
       </Container>
     </StyledRootResponsive>
   );
 };
 export default OurClubCommitee;
 
-function OverviewItem({ icon, label, text = '-' }) {
+function OverviewItem({ text = '-' }) {
   return (
     // <Stack spacing={2.5} direction="row" alignItems="flex-start">
 

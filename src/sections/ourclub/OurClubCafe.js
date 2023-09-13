@@ -79,7 +79,7 @@ const OurClubCafe = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
-            <Typography variant="caption">Email Kirsten Quinn - rippers@southcurlynippers.com if you have any requirements for this program or would like to help out.</Typography>
+            <Markdown content={`<p>Follow us on Insta: <a target='_blank' rel='noopener noreffer' href="https://www.instagram.com/gusto_on_the_beach/">@gusto_on_the_beach</a></p>`} />
           </Stack>
         </Box>
       </Container>

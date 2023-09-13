@@ -10,8 +10,8 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
   ...bgGradient({
     direction: 'to top',
 
-    startColor: `${alpha(theme.palette.background.neutral, 0.7)} 0%`,
-    endColor: `${alpha(theme.palette.background.neutral, 1)} 90%`,
+    startColor: `${alpha(theme.palette.background.neutral, 0.6)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
     imgUrl: '/assets/images/gusto4.jpeg',

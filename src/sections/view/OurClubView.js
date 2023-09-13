@@ -2,7 +2,7 @@
 import RecentPosts from '../posts/RecentPosts';
 import OurClubLanding from '../ourclub/OurClubLanding';
 import OurClubMembership from '../ourclub/OurClubMembership';
-import OurClubTest from '../ourclub/OurClubTest';
+// import OurClubTest from '../ourclub/OurClubTest';
 import OurClubCommitee from '../ourclub/OurClubCommittee';
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ export default function OurClubView({ staticPosts }) {
       <OurClubLanding />
       <OurClubMembership />
       <OurClubCommitee />
-      <OurClubTest />
+      {/* <OurClubTest /> */}
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

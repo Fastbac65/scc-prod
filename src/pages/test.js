@@ -10,7 +10,6 @@ import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 //   post.data.data = null;
 //   post.data.id = null;
 // });
-// console.log(posts);
 
 async function updatePosts() {
   await Promise.all(posts.map((post) => updateDoco('/Posts', post.id, post.data)));

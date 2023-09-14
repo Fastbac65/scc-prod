@@ -231,7 +231,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               <IconButton aria-label="share post" onClick={handleOpen}>
                 <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
               </IconButton>
-              <Tooltip arrow enterTouchDelay={100} enterDelay={100} placement="top-start" title={copyUrl}>
+              <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
                 {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
                 <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
                   <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />

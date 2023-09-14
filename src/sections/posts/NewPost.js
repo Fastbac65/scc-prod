@@ -33,6 +33,7 @@ const NewPost = () => {
   const date = new Date();
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const defaultDate = months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  const defaultAuthor = member?.profileName || member.displayName;
 
   const uploadPostImages = () => {
     //FILE_NAME AND DATABASE DOCUMENT ID ARE THE SAME
@@ -176,7 +177,7 @@ const NewPost = () => {
                 fullWidth
                 inputRef={subtitleRef}
                 label="Subtitle or Date"
-                defaultValue={defaultDate}
+                defaultValue={defaultAuthor + ', ' + defaultDate}
                 InputProps={{ style: { fontSize: 14 } }}
               />
               {/* <TextField size='small' type='text' fullWidth inputRef={summaryRef} label='Summary' required multiline /> */}

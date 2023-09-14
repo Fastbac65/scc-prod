@@ -125,7 +125,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
           // subheader={doc.data?.uName + ', ' + doc.data?.subtitle}
-          subheader={authorPost + ', ' + doc.data?.subtitle}
+          subheader={doc.data?.subtitle}
         />
         <ImageList
           gap={1}

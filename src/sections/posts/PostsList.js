@@ -24,7 +24,7 @@ const PostsList = ({ posts }) => {
     <Box component="section" sx={{ mx: 0 }}>
       <Fade timeout={750} in={true}>
         <Box>
-          <Box sx={{ p: 1 }} columnGap={1} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 1fr' }}>
+          {/* <Box sx={{ p: 1 }} columnGap={1} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 1fr' }}>
             <Stack>
               {posts
                 .filter((post, indx) => {
@@ -49,15 +49,15 @@ const PostsList = ({ posts }) => {
                   </Box>
                 ))}
             </Stack>
-          </Box>
-          {/* <Box pr={{ xs: 0, sm: 2, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+          </Box> */}
+          <Box pr={{ xs: 0, sm: 2, md: 3 }} sx={{ display: 'flex', justifyContent: 'center' }}>
             <Masonry columns={{ xs: 1, sm: 2, md: 2, lg: 3 }} spacing={{ xs: 1 }}>
               {posts.map((doc, indx) => (
                 <PostExpandCard key={doc.id} user={user} doc={doc} setOpen={setOpen} setCurrentImageIndex={setCurrentImageIndex} setImages={setImages} />
               ))}
             </Masonry>
             <PostsLightBox open={open} setOpen={setOpen} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} images={images} />
-          </Box> */}
+          </Box>
         </Box>
       </Fade>
     </Box>

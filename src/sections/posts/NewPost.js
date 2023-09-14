@@ -27,7 +27,7 @@ const NewPost = () => {
   const titleRef = useRef('');
   const subtitleRef = useRef('');
   const mainRef = useRef('');
-  const collectionName = 'Posts';
+  const collectionName = 'posts';
   const storageName = 'posts';
   const postDocumentId = member?.uid + '_' + uuidv4();
   const date = new Date();
@@ -94,7 +94,7 @@ const NewPost = () => {
         postImagesURLs = [postDefaultImageURL];
         console.log('there are NO images: using lib', postDefaultImageURL);
       }
-      // update database collection 'Posts'
+      // update database collection 'posts'
       const postDocumentObj = {
         userId: member?.uid || '',
         uName: member?.profileName || member?.displayName,
@@ -113,8 +113,8 @@ const NewPost = () => {
         likes: 0,
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
-      await addDoco(collectionName, postDocumentId, postDocumentObj); // timestamp simplified
-      await addRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj); // timestamp simplified
+      await addDoco('posts', postDocumentId, postDocumentObj); // timestamp simplified
+      await addRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj); // timestamp simplified
     } catch (error) {
       console.log(error.message);
     }

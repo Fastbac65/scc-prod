@@ -21,7 +21,7 @@ const deletePost = (postDoc) => {
           await Promise.all(postImageDeletePromises); // we await all promises from the delete requests
         }
       }
-      await deleteDoco('Posts', postDoc.id);
+      await deleteDoco('posts', postDoc.id);
       await deleteRealtimeDoc('Posts', postDoc.id);
       resolve();
     } catch (error) {

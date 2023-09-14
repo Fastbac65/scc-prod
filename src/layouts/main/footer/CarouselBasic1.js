@@ -46,7 +46,7 @@ export default function CarouselBasic1({ data }) {
       <Carousel ref={carouselRef} {...carouselSettings}>
         {data.map((item) => (
           // <Grid item key={item.src} xs={12} sm={4}>
-          <Link item key={item.src} href={item.href} target="_blank" rel="noopener">
+          <Link key={item.src} href={item.href} target="_blank" rel="noopener">
             <CardMedia height="200px" href={item.href} component="img" alt="" src={item.src} />
           </Link>
           // </Grid>

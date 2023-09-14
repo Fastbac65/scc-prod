@@ -62,16 +62,16 @@ export function SettingsProvider({ children }) {
   // const custRef = ref(db, 'customers/');
   const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app';
 
-  const fetcher = (url) =>
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
-      }),
-    }).then((res) => res.json());
+  // const fetcher = (url) =>
+  //   fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
+  //     }),
+  //   }).then((res) => res.json());
 
   // useSWR against API listener
   // const { data, isLoading } = useSWR('https://scc-serverapi.vercel.app/api/posts', fetcher);
@@ -151,7 +151,7 @@ export function SettingsProvider({ children }) {
           console.log(error);
         }
       );
-      const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+      const q = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
       const postsListener = onSnapshot(
         q,
         (snapshot) => {

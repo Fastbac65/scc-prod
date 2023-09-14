@@ -15,7 +15,7 @@ import { db } from 'src/lib/createFirebaseApp';
 //       //   }),
 //       // }).then((res) => res.json());
 //       const docs = [];
-//       const q = query(collection(db, 'Posts'), orderBy('timestamp', 'desc'));
+//       const q = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
 //       const snapshot = await getDocs(q);
 //       snapshot.forEach((doc) => {
 //         docs.push({ id: doc.id, data: { ...doc.data() } });

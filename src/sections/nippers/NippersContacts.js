@@ -42,34 +42,34 @@ const nippersContactsContent = [
 		<tr>
 			<td><strong>Position</strong></td>
 			<td><strong>Name</strong></td>
-			<td><strong>Email</strong></td>
+			<td><strong>Email / TeamApp Access Group</strong></td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>President</td>
 			<td>Steve Rudd</td>
-			<td><a href="mailto:president@southcurlynippers.com" rel="noopener noreferrer" target="_blank">president@southcurlynippers.com</a></td>
+			<td><a href="mailto:president@southcurlynippers.com" rel="noopener noreferrer" target="_blank">nippers@southcurlynippers.com</a></td>
 		</tr>
 		<tr>
-			<td>Vice-President</td>
+			<td>Junior Activity Chair</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:vicepresident@southcurlynippers.com" rel="noopener noreferrer" target="_blank">vicepresident@southcurlynippers.com</a></td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Secretary</td>
-			<td>&nbsp;</td>
+			<td>Secretary/Registrar</td>
+			<td>Kirsten Quinn</td>
 			<td><a href="mailto:secretary@southcurlynippers.com" rel="noopener noreferrer" target="_blank">secretary@southcurlynippers.com</a></td>
 		</tr>
 		<tr>
 			<td>Information Officer</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:ict@southcurlynippers.com" rel="noopener noreferrer" target="_blank">ict@southcurlynippers.com</a></td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Risk Assessment Officer</td>
-			<td>Guy Waddilove</td>
-			<td><a href="mailto:risk@southcurlynippers.com" rel="noopener noreferrer" target="_blank">risk@southcurlynippers.com</a></td>
+			<td>Water Safety Supervisor</td>
+			<td>Bernard Blanchfield</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Clothing</td>
@@ -78,83 +78,83 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>Competition Registrar</td>
-			<td>&nbsp;</td>
+			<td>TBD</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Competition Mgr &ndash; Beach</td>
-			<td>&nbsp;</td>
+			<td>TBD</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Competition Mgr &ndash; Water</td>
-			<td>&nbsp;</td>
+			<td>TBD</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>BBQ Co-Ordinator</td>
-			<td>&nbsp;</td>
+			<td>Trish Byrne</td>
 			<td>&nbsp;<a href="mailto:BBQ@southcurlynippers.com" rel="noopener noreferrer" target="_blank">BBQ@southcurlynippers.com</a></td>
 		</tr>
 		<tr>
 			<td>U6 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u6@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u6@southcurlynippers.com</a></td>
+			<td>&quot;Under 6s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U7 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u7@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u7@southcurlynippers.com</a></td>
+			<td>&quot;Under 7s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U8 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u8@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u8@southcurlynippers.com</a></td>
+			<td>&quot;Under 8s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U9 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u9@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u9@southcurlynippers.com</a></td>
+			<td>&quot;Under 9s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U10 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u10@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u10@southcurlynippers.com</a></td>
+			<td>&quot;Under 10s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U11 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u11@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u11@southcurlynippers.com</a></td>
+			<td>&quot;Under 11s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U12 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u12@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u12@southcurlynippers.com</a></td>
+			<td>&quot;Under 12s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U13 Age Managers</td>
 			<td>&nbsp;</td>
-			<td><a href="mailto:u13@southcurlynippers.com" rel="noopener noreferrer" target="_blank">u13@southcurlynippers.com</a></td>
+			<td>&quot;Under 13s-2023/2024&quot;</td>
 		</tr>
 		<tr>
-			<td>U14 &ndash; The SRC Squad Age Managers-Trainers</td>
-			<td>&nbsp;</td>
-			<td><a href="mailto:u14@southcurlynipers.com" rel="noopener noreferrer" target="_blank">u14@southcurlynipers.com</a><br/> <a href="mailto:src@southcurlynippers.com" rel="noopener noreferrer" target="_blank">src@southcurlynippers.com</a></td>
+			<td>U14 &ndash; The SRC Squad</td>
+			<td>Saul Carroll, Scott Stein</td>
+			<td>&quot;Under 14s-2023/2024-SRC SQUAD&quot;</td>
 		</tr>
 		<tr>
-			<td>&lsquo;Rippers&rsquo;: Additional Needs Nippers Group</td>
-			<td>Kirsten Quinn</td>
-			<td><a href="mailto:rippers@southcurlynippers.com" rel="noopener noreferrer" target="_blank">rippers@southcurlynippers.com</a></td>
+			<td>&lsquo;Rippers&rsquo;: Additional Needs Nippers</td>
+			<td>Kirsten Quinn, Gordon Carroll</td>
+			<td>&quot;Rippers-Special Needs Group&quot;</td>
 		</tr>
 		<tr>
-			<td>Cadets (U15-17) Water Safety</td>
-			<td>TBD</td>
-			<td><a href="mailto:cadets@southcurlynippers.com" rel="noopener noreferrer" target="_blank">cadets@southcurlynippers.com</a></td>
-		</tr>
-		<tr>
-			<td>All Age Managers</td>
 			<td>Age Managers</td>
-			<td><a href="mailto:agemanagers@southcurlynippers.com" rel="noopener noreferrer" target="_blank">agemanagers@southcurlynippers.com</a></td>
+			<td>&nbsp;</td>
+			<td>&quot;Age Managers&quot;</td>
+		</tr>
+		<tr>
+			<td>Age Manager Coach</td>
+			<td>Jordi Skelton</td>
+			<td>&nbsp;</td>
 		</tr>
 	</tbody>
 </table>

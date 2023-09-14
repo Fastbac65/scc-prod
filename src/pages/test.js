@@ -2,7 +2,7 @@ import EmailTest from 'src/components/email/EmailTest';
 import { getPosts, getPostsApi } from 'src/lib/getStaticDocs';
 // import { rtdb } from 'src/lib/createFirebaseApp';
 import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
-import { updateDoco } from 'src/lib/firestoreDocument';
+import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 
 // const posts = await getPosts();
 // console.log(posts);
@@ -12,25 +12,11 @@ import { updateDoco } from 'src/lib/firestoreDocument';
 // });
 // console.log(posts);
 
-async function rtPosts() {
+async function updatePosts() {
   await Promise.all(posts.map((post) => updateDoco('/Posts', post.id, post.data)));
 }
 
-// deleteRealtimeDoc('/', 'posts');
-
-// const postRef = ref(rtdb, 'posts/');
-// const listener = onValue(postRef, (snapshot) => {
-//   const postsArray = Object.values(snapshot.val());
-//   console.log(postsArray[0]);
-// });
-
-// listener();
-
-// const read = await getRealtimeDoc('Posts/');
-
-// console.log(Object.values(read.val()));
-
-// rtPosts();
+// updatePosts();
 
 const test = () => (
   <EmailTest

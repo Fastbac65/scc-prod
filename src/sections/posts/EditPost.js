@@ -26,7 +26,7 @@ const EditPost = ({ postDoc }) => {
   const titleRef = useRef('');
   const subtitleRef = useRef('');
   const mainRef = useRef('');
-  const collectionName = 'Posts';
+  const collectionName = 'posts';
   const storageName = 'posts';
   // const postDocumentId = member?.uid + '_' + uuidv4();
   const postDocumentId = postDoc.id;
@@ -97,7 +97,7 @@ const EditPost = ({ postDoc }) => {
 
         console.log('there are images: ', postImagesURLs);
       }
-      // update database collection 'Posts'
+      // update database collection 'posts'
       const postDocumentObj = {
         userId: member?.uid || '',
         uName: member?.profileName || member?.displayName || '',
@@ -116,8 +116,8 @@ const EditPost = ({ postDoc }) => {
         likes: 0,
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
-      await updateDoco(collectionName, postDocumentId, postDocumentObj); // also adds timestamp automatically
-      await updateRealtimeDoc(`${collectionName}/${postDocumentId}`, realtimePostObj);
+      await updateDoco('posts', postDocumentId, postDocumentObj); // also adds timestamp automatically
+      await updateRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj);
     } catch (error) {
       console.log(error.message);
     }

@@ -126,7 +126,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         </div>
         <CardHeader
           avatar={
-            <Tooltip enterTouchDelay={10} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
+            <Tooltip enterTouchDelay={10} placement="top" title={authorPost}>
               <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
             </Tooltip>
           }

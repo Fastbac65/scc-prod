@@ -212,7 +212,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           </Typography>
         </CardContent>
         <CardActions disableSpacing sx={{ py: 0 }}>
-          {user && (
+          {user && !expanded && (
             <>
               <Checkbox
                 color="error"
@@ -227,7 +227,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </IconButton>
             </>
           )}
-          {doc.data.main.length > 1 && (
+          {doc.data.main.length > 1 && !expanded && (
             <>
               <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                 {/* <ExpandMoreIcon /> */}
@@ -271,13 +271,11 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </>
             )}
 
-            <ExpandMore href={`#${doc.id}`} expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-              {/* <ExpandMoreIcon /> */}
+            {/* <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>
-            {/* <Typography variant="caption">more...</Typography> */}
             {!expanded && <Typography variant="caption">more...</Typography>}
-            {expanded && <Typography variant="caption">less...</Typography>}
+            {expanded && <Typography variant="caption">less...</Typography>} */}
           </CardActions>
         </Collapse>
       </Card>

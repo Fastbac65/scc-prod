@@ -57,7 +57,7 @@ export default function RecentPosts({ staticPosts }) {
           )}
         </Box>
         <Typography variant="h2" py={3} mx={2}>
-          Recent News
+          South Curlys Latest..
         </Typography>
         <PostsList posts={allRecent} />
       </StyledRoot>

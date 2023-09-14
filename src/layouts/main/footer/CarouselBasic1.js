@@ -19,6 +19,7 @@ export default function CarouselBasic1({ data }) {
     autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 900,

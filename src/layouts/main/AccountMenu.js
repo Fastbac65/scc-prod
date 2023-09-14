@@ -27,14 +27,14 @@ export function MenuContent() {
 
   const navigations = [
     {
-      title: 'My Profile',
-      path: '/account/profile',
-      icon: <Iconify icon="carbon:user" />,
-    },
-    {
       title: 'Personal Info',
       path: '/account/personal',
       icon: <Iconify icon="carbon:favorite" />,
+    },
+    {
+      title: 'My Profile',
+      path: '/account/profile',
+      icon: <Iconify icon="carbon:user" />,
     },
     {
       title: 'Account Settings',

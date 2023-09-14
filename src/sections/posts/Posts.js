@@ -99,7 +99,7 @@ export default function Posts({ staticPosts }) {
         )}
       </Box>
       <Typography variant="h2" py={3} mx={2}>
-        All News & Activities
+        And In Other News..
       </Typography>
       {/* <Typography variant="h6" color="text" m={2} mb={4}>
           ..from our members, boaties and nippers

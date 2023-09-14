@@ -38,6 +38,10 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
+      src: '/assets/images/gusto5wide.jpeg',
+      description: 'South Curl Curl SLSC',
+    },
+    {
       src: '/assets/images/header11.jpeg',
       description: 'South Curl Curl SLSC',
     },
@@ -54,7 +58,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header4.jpeg',
+      src: '/assets/images/gusto3.jpeg',
       description: 'South Curl Curl SLSC',
     },
     {
@@ -62,7 +66,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/header3.jpeg',
+      src: '/assets/images/gusto2wide.jpeg',
       description: 'South Curl Curl SLSC',
     },
   ];

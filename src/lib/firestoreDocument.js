@@ -1,4 +1,4 @@
-import { doc, collection, getDoc, deleteDoc, setDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
+import { doc, collection, getDoc, deleteDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from './createFirebaseApp';
 
 //all error handling will occur in the call function location

@@ -54,7 +54,7 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
     {
-      src: '/assets/images/champs7.jpeg',
+      src: '/assets/images/champs6wide.jpeg',
       description: 'South Curl Curl SLSC',
     },
     {

@@ -144,6 +144,13 @@ const EditPost = ({ postDoc }) => {
     });
     return str;
   };
+  const initMarkdownText = () => {
+    let str = '';
+    postDoc.data.main.forEach((paragraph) => {
+      str += '<p>' + paragraph + '</p>';
+    });
+    return str;
+  };
 
   return (
     <form onSubmit={handleSubmitPost}>

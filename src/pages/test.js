@@ -2,6 +2,7 @@ import { useState } from 'react';
 import EmailTest from 'src/components/email/EmailTest';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.bubble.css';
+import { useSettingsContext } from 'src/components/settings';
 
 const QuillNoSSR = dynamic(import('react-quill'), {
   ssr: false,
@@ -23,12 +24,26 @@ const modules = {
   },
 };
 
+const str =
+  '<p>If you’re a club member or associate family member of the wonderful Sth Curl Curl club and are keen to come and move with mindful breathing please come and join us at Sth Curly Surf club for ‘ Yoga by the ocean with Kylie’ 🌊 😊🧘🏼‍♀️🧘🏽‍♂️🙏🏼 ....</p>' +
+  '<p>somethings else</p>';
+
 const Test = () => {
-  const [value, setValue] = useState('');
+  const { posts } = useSettingsContext();
+  console.log(posts);
+
+  const initMainText = () => {
+    if (!posts) return '';
+    let str = '';
+    posts[0].data.main.forEach((paragraph) => {
+      str += '<p>' + paragraph + '</p>';
+    });
+    return str;
+  };
+  const [value, setValue] = useState(str);
 
   const handleEditorUpdates = (content, delta, source, editor) => {
     console.log(content);
-    console.log(delta);
     setValue(content);
   };
 

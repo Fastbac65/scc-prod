@@ -21,7 +21,7 @@ const ExpandMore = styled((props) => {
 }));
 
 function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, maxWidth = 600 }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const [openShare, setOpenShare] = useState(null);
   const [favorite, setFavorite] = useState(false);
   const [author, setAuthor] = useState(null);

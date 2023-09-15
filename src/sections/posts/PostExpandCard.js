@@ -223,14 +223,14 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-        {!expanded && (
-          <CardContent sx={{ py: 1 }}>
-            {/* <Typography variant="body2" color="text.secondary" style={{ wordWrap: 'break-word' }}>
+        {/* {!expanded && ( */}
+        <CardContent sx={{ py: 1 }}>
+          {/* <Typography variant="body2" color="text.secondary" style={{ wordWrap: 'break-word' }}>
               {doc.data?.main[0]}
             </Typography> */}
-            <Markdown content={firstPara} />
-          </CardContent>
-        )}
+          <Markdown content={firstPara} />
+        </CardContent>
+        {/* )} */}
         {user && !expanded && (
           <CardActions disableSpacing sx={{ py: 0 }}>
             <Checkbox
@@ -264,7 +264,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         )}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent sx={{ py: 0 }}>
-            <Markdown content={doc.data.content} />
+            <Markdown content={doc.data.content.split(firstPara)[1]} />
             {/* {doc.data.main.slice(1).map(
               (
                 txt,

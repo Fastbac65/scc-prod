@@ -297,7 +297,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 </Tooltip>
               </>
             )}
-
+            <PostOptions postDoc={doc} />
             {/* <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               <Iconify icon="fluent:chevron-down-24-filled" />
             </ExpandMore>

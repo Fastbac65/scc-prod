@@ -193,7 +193,7 @@ const EditPost = ({ postDoc }) => {
           <Stack direction="row" spacing={2}>
             <AddImages files={files} setFiles={setFiles} />
             <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
-              Update
+              Update It..
             </Button>
             {/* <Button type='submit' size='small' sx={{ borderRadius: 25 }} variant='contained' endIcon={<SendIcon />}>
             Save
@@ -252,7 +252,7 @@ const EditPost = ({ postDoc }) => {
         </Paper>
         <DialogActions sx={{ justifyContent: 'flex-end' }}>
           <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
-            Update
+            Update It..
           </Button>
         </DialogActions>
       </DialogContent>

@@ -102,6 +102,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     setTimeout(() => setCopyUrl('copy post URL'), 2000);
   };
 
+  // a lot of screen size tuning for best UI
   const isSmUp = useResponsive('up', 'sm');
   const isMdUp = useResponsive('up', 'md');
   let maxHeightImg = 301;
@@ -132,7 +133,6 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           }
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
-          // subheader={doc.data?.uName + ', ' + doc.data?.subtitle}
           subheader={doc.data?.subtitle}
         />
         <ImageList
@@ -213,56 +213,52 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           ))}
         </ImageList>
         <CardContent sx={{ py: 1 }}>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" style={{ wordWrap: 'break-word' }}>
             {doc.data?.main[0]}
           </Typography>
         </CardContent>
-        <CardActions disableSpacing sx={{ py: 0 }}>
-          {user && !expanded && (
-            <>
-              <Checkbox
-                color="error"
-                aria-label="add to favorites"
-                checked={favorite}
-                onChange={handleChangeFavorite}
-                icon={<Iconify icon="carbon:favorite" />}
-                checkedIcon={<Iconify icon="carbon:favorite-filled" />}
-              />
-              <IconButton aria-label="share post" onClick={handleOpen}>
-                <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+        {user && !expanded && (
+          <CardActions disableSpacing sx={{ py: 0 }}>
+            <Checkbox
+              color="error"
+              aria-label="add to favorites"
+              checked={favorite}
+              onChange={handleChangeFavorite}
+              icon={<Iconify icon="carbon:favorite" />}
+              checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+            />
+            <IconButton aria-label="share post" onClick={handleOpen}>
+              <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+            </IconButton>
+            <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
+              {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
+              <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
+                <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
               </IconButton>
-              <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
-                {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
-                <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
-                  <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
-                </IconButton>
-                {/* </Link> */}
-              </Tooltip>
-            </>
-          )}
-          {doc.data.main.length > 1 && !expanded && (
-            <>
-              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                {/* <ExpandMoreIcon /> */}
-                <Iconify icon="fluent:chevron-down-24-filled" />
-              </ExpandMore>
-              {/* <Typography variant="caption">more...</Typography> */}
-              {!expanded && <Typography variant="caption">more...</Typography>}
-              {expanded && <Typography variant="caption">less...</Typography>}
-            </>
-          )}
-        </CardActions>
+              {/* </Link> */}
+            </Tooltip>
+            {doc.data.main.length > 1 && (
+              <>
+                <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                  {/* <ExpandMoreIcon /> */}
+                  <Iconify icon="fluent:chevron-down-24-filled" />
+                </ExpandMore>
+                {/* <Typography variant="caption">more...</Typography> */}
+                {!expanded && <Typography variant="caption">more...</Typography>}
+                {expanded && <Typography variant="caption">less...</Typography>}
+              </>
+            )}
+          </CardActions>
+        )}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent sx={{ py: 0 }}>
-            {doc.data.main.map(
+            {doc.data.main.slice(1).map(
               (
-                paragraf,
-                indx // being explicit not to confuse with Typography paragraph prop
+                txt,
+                indx // cut first txt blk
               ) => (
                 <Typography key={indx} style={{ wordWrap: 'break-word' }} variant="body2" paragraph color="text.secondary">
-                  {
-                    indx !== 0 && paragraf // skip first paragraf as its alreay above
-                  }
+                  {txt}
                 </Typography>
               )
             )}

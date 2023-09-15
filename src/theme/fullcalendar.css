@@ -1,3 +1,8 @@
+.quill>.ql-container>.ql-editor.ql-blank::before {
+  color: darkslategrey;
+}
+
+
 /* CSS Over-rides for the FullCalendar components */
 
 .wrapper {

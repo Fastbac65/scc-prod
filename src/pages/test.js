@@ -1,4 +1,61 @@
+import { useState } from 'react';
 import EmailTest from 'src/components/email/EmailTest';
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.bubble.css';
+
+const QuillNoSSR = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+});
+
+const modules = {
+  toolbar: [
+    [{ header: [3, 4, false] }],
+    ['bold', 'italic', 'underline', 'blockquote'],
+    ['link'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+    ['clean'],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
+};
+
+const Test = () => {
+  const [value, setValue] = useState('');
+
+  const handleEditorUpdates = (content, delta, source, editor) => {
+    console.log(content);
+    console.log(delta);
+    setValue(content);
+  };
+
+  return (
+    <>
+      {/* <Quill value={value} setValue={handleEditorUpdates} /> */}
+      <QuillNoSSR theme="bubble" placeholder="Write something epic... select text to format!" modules={modules} value={value} onChange={handleEditorUpdates} />
+      <EmailTest
+        name="Bob"
+        email="Bob@this.com"
+        link="https://scc-prod.vercel.app"
+        booking={{
+          bookingType: 'Evening',
+          bookingDate: 'Wed Sep 06 2023 19:18:17 GMT+1000 (Australian Eastern Standard Time)',
+          occasion: '21st',
+          phoneNumber: '+61407945789',
+          email: 'terry.durnin@yahoo.com',
+          fullName: 'Terence Durnin',
+        }}
+      />
+    </>
+  );
+};
+
+export default Test;
+//
+
 // import { getPosts, getPostsApi } from 'src/lib/getStaticDocs';
 // import { rtdb } from 'src/lib/createFirebaseApp';
 // import { addRealtimeDoc, deleteRealtimeDoc, getRealtimeDoc, updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
@@ -31,22 +88,3 @@ import EmailTest from 'src/components/email/EmailTest';
 // }
 
 // updatePosts();
-
-const test = () => (
-  <EmailTest
-    name="Bob"
-    email="Bob@this.com"
-    link="https://scc-prod.vercel.app"
-    booking={{
-      bookingType: 'Evening',
-      bookingDate: 'Wed Sep 06 2023 19:18:17 GMT+1000 (Australian Eastern Standard Time)',
-      occasion: '21st',
-      phoneNumber: '+61407945789',
-      email: 'terry.durnin@yahoo.com',
-      fullName: 'Terence Durnin',
-    }}
-  />
-);
-
-export default test;
-//

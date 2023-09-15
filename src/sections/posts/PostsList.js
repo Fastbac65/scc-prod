@@ -14,12 +14,6 @@ const PostsList = ({ posts }) => {
 
   if (!posts) return;
 
-  const odd = posts.filter((post, indx) => {
-    if (indx % 2) return false;
-    return true;
-  });
-  console.log(odd, posts.length);
-
   return (
     <Box component="section" sx={{ mx: 0 }}>
       <Fade timeout={750} in={true}>

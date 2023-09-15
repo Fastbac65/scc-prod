@@ -59,7 +59,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   ];
   // need to take care of doc coming in as {} empty - for example if its deleted else where
   useEffect(() => {
-    setExpanded(false); //  basically if the doc changes
+    // setExpanded(false); //  basically if the doc changes
     if (!members || !doc?.id) return;
     setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
 

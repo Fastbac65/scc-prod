@@ -24,11 +24,12 @@ const QuillNoSSR = dynamic(import('react-quill'), {
 const modules = {
   toolbar: [
     [{ header: [6, false] }],
-    ['bold', 'italic', 'underline'],
-    ['link'],
-    [{ list: 'ordered' }, { list: 'bullet' }],
+    // ['bold', 'italic', 'underline'],
+    ['bold', 'italic', 'link', 'underline', 'clean', { list: 'bullet' }],
+    // ['link', { list: 'ordered' }, { list: 'bullet' }],
+    // [{ list: 'ordered' }, { list: 'bullet' }],
     // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-    ['clean'],
+    // ['clean'],
   ],
   clipboard: {
     // toggle to add extra line breaks when pasting HTML:

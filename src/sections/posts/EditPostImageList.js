@@ -20,12 +20,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
   // initial photos from the postDoc
   useMemo(async () => {
     setImages(postDoc.data.images);
-
-    // postDoc.data.images.forEach((image) => {
-    //   const fileName = image.src.split('?')[0].split('scc-proto.appspot.com/o/')[1];
-    //   // this fileName is used to create the existing Files in downloadFile
-    //   existingFileNames.current.push(fileName);
-    // });
   }, []);
 
   useEffect(() => {

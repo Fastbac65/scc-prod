@@ -251,6 +251,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </IconButton>
               {/* </Link> */}
             </Tooltip>
+            <PostOptions postDoc={doc} />
+
             {allEl.length > 1 && (
               <>
                 <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">

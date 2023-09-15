@@ -61,10 +61,7 @@ export default function HomeLanding(props) {
       src: '/assets/images/gusto3.jpeg',
       description: 'South Curl Curl SLSC',
     },
-    {
-      src: '/assets/images/header5.jpeg',
-      description: 'South Curl Curl SLSC',
-    },
+
     {
       src: '/assets/images/gusto2wide.jpeg',
       description: 'South Curl Curl SLSC',

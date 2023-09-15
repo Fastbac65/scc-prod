@@ -1,4 +1,4 @@
-import { Manrope, Quicksand, Roboto } from 'next/font/google';
+import { Quicksand, Roboto } from 'next/font/google';
 
 // ----------------------------------------------------------------------
 
@@ -80,16 +80,19 @@ const typography = {
   h5: {
     fontWeight: 500,
     lineHeight: 1.5,
+    letterSpacing: 0.01,
     fontSize: pxToRem(18),
     fontFamily: primaryFont.style.fontFamily,
-    ...responsiveFontSizes({ sm: 19, md: 20, lg: 20 }),
+    ...responsiveFontSizes({ sm: 18, md: 20, lg: 20 }),
   },
   h6: {
     fontWeight: 500,
     lineHeight: 28 / 18,
-    fontSize: pxToRem(17),
+    letterSpacing: 0.01,
+
+    fontSize: pxToRem(16),
     fontFamily: primaryFont.style.fontFamily,
-    ...responsiveFontSizes({ sm: 18, md: 18, lg: 18 }),
+    ...responsiveFontSizes({ sm: 16, md: 18, lg: 18 }),
   },
   subtitle1: {
     fontWeight: 600,

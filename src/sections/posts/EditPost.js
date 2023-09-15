@@ -1,5 +1,5 @@
 import { Box, Button, DialogActions, DialogContent, DialogContentText, Paper, Stack, TextField, useTheme } from '@mui/material';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SendIcon from '@mui/icons-material/Send';
 import AddImages from './AddImages';
 import EditPostImageList from './EditPostImageList';
@@ -10,7 +10,37 @@ import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
 import { updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.bubble.css';
+const QuillNoSSR = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => (
+    <p>
+      <sup>.....</sup>
+    </p>
+  ),
+});
+
+const modules = {
+  toolbar: [
+    [{ header: [6, false] }],
+    ['bold', 'italic', 'underline'],
+    ['link'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+    ['clean'],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
+};
+
 const EditPost = ({ postDoc }) => {
+  const [value, setValue] = useState(postDoc.data?.content);
+  const handleEditorUpdates = (content, delta, source, editor) => {
+    setValue(content);
+  };
   const theme = useTheme();
   const {
     member,
@@ -78,7 +108,7 @@ const EditPost = ({ postDoc }) => {
     e.preventDefault();
     const title = titleRef.current.value;
     const subtitle = subtitleRef.current.value;
-    const main = mainRef.current.value;
+    // const main = mainRef.current.value;
 
     dispatch({ type: 'START_LOADING' });
     try {
@@ -109,7 +139,8 @@ const EditPost = ({ postDoc }) => {
         title: title,
         timestamp: new Date().getTime(),
         subtitle: subtitle,
-        main: main.split(/\r?\n/).filter((para) => para !== ''), // array of paragraphs filtered for empty ones
+        // main: main.split(/\r?\n/).filter((para) => para !== ''), // array of paragraphs filtered for empty ones
+        content: value,
         images: postImagesURLs, // array of images objects [{src: url, alt: url,},.. ]
         thumbnailUrl: '',
         tags: {},
@@ -144,20 +175,20 @@ const EditPost = ({ postDoc }) => {
     });
     return str;
   };
-  const initMarkdownText = () => {
+  function initMarkdownText() {
     let str = '';
     postDoc.data.main.forEach((paragraph) => {
       str += '<p>' + paragraph + '</p>';
     });
     return str;
-  };
+  }
 
   return (
     <form onSubmit={handleSubmitPost}>
       <DialogContent sx={{ pt: 0, px: { xs: 1, sm: 1 }, width: { xs: '100vw', sm: 500, md: 600 }, minHeight: 440 }}>
-        <DialogContentText variant="caption">Click on photo to zoom. Add/delete photos & content.</DialogContentText>
-        <DialogContentText variant="caption"> Update when you are done!</DialogContentText>
-        <DialogActions sx={{ my: 0, justifyContent: 'center' }}>
+        {/* <DialogContentText variant="caption">Click on photo to zoom. Add/delete photos & content.</DialogContentText> */}
+        {/* <DialogContentText variant="caption"> Update when you are done!</DialogContentText> */}
+        <DialogActions sx={{ my: 0, p: 0, justifyContent: 'center' }}>
           <Stack direction="row" spacing={2}>
             <AddImages files={files} setFiles={setFiles} />
             <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
@@ -198,8 +229,10 @@ const EditPost = ({ postDoc }) => {
                 label="Subtitle or Date"
                 InputProps={{ style: { fontSize: 14 } }}
               />
-              {/* <TextField size='small' type='text' fullWidth inputRef={summaryRef} label='Summary' required multiline /> */}
-              <TextField
+              <Box id="quillwrap" className="quillwrap">
+                <QuillNoSSR bounds="#quillwrap" theme="bubble" placeholder="Write something epic... select text to format!" modules={modules} value={value} onChange={handleEditorUpdates} />
+              </Box>
+              {/* <TextField
                 color="info"
                 sx={{ mb: 3 }}
                 variant="standard"
@@ -207,19 +240,16 @@ const EditPost = ({ postDoc }) => {
                 type="text"
                 fullWidth
                 inputRef={mainRef}
-                label="Post"
+                label="Write something epic... select text to format!"
                 defaultValue={initMainText()}
                 required
                 multiline
                 InputProps={{ style: { fontSize: 14 } }}
-              />
+              /> */}
             </Stack>
           </Box>
         </Paper>
-
-        <DialogActions sx={{ justifyContent: 'space-around' }}>
-          {/* <AddImages files={files} setFiles={setFiles} /> */}
-
+        <DialogActions sx={{ justifyContent: 'flex-end' }}>
           <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
             Update
           </Button>

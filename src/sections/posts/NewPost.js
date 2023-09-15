@@ -10,9 +10,38 @@ import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
 import { addRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
-const NewPost = () => {
-  const theme = useTheme();
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.bubble.css';
+const QuillNoSSR = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => (
+    <p>
+      <sup>.....</sup>
+    </p>
+  ),
+});
 
+const modules = {
+  toolbar: [
+    [{ header: [6, false] }],
+    ['bold', 'italic', 'underline'],
+    ['link'],
+    [{ list: 'ordered' }, { list: 'bullet' }],
+    // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+    ['clean'],
+  ],
+  clipboard: {
+    // toggle to add extra line breaks when pasting HTML:
+    matchVisual: false,
+  },
+};
+
+const NewPost = () => {
+  const [value, setValue] = useState();
+  const handleEditorUpdates = (content, delta, source, editor) => {
+    setValue(content);
+  };
+  const theme = useTheme();
   const {
     member,
     dispatch,
@@ -26,7 +55,7 @@ const NewPost = () => {
 
   const titleRef = useRef('');
   const subtitleRef = useRef('');
-  const mainRef = useRef('');
+  // const mainRef = useRef('');
   const collectionName = 'posts';
   const storageName = 'posts';
   const postDocumentId = member?.uid + '_' + uuidv4();
@@ -80,7 +109,7 @@ const NewPost = () => {
     e.preventDefault();
     const title = titleRef.current.value;
     const subtitle = subtitleRef.current.value;
-    const main = mainRef.current.value;
+    // const main = mainRef.current.value;
 
     dispatch({ type: 'START_LOADING' });
     try {
@@ -107,7 +136,9 @@ const NewPost = () => {
         title: title,
         timestamp: new Date().getTime(),
         subtitle: subtitle,
-        main: main.split(/\r?\n/).filter((para) => para !== ''), // array of paragraphs.
+        content: value,
+        // main: main.split(/\r?\n/).filter((para) => para !== ''),
+        // array of paragraphs.
         images: postImagesURLs, // array of images objects [{src: url, alt: url,},.. ]
         thumbnailUrl: '',
         tags: {},
@@ -138,13 +169,13 @@ const NewPost = () => {
   return (
     <form onSubmit={handleSubmitPost}>
       <DialogContent sx={{ pt: 0, px: { xs: 0, sm: 1 }, width: { xs: 350, sm: 600, md: 600 }, minHeight: 440 }}>
-        <DialogContentText variant="caption">Click on photo to zoom.</DialogContentText>
-        <DialogContentText variant="caption">Add photos or go with the library option.</DialogContentText>
+        {/* <DialogContentText variant="caption">Click on photo to zoom.</DialogContentText>
+        <DialogContentText variant="caption">Add photos or go with the library option.</DialogContentText> */}
         <DialogActions sx={{ my: 0, justifyContent: 'center' }}>
           <Stack direction="row" spacing={2}>
             <AddImages files={files} setFiles={setFiles} />
             <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
-              Post
+              Send It..
             </Button>
             {/* <Button type='submit' size='small' sx={{ borderRadius: 25 }} variant='contained' endIcon={<SendIcon />}>
             Save
@@ -180,17 +211,19 @@ const NewPost = () => {
                 defaultValue={defaultAuthor + ', ' + defaultDate}
                 InputProps={{ style: { fontSize: 14 } }}
               />
-              {/* <TextField size='small' type='text' fullWidth inputRef={summaryRef} label='Summary' required multiline /> */}
-              <TextField color="info" sx={{ mb: 3 }} variant="standard" size="small" type="text" fullWidth inputRef={mainRef} label="Main" required multiline InputProps={{ style: { fontSize: 14 } }} />
+              <Box id="quillwrap" className="quillwrap">
+                <QuillNoSSR bounds="#quillwrap" theme="bubble" placeholder="Write something epic... select text to format!" modules={modules} value={value} onChange={handleEditorUpdates} />
+              </Box>
+              {/* <TextField color="info" sx={{ mb: 3 }} variant="standard" size="small" type="text" fullWidth inputRef={mainRef} label="Main" required multiline InputProps={{ style: { fontSize: 14 } }} /> */}
             </Stack>
           </Box>
         </Paper>
 
-        <DialogActions sx={{ justifyContent: 'space-around' }}>
+        <DialogActions sx={{ justifyContent: 'flex-end' }}>
           {/* <AddImages files={files} setFiles={setFiles} /> */}
 
           <Button type="submit" sx={{ borderRadius: 25 }} variant="contained" endIcon={<SendIcon />}>
-            Post
+            Send it..
           </Button>
         </DialogActions>
       </DialogContent>

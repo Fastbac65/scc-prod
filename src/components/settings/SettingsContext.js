@@ -5,7 +5,7 @@ import { auth, db, rtdb } from 'src/lib/createFirebaseApp';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 //
 import { defaultSettings } from './config-setting';
 import reducer from './reducer';

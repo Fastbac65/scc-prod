@@ -12,7 +12,6 @@ const downloadFile = (url) => {
 
       // const file = new Blob([img.data], { type: img.headers['content-type'] });
       const file = new File([img.data], filename, { type: img.headers['content-type'] });
-      console.log(file);
       resolve(file);
     } catch (error) {
       reject(error.message, error);

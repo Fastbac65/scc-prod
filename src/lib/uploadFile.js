@@ -1,4 +1,4 @@
-import { getDownloadURL, uploadBytes, ref } from 'firebase/storage';
+import { getDownloadURL, uploadBytes, ref, listAll } from 'firebase/storage';
 import { storage } from 'src/lib/createFirebaseApp';
 
 // all error handling will occur in the call function location
@@ -23,3 +23,15 @@ const uploadFile = (file, storageFilePath, defStorage = storage) => {
   });
 };
 export default uploadFile;
+
+export async function getFiles(path) {
+  const fileRefs = ref(storage, path);
+  const filelist = [];
+
+  const files = listAll(fileRefs);
+  (await files).items.forEach(async (itemRef) => {
+    const link = await getDownloadURL(itemRef);
+    filelist.push({ link, label: itemRef.name.split('.')[0] });
+  });
+  return filelist;
+}

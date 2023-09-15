@@ -207,7 +207,7 @@ const OurClubCommitee = () => {
           <Stack>
             <Stack spacing={1}>
               {ourCommittee.map((item) => (
-                <OverviewItem key={item.label} text={item.text} />
+                <OverviewItem key={item.text} text={item.text} />
               ))}
             </Stack>
           </Stack>

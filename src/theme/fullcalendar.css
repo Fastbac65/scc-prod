@@ -1,7 +1,49 @@
 .quill>.ql-container>.ql-editor.ql-blank::before {
-  color: #004c98;
+  color: #299ae8;;
+}
+.quillwrap .ql-container {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  opacity: 0.9;
+  font-weight: 300
+}
+.quillwrap .ql-editor .ql-font-serif {
+  font-family: Roboto, Georgia, Times New Roman, serif;
+}
+.quillwrap .ql-bubble .ql-picker.ql-expanded .ql-picker-label {
+  z-index: 100000000;
 }
 
+.quillwrap .ql-editor {
+  padding: 12px 0px;
+  font-family: Roboto, Helvetica;
+}
+
+.quillwrap .ql-bubble .ql-editor a {
+  color: #299ae8;
+}
+.quillwrap .ql-bubble .ql-editor h5 {
+  font-size: 1.25em;
+}
+.quillwrap .ql-bubble .ql-editor h6 {
+  font-size: 1.125em;
+}
+
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-item[data-value="6"]::before{
+  font-size: 1em;
+}
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-label[data-value="6"]::before,
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-item[data-value="6"]::before {
+  content: 'Heading';
+}
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
+  font-size: 1.125em;
+}
+
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-label[data-value="5"]::before,
+.quillwrap .ql-bubble .ql-picker.ql-header .ql-picker-item[data-value="5"]::before {
+  content: 'Heading 1';
+}
 
 /* CSS Over-rides for the FullCalendar components */
 

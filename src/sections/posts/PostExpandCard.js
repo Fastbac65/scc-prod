@@ -1,6 +1,5 @@
 import { memo, useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import NextLink from 'next/link';
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
@@ -8,8 +7,8 @@ import { useSettingsContext } from 'src/components/settings';
 import { updateDoco } from 'src/lib/firestoreDocument';
 import { fToNow } from 'src/lib/formatTime';
 import useResponsive from 'src/hooks/useResponsive';
+import Markdown from 'src/components/markdown/Markdown';
 import copy from 'clipboard-copy';
-// import updateUserRecords from '../context/updateUserRecords';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -62,7 +61,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   ];
 
   useEffect(() => {
-    if (!members) return;
+    setExpanded(false); //  basically if the doc changes
+    if (!members || !doc?.id) return;
     setAuthor({ ...members.filter((mem) => mem.uid === doc.data.userId)[0] });
 
     const fav = member?.postLikes?.indexOf(doc.id) >= 0 ? true : false;
@@ -118,6 +118,17 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   // more pics is different for odd number of pics as we use full width so no gaps
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
   const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
+
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = doc.data?.content;
+  var firstPara;
+  var firstEl = tempDiv.querySelector('p, h6');
+  var allEl = tempDiv.querySelectorAll('p,  h6');
+  if (firstEl) {
+    const elTxt = firstEl.innerHTML;
+    const elType = firstEl.tagName.toLocaleLowerCase();
+    firstPara = '<' + elType + '>' + elTxt + '</' + elType + '>';
+  }
 
   return (
     <>
@@ -212,11 +223,14 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-        <CardContent sx={{ py: 1 }}>
-          <Typography variant="body2" color="text.secondary" style={{ wordWrap: 'break-word' }}>
-            {doc.data?.main[0]}
-          </Typography>
-        </CardContent>
+        {!expanded && (
+          <CardContent sx={{ py: 1 }}>
+            {/* <Typography variant="body2" color="text.secondary" style={{ wordWrap: 'break-word' }}>
+              {doc.data?.main[0]}
+            </Typography> */}
+            <Markdown content={firstPara} />
+          </CardContent>
+        )}
         {user && !expanded && (
           <CardActions disableSpacing sx={{ py: 0 }}>
             <Checkbox
@@ -237,22 +251,21 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               </IconButton>
               {/* </Link> */}
             </Tooltip>
-            {doc.data.main.length > 1 && (
+            {allEl.length > 1 && (
               <>
                 <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                   {/* <ExpandMoreIcon /> */}
                   <Iconify icon="fluent:chevron-down-24-filled" />
                 </ExpandMore>
-                {/* <Typography variant="caption">more...</Typography> */}
-                {!expanded && <Typography variant="caption">more...</Typography>}
-                {expanded && <Typography variant="caption">less...</Typography>}
+                <Typography variant="caption">more...</Typography>
               </>
             )}
           </CardActions>
         )}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent sx={{ py: 0 }}>
-            {doc.data.main.slice(1).map(
+            <Markdown content={doc.data.content} />
+            {/* {doc.data.main.slice(1).map(
               (
                 txt,
                 indx // cut first txt blk
@@ -261,7 +274,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   {txt}
                 </Typography>
               )
-            )}
+            )} */}
           </CardContent>
           <CardActions disableSpacing sx={{ py: 0 }}>
             {user && (
@@ -278,11 +291,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
                 </IconButton>
                 <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
-                  {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
                   <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
                     <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
                   </IconButton>
-                  {/* </Link> */}
                 </Tooltip>
               </>
             )}

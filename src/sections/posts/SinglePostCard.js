@@ -1,6 +1,5 @@
 import { memo, useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-
 import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem, Fade } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
@@ -8,7 +7,7 @@ import { useSettingsContext } from 'src/components/settings';
 import { updateDoco } from 'src/lib/firestoreDocument';
 import { fToNow } from 'src/lib/formatTime';
 import useResponsive from 'src/hooks/useResponsive';
-// import updateUserRecords from '../context/updateUserRecords';
+import Markdown from 'src/components/markdown/Markdown';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -111,7 +110,18 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   // more pics is different for odd number of pics as we use full width so no gaps
   if (!doc) return;
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
+  const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
 
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = doc.data?.content;
+  var firstPara;
+  var firstEl = tempDiv.querySelector('p, h6');
+  var allEl = tempDiv.querySelectorAll('p,  h6');
+  if (firstEl) {
+    const elTxt = firstEl.innerHTML;
+    const elType = firstEl.tagName.toLocaleLowerCase();
+    firstPara = '<' + elType + '>' + elTxt + '</' + elType + '>';
+  }
   return (
     <>
       <Card sx={{ maxWidth: maxWidth }}>
@@ -206,53 +216,41 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             </ImageListItem>
           ))}
         </ImageList>
-        <CardContent sx={{ py: 1 }}>
-          <Typography variant="body2" color="text.primary">
+        {!expanded && (
+          <CardContent sx={{ py: 1 }}>
+            {/* <Typography variant="body2" color="text.primary">
             {doc.data?.main[0]}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing sx={{ py: 0 }}>
-          {user && !expanded && (
-            <>
-              <Checkbox
-                color="error"
-                aria-label="add to favorites"
-                checked={favorite}
-                onChange={handleChangeFavorite}
-                icon={<Iconify icon="carbon:favorite" />}
-                checkedIcon={<Iconify icon="carbon:favorite-filled" />}
-              />
-              <IconButton aria-label="share post" onClick={handleOpen}>
-                <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
-              </IconButton>
-            </>
-          )}
-          {doc.data.main.length > 1 && !expanded && (
-            <>
-              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                {/* <ExpandMoreIcon /> */}
-                <Iconify icon="fluent:chevron-down-24-filled" />
-              </ExpandMore>
-              {/* <Typography variant="caption">more...</Typography> */}
-              {!expanded && <Typography variant="caption">more...</Typography>}
-              {expanded && <Typography variant="caption">less...</Typography>}
-            </>
-          )}
-        </CardActions>
+          </Typography> */}
+            <Markdown content={firstPara} />
+          </CardContent>
+        )}
+        {user && !expanded && (
+          <CardActions disableSpacing sx={{ py: 0 }}>
+            <Checkbox
+              color="error"
+              aria-label="add to favorites"
+              checked={favorite}
+              onChange={handleChangeFavorite}
+              icon={<Iconify icon="carbon:favorite" />}
+              checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+            />
+            <IconButton aria-label="share post" onClick={handleOpen}>
+              <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+            </IconButton>
+            {allEl.length > 1 && (
+              <>
+                <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                  {/* <ExpandMoreIcon /> */}
+                  <Iconify icon="fluent:chevron-down-24-filled" />
+                </ExpandMore>
+                <Typography variant="caption">more...</Typography>
+              </>
+            )}
+          </CardActions>
+        )}
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent sx={{ py: 0 }}>
-            {doc.data.main.map(
-              (
-                paragraf,
-                indx // being explicit not to confuse with Typography paragraph prop
-              ) => (
-                <Typography key={indx} variant="body2" paragraph color="text.secondary">
-                  {
-                    indx !== 0 && paragraf // skip first paragraf as its alreay above
-                  }
-                </Typography>
-              )
-            )}
+            <Markdown content={doc.data.content} />
           </CardContent>
           <CardActions disableSpacing sx={{ py: 0 }}>
             {user && (

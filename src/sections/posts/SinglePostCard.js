@@ -237,6 +237,8 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <IconButton aria-label="share post" onClick={handleOpen}>
               <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
             </IconButton>
+            <PostOptions postDoc={doc} />
+
             {allEl.length > 1 && (
               <>
                 <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
@@ -268,6 +270,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 </IconButton>
               </>
             )}
+            <PostOptions postDoc={doc} />
 
             {/* <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               <Iconify icon="fluent:chevron-down-24-filled" />

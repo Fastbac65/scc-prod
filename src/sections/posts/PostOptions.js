@@ -54,7 +54,7 @@ function PostOptions({ postDoc }) {
 
   return (
     <Box>
-      <Tooltip title="Options" arrow placement="bottom-end">
+      <Tooltip title="Options" arrow placement="top-end">
         <IconButton
           onClick={handleOpenUserMenu}
           aria-label="Options Menu"

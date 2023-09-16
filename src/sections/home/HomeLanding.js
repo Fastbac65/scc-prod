@@ -4,7 +4,7 @@ import Carousel from 'react-material-ui-carousel';
 import { CardMedia, Box, Typography } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
@@ -17,6 +17,11 @@ const StyledRoot = styled('div')(({ theme }) => ({
 
 export default function HomeLanding(props) {
   const theme = useTheme();
+  let count = useRef(0);
+  let countm = useRef(0);
+
+  const [carousel, setCarousel] = useState([]);
+
   var items = [
     {
       src: '/assets/images/header1.jpeg',
@@ -85,6 +90,11 @@ export default function HomeLanding(props) {
     return array;
   }
 
+  useMemo(() => {
+    setCarousel(shuffle(items));
+    countm.current++;
+  }, []);
+
   return (
     <StyledRoot>
       <Box sx={{ mx: { xs: 0, sm: 2 } }} pt={10} pb={2}>
@@ -109,7 +119,7 @@ export default function HomeLanding(props) {
             },
           }}
         >
-          {items.map((item, i) => (
+          {carousel.map((item, i) => (
             <Item key={i} item={item} />
           ))}
         </Carousel>

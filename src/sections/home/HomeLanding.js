@@ -83,9 +83,7 @@ export default function HomeLanding(props) {
 
     return array;
   }
-  console.log(items);
 
-  return (
     <StyledRoot>
       <Box sx={{ mx: { xs: 0, sm: 2 } }} pt={10} pb={2}>
         <Typography textAlign="center" variant="h2" m={2}>

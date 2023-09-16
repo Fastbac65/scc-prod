@@ -4,6 +4,7 @@ import Carousel from 'react-material-ui-carousel';
 import { CardMedia, Box, Typography } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
+import { useEffect, useLayoutEffect } from 'react';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
@@ -84,6 +85,7 @@ export default function HomeLanding(props) {
     return array;
   }
 
+  return (
     <StyledRoot>
       <Box sx={{ mx: { xs: 0, sm: 2 } }} pt={10} pb={2}>
         <Typography textAlign="center" variant="h2" m={2}>

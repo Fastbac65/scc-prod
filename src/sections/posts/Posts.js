@@ -76,8 +76,7 @@ export default function Posts({ staticPosts }) {
         {member?.role?.posts && (
           <Stack spacing={1} direction="row" sx={{ justifyContent: 'center' }}>
             <Tooltip arrow placement="top-start" title="add post" enterDelay={2000}>
-              <Fab variant="extended" size="small" color="secondary" aria-label="edit" onClick={handleCreatePost}>
-                {/* <Add /> */}
+              <Fab variant="extended" size="small" color="primary" aria-label="edit" onClick={handleCreatePost}>
                 <Iconify icon="mdi:plus" />
                 Post
               </Fab>

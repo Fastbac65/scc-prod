@@ -67,7 +67,6 @@ export default function HomeLanding(props) {
       description: 'South Curl Curl SLSC',
     },
   ];
-  shuffle(items);
   function shuffle(array) {
     let currentIndex = array.length,
       randomIndex;

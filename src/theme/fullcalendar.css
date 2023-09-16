@@ -13,14 +13,17 @@
 .quillwrap .ql-bubble .ql-picker.ql-expanded .ql-picker-label {
   z-index: 100000000;
 }
-
 .quillwrap .ql-editor {
   padding: 12px 0px;
   font-family: Roboto, Helvetica;
 }
-
 .quillwrap .ql-bubble .ql-editor a {
   color: #299ae8;
+}
+.quillwrap .ql-bubble .ql-tooltip {
+  background-color: rgb(0, 76, 152);
+  border-radius: 25px;
+  color: #fff;
 }
 .quillwrap .ql-bubble .ql-editor h5 {
   font-size: 1.25em;

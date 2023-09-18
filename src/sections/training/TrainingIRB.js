@@ -15,7 +15,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/gusto4.jpeg',
+    imgUrl: '/assets/images/irbtrain.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({

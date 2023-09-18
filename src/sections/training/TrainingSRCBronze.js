@@ -34,18 +34,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const textStr = `<>
-        To give the little ones a chance to use the beach & pool without being crashed by the big kids, we have different starting times for the younger age groups as follows:
-        <ul>
-          <li>8.45am to 9.45am - Under 6, 7 and 8 and SRC</li>
-          <li>10am to 11am - Under 9–13 and Rippers (Additional Needs Nippers)</li>
-        </ul>
-        The younger age groups can take longer than the allocated hour depending on numbers and helpers available. Nippers assemble behind their age marker on the beach for roll call and must be wearing their
-        age-colour nipper cap and have sunscreen applied before Nippers starts. At the end of the nippers session, each child must be marked off the roll prior to leaving with parent. Nipper caps are to be
-        removed once Nippers has finished.
-      </>`;
-
-const nippersIntroContent = [
+const trainingSRCBronzeContent = [
   {
     icon: 'icon-park-outline:degree-hat',
     label: 'Surf Rescue Certificate',
@@ -76,7 +65,7 @@ const TrainingSRCBronze = () => {
         </Box>
 
         <Stack spacing={1} sx={{ px: 1, py: 2, textAlign: 'left' }}>
-          {nippersIntroContent.map((item) => (
+          {trainingSRCBronzeContent.map((item) => (
             <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
           ))}
         </Stack>
@@ -98,7 +87,7 @@ function OverviewItem({ icon, label, text = '-' }) {
         <Iconify icon={icon} />
       </Box>
       <Stack spacing={0.5}>
-        <Typography variant="h4">{label}</Typography>
+        <Typography sx={{ fontWeight: 600 }}>{label}</Typography>
         <Markdown content={text} />
         {/* <Typography color="text.secondary" variant="body2">
           {text}

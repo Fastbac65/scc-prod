@@ -53,7 +53,7 @@ const TrainingIRB = () => {
       <div style={{ position: 'relative' }}>
         <div id="cadets" style={{ position: 'absolute', top: '-80px' }} />
       </div>
-      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+      <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3">Rescue Boat Training</Typography>

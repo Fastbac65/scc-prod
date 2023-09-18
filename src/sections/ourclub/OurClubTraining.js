@@ -62,7 +62,7 @@ const OurClubTraining = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="booklet" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="srcbronze" style={{ position: 'absolute', top: '-80px' }} />
       </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
@@ -93,7 +93,7 @@ const OurClubTraining = () => {
           </Stack>
         </Box>
         {user && (
-          <Link coponent={NextLink} target="_blank" rel="noopener" href="training">
+          <Link component={NextLink} href="/training">
             <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
               SCC Members Training
             </Button>

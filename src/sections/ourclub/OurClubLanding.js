@@ -51,7 +51,8 @@ const OurClubLanding = () => {
           <CustomBreadcrumbs
             links={[
               { name: 'Home', href: '/' },
-              { name: 'SCC Cafe - Gusto', href: '/ourclub/#gustocafe' },
+              { name: 'SRC/Bronze', href: '/ourclub/#srcbronze' },
+              { name: 'SCC Cafe-Gusto', href: '/ourclub/#gustocafe' },
               { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
             ]}
           />

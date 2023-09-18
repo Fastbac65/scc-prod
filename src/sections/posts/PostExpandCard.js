@@ -33,31 +33,24 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     {
       value: 'facebook',
       label: 'FaceBook',
-      icon: 'carbon:logo-facebook',
+      icon: 'ic:baseline-facebook',
       color: '#1877F2',
-      href: 'https://facebook.com',
+      href: `https://www.facebook.com/sharer/sharer.php?u=${host}/posts/${doc.id}`,
     },
     {
-      value: 'instagram',
-      label: 'Instagram',
-      icon: 'carbon:logo-instagram',
-      color: '#E02D69',
-      href: 'https://facebook.com',
+      value: 'whatsapp',
+      label: 'WhatsApp',
+      icon: 'ic:baseline-whatsapp',
+      color: '#72ee79',
+      href: `https://api.whatsapp.com/send?text=${host}/posts/${doc.id}`,
     },
-    {
-      value: 'linkedin',
-      label: 'Linkedin',
-      icon: 'carbon:logo-linkedin',
-      color: '#007EBB',
-      href: 'https://facebook.com',
-    },
-    {
-      value: 'twitter',
-      label: 'Twitter',
-      icon: 'carbon:logo-twitter',
-      color: '#00AAEC',
-      href: 'https://facebook.com',
-    },
+    // {
+    //   value: 'twitter',
+    //   label: 'Twitter',
+    //   icon: 'carbon:logo-twitter',
+    //   color: '#00AAEC',
+    //   href: 'https://facebook.com',
+    // },
   ];
 
   useEffect(() => {
@@ -315,17 +308,29 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
         PaperProps={{
-          sx: { width: 200, p: 1 },
+          sx: { width: 150, p: 1 },
         }}
       >
-        {socials.map((social) => (
-          <Link key={social.value} href={social.href} target="_blank" underline="none">
-            <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.light }}>
-              <Iconify icon={social.icon} width={24} sx={{ mr: 1 }} />
-              Share via {social.label}
-            </MenuItem>
-          </Link>
-        ))}
+        {/* {socials.map((social) => ( */}
+        <Link key={socials[0].value} href={socials[0].href} target="_blank" underline="none">
+          <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: socials[0].color }}>
+            {/* <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.light }}> */}
+            <Iconify icon={socials[0].icon} width={24} sx={{ minWidth: '24px' }} />
+            <Typography sx={{ pl: 1 }} variant="body2">
+              {socials[0].label}
+            </Typography>
+          </MenuItem>
+        </Link>
+        <Link key={socials[1].value} href={socials[1].href} target="_blank" underline="none">
+          <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: socials[1].color }}>
+            {/* <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.light }}> */}
+            <Iconify icon={socials[1].icon} width={24} sx={{ minWidth: '24px' }} />
+            <Typography sx={{ pl: 1 }} variant="body2">
+              {socials[1].label}
+            </Typography>
+          </MenuItem>
+        </Link>
+        {/* ))} */}
       </Popover>
     </>
   );

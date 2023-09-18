@@ -50,7 +50,7 @@ const TrainingARTFirstAid = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="patrolinfo" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="artfirstaid" style={{ position: 'absolute', top: '-80px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>

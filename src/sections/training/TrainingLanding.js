@@ -55,6 +55,8 @@ const TrainingLanding = () => {
             sx={{ mb: 3 }}
             links={[
               { name: 'Home', href: '/' },
+              { name: 'IRB Crew/Driver', href: '/training/#irb' },
+              { name: 'ART & First Aid', href: '/training/#artfirstaid' },
               { name: 'Training Calendar', href: '/training/#trainingcalendar' },
             ]}
           />

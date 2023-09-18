@@ -42,7 +42,6 @@ export default function HomePage({ staticPosts }) {
           name="description"
           content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
         />
-
         <meta property="og:url" content="https://www.southcurlcurlslsc.com.au" />
         <meta property="og:site_name" content="South Curl Curl Surf Life Saving" />
         <meta property="og:type" content="website" />

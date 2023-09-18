@@ -51,7 +51,7 @@ const TrainingSRCBronze = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="info" style={{ position: 'absolute', top: '-160px' }} />
+        <div id="srcbronze" style={{ position: 'absolute', top: '-160px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>

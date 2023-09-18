@@ -54,7 +54,7 @@ const TrainingSRCBronze = () => {
         <div id="info" style={{ position: 'absolute', top: '-160px' }} />
       </div>
 
-      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+      <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 1 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
             <Typography variant="h3">SRC & Bronze</Typography>

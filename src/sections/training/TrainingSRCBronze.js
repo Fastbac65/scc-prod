@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 // components
 import Iconify from 'src/components/iconify/Iconify';
 import Markdown from 'src/components/markdown/Markdown';
+import useResponsive from 'src/hooks/useResponsive';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
@@ -81,11 +82,14 @@ const TrainingSRCBronze = () => {
 export default TrainingSRCBronze;
 
 function OverviewItem({ icon, label, text = '-' }) {
+  const isSmUp = useResponsive('up', 'sm');
   return (
     <Stack spacing={2.5} direction="row" alignItems="flex-start">
-      <Box sx={{ width: 24, height: 24 }}>
-        <Iconify icon={icon} />
-      </Box>
+      {isSmUp && (
+        <Box sx={{ width: 24, height: 24 }}>
+          <Iconify icon={icon} />
+        </Box>
+      )}
       <Stack spacing={0.5}>
         <Typography sx={{ fontWeight: 600 }}>{label}</Typography>
         <Markdown content={text} />

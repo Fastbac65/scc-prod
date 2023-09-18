@@ -5,6 +5,7 @@ import OurClubMembership from '../ourclub/OurClubMembership';
 // import OurClubTest from '../ourclub/OurClubTest';
 import OurClubCommitee from '../ourclub/OurClubCommittee';
 import OurClubCafe from '../ourclub/OurClubCafe';
+import OurClubTraining from '../ourclub/OurClubTraining';
 // ----------------------------------------------------------------------
 
 export default function OurClubView({ staticPosts }) {
@@ -12,6 +13,7 @@ export default function OurClubView({ staticPosts }) {
     <>
       <OurClubLanding />
       <OurClubMembership />
+      <OurClubTraining />
       <OurClubCafe />
       <OurClubCommitee />
       {/* <OurClubTest /> */}

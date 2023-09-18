@@ -1,6 +1,7 @@
 import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify/Iconify';
+import Markdown from 'src/components/markdown/Markdown';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
@@ -35,12 +36,12 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'Membership Renewal',
-    text: 'Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250.',
+    text: `<p>Renew online at SLS members portal below. Patroling Member $70, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250. Family membership covers parents/guardians plus kids under 18.</p>`,
   },
   {
     icon: 'tdesign:member',
     label: 'Nippers & Nipper Parents Renewal',
-    text: 'Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details',
+    text: `<p>Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details</p>`,
   },
   // {
   //   icon: 'tdesign:member',
@@ -50,7 +51,7 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'New Member & Nipper Registration',
-    text: 'Create a new account for each member at SLS members portal below. Within members portal, pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).',
+    text: `<p>Create a new account for each member at SLS members portal below. Within members portal, click on $ menu top right, select South Curl Curl and 'Pay Online' to pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
   },
 ];
 const OurClubMembership = () => {
@@ -101,9 +102,10 @@ function OverviewItem({ icon, label, text = '-' }) {
       </Box>
       <Stack spacing={0.5}>
         <Typography>{label}</Typography>
-        <Typography color="text.secondary" variant="body2">
+        <Markdown content={text} />
+        {/* <Typography color="text.secondary" variant="body2">
           {text}
-        </Typography>
+        </Typography> */}
       </Stack>
     </Stack>
   );

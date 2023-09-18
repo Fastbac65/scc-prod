@@ -49,13 +49,12 @@ const boatiesCrewsContent = [
     - U19 Male - Tickles*, New Un-Named Crew*<br/>
     - U19 Female - Cruisers*, New Un-Named Crew*<br/><br/>
 
-    *denotes on Debut to scare the competition for the first time this season.</p>`,
+    *denotes on Debut to scare the competition for the first time this season. We are still in the process of naming two crews, standby for updates!</p>`,
   },
   {
     icon: 'material-symbols:rowing-rounded',
     label: 'Interested In Joining SCC Boaties',
-    text: `<p>For more information on how to join the South Curl Curl rowing community, please do not hesitate to contact:
-    Boat Captains Jules & Mali: @ ....</p>`,
+    text: `<p>‘Interested in joining as a rower/sweep? Feel free to contact our Boat Captains Jules & Mali at <a href='mailto:boatcaptain@southcurlcurlslsc.com.au'>boatcaptain@southcurlcurlslsc.com.au</a></p>`,
   },
   {
     icon: 'material-symbols:rowing-rounded',

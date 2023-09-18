@@ -60,7 +60,7 @@ export function SettingsProvider({ children }) {
 
   // const purchaseRef = ref(db, 'purchases/');
   // const custRef = ref(db, 'customers/');
-  const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app';
+  const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://www.southcurlcurlslsc.com.au';
 
   // const fetcher = (url) =>
   //   fetch(url, {

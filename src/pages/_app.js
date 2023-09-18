@@ -52,7 +52,6 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <meta name="google-site-verification" content="0vx-WRanXJjemAmzQwVItX0iCJHquCTSgJPldrJ_dz8" />
       </Head>
 
       <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={enAU}>

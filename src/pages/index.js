@@ -37,9 +37,23 @@ export default function HomePage({ staticPosts }) {
   return (
     <>
       <Head>
-        <title>South Curl Curl Surf Life Saving Club</title>
+        <title>Home - South Curl Curl Surf Life Saving</title>
+        <meta
+          name="desription"
+          content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+        />
         <link rel="canonical" href={host} />
         <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
+        <meta property="og:locale" content="en_US"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta property="og:title" content="Home - Surf Life Saving"></meta>
+        <meta
+          property="og:description"
+          content="Home - South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+        ></meta>
+        <meta property="og:url" content="https://southcurlcurlslsc.com.au/"></meta>
+        <meta property="og:site_name" content="South Curl Curl Surf Life Saving"></meta>
+        <meta property="og:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg"></meta>
       </Head>
       <HomeView staticPosts={staticPosts} />
     </>

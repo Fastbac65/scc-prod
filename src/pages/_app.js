@@ -29,6 +29,8 @@ import enAU from 'date-fns/locale/en-AU';
 
 // theme
 import ThemeProvider from 'src/theme';
+import palette from 'src/theme/palette';
+
 // utils
 import createEmotionCache from 'src/lib/createEmotionCache';
 // components

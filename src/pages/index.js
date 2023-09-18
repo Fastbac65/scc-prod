@@ -44,19 +44,28 @@ export default function HomePage({ staticPosts }) {
         />
         <link rel="canonical" href={host} />
         <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-        <meta property="og:locale" content="en_US"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta property="og:title" content="Home - South Curl Curl Surf Life Saving"></meta>
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="South Curl Curl Surf Life Saving Club" />
 
         <meta
           property="og:description"
-          content="Home - South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
-        ></meta>
-        <meta property="og:url" content="https://southcurlcurlslsc.com.au/"></meta>
-        <meta property="og:site_name" content="South Curl Curl Surf Life Saving"></meta>
-        <meta property="og:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg"></meta>
-        <meta property="og:image:width" content="960"></meta>
-        <meta property="og:image:height" content="675"></meta>
+          content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+        />
+        <meta property="og:url" content="https://southcurlcurlslsc.com.au/" />
+        <meta property="og:site_name" content="South Curl Curl Surf Life Saving" />
+        <meta property="og:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
+        <meta property="og:image:width" content="960" />
+        <meta property="og:image:height" content="675" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="southcurlcurlslsc.com.au" />
+        <meta property="twitter:url" content="https://southcurlcurlslsc.com.au" />
+        <meta name="twitter:title" content="South Curl Curl Surf Life Saving Club" />
+        <meta
+          name="twitter:description"
+          content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+        />
+        <meta name="twitter:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
       </Head>
       <HomeView staticPosts={staticPosts} />
     </>

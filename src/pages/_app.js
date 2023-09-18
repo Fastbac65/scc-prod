@@ -48,7 +48,7 @@ const Meta = () => (
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     {/* PWA primary color */}
     <meta name="theme-color" content={palette('dark').primary.main} />
-    <meta name="description" content="South Curl Curl Surf Life Saving Club" />
+    {/* <meta name="description" content="South Curl Curl Surf Life Saving Club" /> */}
     <meta name="keywords" content="surf lifesaving first aid patrol membership south curly" />
     <meta name="author" content="TezD" />
     {/* stop iOS causing hydration issues */}

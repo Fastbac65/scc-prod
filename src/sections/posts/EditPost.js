@@ -25,7 +25,7 @@ const modules = {
   toolbar: [
     [{ header: [6, false] }],
     // ['bold', 'italic', 'underline'],
-    ['bold', 'italic', 'underline', 'link', { list: 'bullet' }],
+    ['bold', 'italic', 'underline', 'link', 'clean', { list: 'bullet' }],
     // ['link', { list: 'ordered' }, { list: 'bullet' }],
     // [{ list: 'ordered' }, { list: 'bullet' }],
     // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],

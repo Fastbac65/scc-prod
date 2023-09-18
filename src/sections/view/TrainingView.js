@@ -12,8 +12,8 @@ export default function PatrolView({ staticPosts }) {
     <>
       <TrainingLanding />
       <TrainingSRC />
-      <TrainingARTFirstAid />
       <TrainingIRB />
+      <TrainingARTFirstAid />
       <TrainingCalendar />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>

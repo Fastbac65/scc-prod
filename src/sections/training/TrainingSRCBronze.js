@@ -36,12 +36,12 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 const trainingSRCBronzeContent = [
   {
-    icon: 'icon-park-outline:degree-hat',
+    icon: 'mingcute:medal-line',
     label: 'Surf Rescue Certificate',
     text: `<p>The Surf Rescue Certificate (<strong><em>SRC</em></strong>) course is the entry level patrolling award and provides participants with the knowledge of basic patrolling and surf awareness in order to become a probationary patroller and provide water safety for Nippers. The last stepping stone of the Nippers journey to transition to a cadet.</p><ul><li>Minimum age - 13yrs and above</li><li>Prerequisite : 200m swim in 5 minutes</li><li>Outcome : Patrolling Member</li><li>Course Duration : 7-8 weeks</li></ul><p>Candidates train in groups for approximately seven (7) weeks, training weekly in the water on the Sundays and 4 midweek sessions for the Dry content.&nbsp;Candidates will be assessed on various CPR and radio skills and team work in a patrolling situation.&nbsp;</p><p>This course is run once a season with a Spring course starting in October.</p>`,
   },
   {
-    icon: 'icon-park-outline:degree-hat',
+    icon: 'mingcute:medal-line',
     label: 'Bronze Medallion',
     text: `<p>The Bronze Medallion course provides participants with the knowledge of basic patrolling and surf awareness in order to be able to participate in lifesaving operations.&nbsp;</p><ul><li>Minimum age - 15yrs and above</li><li>Prerequisite : 400m swim in 9 minutes</li><li>Outcome : Patrolling Member</li><li>Course Duration : 7-8 weeks</li></ul><p>Candidates train in groups for approximately eight (8) weeks, training twice per week and will be assessed on various skills in communications and team work in a patrolling situation. The candidates will also come away with a nationally recognised First Aid Certificate and Advanced Resuscitation Certificate.</p><p>This course is run twice a season with a Spring course starting in October &amp; a summer course starting at the end of January.</p>`,
   },

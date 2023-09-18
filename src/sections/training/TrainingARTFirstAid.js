@@ -36,21 +36,16 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const patrolInfoContent = [
   {
     icon: 'icon-park-outline:degree-hat',
-    label: 'Season Starts Sept 23rd',
-    text: `<p>All active members are required to be rostered onto patrol duty throughout the season on a rotational basis usually one day per month, which equates to 5-6 half day patrols per season. Due to the strength of our patrolling membership and our patrol hours, this is one of the lightest patrolling commitments across the Sydney Northern Beaches Branch.</p>`,
+    label: 'Advanced Resuscitation Certificate',
+    text: `<p>The Advanced Resuscitation Techniques Certificate (<strong>ARTC</strong>) provides participants with the skills and knowledge to use oxygen, airway management devices and automated defibrillators during resuscitation, and to administer oxygen to conscious or unconscious breathing casualties.</p><ul><li>Minimum age : 15yrs and above</li><li>Prerequisite : Provide First Aid Course</li><li>Outcome : ART Patrolling Member</li><li>Course Duration : 4 evenings</li></ul><p>This course is run two or three times a season with a Spring course starting in November &amp; a summer course starting in February. Please send a message to the <a href="mailto:chiefinstructor@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">chiefinstructor@southcurlcurlslsc.com.au</a> to express your interest in this course</p>`,
   },
   {
     icon: 'icon-park-outline:degree-hat',
-    label: 'Patrol Roster',
-    text: `<p>Current SCC Patrol roster can be seen below in the calendar section. This version on the public website does not include telephone numbers due to privacy reasons. Patrolling Members can access the Patrol Roster with telephone number on TeamApp under ‘Information for Patrolling Members’.</p>`,
-  },
-  {
-    icon: 'icon-park-outline:degree-hat',
-    label: 'Gym Access',
-    text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk.  Those Patrolling Members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link on <a rel='noopener' target='_blank' href=' https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' >here</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.org/wp-content/uploads/2023/08/SCC-Gym-agreement-FINAL.pdf' >here</a>. Email mail@southcurlcurlslsc.org to arrange FOB collection or activation.</p>`,
+    label: 'Provide First Aid Course',
+    text: `<p>Trains participants in the skills and knowledge to manage emergency first aid situations until professional medical support is available.&nbsp;</p><ul><li>Minimum age : 14/15yrs and above</li><li>Prerequisite : Complete the Elearning pre-work</li><li>Outcome : First Aid Certificate</li><li>Course Duration : Full day course</li></ul><p>This course runs generally inline with the ARTC course and is a prerequisite for ARTC</p>`,
   },
 ];
-const TrainingInformation = () => {
+const TrainingARTFirstAid = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -60,8 +55,11 @@ const TrainingInformation = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Training</Typography>
-            <Typography variant="body2">All your training info here from Nat our chief instructor</Typography>
+            <Typography variant="h3">Advanced First Aid</Typography>
+            <Typography variant="body2">
+              At South Curl Curl we also provide many opportunities to enhance your First Aid capabilities through more advanced First Aid training. Why not go to the next level and join us in our Advanced
+              Resus and First Aid courses.
+            </Typography>
           </Stack>
         </Box>
 
@@ -77,14 +75,14 @@ const TrainingInformation = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
-            <Typography variant="caption">For any queries around Patrols and Rosters please email the Patrol Supervisor on patrolsup@southcurlcurlslsc.com.au</Typography>
+            <Typography variant="caption">For all training queries please send an email to chiefinstructor@southcurlcurlslsc.som.au for further information</Typography>
           </Stack>
         </Box>
       </Container>
     </StyledRootResponsive>
   );
 };
-export default TrainingInformation;
+export default TrainingARTFirstAid;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

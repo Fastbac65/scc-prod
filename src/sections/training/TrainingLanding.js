@@ -29,8 +29,9 @@ const TrainingLanding = () => {
                 Training
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-                Our training is dedicated to equipping members with essential skills and knowledge for effective lifesaving. We embrace continuous learning and development, to protect ives on our beautiful and
-                challenging beach.
+                At South Curl Curl we aim to provide training that is relevant to the needs of our lifesaving community but also ensure that it is current and of the highest standard. Our trainers have a great
+                passion for keeping our very dynamic beach safe and giving all patrollers the skills to do so. South Curly often provides extra excitement and being comfortable in our surf, whilst keeping your
+                family & friends safe can be an asset for life.
               </Typography>
               {/* <Typography variant="h2" component="h2">
                 {title}

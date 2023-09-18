@@ -58,8 +58,8 @@ const TrainingIRB = () => {
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3">Rescue Boat Training</Typography>
             <Typography variant="body2">
-              When the surf gets bigger or things get more complicated our IRB teams are called upon. Take your life saving skills up another level, join our amazing IRB crew and drivers and learn how to deal
-              with and navigate probably some of the most challenging surf conditions on the northern beaches
+              When the surf gets &quot;more demanding&quot; and things get more complicated our IRB teams are called upon. Take your life saving skills up another level, join our amazing IRB crew and drivers
+              and learn how to deal with and navigate probably some of the most challenging surf conditions on the northern beaches
             </Typography>
           </Stack>
         </Box>

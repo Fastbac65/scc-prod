@@ -47,11 +47,42 @@ const clientSideEmotionCache = createEmotionCache();
 export default function MyApp(props) {
   const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
 
+  const defaultTitle = 'South Curl Curl Surf Life Saving Club';
+  const defaultDescription =
+    'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.';
+  const defaultUrl = 'https://www.southcurlcurlslsc.com.au';
+  const defaultImage = 'https://www.southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg';
+
+  const { title, description, image } = pageProps;
+
+  const openGraphData = [
+    { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: title || defaultTitle },
+    { property: 'og:description', content: description || defaultDescription },
+    { property: 'og:title', content: title || defaultTitle },
+    { property: 'og:url', content: defaultUrl },
+    { property: 'og:image', content: image || defaultImage },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title || defaultTitle },
+    { name: 'twitter:description', content: description || defaultDescription },
+    { name: 'twitter:image', content: image || defaultImage },
+    { property: 'twitter:url', content: defaultUrl },
+    { property: 'twitter:domain', content: 'southcurlcurlslsc.com.au' },
+    { property: 'twitter:image', content: image || defaultImage },
+  ];
+
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
     <>
       <Head>
+        <title>{title || defaultTitle}</title>
+        <meta name="description" content={description || defaultDescription} />
+        {openGraphData.map((og) => (
+          <meta key={og.property || og.name} {...og} />
+        ))}
+      </Head>
+      {/* <Head>
         <title>South Curl Curl Surf Life Saving Club</title>
         <meta
           name="description"
@@ -77,10 +108,10 @@ export default function MyApp(props) {
           content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
         />
         <meta name="twitter:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
-
         <link rel="canonical" href="https://www.southcurlcurlslsc.com.au" />
         <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.southcurlcurlslsc.com.au" />
-      </Head>
+        //{' '}
+      </Head> */}
       <CacheProvider value={emotionCache}>
         <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={enAU}>
           <SettingsProvider>

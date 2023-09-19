@@ -19,7 +19,7 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
-      // staticMembers: members,
+      title: 'this is a static title',
     },
     // revalidate: 10,
   };
@@ -29,7 +29,7 @@ export async function getStaticProps() {
 
 // Entry point to website content
 
-export default function HomePage({ staticPosts }) {
+export default function HomePage({ staticPosts, title }) {
   const { loading, host } = useSettingsContext();
   if (loading) {
     return <LoadingScreen />;
@@ -66,6 +66,7 @@ export default function HomePage({ staticPosts }) {
         <link rel="canonical" href="https://www.southcurlcurlslsc.com.au" />
         <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.southcurlcurlslsc.com.au" />
       </Head> */}
+      <Head></Head>
       <HomeView staticPosts={staticPosts} />
     </>
   );

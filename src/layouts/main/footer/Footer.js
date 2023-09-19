@@ -65,11 +65,11 @@ const Footer = () => {
         </Typography>
         <Typography color="text-primary" pb={1} paragraph variant="caption">
           © Copyright 2023 | South Curl Curl Surf Lifesaving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.org/terms-conditions">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.com.au/privacy">
             Terms & Conditions
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.org/privacy">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.com.au/privacy">
             Privacy
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Site by TezD

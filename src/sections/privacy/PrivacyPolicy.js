@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="irb" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="privacy" style={{ position: 'absolute', top: '-80px' }} />
       </div>
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">

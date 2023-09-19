@@ -36,7 +36,7 @@ export default function HomePage({ staticPosts }) {
   }
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>South Curl Curl Surf Life Saving Club</title>
         <meta
           name="description"
@@ -63,9 +63,9 @@ export default function HomePage({ staticPosts }) {
         />
         <meta name="twitter:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
 
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-      </Head>
+        <link rel="canonical" href="https://www.southcurlcurlslsc.com.au" />
+        <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.southcurlcurlslsc.com.au" />
+      </Head> */}
       <HomeView staticPosts={staticPosts} />
     </>
   );

@@ -8,13 +8,36 @@ import createEmotionServer from '@emotion/server/create-instance';
 import createEmotionCache from 'src/lib/createEmotionCache';
 // theme
 import { primaryFont } from 'src/theme/typography';
+import palette from 'src/theme/palette';
 
+const Meta = () => (
+  <>
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    {/* PWA primary color */}
+    <meta name="theme-color" content={palette('dark').primary.main} />
+    {/* <meta name="description" content="South Curl Curl Surf Life Saving Club" /> */}
+    <meta name="keywords" content="surf lifesaving first aid patrol membership south curly" />
+    <meta name="author" content="TezD" />
+    {/* stop iOS causing hydration issues */}
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  </>
+);
+
+const Favicon = () => (
+  <>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any"></link>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+  </>
+);
 // ----------------------------------------------------------------------
-
 export default function MyDocument({ emotionStyleTags }) {
   return (
     <Html lang="en" className={primaryFont.className}>
       <Head>
+        <Favicon />
+        <Meta />
         {/* Emotion */}
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}

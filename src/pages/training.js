@@ -36,8 +36,8 @@ export default function Training({ staticPosts }) {
     <>
       <Head>
         <title>SCC SLSC - Our Club</title>
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
+        <link rel="canonical" href={`${host}/training`} />
+        <link rel="alternate" media="only screen and (max-width: 640px)" href={`${host}/training`} />
       </Head>
 
       <TrainingView staticPosts={staticPosts} />

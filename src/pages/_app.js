@@ -51,8 +51,6 @@ export default function MyApp(props) {
 
   return (
     <CacheProvider value={emotionCache}>
-      <Head></Head>
-
       <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={enAU}>
         <SettingsProvider>
           <ThemeProvider>

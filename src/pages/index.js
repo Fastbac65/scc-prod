@@ -19,7 +19,7 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
-      title: 'this is a static title',
+      title: 'South Curl Curl Surf Life Saving Home Page',
     },
     // revalidate: 10,
   };

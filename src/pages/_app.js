@@ -62,6 +62,8 @@ export default function MyApp(props) {
     { property: 'og:title', content: title || defaultTitle },
     { property: 'og:url', content: defaultUrl },
     { property: 'og:image', content: image || defaultImage },
+    { property: 'og:image:width', content: '960' },
+    { property: 'og:image:height', content: '675' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title || defaultTitle },
     { name: 'twitter:description', content: description || defaultDescription },

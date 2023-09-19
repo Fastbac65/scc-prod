@@ -6,6 +6,7 @@ export { default as NippersView } from './NippersView';
 export { default as TrainingView } from './TrainingView';
 export { default as VenueHireView } from './VenueHireView';
 export { default as CompetitorsView } from './CompetitorsView';
+export { default as PrivacyTermsOfUseView } from './PrivacyTermsOfUseView';
 
 // export { default as ContactView } from './ContactView';
 

@@ -32,6 +32,15 @@ const Meta = () => (
       content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
     />
     <meta property="og:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="southcurlcurlslsc.com.au" />
+    <meta property="twitter:url" content="https://www.southcurlcurlslsc.com.au" />
+    <meta name="twitter:title" content="South Curl Curl Surf Life Saving Club" />
+    <meta
+      name="twitter:description"
+      content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+    />
+    <meta name="twitter:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
   </>
 );
 

@@ -136,11 +136,11 @@ const TermOfUsePolicy = () => {
           </Stack>
           <Stack></Stack>
         </Stack>
-        <Box display="flex" justifyContent="center">
+        {/* <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
             <Typography variant="caption">For all training queries please send an email to chiefinstructor@southcurlcurlslsc.som.au for further information</Typography>
           </Stack>
-        </Box>
+        </Box> */}
       </Container>
     </StyledRootResponsive>
   );

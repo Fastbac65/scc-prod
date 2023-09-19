@@ -12,14 +12,26 @@ import palette from 'src/theme/palette';
 
 const Meta = () => (
   <>
+    <meta name="title" content="South Curl Curl Surf Life Saving Club" />
+    <meta
+      name="description"
+      content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+    />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     {/* PWA primary color */}
     <meta name="theme-color" content={palette('dark').primary.main} />
-    {/* <meta name="description" content="South Curl Curl Surf Life Saving Club" /> */}
     <meta name="keywords" content="surf lifesaving first aid patrol membership south curly" />
     <meta name="author" content="TezD" />
     {/* stop iOS causing hydration issues */}
     <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+    <meta property="og:site_name" content="South Curl Curl Surf Life Saving" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="South Curl Curl Surf Life Saving Club" />
+    <meta
+      property="og:description"
+      content="South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise."
+    />
+    <meta property="og:image" content="https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg" />
   </>
 );
 

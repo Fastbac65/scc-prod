@@ -35,15 +35,5 @@ export default function Competitors({ staticPosts }) {
   // if (loading) {
   //   return <LoadingScreen />;
   // }
-  return (
-    <>
-      <Head>
-        <title>SCC SLSC - Our Club</title>
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-      </Head>
-
-      <CompetitorsView staticPosts={staticPosts} />
-    </>
-  );
+  return <CompetitorsView staticPosts={staticPosts} />;
 }

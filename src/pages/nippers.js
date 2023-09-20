@@ -1,12 +1,6 @@
 // next
-import Head from 'next/head';
-// fb
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import { db } from 'src/lib/createFirebaseApp';
-// layouts
 import MainLayout from 'src/layouts/main';
 // sections
-import { useSettingsContext } from 'src/components/settings';
 // import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 import { NippersView } from 'src/sections/view';
 import { getPosts } from 'src/lib/getStaticDocs';
@@ -34,9 +28,5 @@ export async function getStaticProps() {
 // ----------------------------------------------------------------------
 
 export default function Nippers({ staticPosts }) {
-  const { loading, host } = useSettingsContext();
-  // if (loading) {
-  //   return <LoadingScreen />;
-  // }
   return <NippersView staticPosts={staticPosts} />;
 }

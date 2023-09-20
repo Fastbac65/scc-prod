@@ -36,15 +36,5 @@ export default function Training({ staticPosts }) {
   // if (loading) {
   //   return <LoadingScreen />;
   // }
-  return (
-    <>
-      <Head>
-        <title>SCC SLSC - Our Club</title>
-        <link rel="canonical" href={`${host}/training`} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={`${host}/training`} />
-      </Head>
-
-      <TrainingView staticPosts={staticPosts} />
-    </>
-  );
+  return <TrainingView staticPosts={staticPosts} />;
 }

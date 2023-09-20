@@ -36,15 +36,5 @@ export default function Patrol({ staticPosts }) {
   //   return <LoadingScreen />;
 
   // }
-  return (
-    <>
-      <Head>
-        <title>SCC SLSC - Our Club</title>
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-      </Head>
-
-      <PatrolView staticPosts={staticPosts} />
-    </>
-  );
+  return <PatrolView staticPosts={staticPosts} />;
 }

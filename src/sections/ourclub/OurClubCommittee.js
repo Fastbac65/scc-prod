@@ -47,32 +47,27 @@ const ourCommittee = [
 		<tr>
 			<td>Deputy President</td>
 			<td>Dave Alldis</td>
-			<td><a href="mailto:davidalldis13@gmail.com">Deputypresident@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Deputypresident@southcurlcurlslsc.com.au">Deputypresident@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Secretary</td>
 			<td>Jono Beavon</td>
-			<td><a href="mailto:jono.beavon@sydneybeachhomes.com.au">Secretary@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Secretary@southcurlcurlslsc.com.au">Secretary@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Treasurer</td>
 			<td>Paul Brittain</td>
-			<td><a href="mailto:paul_brittain@ymail.com">Treasurer@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Treasurer@southcurlcurlslsc.com.au">Treasurer@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Club Captain</td>
 			<td>Kevin Moffat</td>
-			<td><a href="mailto:lianehm1@gmail.com">Captain@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Captain@southcurlcurlslsc.com.au">Captain@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Nippers President</td>
 			<td>Frank Tol</td>
-			<td><a href="mailto:tolfm@hotmail.com">Nippers@southcurlcurlslsc.com.au</a></td>
-		</tr>
-		<tr>
-			<td>Nippers Deputy</td>
-			<td>Steve Rudd</td>
-			<td><a href="mailto:steverudd1@hotmail.com">Nippers@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Nippers@southcurlcurlslsc.com.au">Nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Patrol Supervisor</td>
@@ -87,27 +82,27 @@ const ourCommittee = [
 		<tr>
 			<td>Boat Captain 1</td>
 			<td>Julian McKay</td>
-			<td><a href="mailto:Julian.McKay18@gmail.com">Boatcaptain@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Boatcaptain@southcurlcurlslsc.com.au">Boatcaptain@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Boat Captain 2</td>
 			<td>Mali Warneford</td>
-			<td><a href="mailto:MaliWarneford@icloud.com">Boatcaptain@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Boatcaptain@southcurlcurlslsc.com.au">Boatcaptain@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>First Aid Officer</td>
 			<td>Lisa Holland</td>
-			<td><a href="mailto:Lisa.Holland99@gmail.com">Firstaid@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Firstaid@southcurlcurlslsc.com.au">Firstaid@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Safety Officer</td>
 			<td>Guy Waddilove</td>
-			<td><a href="mailto:guy@waddiloveyachts.com">OHS@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:OHS@southcurlcurlslsc.com.au">OHS@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Gym Officer</td>
 			<td>Bjorn Shearer</td>
-			<td><a href="mailto:bjorn_shearer@hotmail.com">Gym@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:gym@southcurlcurlslsc.com.au">gym@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Powercraft Captain</td>
@@ -117,12 +112,12 @@ const ourCommittee = [
 		<tr>
 			<td>IRB Engineer</td>
 			<td>Terry Durnin</td>
-			<td><a href="mailto:terry.durnin@yahoo.com">IRB@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:IRB@southcurlcurlslsc.com.au">IRB@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Craft Captain</td>
 			<td>Peter Allen</td>
-			<td><a href="mailto:freshiepete@gmail.com">Craft@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Craft@southcurlcurlslsc.com.au">Craft@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Social Secretary</td>
@@ -137,7 +132,7 @@ const ourCommittee = [
 		<tr>
 			<td>Sponsor Coordinator</td>
 			<td>Graeme Dominish</td>
-			<td><a href="mailto:DominGr@cba.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Sponsorship@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Club Admin</td>
@@ -152,27 +147,22 @@ const ourCommittee = [
 		<tr>
 			<td>Gear Steward</td>
 			<td>Steve Birch</td>
-			<td><a href="mailto:SBirch@flamestop.com.au">Gear@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Gear@southcurlcurlslsc.com.au">Gear@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Handicapper</td>
 			<td>Dave Platter</td>
-			<td><a href="mailto:Dave@daveplatter.com">Handicapper@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Handicapper@southcurlcurlslsc.com.au">Handicapper@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Tour Manager</td>
 			<td>Michelle Lowery</td>
-			<td><a href="mailto:Michelle@limephotography.com.au">TourManager@southcurlcurlslsc.com.au</a></td>
-		</tr>
-		<tr>
-			<td>Competition Manager</td>
-			<td>Michela Verwey</td>
-			<td><a href="mailto:MichelaVerwey@gmail.com">Competition@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:TourManager@southcurlcurlslsc.com.au">TourManager@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Complaints or Grievances</td>
 			<td>Jenny Drury</td>
-			<td><a href="mailto:jennydrury@statcom.com.au">Complaints@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:Complaints@southcurlcurlslsc.com.au">Complaints@southcurlcurlslsc.com.au</a></td>
 		</tr>
 	</tbody>
 </table>

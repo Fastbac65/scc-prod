@@ -18,6 +18,10 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
+      title: 'SCC - Venue Hire',
+      description:
+        'Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings and other similar functions.',
+      canonical: 'https:southcurlcurlslsc.com.au/venuehire',
       // staticMembers: members,
     },
     // revalidate: 10,

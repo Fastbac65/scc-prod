@@ -53,7 +53,7 @@ export default function MyApp(props) {
   const defaultUrl = 'https://southcurlcurlslsc.com.au';
   const defaultImage = 'https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg';
 
-  const { title, description, image } = pageProps;
+  const { title, description, image, canonical } = pageProps;
 
   const openGraphData = [
     { property: 'og:type', content: 'website' },
@@ -84,6 +84,8 @@ export default function MyApp(props) {
         {openGraphData.map((og) => (
           <meta key={og.property || og.name} {...og} />
         ))}
+        <link rel="canonical" href={canonical || defaultUrl} />
+        <link rel="alternate" media="only screen and (max-width: 640px)" href={canonical || defaultUrl} />
       </Head>
       {/* <Head>
         <title>South Curl Curl Surf Life Saving Club</title>

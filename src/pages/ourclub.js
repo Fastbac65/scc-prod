@@ -18,6 +18,11 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
+      title: 'SCC - Our Club',
+      description:
+        'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.',
+      canonical: 'https:southcurlcurlslsc.com.au/ourclub',
+
       // staticMembers: members,
     },
     // revalidate: 10,
@@ -31,15 +36,5 @@ export default function OurClub({ staticPosts }) {
   // if (loading) {
   //   return <LoadingScreen />;
   // }
-  return (
-    <>
-      <Head>
-        <title>SCC SLSC - Our Club</title>
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-      </Head>
-
-      <OurClubView staticPosts={staticPosts} />
-    </>
-  );
+  return <OurClubView staticPosts={staticPosts} />;
 }

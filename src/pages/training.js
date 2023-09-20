@@ -19,6 +19,10 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
+      title: 'SCC - Training',
+      description:
+        'At South Curl Curl we aim to provide training that is relevant to the needs of our lifesaving community but also ensure that it is current and of the highest standard. Our trainers have a great passion for keeping our very dynamic beach safe and giving all patrollers the skills to do so. South Curly often provides extra excitement and being comfortable in our surf, whilst keeping your family & friends safe can be an asset for life.',
+      canonical: 'https:southcurlcurlslsc.com.au/training',
       // staticMembers: members,
     },
     // revalidate: 10,

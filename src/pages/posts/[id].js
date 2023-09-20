@@ -22,6 +22,9 @@ export async function getStaticProps(context) {
     props: {
       staticPosts: posts,
       staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
+      title: post.data?.title,
+      description: 'South Curl Curl Surf Life Saving Club shared post',
+      canonical: `https:southcurlcurlslsc.com.au/posts/${post.id}`,
     },
     // revalidate: 10,
   };

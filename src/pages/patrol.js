@@ -14,7 +14,7 @@ export async function getStaticProps() {
   return {
     props: {
       staticPosts: posts,
-      title: 'SCC - Patrols',
+      title: 'SCC - Patrol',
       description:
         'The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and nippers.',
       canonical: 'https:southcurlcurlslsc.com.au/patrol',

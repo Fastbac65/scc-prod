@@ -50,8 +50,8 @@ export default function MyApp(props) {
   const defaultTitle = 'South Curl Curl Surf Life Saving Club';
   const defaultDescription =
     'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.';
-  const defaultUrl = 'https://www.southcurlcurlslsc.com.au';
-  const defaultImage = 'https://www.southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg';
+  const defaultUrl = 'https://southcurlcurlslsc.com.au';
+  const defaultImage = 'https://southcurlcurlslsc.com.au/assets/images/scc-fb-grp.jpeg';
 
   const { title, description, image } = pageProps;
 

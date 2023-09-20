@@ -8,7 +8,9 @@ import { useSettingsContext } from 'src/components/settings';
 import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 
 import { getPosts } from 'src/lib/getStaticDocs';
+import jsdom from 'jsdom';
 
+const { JSDOM } = jsdom;
 // ----------------------------------------------------------------------
 
 SinglePost.getLayout = (page) => <MainLayout>{page}</MainLayout>;
@@ -16,20 +18,18 @@ SinglePost.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 export async function getStaticProps(context) {
   const posts = await getPosts();
   const post = posts.filter((post) => post.id === context.params.id);
-  var tempDiv = document.createElement('div');
-  tempDiv.innerHTML = post.data?.content;
-  var firstPara;
-  var firstEl = tempDiv.querySelector('p, h6');
-  if (firstEl) {
-    firstPara = firstEl.innerText;
-  }
+  const dom = new JSDOM(`<!DOCTYPE html> ${post[0].data?.content}`);
+  // var tempDiv = document.createElement('div');
+  // tempDiv.innerHTML = post.data?.content;
+  var firstEl = dom.window.document.querySelector('p, h6');
+
   return {
     props: {
       staticPosts: posts,
       staticPost: post.length ? post[0] : {},
       // staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
       title: post[0].data.title,
-      description: firstPara,
+      description: firstEl.textContent || 'South Curl Curl SLSC shared post',
       canonical: `https:southcurlcurlslsc.com.au/posts/${post[0].id}`,
       image: post[0].data.images[0].src,
     },

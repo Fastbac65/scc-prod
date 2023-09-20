@@ -1,10 +1,6 @@
-// next
-import Head from 'next/head';
 // layouts
 import MainLayout from 'src/layouts/main';
 // sections
-import { useSettingsContext } from 'src/components/settings';
-// import LoadingScreen from 'src/components/loading-screen/LoadingScreen';
 import { PatrolView } from 'src/sections/view';
 import { getPosts } from 'src/lib/getStaticDocs';
 
@@ -31,10 +27,5 @@ export async function getStaticProps() {
 // ----------------------------------------------------------------------
 
 export default function Patrol({ staticPosts }) {
-  const { host } = useSettingsContext();
-  // if (loading) {
-  //   return <LoadingScreen />;
-
-  // }
   return <PatrolView staticPosts={staticPosts} />;
 }

@@ -24,6 +24,7 @@ export async function getStaticProps(context) {
       title: post[0].data.title,
       description: 'South Curl Curl Surf Life Saving Club shared post',
       canonical: `https:southcurlcurlslsc.com.au/posts/${post[0].id}`,
+      image: post[0].images[0].src,
     },
     // revalidate: 10,
   };

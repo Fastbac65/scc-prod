@@ -60,7 +60,7 @@ export default function MyApp(props) {
     { property: 'og:site_name', content: title || defaultTitle },
     { property: 'og:description', content: description || defaultDescription },
     { property: 'og:title', content: title || defaultTitle },
-    { property: 'og:url', content: defaultUrl },
+    { property: 'og:url', content: canonical || defaultUrl },
     { property: 'og:image', content: image || defaultImage },
     { property: 'og:image:alt', content: defaultTitle },
     { property: 'og:image:width', content: '960' },
@@ -69,7 +69,7 @@ export default function MyApp(props) {
     { name: 'twitter:title', content: title || defaultTitle },
     { name: 'twitter:description', content: description || defaultDescription },
     { name: 'twitter:image', content: image || defaultImage },
-    { property: 'twitter:url', content: defaultUrl },
+    { property: 'twitter:url', content: canonical || defaultUrl },
     { property: 'twitter:domain', content: 'southcurlcurlslsc.com.au' },
     { property: 'twitter:image', content: image || defaultImage },
   ];

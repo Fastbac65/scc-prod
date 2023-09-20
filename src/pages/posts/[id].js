@@ -16,13 +16,20 @@ SinglePost.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 export async function getStaticProps(context) {
   const posts = await getPosts();
   const post = posts.filter((post) => post.id === context.params.id);
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = post.data?.content;
+  var firstPara;
+  var firstEl = tempDiv.querySelector('p, h6');
+  if (firstEl) {
+    firstPara = firstEl.innerText;
+  }
   return {
     props: {
       staticPosts: posts,
       staticPost: post.length ? post[0] : {},
       // staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
       title: post[0].data.title,
-      description: 'South Curl Curl Surf Life Saving Club shared post',
+      description: firstPara,
       canonical: `https:southcurlcurlslsc.com.au/posts/${post[0].id}`,
       image: post[0].data.images[0].src,
     },
@@ -52,14 +59,5 @@ export default function SinglePost({ staticPosts, staticPost }) {
   if (loading) {
     return <LoadingScreen />;
   }
-  return (
-    <>
-      <Head>
-        <title>South Curl Curl Surf Life Saving Club</title>
-        <link rel="canonical" href={host} />
-        <link rel="alternate" media="only screen and (max-width: 640px)" href={host} />
-      </Head>
-      <PostsView staticPosts={staticPosts} staticPost={staticPost} />
-    </>
-  );
+  return <PostsView staticPosts={staticPosts} staticPost={staticPost} />;
 }

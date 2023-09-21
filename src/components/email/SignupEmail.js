@@ -15,8 +15,8 @@ export const SignUpEmail = ({ email, link, name }) => (
           </Link>
           <Hr style={hr} />
           <Section>
-            <Text style={text}>Hi {name},</Text>
-            <Text style={text}>Welcome to South Curl Curl SLSC. To finalise your members access to the South Curl Curl SLSC website please continue here:</Text>
+            <Text style={text}>Hi {name.split(/[ ]+/)[0]},</Text>
+            <Text style={text}>Welcome to the South Curl Curl SLSC website members. To finalise your members access to the South Curl Curl SLSC website please continue here:</Text>
             <Button pY={10} style={button} href={link}>
               Finalise SCC SLSC Website Account
             </Button>

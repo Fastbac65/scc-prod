@@ -72,7 +72,7 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
           ...alert,
           open: true,
           severity: 'success',
-          message: `Thank you. Your details have been secured. Your South Curl Curl SLSC website members account is all setup! You can view your account details via the fun avatar, top right. If you would like to be a content contributor to the SCC website and posts please speak with a member of our committee or contact webadamin@southcurlcurlslsc.com.au.`,
+          message: `Thank you. Your details have been secured. Your South Curl Curl SLSC website members account is all setup! You can view your account details via the fun avatar, top right. If you would like to be a content contributor to the SCC website and posts please speak with a member of our committee or contact webadmin@southcurlcurlslsc.com.au.`,
           duration: 12000,
         },
       });

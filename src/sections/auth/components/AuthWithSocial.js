@@ -71,23 +71,28 @@ export default function AuthWithSocial() {
       dispatch({ type: 'END_LOADING' });
     } catch (error) {
       console.log(error);
-      setTimeout(
-        // allows some time for the page routing to settle before error message
-        () =>
-          dispatch({
-            type: 'UPDATE_ALERT',
-            payload: { ...alert, open: true, severity: 'error', message: error.message, duration: 8000 },
-          }),
-        1200
-      );
-      dispatch({ type: 'END_LOADING' });
+      const message = error.message === 'Firebase: Error (auth/popup-closed-by-user).' ? 'Pop up closed before social login completion' : `An error has occured: ${error.message}`;
+      dispatch({
+        type: 'UPDATE_ALERT',
+        payload: { ...alert, open: true, severity: 'error', message: message, duration: 8000 },
+      }),
+        // setTimeout(
+        //   // allows some time for the page routing to settle before error message
+        //   () =>
+        //     dispatch({
+        //       type: 'UPDATE_ALERT',
+        //       payload: { ...alert, open: true, severity: 'error', message: error.message, duration: 8000 },
+        //     }),
+        //   100
+        // );
+        dispatch({ type: 'END_LOADING' });
     }
   };
 
   return (
     <Stack direction="row" spacing={2}>
-      <Button fullWidth size="large" color="inherit" variant="outlined">
-        {/* <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerGoogle)}> */}
+      {/* <Button fullWidth size="large" color="inherit" variant="outlined"> */}
+      <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerGoogle)}>
         <Iconify icon="logos:google-icon" width={24} />
       </Button>
 

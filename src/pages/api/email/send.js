@@ -66,9 +66,10 @@ export default async function handler(req, res) {
           link = await getAuth().generateSignInWithEmailLink(email, actionCodeSettings);
           try {
             await resend.emails.send({
-              from: 'onboarding@resend.dev',
-              to: 'sccslsc.webdev@gmail.com',
-              // to: email,
+              from: 'South Curly Members <onboarding@southcurlcurlslsc.com.au>',
+              reply_to: 'webadmin@southcurlcurlslsc.com.au',
+              to: email,
+              bcc: ['webadmin@southcurlcurlslsc.com.au' /*mail@southcurlcurlslsc.com.au*/],
               subject: 'Welcome to South Curl Curl SLSC Members',
               html: '<strong>Please finalise your members account setup</strong>',
               react: SignUpEmail({ link, email, name }),
@@ -82,8 +83,10 @@ export default async function handler(req, res) {
         case 'bookingInquiry': {
           try {
             await resend.emails.send({
-              from: 'support@southcurlcurlslsc.com.au',
-              to: ['sccslsc.webdev@gmail.com', booking.email],
+              from: 'SCC Venue Management <booking@southcurlcurlslsc.com.au>',
+              reply_to: 'webadmin@southcurlcurlslsc.com.au',
+
+              to: booking.email,
               bcc: ['fastbac65@gmail.com'],
               // to: email,
               subject: 'Venue Booking Inquiry',

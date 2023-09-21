@@ -41,11 +41,11 @@ export function MenuContent() {
       path: '/account/settings',
       icon: <Iconify icon="carbon:cut-out" />,
     },
-    {
-      title: 'Featured Training',
-      path: '/account/media',
-      icon: <Iconify icon="carbon:document" />,
-    },
+    // {
+    //   title: 'Featured Training',
+    //   path: '/account/media',
+    //   icon: <Iconify icon="carbon:document" />,
+    // },
     // {
     //   title: 'Account Orders',
     //   path: '/account/orders',

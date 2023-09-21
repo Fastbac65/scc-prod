@@ -118,7 +118,7 @@ export default function AccountPersonalView() {
           </Typography>
           <Typography sx={{ pb: 0 }}>name and email as per registration</Typography>
           <Typography variant="caption" sx={{ py: 1 }}>
-            set a preferred name via profile.
+            set a preferred name via My Profile.
           </Typography>
           <Stack spacing={2.5}>
             <Box rowGap={2.5} columnGap={2} display="grid" gridTemplateColumns={{ xs: 'repeat(2, 1fr)', sm: 'repeat(2, 1fr)' }}>

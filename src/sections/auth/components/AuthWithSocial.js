@@ -27,8 +27,7 @@ export default function AuthWithSocial() {
       const { user, newUser } = await signInSocial(auth, provider);
       let message = 'Welcome back to South Curl Curl Members!!';
       if (newUser) {
-        message =
-          'Awesome!!!  Your South Curl Curl members account has been created successfully. Your social profile details have been linked to this account. If you wish to update these details you must update them on your social account.';
+        message = `Awesome!!!  Your South Curl Curl members account has been created successfully. Your social profile details have been linked to this account. If you wish to update these details you must update them on your social account. You can edit your personal information and profile details by clicking on your photo top right. `;
 
         const userObj = {
           uid: user.uid,
@@ -61,7 +60,7 @@ export default function AuthWithSocial() {
         payload: {
           ...alert,
           open: true,
-          severity: newUser ? 'info' : 'success',
+          severity: 'success',
           message: message,
           // variant: '',
           duration: newUser ? 30000 : 6000,

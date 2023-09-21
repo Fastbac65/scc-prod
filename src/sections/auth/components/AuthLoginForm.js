@@ -6,7 +6,7 @@ import { useState } from 'react';
 import NextLink from 'next/link';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { Stack, Link, IconButton, InputAdornment, CircularProgress } from '@mui/material';
+import { Stack, Link, IconButton, InputAdornment, CircularProgress, Typography } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField } from 'src/components/hook-form';
@@ -133,6 +133,16 @@ export default function AuthLoginForm() {
         <LoadingButton fullWidth color="primary" size="large" type="submit" variant="contained" loading={isSubmitting} loadingIndicator={<CircularProgress color="primary" size={24} />}>
           Login
         </LoadingButton>
+        <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
+          {`In using this website I agree to South Curl Curl SLSC `}
+          <Link component={NextLink} color="text.primary" href="/privacy/#termsofuse" underline="always">
+            Terms of Use
+          </Link>
+          {` and `}
+          <Link component={NextLink} color="text.primary" href="/privacy/#privacy" underline="always">
+            Privacy Policy.
+          </Link>
+        </Typography>
       </Stack>
     </FormProvider>
   );

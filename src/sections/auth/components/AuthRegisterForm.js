@@ -1,3 +1,4 @@
+import NextLink from 'next/link';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -151,11 +152,11 @@ export default function AuthRegisterForm() {
 
         <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
           {`In using this website I agree to South Curl Curl SLSC `}
-          <Link color="text.primary" href="#" underline="always">
-            Terms of Service
+          <Link component={NextLink} color="text.primary" href="/privacy/#termsofuse" underline="always">
+            Terms of Use
           </Link>
           {` and `}
-          <Link color="text.primary" href="#" underline="always">
+          <Link component={NextLink} color="text.primary" href="/privacy/#privacy" underline="always">
             Privacy Policy.
           </Link>
         </Typography>

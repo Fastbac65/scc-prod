@@ -224,39 +224,40 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           <Markdown content={firstPara} />
         </CardContent>
         {/* )} */}
-        {user && !expanded && (
-          <CardActions disableSpacing sx={{ py: 0 }}>
-            <Checkbox
-              color="error"
-              aria-label="add to favorites"
-              checked={favorite}
-              onChange={handleChangeFavorite}
-              icon={<Iconify icon="carbon:favorite" />}
-              checkedIcon={<Iconify icon="carbon:favorite-filled" />}
-            />
-            <IconButton aria-label="share post" onClick={handleOpen}>
-              <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
-            </IconButton>
-            <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
-              {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
-              <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
-                <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+        <CardActions disableSpacing sx={{ py: 0 }}>
+          {user && !expanded && (
+            <>
+              <Checkbox
+                color="error"
+                aria-label="add to favorites"
+                checked={favorite}
+                onChange={handleChangeFavorite}
+                icon={<Iconify icon="carbon:favorite" />}
+                checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+              />
+              <IconButton aria-label="share post" onClick={handleOpen}>
+                <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
               </IconButton>
-              {/* </Link> */}
-            </Tooltip>
-            <PostOptions postDoc={doc} />
-
-            {allEl.length > 1 && (
-              <>
-                <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
-                  {/* <ExpandMoreIcon /> */}
-                  <Iconify icon="fluent:chevron-down-24-filled" />
-                </ExpandMore>
-                <Typography variant="caption">more...</Typography>
-              </>
-            )}
-          </CardActions>
-        )}
+              <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
+                {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
+                <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
+                  <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+                </IconButton>
+                {/* </Link> */}
+              </Tooltip>
+              <PostOptions postDoc={doc} />
+            </>
+          )}
+          {allEl.length > 1 && !expanded && (
+            <>
+              <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
+                {/* <ExpandMoreIcon /> */}
+                <Iconify icon="fluent:chevron-down-24-filled" />
+              </ExpandMore>
+              <Typography variant="caption">more...</Typography>
+            </>
+          )}
+        </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent sx={{ py: 0 }}>
             <Markdown content={doc.data.content.split(firstPara)[1]} />

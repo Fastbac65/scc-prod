@@ -82,7 +82,7 @@ export default async function handler(req, res) {
         case 'bookingInquiry': {
           try {
             await resend.emails.send({
-              from: 'support@resend.dev',
+              from: 'support@southcurlcurlslsc.com.au',
               to: ['sccslsc.webdev@gmail.com', booking.email],
               bcc: ['fastbac65@gmail.com'],
               // to: email,

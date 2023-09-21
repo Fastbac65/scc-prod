@@ -91,10 +91,10 @@ export default function AuthWithSocial() {
         <Iconify icon="logos:google-icon" width={24} />
       </Button>
 
-      <Button fullWidth size="large" color="inherit" variant="outlined">
-        {/* <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerFacebook)}> */}
+      {/* <Button fullWidth size="large" color="inherit" variant="outlined">
+        <Button fullWidth size="large" color="inherit" variant="outlined" onClick={() => authSocial(providerFacebook)}>
         <Iconify icon="carbon:logo-facebook" width={24} color="#1877F2" />
-      </Button>
+      </Button> */}
 
       {/* <Button color="inherit" fullWidth variant="outlined" size="large">
         <Iconify icon="carbon:logo-github" width={24} sx={{ color: 'text.primary' }} />

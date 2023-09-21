@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://southcurlcurlslsc.com.au
+
+# Sitemaps
+Sitemap: https://southcurlcurlslsc.com.au/sitemap.xml

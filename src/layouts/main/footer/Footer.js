@@ -1,6 +1,6 @@
-import Image from 'next/image';
+import NextLink from 'next/link';
 
-import { CardMedia, Grid, Link, Paper, Typography, Box, useTheme } from '@mui/material';
+import { Link, Paper, Typography, Box, useTheme } from '@mui/material';
 import CarouselBasic1 from './CarouselBasic1';
 
 const Footer = () => {
@@ -57,19 +57,18 @@ const Footer = () => {
       <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={1} paragraph color="text-primary" variant="caption">
           Email:{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.org">
-            {' '}
-            mail@southcurlcurlslsc.org
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.com.au">
+            mail@southcurlcurlslsc.com.au
           </Link>
-          &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Tel: +61-2-9938 5430&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Mail: P.O. Box 18, Freshwater NSW 2096
+          &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Tel: +61-2-99385430&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Mail: P.O. Box 18, Freshwater NSW 2096
         </Typography>
         <Typography color="text-primary" pb={1} paragraph variant="caption">
-          © Copyright 2023 | South Curl Curl Surf Lifesaving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.com.au/privacy">
+          © Copyright 2023 | South Curl Curl Surf Life Saving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="https://southcurlcurlslsc.com.au/privacy">
             Terms & Conditions
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} target="_blank" href="https://southcurlcurlslsc.com.au/privacy">
+          <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="https://southcurlcurlslsc.com.au/privacy">
             Privacy
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Site by TezD

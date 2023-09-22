@@ -91,9 +91,9 @@ export default function Posts({ staticPosts }) {
                     <FacebookOutlined />
                   </Fab>
                 </Tooltip> */}
-            <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
+            {/* <Tooltip arrow placement="top-start" title="favourites" enterDelay={2000}>
               <Checkbox color="error" aria-label="add to favorites" checked={like} onChange={handleFavsClick} icon={<Iconify icon="carbon:favorite" />} checkedIcon={<Iconify icon="carbon:favorite-filled" />} />
-            </Tooltip>
+            </Tooltip> */}
           </Stack>
         )}
       </Box>

@@ -110,13 +110,15 @@ const CalendarPatrol = ({ holidays, patrol }) => {
 
     if (!patrol) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+        if (event?.borderColor === `${theme.palette.warning.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (patrol) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+        if (event?.borderColor === `${theme.palette.warning.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'auto');
         }
       });
@@ -177,12 +179,13 @@ const CalendarPatrol = ({ holidays, patrol }) => {
       }
     }
     if (!patrol) {
-      if (calEventInfo.event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+      if (calEventInfo?.borderColor === `${theme.palette.warning.main}`) {
+        // if (calEventInfo.event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
         calEventInfo.event.setProp('display', 'none');
       }
     }
     // if (!patrolTraining) {
-    //   // if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.warning.main}`) {
     //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {
     //     calEventInfo.event.setProp('display', 'none');
     //   }

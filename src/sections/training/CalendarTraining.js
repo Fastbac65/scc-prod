@@ -110,13 +110,15 @@ const CalendarTraining = ({ holidays, training }) => {
 
     if (!training) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
+        if (event?.borderColor === `${theme.palette.error.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (training) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
+        if (event?.borderColor === `${theme.palette.error.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
           event.setProp('display', 'auto');
         }
       });
@@ -177,8 +179,8 @@ const CalendarTraining = ({ holidays, training }) => {
       }
     }
     if (!training) {
-      // if (calEventInfo?.borderColor === `${theme.palette.success.main}`) {
-      if (calEventInfo.event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
+      if (calEventInfo?.borderColor === `${theme.palette.error.main}`) {
+        // if (calEventInfo.event?.extendedProps?.creator?.email === 'natalieneary@gmail.com') {
         calEventInfo.event.setProp('display', 'none');
       }
     }

@@ -1,6 +1,6 @@
 import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled } from '@mui/material';
 import { useState } from 'react';
-import CalendarVenueHire from './CalendarVenueHire';
+import CalendarVenueHire2 from './CalendarVenueHire';
 import { bgGradient } from 'src/lib/cssStyles';
 import useResponsive from 'src/hooks/useResponsive';
 
@@ -80,9 +80,8 @@ const VenueHireCalendar = () => {
               </Box>
             )}
             <Box sx={{ flexGrow: 1 }}>
-              {' '}
               {/* margin seems to fix scroll issue on mobile */}
-              <CalendarVenueHire
+              <CalendarVenueHire2
                 holidays={holidays}
                 booking={booking}
                 // patrolTraining={patrolTraining}

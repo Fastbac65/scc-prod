@@ -83,11 +83,11 @@ export default async function handler(req, res) {
         case 'bookingInquiry': {
           try {
             await resend.emails.send({
-              from: 'SCC Venue Management <booking@southcurlcurlslsc.com.au>',
-              reply_to: 'webadmin@southcurlcurlslsc.com.au',
+              from: 'SCC Venue Management <caretaker@southcurlcurlslsc.com.au>',
+              reply_to: 'SCC Venue Management <caretaker@southcurlcurlslsc.com.au>',
 
               to: booking.email,
-              bcc: ['fastbac65@gmail.com'],
+              bcc: ['SCC Venue Management <caretaker@southcurlcurlslsc.com.au>'],
               // to: email,
               subject: 'Venue Booking Inquiry',
               html: '<strong>Venue Booking Inquiry Received</strong>',

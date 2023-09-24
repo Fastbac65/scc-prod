@@ -52,6 +52,15 @@
   content: 'Heading 1';
 }
 
+.quillwrap .ql-container.ql-bubble:not(.ql-disabled) a:before {
+  overflow-x: scroll;
+  background-color: #004c98;
+  text-wrap: wrap;
+  transform: translate(0%, -100%);
+  margin-left: -8px;
+}
+
+
 /* CSS Over-rides for the FullCalendar components */
 
 .wrapper {

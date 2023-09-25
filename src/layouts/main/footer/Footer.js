@@ -57,8 +57,8 @@ const Footer = () => {
       <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={1} paragraph color="text-primary" variant="caption">
           Email:{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.com.au">
-            mail@southcurlcurlslsc.com.au
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.org">
+            mail@southcurlcurlslsc.org
           </Link>
           &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Tel: +61-2-99385430&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Mail: P.O. Box 18, Freshwater NSW 2096
         </Typography>

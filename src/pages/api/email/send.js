@@ -71,7 +71,7 @@ export default async function handler(req, res) {
               from: 'South Curly Members <onboarding@southcurlcurlslsc.com.au>',
               reply_to: 'webadmin@southcurlcurlslsc.com.au',
               to: email,
-              bcc: ['webadmin@southcurlcurlslsc.com.au' /*mail@southcurlcurlslsc.com.au*/],
+              bcc: ['webadmin@southcurlcurlslsc.com.au' /*mail@southcurlcurlslsc.org*/],
               subject: 'Welcome to South Curl Curl SLSC Members',
               html: '<strong>Please finalise your members account setup</strong>',
               react: SignUpEmail({ link, email, name }),

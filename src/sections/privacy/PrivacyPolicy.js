@@ -90,7 +90,7 @@ const privacyContent = [
       <p><strong>Safety</strong>: We take the safety and security of children seriously. We will not knowingly use, post, or share photographs that could compromise the safety or well-being of any child. If you have concerns about a specific photograph or image, please contact us immediately, and we will take appropriate action.</p>
       </li>
       <li>
-      <p><strong>Requests for Removal</strong>: If, as a parent or guardian, you wish to have a photograph or image of your child removed from our website, social media accounts, or other promotional materials, please contact us at <a href="mailto:mail@southcurlcurlslsc.com.au?subject=Photo%20removal">mail@southcurlcurlslsc.com.au</a>, and we will promptly address your request.</p>
+      <p><strong>Requests for Removal</strong>: If, as a parent or guardian, you wish to have a photograph or image of your child removed from our website, social media accounts, or other promotional materials, please contact us at <a href="mailto:mail@southcurlcurlslsc.org?subject=Photo%20removal">mail@southcurlcurlslsc.org</a>, and we will promptly address your request.</p>
       </li>
       <li>
       <p><strong>Third-Party Use</strong>: While we take precautions to protect the privacy and safety of children, we cannot control the actions of individuals or entities who may access or use photographs posted online. We strongly advise parents and guardians to educate their children about online safety and privacy.</p>

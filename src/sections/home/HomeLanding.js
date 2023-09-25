@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Carousel from 'react-material-ui-carousel';
-import { CardMedia, Box, Typography } from '@mui/material';
+import { CardMedia, Box, Typography, Container, Stack } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
@@ -97,48 +97,50 @@ export default function HomeLanding(props) {
 
   return (
     <StyledRoot>
-      <Box sx={{ mx: { xs: 0, sm: 2 } }} pt={10} pb={2}>
-        <Typography textAlign="center" variant="h2" m={2}>
-          South Curl Curl Surf Life Saving Club
-        </Typography>
-        <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-          Summer is here, Nippers are on and the sand is back on our beautiful beach!!
-        </Typography>
-        {/* <PreloadImg /> */}
-
-        <Carousel
-          interval={6000}
-          duration={4000}
-          height={250}
-          autoPlay={true}
-          sx={{ borderRadius: 2 }}
-          indicatorIconButtonProps={{
-            style: {
-              display: 'none',
-              // color: 'blue', // 3
-            },
-          }}
-        >
-          {carousel.map((item, i) => (
-            <Item key={i} item={item} />
-          ))}
-        </Carousel>
-        <Box sx={{ background: 'rgba(0,0,0,0.3)', borderRadius: 2 }}>
-          <Typography
-            color="white"
-            textAlign="center"
-            variant="body1"
-            py={3}
-            mt={1}
-            mx={2}
-            // sx={{ background: 'rgba()' }}
-          >
-            South Curl Curl Surf Life Saving Club has been in existence since 1918 and no lives have been lost whilst the beach has been patrolled. The Club places great emphasis on training club members in
-            life saving skills to ensure this tradition is maintained. The South Curl Curl Surf Life Saving Club is a volunteer organisation whose basic objective is to provide the highest possible level of
-            water safety for our locals, visitors and nippers.
+      <Stack direction="row" sx={{ mx: 0, px: 0, justifyContent: 'center' }}>
+        <Box sx={{ mx: { xs: 0, sm: 1, md: 2 }, maxWidth: 1000, textAlign: 'center' }} pt={10} pb={2}>
+          <Typography textAlign="center" variant="h2" m={2}>
+            South Curl Curl Surf Life Saving Club
           </Typography>
+          <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
+            Summer is here, Nippers are on and the sand is back on our beautiful beach!!
+          </Typography>
+          {/* <PreloadImg /> */}
+
+          <Carousel
+            interval={6000}
+            duration={4000}
+            height={250}
+            autoPlay={true}
+            sx={{ borderRadius: 2 }}
+            indicatorIconButtonProps={{
+              style: {
+                display: 'none',
+                // color: 'blue', // 3
+              },
+            }}
+          >
+            {carousel.map((item, i) => (
+              <Item key={i} item={item} />
+            ))}
+          </Carousel>
+          <Box sx={{ background: 'rgba(0,0,0,0.3)', borderRadius: 2 }}>
+            <Typography
+              color="white"
+              textAlign="center"
+              variant="body1"
+              py={3}
+              mt={1}
+              mx={2}
+              // sx={{ background: 'rgba()' }}
+            >
+              South Curl Curl Surf Life Saving Club has been in existence since 1918 and no lives have been lost whilst the beach has been patrolled. The Club places great emphasis on training club members in
+              life saving skills to ensure this tradition is maintained. The South Curl Curl Surf Life Saving Club is a volunteer organisation whose basic objective is to provide the highest possible level of
+              water safety for our locals, visitors and nippers.
+            </Typography>
+          </Box>
         </Box>
-      </Box>
+      </Stack>
     </StyledRoot>
   );
 }

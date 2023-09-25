@@ -63,7 +63,7 @@ export default async function handler(req, res) {
         // dynamicLinkDomain: 'coolapp.page.link',
       };
 
-      switch (mode) {
+      https: switch (mode) {
         case 'signInWithEmail': {
           link = await getAuth().generateSignInWithEmailLink(email, actionCodeSettings);
           try {

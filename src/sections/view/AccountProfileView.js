@@ -17,6 +17,7 @@ import resizeImage from 'src/lib/resizeImage';
 import uploadFile from 'src/lib/uploadFile';
 import { updateProfile } from 'firebase/auth';
 import getPatrol from 'src/lib/getPatrolCal';
+import { fDateTime } from 'src/lib/formatTime';
 
 // ----------------------------------------------------------------------
 
@@ -218,15 +219,12 @@ export default function AccountPersonalView() {
           )}
         </FormProvider>
         <Typography variant="h3" sx={{ mb: 2, mt: { xs: 2, md: 0 } }}>
-          Your Patrol Roster - {member?.patrol}
+          Your Patrol Roster - {member?.patrol ? member?.patrol : 'Set above and update'}
         </Typography>
         <Stack spacing={1} sx={{ backgroundColor: theme.palette.background.neutral, borderRadius: 2 }}>
           {patrolRoster.map((patrol, indx) => {
-            const date = new Date(patrol.start);
-            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-            const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
-            const rosterDate = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
-            return <OverviewItem key={patrol.id} icon={'mdi:flag-variant-outline'} text={rosterDate} />;
+            const startEnd = fDateTime(patrol.start, 'E, do MMM, yyyy, h:mm aaa') + ' - ' + fDateTime(patrol.end, 'h:mm aaa');
+            return <OverviewItem key={patrol.id} icon={'mdi:flag-variant-outline'} text={startEnd} />;
           })}
         </Stack>
       </Container>

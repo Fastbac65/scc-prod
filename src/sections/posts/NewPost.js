@@ -81,10 +81,8 @@ const NewPost = () => {
           resizePromises.push(resizeImage(file));
         });
         const resizeBlobs = await Promise.all(resizePromises);
-        console.log('1', resizeBlobs);
 
         //upload Post images to storage
-
         files.forEach(async (file, indx) => {
           const imageName = postDocumentId + '_' + indx + '.' + file.name.split('.').pop(); // doc.id_indx.jpeg - last split gets the right file ext
           const storageFilePath = `${storageName}/${member.uid}/` + imageName;
@@ -92,15 +90,13 @@ const NewPost = () => {
           imageUploadPromises.push(uploadFile(resizeBlobs[indx].blob, storageFilePath)); // upload the resized version
         });
         const urls = await Promise.all(imageUploadPromises); //  these urls have the '%2F' which doesnt work on firebase methods because of rules. Always have to build path with '/'
-        console.log('2 images uploaded');
         urls.forEach((url) => {
           images.push({ src: url, alt: url });
         });
-        console.log('3', images);
 
         resolve(images); // send back array of URLs of Post images in [{src: url, alt: url,},.. ]
       } catch (error) {
-        console.log('4', error.message);
+        console.log('file error', error.message);
         reject(error);
       }
     });
@@ -118,12 +114,9 @@ const NewPost = () => {
       if (files.length) {
         let urls = await uploadPostImages(); // returns an array of urls
         postImagesURLs = urls;
-
-        console.log('there are images: ', urls);
       } else {
         // needs to be initialised to default lib image which is set by PostImageList
         postImagesURLs = [postDefaultImageURL];
-        console.log('there are NO images: using lib', postDefaultImageURL);
       }
       // update database collection 'posts'
       const postDocumentObj = {
@@ -165,7 +158,6 @@ const NewPost = () => {
       },
     });
   };
-  // console.log(files);
 
   return (
     <form onSubmit={handleSubmitPost}>

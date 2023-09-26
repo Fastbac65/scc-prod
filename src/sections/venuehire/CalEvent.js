@@ -36,7 +36,6 @@ const CalEvent = ({ eventInfo }) => {
     }
 
     description = newstring.split('<br>');
-    console.log(description);
   }
   var startEnd;
   if (!eventInfo.allDay) {
@@ -48,7 +47,6 @@ const CalEvent = ({ eventInfo }) => {
   var location = '';
   if (eventInfo?.extendedProps?.location && eventInfo.extendedProps?.location.includes(`/posts/`)) {
     let postId = eventInfo.extendedProps.location.split('/posts/')[1];
-    console.log(posts);
     var postDoc = posts.filter((doc) => doc.id === postId);
     // location = 'SCC Post: ' + eventInfo.extendedProps.location.split('scc-proto.web.app/posts/')[1].split('_')[0];
     if (postDoc.length !== 0) {

@@ -90,7 +90,6 @@ export default function AccountPersonalView() {
   // init form and needPassword once 'member' is loaded
   useEffect(() => {
     if (!member) {
-      console.log('no member yet!');
       return;
     }
     const resetValues = {
@@ -102,7 +101,6 @@ export default function AccountPersonalView() {
       (async () => {
         const roster = await getPatrol(member.patrol);
         setPatrolRoster(roster);
-        console.log(roster);
       })();
     } else setPatrolRoster([]);
     // eslint-disable-next-line react-hooks/exhaustive-deps

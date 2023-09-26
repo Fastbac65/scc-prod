@@ -78,10 +78,8 @@ const EditPost = ({ postDoc }) => {
           resizePromises.push(resizeImage(file));
         });
         const resizeBlobs = await Promise.all(resizePromises);
-        console.log('1', resizeBlobs);
 
         //upload Post images to storage
-
         files.forEach(async (file, indx) => {
           const imageName = postDocumentId + '_' + indx + '.' + file.name.split('.').pop();
           const storageFilePath = `${storageName}/${member.uid}/` + imageName;
@@ -89,13 +87,11 @@ const EditPost = ({ postDoc }) => {
           imageUploadPromises.push(uploadFile(resizeBlobs[indx].blob, storageFilePath)); // upload the resized version
         });
         const urls = await Promise.all(imageUploadPromises);
-        console.log('2 images uploaded');
         urls.map((url) => images.push({ src: url, alt: url }));
-        console.log('3', images);
 
         resolve(images); // send back array of URLs of Post images in [{src: url, alt: url,},.. ]
       } catch (error) {
-        console.log('4', error.message);
+        console.log('files error', error.message);
         reject(error);
       }
     });
@@ -120,13 +116,10 @@ const EditPost = ({ postDoc }) => {
           // const ext = imageDeleteName.split('.')[1];
           const filePath = 'posts/' + postDoc.data.userId + '/' + imageDeleteName;
           deleteFile(filePath); // no need to await this.. let em go!
-          console.log('deleted', filePath);
         }
       }
       if (files.length) {
         postImagesURLs = await uploadPostImages(); // returns an array of urls
-
-        console.log('there are images: ', postImagesURLs);
       }
       // update database collection 'posts'
       const postDocumentObj = {
@@ -167,22 +160,21 @@ const EditPost = ({ postDoc }) => {
       },
     });
   };
-  // console.log(files);
 
-  const initMainText = () => {
-    let str = '';
-    postDoc.data.main.forEach((paragraph) => {
-      str += paragraph + '\n\n';
-    });
-    return str;
-  };
-  function initMarkdownText() {
-    let str = '';
-    postDoc.data.main.forEach((paragraph) => {
-      str += '<p>' + paragraph + '</p>';
-    });
-    return str;
-  }
+  // const initMainText = () => {
+  //   let str = '';
+  //   postDoc.data.main.forEach((paragraph) => {
+  //     str += paragraph + '\n\n';
+  //   });
+  //   return str;
+  // };
+  // function initMarkdownText() {
+  //   let str = '';
+  //   postDoc.data.main.forEach((paragraph) => {
+  //     str += '<p>' + paragraph + '</p>';
+  //   });
+  //   return str;
+  // }
 
   return (
     <form onSubmit={handleSubmitPost}>

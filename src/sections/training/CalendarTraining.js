@@ -56,7 +56,6 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
     }
   });
 
-  console.log(allEvents);
   successCallback(allEvents);
 };
 
@@ -82,8 +81,6 @@ const CalendarTraining = ({ holidays, training }) => {
   }, []);
 
   useEffect(() => {
-    console.log('useEffect holidays');
-
     if (!holidays) {
       allEvents.current.forEach((event) => {
         if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
@@ -106,8 +103,6 @@ const CalendarTraining = ({ holidays, training }) => {
   }, [holidays]);
 
   useEffect(() => {
-    console.log('useEffect training');
-
     if (!training) {
       allEvents.current.forEach((event) => {
         if (event?.borderColor === `${theme.palette.error.main}`) {
@@ -155,7 +150,6 @@ const CalendarTraining = ({ holidays, training }) => {
 
   const handleEventClick = (eventInfo) => {
     eventInfo.jsEvent.preventDefault();
-    console.log(eventInfo, eventInfo.event.title);
     dispatch({
       type: 'MODAL',
       payload: {
@@ -168,7 +162,6 @@ const CalendarTraining = ({ holidays, training }) => {
   };
 
   const handleEventDidMount = (calEventInfo) => {
-    console.log(calEventInfo);
     if (!holidays) {
       // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
       if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {

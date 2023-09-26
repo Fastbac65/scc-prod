@@ -57,7 +57,6 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
     }
   });
 
-  console.log(allEvents);
   successCallback(allEvents);
 };
 
@@ -83,8 +82,6 @@ const CalendarPatrol = ({ holidays, patrol }) => {
   }, []);
 
   useEffect(() => {
-    console.log('useEffect holidays');
-
     if (!holidays) {
       allEvents.current.forEach((event) => {
         if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
@@ -107,8 +104,6 @@ const CalendarPatrol = ({ holidays, patrol }) => {
   }, [holidays]);
 
   useEffect(() => {
-    console.log('useEffect patrol');
-
     if (!patrol) {
       allEvents.current.forEach((event) => {
         if (event?.borderColor === `${theme.palette.warning.main}`) {
@@ -156,7 +151,6 @@ const CalendarPatrol = ({ holidays, patrol }) => {
 
   const handleEventClick = (eventInfo) => {
     eventInfo.jsEvent.preventDefault();
-    console.log(eventInfo, eventInfo.event.title);
     dispatch({
       type: 'MODAL',
       payload: {

@@ -11,8 +11,6 @@ const AddImages = ({ files, setFiles }) => {
 
   const handleChange = (e) => {
     const allFiles = [...files, ...e.target.files];
-    console.log(allFiles);
-
     setFiles(allFiles);
     fileRef.current.value = null; //allows the same file to be uploaded twice
   };

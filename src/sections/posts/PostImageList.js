@@ -106,7 +106,6 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
 
   const handleDelete = (e, indx, image) => {
     // need to delete a file from 'files' and the image from the display
-    console.log('delete image', image, indx, e);
     let imgArr = [...images];
     imgArr.splice(indx, 1);
     setImages(imgArr);
@@ -142,7 +141,6 @@ const PostImageList = ({ files, setFiles, setPostDefaultImageURL }) => {
                     onClick={() => {
                       setCurrentImageIndex(indx);
                       setOpen(true);
-                      console.log('clicked image');
                     }}
                   />
                   {images.length > 1 && (

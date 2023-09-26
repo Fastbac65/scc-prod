@@ -84,7 +84,6 @@ const VenueHireBooking = () => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
       // reset();
-      console.log('DATA', data, bookingRef);
       // await addDoco(`bookings`, bookingRef , data);
       dispatch({
         type: 'UPDATE_ALERT',

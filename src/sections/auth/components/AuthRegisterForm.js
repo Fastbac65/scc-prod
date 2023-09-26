@@ -58,7 +58,6 @@ export default function AuthRegisterForm() {
         }),
       }).then((res) => res.json());
       // if the account already existing throw a wobbler
-      console.log(user);
       if (user.uid) throw new Error('Error - It appears there is already an account on our system with that email address.');
       // await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -75,7 +74,6 @@ export default function AuthRegisterForm() {
           api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
         }),
       }).then((res) => res.json());
-      console.log(response);
       router.push('/');
 
       dispatch({

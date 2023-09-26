@@ -32,7 +32,7 @@ export default function ResetPasswordView() {
       <Link
         component={NextLink}
         href="/auth/login-cover"
-        color="primary.lighter"
+        color="primary.light"
         variant="subtitle2"
         sx={{
           mt: 3,

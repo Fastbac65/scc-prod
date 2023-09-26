@@ -19,7 +19,6 @@ const { db } = createFirebaseAdminApp();
 const host = 'https://southcurlcurlslsc.com.au';
 const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://southcurlcurlslsc.com.au';
 
-console.log(host, host1);
 // Lets connect the email API server to the customer database
 // const ref = db.ref('customers/');
 // let customers = [];
@@ -95,7 +94,6 @@ export default async function handler(req, res) {
               html: '<strong>Venue Booking Inquiry Received</strong>',
               react: BookingEmail({ booking }),
             });
-            console.log('BookingInquiry', booking);
           } catch (error) {
             console.log(error);
           }
@@ -109,9 +107,7 @@ export default async function handler(req, res) {
         case 'resetPassword': {
           currentUser = await getAuth().getUserByEmail(email);
           if (currentUser) {
-            console.log(currentUser);
             link = await getAuth().generatePasswordResetLink(email, actionCodeSettings);
-            console.log(link);
             const firstName = currentUser?.displayName.split(/[ ]+/)[0];
             try {
               const data = await resend.emails.send({
@@ -143,9 +139,9 @@ export default async function handler(req, res) {
         }
       }
     } catch (error) {
-      console.log('Error in Email API', error.message);
+      console.log('Email API', error.message);
       currentUser = 'Error fetching user';
-      return res.status(200).json({ error: 'Error in Email API', reason: error });
+      return res.status(200).json({ error: 'Email API', reason: error });
     }
 
     // try {

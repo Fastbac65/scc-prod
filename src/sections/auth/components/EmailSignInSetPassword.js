@@ -39,7 +39,6 @@ const EmailSignInSetPassword = ({ email, fname, mobile }) => {
     try {
       // The client SDK will parse the code from the link for you.
       const result = await signInWithEmailLink(auth, email, window.location.href);
-      console.log(result.user);
       try {
         // pick a profile pic from /assets/images/avatar/avatar_x
         const pic = Math.floor(Math.random() * 25);

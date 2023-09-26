@@ -41,7 +41,6 @@ try {
 // await new Promise((resolve) => setTimeout(resolve, 1000));
 
 export default async function handler(req, res) {
-  console.log(postDocs.length);
   console.log('init bakup', initPosts.length);
   // Check for secret to confirm this is a valid request
   if (req.method === 'OPTIONS') return res.status(200).send(); // takes care of browser preflight

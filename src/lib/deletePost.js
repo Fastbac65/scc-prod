@@ -15,7 +15,6 @@ const deletePost = (postDoc) => {
           postDoc.data.images.forEach(async (image) => {
             const postImageName = image.src.split(postDoc.data.userId + '%2F')[1].split('?')[0]; // strip the filename from the URL
             const filePath = 'posts/' + postDoc.data.userId + '/' + postImageName; // storage file path
-            console.log(filePath);
             postImageDeletePromises.push(deleteFile(filePath)); // all deletes go almost in parallel so we dont await them
           });
           await Promise.all(postImageDeletePromises); // we await all promises from the delete requests

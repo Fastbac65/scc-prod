@@ -64,7 +64,6 @@ export function MenuContent() {
     // router.reload();
     const success = signOut();
     if (success) {
-      console.log('logged out');
       //
     }
   };

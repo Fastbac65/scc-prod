@@ -7,7 +7,6 @@ import SinglePostShare from '../posts/SinglePostShare';
 // ----------------------------------------------------------------------
 
 export default function PostsView({ staticPosts, staticPost }) {
-  console.log(staticPost.id);
   return (
     <>
       {/* <RecentPosts staticPosts={staticPosts.slice(0, 6)} /> */}

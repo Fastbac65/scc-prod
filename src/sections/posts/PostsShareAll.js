@@ -43,7 +43,6 @@ export default function PostsShareAll({ staticPosts, sharedPostId }) {
 
   const handleFavsClick = () => {
     if (!like) {
-      console.log(member?.postLikes);
       if (member?.postLikes?.length > 0) {
         let likes = [];
         allPosts.forEach((doc) => {
@@ -52,7 +51,6 @@ export default function PostsShareAll({ staticPosts, sharedPostId }) {
           }
         });
         setLikePostDocs(likes);
-        console.log('liked posts', likes);
         setLike(!like);
       }
     } else {

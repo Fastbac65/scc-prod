@@ -8,8 +8,6 @@ const resizeImage = (imageToResize, jpegQuality = 75, resizeMax = 1200) => {
   return new Promise((resolve) => {
     if (imageToResize) {
       const url = URL.createObjectURL(imageToResize);
-      console.log(url);
-
       var img = new Image();
       img.onload = () => {
         var height = img.height;
@@ -19,7 +17,6 @@ const resizeImage = (imageToResize, jpegQuality = 75, resizeMax = 1200) => {
         if (width > resizeMax || height > resizeMax) {
           width > height ? (newAspect = resizeMax / width) : (newAspect = resizeMax / height);
         }
-        console.log('image dims: ', width, height, 'newAspect:', newAspect);
         Resizer.imageFileResizer(
           imageToResize,
           width * newAspect,
@@ -32,7 +29,6 @@ const resizeImage = (imageToResize, jpegQuality = 75, resizeMax = 1200) => {
           },
           'base64'
         );
-        console.log('image resized');
         // code here to use the dimensions
       };
       img.src = url;

@@ -31,7 +31,6 @@ export default function AccountSettingsView() {
 
   useEffect(() => {
     if (!user) {
-      console.log('no user yet!');
       return;
     }
     if (user?.providerData[0].providerId !== 'password') setPasswordAuth(false);
@@ -62,13 +61,10 @@ export default function AccountSettingsView() {
 
   const onSubmit = async (data) => {
     dispatch({ type: 'START_LOADING' });
-    console.log('DATA', data);
-
     try {
       try {
         const credential = EmailAuthProvider.credential(user?.email, data.original);
         await reauthenticateWithCredential(user, credential);
-        console.log('reauth success');
       } catch (error) {
         dispatch({ type: 'END_LOADING' });
 

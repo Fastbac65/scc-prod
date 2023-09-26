@@ -92,7 +92,6 @@ export default function AccountPersonalView() {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
       // reset();
-      console.log('DATA', data);
       await updateDoco(`members`, member.uid, data);
       dispatch({
         type: 'UPDATE_ALERT',

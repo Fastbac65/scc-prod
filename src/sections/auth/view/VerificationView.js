@@ -38,7 +38,6 @@ export default function VerificationView() {
   } = useSettingsContext();
 
   const verifyUser = async (oobCode, mode, continueUrl) => {
-    console.log('verify fct ran');
     // Additional state parameters passed via continueUrl for fullname, mobile and email from the register page
     const url = new URL(continueUrl);
     const email = url.searchParams.get('em');

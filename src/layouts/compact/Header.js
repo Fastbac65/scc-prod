@@ -15,7 +15,6 @@ import Iconify from 'src/components/iconify/Iconify';
 
 export default function Header({ isOffset }) {
   const theme = useTheme();
-  console.log(theme);
 
   return (
     <AppBar color="transparent" sx={{ boxShadow: 'none', width: '100vw' }}>

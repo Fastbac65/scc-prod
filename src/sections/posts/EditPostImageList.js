@@ -31,7 +31,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
         fileDownloadPromises.push(downloadFile(image.src));
       });
       const downloadFiles = await Promise.all(fileDownloadPromises);
-      console.log(downloadFiles);
       setFiles(downloadFiles);
     };
 
@@ -44,7 +43,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
   useEffect(() => {
     var imgs = [];
     if (files.length) {
-      console.log('if files was true');
       files.forEach((file, indx) => {
         var url = URL.createObjectURL(file);
         // imgs.push({ src: url, alt: url });  another way to do it
@@ -59,7 +57,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
   }, [files]);
 
   const handleDelete = (e, indx, image) => {
-    console.log('delete image', image, indx, e);
     // need to delete a file from 'files' and the image from the display
     // setTasks(tasks.filter((taskitem) => taskitem.id !== id));
     let imgArr = [...images];
@@ -70,7 +67,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
     fileArr.splice(indx, 1);
     setFiles(fileArr);
     // setFiles(files.filter((file) => file.name !== files[indx].name));
-    console.log('delete', files);
   };
 
   return (
@@ -98,7 +94,6 @@ const EditPostImageList = ({ files, setFiles, postDoc }) => {
                     onClick={() => {
                       setCurrentImageIndex(indx);
                       setOpen(true);
-                      console.log('clicked image');
                     }}
                   />
                   {images.length > 1 && (

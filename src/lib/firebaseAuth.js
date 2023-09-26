@@ -22,7 +22,6 @@ export const signInSocial = (auth, provider) => {
             }),
           }).then((res) => res.json());
           // if the account already existing throw a wobbler
-          console.log('checked existing users', existingUser);
           if (existingUser.uid) {
             deleteUser(newuser);
             throw new Error(`Failed to create a new member account - It appears there is already an account on our system with email address ${existingUser.email}`);

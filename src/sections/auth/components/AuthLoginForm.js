@@ -62,7 +62,6 @@ export default function AuthLoginForm() {
           posn: 'bottom',
         },
       });
-      console.log(userDoc);
       // update subset
       // const userObj = {
       //   uid: userDoc.user.uid,
@@ -86,7 +85,6 @@ export default function AuthLoginForm() {
         lastLoginAt: userDoc.user.metadata.lastLoginAt,
         lastSignInTime: userDoc.user.metadata.lastSignInTime,
       };
-      console.log(userObj);
 
       await updateDoco('members', userDoc.user.uid, userObj);
       // reset();

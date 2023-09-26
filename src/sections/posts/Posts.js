@@ -42,7 +42,6 @@ export default function Posts({ staticPosts }) {
 
   const handleFavsClick = () => {
     if (!like) {
-      console.log(member?.postLikes);
       if (member?.postLikes?.length > 0) {
         let likes = [];
         allPosts.forEach((doc) => {
@@ -51,7 +50,6 @@ export default function Posts({ staticPosts }) {
           }
         });
         setLikePostDocs(likes);
-        console.log('liked posts', likes);
         setLike(!like);
       }
     } else {

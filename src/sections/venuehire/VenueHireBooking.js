@@ -110,7 +110,6 @@ const VenueHireBooking = () => {
     try {
       // await new Promise((resolve) => setTimeout(resolve, 500));
       // reset();
-      console.log('DATA', data, bookingRef);
       // await addDoco(`bookings`, bookingRef , data);
       const response = await fetch('/api/email/send', {
         method: 'POST',
@@ -123,7 +122,6 @@ const VenueHireBooking = () => {
           api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET,
         }),
       }).then((res) => res.json());
-      console.log(response);
       dispatch({
         type: 'UPDATE_ALERT',
         payload: {

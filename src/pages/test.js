@@ -1,32 +1,6 @@
-import axios from 'axios';
-import { useState } from 'react';
 import EmailTest from 'src/components/email/EmailTest';
-import { useInit } from 'src/hooks/useInitialisationCode';
-
-const calId = 'cb27ab3151610b4206a2df3bb7d606f71216f9d3e7ec4b4aa80171f8b2286ee9@group.calendar.google.com'; // patrol gcal
-
-const start = encodeURIComponent(new Date('01 Sept 2023').toISOString());
-const end = encodeURIComponent(new Date('01 June 2024').toISOString());
-
-var allGetEvents = [];
-var allEvents = [];
-var getPromises = [];
-
-async function getPatrol() {
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${calId}/events?key=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&timeMin=${start}&timeMax=${end}&singleEvents=true&maxResults=999`;
-  try {
-    getPromises.push(axios.get(url));
-  } catch (error) {
-    console.log(error.message);
-  }
-  allGetEvents = await Promise.all(getPromises);
-  console.log(allGetEvents);
-}
 
 const Test = () => {
-  useInit(() => {
-    getPatrol();
-  });
   return (
     <EmailTest
       name="Bob"

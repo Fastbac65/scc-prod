@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect, useRef, useState } from 'react';
 // @mui
 import { LoadingButton } from '@mui/lab';
-import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress, Input } from '@mui/material';
+import { Box, Typography, Stack, Container, Avatar, IconButton, CircularProgress, Input, useTheme } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify';
 import FormProvider, { RHFTextField, RHFSelect } from 'src/components/hook-form';
@@ -16,6 +16,7 @@ import { updateDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import uploadFile from 'src/lib/uploadFile';
 import { updateProfile } from 'firebase/auth';
+import getPatrol from 'src/lib/getPatrolCal';
 
 // ----------------------------------------------------------------------
 
@@ -59,8 +60,11 @@ export default function AccountPersonalView() {
     state: { alert },
   } = useSettingsContext();
 
+  const theme = useTheme();
+
   // const [needPassword, setNeedPassword] = useState(true);
   const [photoURL, setPhotoURL] = useState(null);
+  const [patrolRoster, setPatrolRoster] = useState([]);
   var resizedImg = useRef({});
   const fileRef = useRef();
 
@@ -93,6 +97,13 @@ export default function AccountPersonalView() {
       patrol: member?.patrol || '',
     };
     reset(resetValues);
+    if (member?.patrol !== '') {
+      (async () => {
+        const roster = await getPatrol(member.patrol);
+        setPatrolRoster(roster);
+        console.log(roster);
+      })();
+    } else setPatrolRoster([]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member]);
 
@@ -206,24 +217,31 @@ export default function AccountPersonalView() {
             </>
           )}
         </FormProvider>
+        <Typography variant="h3" sx={{ mb: 2, mt: { xs: 2, md: 0 } }}>
+          Your Patrol Roster - {member?.patrol}
+        </Typography>
+        <Stack spacing={1} sx={{ backgroundColor: theme.palette.background.neutral, borderRadius: 2 }}>
+          {patrolRoster.map((patrol, indx) => {
+            const date = new Date(patrol.start);
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+            const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+            const rosterDate = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+            return <OverviewItem key={patrol.id} icon={'mdi:flag-variant-outline'} text={rosterDate} />;
+          })}
+        </Stack>
       </Container>
     </AccountLayout>
   );
 }
 
-// function OverviewItem({ icon, label, text = '-' }) {
-//   return (
-//     <Stack spacing={1.5} direction="row" alignItems="flex-start">
-//       <Iconify icon={icon} width={24} />
-//       <Stack spacing={0.5}>
-//         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-//           {label}
-//         </Typography>
-//         <Typography>{text}</Typography>
-//       </Stack>
-//     </Stack>
-//   );
-// }
+function OverviewItem({ icon, label, text = '-' }) {
+  return (
+    <Stack spacing={2.5} direction="row" alignItems="flex-start" sx={{ px: 2, py: 1 }}>
+      <Iconify icon={icon} width={24} />
+      <Typography>{text}</Typography>
+    </Stack>
+  );
+}
 
 // OverviewItem.propTypes = {
 //   icon: PropTypes.node,

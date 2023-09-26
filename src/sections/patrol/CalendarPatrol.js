@@ -15,7 +15,8 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
   const googleCalIds = [
     '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com',
     'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com',
-    'ecde8a66b27bea0cd4fc08cfc2bc6ef94f41e7af49bb08faf78985f97ca659f4@group.calendar.google.com', // patrol gcal
+    // 'ecde8a66b27bea0cd4fc08cfc2bc6ef94f41e7af49bb08faf78985f97ca659f4@group.calendar.google.com', // patrol gcal
+    'cb27ab3151610b4206a2df3bb7d606f71216f9d3e7ec4b4aa80171f8b2286ee9@group.calendar.google.com', // patrol gcal
   ];
 
   const start = encodeURIComponent(info.startStr);
@@ -168,7 +169,6 @@ const CalendarPatrol = ({ holidays, patrol }) => {
   };
 
   const handleEventDidMount = (calEventInfo) => {
-    console.log(calEventInfo);
     if (!holidays) {
       // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
       if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {

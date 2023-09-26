@@ -1,56 +1,46 @@
+import axios from 'axios';
 import { useState } from 'react';
 import EmailTest from 'src/components/email/EmailTest';
+import { useInit } from 'src/hooks/useInitialisationCode';
 
-import dynamic from 'next/dynamic';
-import 'react-quill/dist/quill.bubble.css';
-const QuillNoSSR = dynamic(import('react-quill'), {
-  ssr: false,
-  loading: () => <p>...</p>,
-});
-const modules = {
-  toolbar: [
-    [{ header: [3, 4, false] }],
-    ['bold', 'italic', 'underline', 'blockquote'],
-    ['link'],
-    [{ list: 'ordered' }, { list: 'bullet' }],
-    // [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-    ['clean'],
-  ],
-  clipboard: {
-    // toggle to add extra line breaks when pasting HTML:
-    matchVisual: false,
-  },
-};
+const calId = 'cb27ab3151610b4206a2df3bb7d606f71216f9d3e7ec4b4aa80171f8b2286ee9@group.calendar.google.com'; // patrol gcal
 
-const str =
-  '<p>If you’re a club member or associate family member of the wonderful Sth Curl Curl club and are keen to come and move with mindful breathing please come and join us at Sth Curly Surf club for ‘ Yoga by the ocean with Kylie’ 🌊 😊🧘🏼‍♀️🧘🏽‍♂️🙏🏼 ....</p>' +
-  '<p>somethings else</p>';
+const start = encodeURIComponent(new Date('01 Sept 2023').toISOString());
+const end = encodeURIComponent(new Date('01 June 2024').toISOString());
+
+var allGetEvents = [];
+var allEvents = [];
+var getPromises = [];
+
+async function getPatrol() {
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${calId}/events?key=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&timeMin=${start}&timeMax=${end}&singleEvents=true&maxResults=999`;
+  try {
+    getPromises.push(axios.get(url));
+  } catch (error) {
+    console.log(error.message);
+  }
+  allGetEvents = await Promise.all(getPromises);
+  console.log(allGetEvents);
+}
 
 const Test = () => {
-  const [value, setValue] = useState('wdhfgseighisufehgisurehgiuersgou');
-  const handleEditorUpdates = (content, delta, source, editor) => {
-    console.log(content);
-    // setValue(content);
-  };
+  useInit(() => {
+    getPatrol();
+  });
   return (
-    <>
-      {/* <Quill value={value} setValue={handleEditorUpdates} /> */}
-      <QuillNoSSR theme="bubble" placeholder="Write something epic... select text to format!" modules={modules} value={'str'} onChange={handleEditorUpdates} />
-
-      <EmailTest
-        name="Bob"
-        email="Bob@this.com"
-        link="https://scc-prod.vercel.app"
-        booking={{
-          bookingType: 'Evening',
-          bookingDate: 'Wed Sep 06 2023 19:18:17 GMT+1000 (Australian Eastern Standard Time)',
-          occasion: '21st',
-          phoneNumber: '+61407945789',
-          email: 'terry.durnin@yahoo.com',
-          fullName: 'Terence Durnin',
-        }}
-      />
-    </>
+    <EmailTest
+      name="Bob"
+      email="Bob@this.com"
+      link="https://scc-prod.vercel.app"
+      booking={{
+        bookingType: 'Evening',
+        bookingDate: 'Wed Sep 06 2023 19:18:17 GMT+1000 (Australian Eastern Standard Time)',
+        occasion: '21st',
+        phoneNumber: '+61407945789',
+        email: 'terry.durnin@yahoo.com',
+        fullName: 'Terence Durnin',
+      }}
+    />
   );
 };
 

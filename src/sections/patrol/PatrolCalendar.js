@@ -77,12 +77,12 @@ const PatrolCalendar = () => {
           </Box>
           <Box>
             <Typography>
-              {' '}
               Public version of full patrol roster: &nbsp;
               <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.org/wp-content/uploads/2023/08/SCC-2023-2024-PATROLS-No-Tel-as-at-23-Aug-23.pdf">
                 SCC 2023-2024 PATROLS as at 23 Aug’23.
               </Link>
             </Typography>
+            <Typography>To see your own full roster - update your patrol in your profile </Typography>
           </Box>
         </Container>
       </Styled2ndLayer>

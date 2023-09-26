@@ -29,11 +29,9 @@ export default function RecentPosts({ staticPosts }) {
 
   useEffect(() => {
     if (!posts) {
-      console.log('no posts');
       return;
     } else {
       setAllRecent([...posts.slice(0, 6)]);
-      console.log('recent realtime posts loaded', posts.slice(0, 6));
     }
   }, [posts]);
 

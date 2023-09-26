@@ -57,7 +57,6 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
     }
   });
 
-  console.log(allEvents);
   successCallback(allEvents);
 };
 
@@ -83,8 +82,6 @@ const CalendarVenueHire2 = ({ holidays, booking, social }) => {
   }, []);
 
   useEffect(() => {
-    console.log('useEffect holidays');
-
     if (!holidays) {
       allEvents.current.forEach((event) => {
         if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
@@ -107,8 +104,6 @@ const CalendarVenueHire2 = ({ holidays, booking, social }) => {
   }, [holidays]);
 
   useEffect(() => {
-    console.log('useEffect booking');
-
     if (!booking) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.success.main}`) {
@@ -187,7 +182,6 @@ const CalendarVenueHire2 = ({ holidays, booking, social }) => {
   };
 
   const handleEventDidMount = (calEventInfo) => {
-    console.log(calEventInfo);
     if (!holidays) {
       // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
       if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {

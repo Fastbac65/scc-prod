@@ -84,15 +84,12 @@ export function SettingsProvider({ children }) {
   useEffect(() => {
     let listener = () => {}; // member account details listener needed so that account pages reflect updates
     if (user) {
-      console.log('user loaded', user);
       listener = onSnapshot(doc(db, 'members', user.uid), (snapshot) => {
         if (snapshot.data()) {
-          console.log('member loaded', snapshot.data());
           setMember(snapshot.data());
         }
       });
     } else {
-      console.log('App logged out');
       setMember(null);
     }
     return () => {
@@ -144,7 +141,6 @@ export function SettingsProvider({ children }) {
           snapshot.forEach((doc) => {
             docs.push({ uid: doc.id, data: doc.data() });
           });
-          console.log('members loaded', docs);
           setMembers([...docs]);
         },
         (error) => {
@@ -160,7 +156,6 @@ export function SettingsProvider({ children }) {
           snapshot.forEach((doc) => {
             docs.push({ id: doc.id, data: doc.data() });
           });
-          console.log('posts loaded', docs);
           setPosts([...docs]);
         },
         (error) => {

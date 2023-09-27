@@ -18,20 +18,21 @@ SinglePost.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 export async function getStaticProps(context) {
   const posts = await getPosts();
   const post = posts.filter((post) => post.id === context.params.id);
-  const dom = new JSDOM(`<!DOCTYPE html> ${post[0].data?.content}`);
+
+  const dom = post.length ? new JSDOM(`<!DOCTYPE html> ${post[0].data?.content}`) : null;
   // var tempDiv = document.createElement('div');
   // tempDiv.innerHTML = post.data?.content;
-  var firstEl = dom.window.document.querySelector('p, h6');
+  var firstEl = post.length ? dom.window.document.querySelector('p, h6') : null;
 
   return {
     props: {
       staticPosts: posts,
       staticPost: post.length ? post[0] : {},
       // staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
-      title: post[0].data.title,
-      description: firstEl.textContent || 'South Curl Curl SLSC shared post',
-      canonical: `https:southcurlcurlslsc.com.au/posts/${post[0].id}`,
-      image: post[0].data.images[0].src,
+      title: post.length ? post[0].data.title : '',
+      description: firstEl?.textContent || 'South Curl Curl SLSC shared post',
+      canonical: post.length ? `https:southcurlcurlslsc.com.au/posts/${post[0].id}` : '',
+      image: post.length ? post[0].data.images[0].src : '',
     },
     // revalidate: 10,
   };

@@ -11,7 +11,7 @@ export default function PostsView({ staticPosts, staticPost }) {
     <>
       {/* <RecentPosts staticPosts={staticPosts.slice(0, 6)} /> */}
       <SinglePostShare post={staticPost} />
-      <PostsShareAll staticPosts={staticPosts.filter((post) => post.id !== staticPost.id)} sharedPostId={staticPost.id} />
+      <PostsShareAll staticPosts={staticPosts?.filter((post) => post.id !== staticPost?.id)} sharedPostId={staticPost?.id} />
       {/* <Posts staticPosts={staticPosts} /> */}
       {/* <Posts staticPosts={staticPosts.slice(6)} /> */}
     </>

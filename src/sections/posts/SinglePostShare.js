@@ -29,11 +29,11 @@ const SinglePostShare = ({ post }) => {
       setRealtimePost(post);
       return;
     } else {
-      setRealtimePost(posts.filter((doc) => doc.id === post.id)[0]);
+      setRealtimePost(posts.filter((doc) => doc.id === post?.id)[0]);
     }
   }, [posts, post]);
 
-  if (!post.id)
+  if (!post?.id)
     return (
       <Box sx={{ pt: 10 }}>
         <Typography variant="body2" color="text.secondary" sx={{ textAlign: 'center' }}>

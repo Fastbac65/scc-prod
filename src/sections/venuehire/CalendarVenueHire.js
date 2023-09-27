@@ -16,7 +16,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
     '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com',
     'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com',
     '638ddc38eff446e1a914ee3f9a50e67114b7e931601aa9d2f6aa26cf14fe2958@group.calendar.google.com', // venue hire
-    'scccaretaker@gmail.com', // social
+    'scccaretaker@gmail.com', // scc events
   ];
 
   const start = encodeURIComponent(info.startStr);

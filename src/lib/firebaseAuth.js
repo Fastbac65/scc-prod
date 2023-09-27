@@ -6,8 +6,8 @@ export const signInSocial = (auth, provider) => {
       provider.addScope('email');
       const result = await signInWithPopup(auth, provider);
       const userInfo = getAdditionalUserInfo(result);
-      const newuser = result.user;
       if (userInfo.isNewUser) {
+        const newuser = result.user;
         // first time social login we need to check if the email already exists
         try {
           const existingUser = await fetch('/api/email/send', {
@@ -36,7 +36,7 @@ export const signInSocial = (auth, provider) => {
         }
       } else {
         // resolve new member so calling fct can write to member database
-        resolve({ user: newuser, newUser: userInfo.isNewUser });
+        resolve({ user: result.user, newUser: userInfo.isNewUser });
       }
     } catch (error) {
       console.log('signin error', error);

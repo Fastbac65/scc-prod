@@ -16,7 +16,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
     '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com',
     'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com',
     '638ddc38eff446e1a914ee3f9a50e67114b7e931601aa9d2f6aa26cf14fe2958@group.calendar.google.com', // venue hire
-    '96863d108b520dc336152ddf11b0df49e180d1ac64d14f73584acd01057d3167@group.calendar.google.com', // social
+    'scccaretaker@gmail.com', // social
   ];
 
   const start = encodeURIComponent(info.startStr);
@@ -44,7 +44,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
       events = response.data.items.map((event) => ({
         //
         id: event?.id,
-        title: event?.summary,
+        title: event?.summary || 'Busy',
         location: event?.location,
         description: event?.description,
         start: event.start?.dateTime || event.start?.date,

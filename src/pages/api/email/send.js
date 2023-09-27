@@ -83,13 +83,13 @@ export default async function handler(req, res) {
         }
         case 'bookingInquiry': {
           try {
+            const res = await db.collection('bookings').doc(booking.email).set(booking);
             await resend.emails.send({
               from: 'SCC Venue Management <caretaker@southcurlcurlslsc.com.au>',
               reply_to: 'SCC Venue Management <caretaker@southcurlcurlslsc.com.au>',
 
               to: booking.email,
               bcc: ['SCC Venue Management <caretaker@southcurlcurlslsc.com.au>'],
-              // to: email,
               subject: 'Venue Booking Inquiry',
               html: '<strong>Venue Booking Inquiry Received</strong>',
               react: BookingEmail({ booking }),

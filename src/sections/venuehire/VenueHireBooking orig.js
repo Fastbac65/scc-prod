@@ -164,7 +164,7 @@ const VenueHireBooking = () => {
       </Box>
       <Stack alignItems="center">
         <Typography variant="body2" color="text.secondary" m={2} mb={4}>
-          Otherwise feel free to drop us an email at scccaretaker@gmail.com or call us on the mobile 0432066292.
+          Otherwise feel free to drop us an email at caretaker@southcurlcurlslsc.com.au or call us on the mobile 0432066292.
         </Typography>
       </Stack>
     </StyledRoot>

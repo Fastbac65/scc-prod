@@ -108,9 +108,7 @@ const VenueHireBooking = () => {
   const onSubmit = async (data) => {
     const bookingRef = new Date().getTime();
     try {
-      // await new Promise((resolve) => setTimeout(resolve, 500));
-      // reset();
-      // await addDoco(`bookings`, bookingRef , data);
+      // booking will be written from server side to db
       const response = await fetch('/api/email/send', {
         method: 'POST',
         headers: {
@@ -184,7 +182,7 @@ const VenueHireBooking = () => {
           <Divider sx={{ mb: 2 }}>Or Contact Us</Divider>
           <Stack alignItems="center">
             <Typography variant="body2" color="text.secondary" px={2}>
-              email: scccaretaker@gmail.com or mobile: 0432066292.
+              e: caretaker@southcurlcurlslsc.com.au m: 0432066292.
             </Typography>
           </Stack>
         </Stack>

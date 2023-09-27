@@ -234,7 +234,7 @@ function OverviewItem({ icon, label, text = '-' }) {
   return (
     <Stack spacing={2.5} direction="row" alignItems="flex-start" sx={{ px: 2, py: 1 }}>
       <Iconify icon={icon} width={24} />
-      <Typography>{text}</Typography>
+      <Typography variant="body2">{text}</Typography>
     </Stack>
   );
 }

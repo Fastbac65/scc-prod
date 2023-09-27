@@ -49,7 +49,7 @@ export const EmailTest = ({ name, email, link, booking }) => {
           <Hr style={hr} />
           <Text style={subtext}>
             This email was originally sent to {email}.<br />
-            If you need update your details please reach us at scccaretaker@gmail.com or 0432066292
+            If you need update your details please reach us at caretaker@southcurlcurlslsc.com.au or 0432066292
           </Text>
         </Section>
       </Container>

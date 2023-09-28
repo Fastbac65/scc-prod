@@ -101,13 +101,9 @@ export default function AccountPersonalView() {
     // get roster if patrol is set
     if (member?.patrol !== '') {
       (async () => {
-        if (count.current === 0) {
-          const roster = await getPatrol(member.patrol);
-          count.current++;
-          console.log('get google');
-          setPatrolRoster(roster);
-        }
-        console.log('get patrols', count.current, patrolRoster);
+        const roster = await getPatrol(member.patrol);
+        count.current++;
+        setPatrolRoster(roster);
       })();
     } else setPatrolRoster([]);
     // eslint-disable-next-line react-hooks/exhaustive-deps

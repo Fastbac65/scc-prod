@@ -68,6 +68,7 @@ export default function AccountPersonalView() {
   const [patrolRoster, setPatrolRoster] = useState([]);
   var resizedImg = useRef({});
   const fileRef = useRef();
+  const count = useRef(0);
 
   const AccountProfileSchema = Yup.object().shape({
     profileName: Yup.string(),
@@ -97,10 +98,16 @@ export default function AccountPersonalView() {
       patrol: member?.patrol || '',
     };
     reset(resetValues);
+    // get roster if patrol is set
     if (member?.patrol !== '') {
       (async () => {
-        const roster = await getPatrol(member.patrol);
-        setPatrolRoster(roster);
+        if (count.current === 0) {
+          const roster = await getPatrol(member.patrol);
+          count.current++;
+          console.log('get google');
+          setPatrolRoster(roster);
+        }
+        console.log('get patrols', count.current, patrolRoster);
       })();
     } else setPatrolRoster([]);
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -59,7 +59,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Secretary/Registrar</td>
 			<td>Kirsten Quinn</td>
-			<td><a href="mailto:secretary@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">secretary@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:rippers@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">rippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Information Officer</td>

@@ -66,7 +66,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Nippers President</td>
-			<td>Frank Tol</td>
+			<td>Steve Rudd</td>
 			<td><a href="mailto:Nippers@southcurlcurlslsc.com.au">Nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>

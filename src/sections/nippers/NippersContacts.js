@@ -47,14 +47,14 @@ const nippersContactsContent = [
 	</thead>
 	<tbody>
 		<tr>
-			<td>Junior Activity President</td>
+			<td>Junior Activity Chair</td>
 			<td>Steve Rudd</td>
 			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
-			<td>Junior Activity Chair</td>
+			<td>Junior Activity Deputy</td>
 			<td>TBA</td>
-			<td>&nbsp;</td>
+			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Secretary/Registrar</td>
@@ -64,7 +64,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Information Officer</td>
 			<td>Graham Smith</td>
-			<td><a href="mailto:secretary@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">secretary@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:ict@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">ict@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Water Safety Supervisor</td>

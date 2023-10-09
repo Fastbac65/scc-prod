@@ -54,7 +54,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Junior Activity Chair</td>
 			<td>TBA</td>
-			<td>.</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Secretary/Registrar</td>
@@ -94,7 +94,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Social Secretary</td>
 			<td>Trish Byrne</td>
-			<td>&nbsp;<a href="mailto:social@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">BBQ@southcurlcurlslsc.com.au</a></td>
+			<td>&nbsp;<a href="mailto:social@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">social@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>U6 Age Managers</td>

@@ -47,14 +47,14 @@ const nippersContactsContent = [
 	</thead>
 	<tbody>
 		<tr>
-			<td>President</td>
+			<td>Junior Activity President</td>
 			<td>Steve Rudd</td>
 			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Junior Activity Chair</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td>TBA</td>
+			<td>.</td>
 		</tr>
 		<tr>
 			<td>Secretary/Registrar</td>
@@ -63,8 +63,8 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>Information Officer</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td>Graham Smith</td>
+			<td><a href="mailto:secretary@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">secretary@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Water Safety Supervisor</td>
@@ -92,9 +92,9 @@ const nippersContactsContent = [
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>BBQ Co-Ordinator</td>
+			<td>Social Secretary</td>
 			<td>Trish Byrne</td>
-			<td>&nbsp;<a href="mailto:BBQ@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">BBQ@southcurlcurlslsc.com.au</a></td>
+			<td>&nbsp;<a href="mailto:social@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">BBQ@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>U6 Age Managers</td>

@@ -108,37 +108,37 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>U8 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Rachael Gaynes; Charley Bailey</td>
 			<td>&quot;Under 8s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U9 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Serena White; Paul White; Ben Humel; Danielle van Dijk; James Crozier; Marcus Babajews; John Maddalena; Doug Mears</td>
 			<td>&quot;Under 9s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U10 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Chris Coroneos; Damon Ashton; Lauren Gleeson</td>
 			<td>&quot;Under 10s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U11 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Tracey Watts; Rachael Gaynes; Serena White; Colette Woodliffe</td>
 			<td>&quot;Under 11s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U12 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Andrew Firth; Marcus Babajews; Graham Bucknell; Stuart Barnes; Phil Callum</td>
 			<td>&quot;Under 12s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U13 Age Managers</td>
-			<td>&nbsp;</td>
+			<td>Steve Rudd; Cameron Garland; Frank Tol</td>
 			<td>&quot;Under 13s-2023/2024&quot;</td>
 		</tr>
 		<tr>
 			<td>U14 &ndash; The SRC Squad</td>
-			<td>Saul Carroll, Scott Stein</td>
+			<td>Scott Stein; Mark Kemp (only on ad hoc basis); supported with Adam Rowe; Colin Dodd; Guy Waddilove</td>
 			<td>&quot;Under 14s-2023/2024-SRC SQUAD&quot;</td>
 		</tr>
 		<tr>

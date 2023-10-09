@@ -49,7 +49,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>President</td>
 			<td>Steve Rudd</td>
-			<td><a href="mailto:president@southcurlynippers.com" rel="noopener noreferrer" target="_blank">nippers@southcurlynippers.com</a></td>
+			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Junior Activity Chair</td>
@@ -59,7 +59,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Secretary/Registrar</td>
 			<td>Kirsten Quinn</td>
-			<td><a href="mailto:secretary@southcurlynippers.com" rel="noopener noreferrer" target="_blank">secretary@southcurlynippers.com</a></td>
+			<td><a href="mailto:secretary@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">secretary@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Information Officer</td>
@@ -74,7 +74,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>Clothing</td>
 			<td>Alison Donnan</td>
-			<td><a href="mailto:clothing@southcurlynippers.com" rel="noopener noreferrer" target="_blank">clothing@southcurlynippers.com</a></td>
+			<td><a href="mailto:clothing@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">clothing@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Competition Registrar</td>
@@ -94,7 +94,7 @@ const nippersContactsContent = [
 		<tr>
 			<td>BBQ Co-Ordinator</td>
 			<td>Trish Byrne</td>
-			<td>&nbsp;<a href="mailto:BBQ@southcurlynippers.com" rel="noopener noreferrer" target="_blank">BBQ@southcurlynippers.com</a></td>
+			<td>&nbsp;<a href="mailto:BBQ@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">BBQ@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>U6 Age Managers</td>

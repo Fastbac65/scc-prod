@@ -85,7 +85,7 @@ const NippersRippers = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
-            <Typography variant="caption">Email Kirsten Quinn - rippers@southcurlynippers.com if you have any requirements for this program or would like to help out.</Typography>
+            <Typography variant="caption">Email Kirsten Quinn - rippers@southcurlcurlslsc.com.au if you have any requirements for this program or would like to help out.</Typography>
           </Stack>
         </Box>
       </Container>

@@ -138,7 +138,7 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>U14 &ndash; The SRC Squad</td>
-			<td>Scott Stein; Mark Kemp (only on ad hoc basis); supported with Adam Rowe; Colin Dodd; Guy Waddilove</td>
+			<td>Luca Stein, Zara Howes & Sue Hanley; supported by Guy Waddilove</td>
 			<td>&quot;Under 14s-2023/2024-SRC SQUAD&quot;</td>
 		</tr>
 		<tr>

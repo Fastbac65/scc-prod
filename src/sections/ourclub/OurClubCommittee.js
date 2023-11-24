@@ -185,7 +185,9 @@ const OurClubCommitee = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center', px: 0 }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '1000px' }}>
-            <Typography variant="h3">South Curl Curl Committee</Typography>
+            <Typography variant="h3" component="h2">
+              South Curl Curl Committee
+            </Typography>
             <Typography variant="body2">
               A massive Thank You to all our volunteer South Curl Curl SLSC Committee members. SCC SLSC is a volunteer organisation with a large member base and we could not exit without the amazing hard work
               put in by all involved in running the club

@@ -57,7 +57,9 @@ const TrainingSRCBronze = () => {
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">SRC & Bronze</Typography>
+            <Typography variant="h3" component="h2">
+              SRC & Bronze
+            </Typography>
             <Typography variant="body2">
               The minimum requirement to be an active Surf Lifesaver and join us on patrol is the Surf Rescue Certificate (min age 13 yrs) or the Bronze Medallion (min age 15 yrs). These are also the minmum
               requirement to provide water safety at Nippers.

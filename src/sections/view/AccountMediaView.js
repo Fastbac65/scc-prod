@@ -34,7 +34,7 @@ export default function AccountMediaView() {
   return (
     <AccountLayout>
       <Container>
-        <Typography variant="h3" sx={{ mb: 5 }}>
+        <Typography variant="h3" component="h2" sx={{ mb: 5 }}>
           This months featured training
         </Typography>
         <Box

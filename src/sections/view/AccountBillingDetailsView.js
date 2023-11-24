@@ -21,7 +21,7 @@ export default function AccountPersonalView() {
   return (
     <AccountLayout>
       <Container>
-        <Typography variant="h3" sx={{ mb: 3 }}>
+        <Typography variant="h3" component="h2" sx={{ mb: 3 }}>
           Billing Details
         </Typography>
         <Box

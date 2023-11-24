@@ -96,7 +96,7 @@ export default function AccountSettingsView() {
     <AccountLayout>
       <Container>
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-          <Typography variant="h3" sx={{ mb: 3 }}>
+          <Typography variant="h3" component="h2" sx={{ mb: 3 }}>
             Account Settings
           </Typography>
           {passwordAuth && (

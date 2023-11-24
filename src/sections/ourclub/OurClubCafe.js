@@ -60,7 +60,9 @@ const OurClubCafe = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">Gusto On The Beach</Typography>
+            <Typography variant="h3" component="h2">
+              Gusto On The Beach
+            </Typography>
             <Typography variant="body2">
               Located right on south curly beach: beautiful views, great food, awesome coffee and a relaxed vibe, with dogs of all kinds and the odd seagull, welcomed and encouraged!
             </Typography>

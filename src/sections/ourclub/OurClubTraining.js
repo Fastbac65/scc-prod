@@ -67,7 +67,9 @@ const OurClubTraining = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">SRC and Bronze Training</Typography>
+            <Typography variant="h3" component="h2">
+              SRC and Bronze Training
+            </Typography>
             <Typography variant="body2">
               South Curl Curl Surf Life Saving Club offers a variety of courses to new and existing members. All lifesavers are encouraged to gain extra awards to improve their skills. The minimum requirement
               to be an active Surf Lifesaver is the Surf Rescue Certificate (min age 13 yrs) or the Bronze Medallion (min age 15 yrs). All member & course payments can be made via the SLS Members Portal above.

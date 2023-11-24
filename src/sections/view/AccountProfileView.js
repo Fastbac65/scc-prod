@@ -163,7 +163,7 @@ export default function AccountPersonalView() {
     <AccountLayout>
       <Container>
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-          <Typography variant="h3" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
+          <Typography variant="h3" component="h2" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
             Update Profile
           </Typography>
           {user?.providerData[0].providerId !== 'password' && (
@@ -219,7 +219,7 @@ export default function AccountPersonalView() {
             </>
           )}
         </FormProvider>
-        <Typography variant="h3" sx={{ mb: 2, mt: { xs: 2, md: 0 } }}>
+        <Typography variant="h3" component="h2" sx={{ mb: 2, mt: { xs: 2, md: 0 } }}>
           Your Patrol Roster - {member?.patrol ? member?.patrol : 'Set above and update'}
         </Typography>
         <Stack spacing={1} sx={{ backgroundColor: theme.palette.background.neutral, borderRadius: 2 }}>

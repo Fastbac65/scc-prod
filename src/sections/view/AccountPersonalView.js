@@ -112,7 +112,7 @@ export default function AccountPersonalView() {
     <AccountLayout>
       <Container>
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-          <Typography variant="h3" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
+          <Typography variant="h3" component="h2" sx={{ mb: 0, mt: { xs: 2, md: 0 } }}>
             Personal Details
           </Typography>
           <Typography sx={{ pb: 0 }}>name and email as per registration</Typography>

@@ -73,7 +73,9 @@ const CompetitorsBoatiesCrews = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">South Curly Crews</Typography>
+            <Typography variant="h3" component="h2">
+              South Curly Crews
+            </Typography>
             {/* <Typography variant="body2">
               Championing the development of elite lifesavers, we strive to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful beaches,
               come join the best of the best..

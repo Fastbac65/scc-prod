@@ -52,7 +52,9 @@ const CompetitorsBoaties = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">South Curly Boaties</Typography>
+            <Typography variant="h3" component="h2">
+              South Curly Boaties
+            </Typography>
             <Typography variant="body2">
               With a focus on producing some of the best surf boat rowing athletes in the country, not afraid to crack into an 8ft swell in a boat, South Curly Boaties have been one of Australia’s most dominant
               competitive clubs in the sport for the better part of 85 years.

@@ -37,7 +37,9 @@ export default function AccountLayout({ children }) {
 
       {isMdUp && (
         <Container sx={{ my: 3 }}>
-          <Typography variant="h3">Members Account</Typography>
+          <Typography variant="h3" component="h2">
+            Members Account
+          </Typography>
         </Container>
       )}
 

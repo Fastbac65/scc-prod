@@ -51,7 +51,7 @@ const VenueHireDetails = () => {
       <Box sx={{ px: 1, pb: 2 }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '2fr 3fr', md: 'repeat(2, 1fr)' }}>
         <Stack></Stack>
         <Stack>
-          <Typography variant="h3" sx={{ mb: 3 }}>
+          <Typography variant="h3" component="h2" sx={{ mb: 3 }}>
             Venue Details
           </Typography>
           <Stack spacing={1}>

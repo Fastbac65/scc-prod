@@ -61,7 +61,7 @@ export default function AccountOrdersPage() {
 
   return (
     <AccountLayout>
-      <Typography variant="h3" sx={{ pl: 2, mb: 3 }}>
+      <Typography variant="h3" component="h2" sx={{ pl: 2, mb: 3 }}>
         Orders
       </Typography>
 

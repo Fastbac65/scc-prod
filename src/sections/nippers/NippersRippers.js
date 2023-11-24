@@ -65,7 +65,9 @@ const NippersRippers = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Rippers</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Rippers
+            </Typography>
             <Typography variant="body2">
               South Curly proudly partners with the Cerebral Palsy Alliance at Allambie Heights to offer an exceptional modified Nipper program tailored for children and youth (ages 5 to 15) with additional
               needs. This collaborative initiative emphasizes inclusion, creating an enriching environment for all participants through:

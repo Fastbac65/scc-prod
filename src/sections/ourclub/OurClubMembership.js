@@ -60,7 +60,9 @@ const OurClubMembership = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Membership</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Membership
+            </Typography>
             <Typography variant="body2">
               South Curl Curl Surf Life Saving Club welcomes all new membership enquiries from all-comers regardless of age and skill levels. For our new Nippers and parents, an amazing fun program awaits you.
               For those aspiring to compete, you are in the right place. The Club has a relatively small and friendly membership base and all interests are catered for, especially social.

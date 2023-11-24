@@ -52,7 +52,9 @@ const PatrolCalendar = () => {
           <div id="patrolcalendar" style={{ position: 'absolute', top: '-60px' }} />
         </div>
         <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', justifyContent: 'center' }}>
-          <Typography variant="h3">SCC Patrol Calendar</Typography>{' '}
+          <Typography variant="h3" component="h2">
+            SCC Patrol Calendar
+          </Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
             scroll within calendar to view more
           </Typography>

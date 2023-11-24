@@ -85,7 +85,9 @@ const NippersInformation = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">Information for Nippers/Parents</Typography>
+            <Typography variant="h3" component="h2">
+              Information for Nippers/Parents
+            </Typography>
             <Typography variant="body2">
               South Curl Curl Nippers are between the age of 5-14 years. Our primary goal is to teach surf awareness and safety in a fun and healthy outdoor environment with friends. Nippers should be
               encouraged to do regular swimming lessons so they can enjoy the beach and ocean activities.

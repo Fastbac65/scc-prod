@@ -61,7 +61,9 @@ const VenueHireCalendar = () => {
           <div id="venuecalendar" style={{ position: 'absolute', top: '-80px' }} />
         </div>
         <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', justifyContent: 'center' }}>
-          <Typography variant="h3">SCC Venue Bookings</Typography>{' '}
+          <Typography variant="h3" component="h2">
+            SCC Venue Bookings
+          </Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
             scroll within calendar to view more..
           </Typography>

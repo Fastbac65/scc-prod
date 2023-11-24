@@ -60,7 +60,9 @@ const PatrolInformation = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Patrol</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Patrol
+            </Typography>
             <Typography variant="body2">Our favourite time of year is here again. South Curly beach patrol season has started.</Typography>
           </Stack>
         </Box>

@@ -170,7 +170,9 @@ const NippersContacts = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center', px: 0 }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
-            <Typography variant="h3">Nippers Committee & Age Managers</Typography>
+            <Typography variant="h3" component="h2">
+              Nippers Committee & Age Managers
+            </Typography>
             <Typography variant="body2">A massive Thank You to all our volunteer Nippers Committee members and Age managers. Nippers is just not possible without you</Typography>
           </Stack>
         </Box>

@@ -74,7 +74,9 @@ const CompetitorsChamps = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack>
-            <Typography variant="h3">SCC Champion Lifesavers</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Champion Lifesavers
+            </Typography>
             <Typography variant="body2">
               Championing the development of elite lifesavers, we strive to cultivate exceptional skills, unwavering dedication, and a commitment to safeguarding lives on our challenging but beautiful beaches,
               come join the best of the best..

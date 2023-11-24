@@ -63,7 +63,9 @@ const CompetitorsCadets = () => {
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
-            <Typography variant="h3">SCC Surf Rescue Cadets</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Surf Rescue Cadets
+            </Typography>
             <Typography variant="body2">
               At South Curl Curl SLSC, our Surf Life Saving Cadets are empowered with the skills, knowledge, and values to become dedicated and community-focused lifesavers, committed to beach safety and
               well-being.

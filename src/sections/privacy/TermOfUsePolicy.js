@@ -118,7 +118,9 @@ const TermOfUsePolicy = () => {
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
-            <Typography variant="h3">SCC Website Terms of Use</Typography>
+            <Typography variant="h3" component="h2">
+              SCC Website Terms of Use
+            </Typography>
             <Typography variant="body2">
               At South Curl Curl we also provide many opportunities to enhance your First Aid capabilities through more advanced First Aid training. Why not go to the next level and join us in our Advanced
               Resus and First Aid courses.

@@ -56,7 +56,9 @@ const TrainingIRB = () => {
       <Container maxWidth="lg" sx={{ mx: 0, px: { xs: 0.5, sm: 3 }, textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
-            <Typography variant="h3">Rescue Boat Training</Typography>
+            <Typography variant="h3" component="h2">
+              Rescue Boat Training
+            </Typography>
             <Typography variant="body2">
               When the surf gets &quot;more demanding&quot; and things get more complicated our IRB teams are called upon. Take your life saving skills up another level, join our amazing IRB crew and drivers
               and learn how to deal with and navigate probably some of the most challenging surf conditions on the northern beaches

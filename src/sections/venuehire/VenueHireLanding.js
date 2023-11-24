@@ -22,14 +22,14 @@ const VenueHireLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Venue Hire
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings and other similar functions.
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

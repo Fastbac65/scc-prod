@@ -24,7 +24,7 @@ const PatrolLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Patrols
               </Typography>
@@ -32,7 +32,7 @@ const PatrolLanding = () => {
                 The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and
                 nippers.
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

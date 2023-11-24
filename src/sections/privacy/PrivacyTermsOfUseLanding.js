@@ -24,7 +24,7 @@ const PrivacyTermsOfUseLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Privacy & Terms of Use
               </Typography>
@@ -32,7 +32,7 @@ const PrivacyTermsOfUseLanding = () => {
                 At South Curl Curl SLSC, we are dedicated to safeguarding your privacy. We take the protection of personal information seriously and have implemented measures to ensure the confidentiality,
                 security, and responsible handling of all data collected through our services
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

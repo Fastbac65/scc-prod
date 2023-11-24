@@ -22,7 +22,7 @@ const NippersLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Nippers - Starts Oct 15th
               </Typography>
@@ -30,7 +30,7 @@ const NippersLanding = () => {
                 For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400
                 little caps adorning our glorious beach.
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

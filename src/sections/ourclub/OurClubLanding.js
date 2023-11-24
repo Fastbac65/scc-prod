@@ -22,7 +22,7 @@ const OurClubLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Our Club
               </Typography>
@@ -30,7 +30,7 @@ const OurClubLanding = () => {
                 South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of
                 lifesaving expertise.
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

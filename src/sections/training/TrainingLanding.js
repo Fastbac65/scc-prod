@@ -24,7 +24,7 @@ const TrainingLanding = () => {
         <Grid container spacing={3} sx={{ m: 0, justifyContent: 'center' }}>
           <Grid xs={12} md={10}>
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
-              <Typography variant="h2" component="h2">
+              <Typography variant="h2" component="h1">
                 {/* {title} */}
                 Training
               </Typography>
@@ -33,7 +33,7 @@ const TrainingLanding = () => {
                 passion for keeping our very dynamic beach safe and giving all patrollers the skills to do so. South Curly often provides extra excitement and being comfortable in our surf, whilst keeping your
                 family & friends safe can be an asset for life.
               </Typography>
-              {/* <Typography variant="h2" component="h2">
+              {/* <Typography variant="h2" component="h1">
                 {title}
                 South Curl Curl SLSC
               </Typography> */}

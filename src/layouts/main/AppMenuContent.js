@@ -10,14 +10,14 @@ import useActiveLink from 'src/hooks/useActiveLink';
 // components
 import Iconify from 'src/components/iconify';
 import { useSettingsContext } from 'src/components/settings';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 // ----------------------------------------------------------------------
 
 export default function AppMenuContent({ data }) {
   const { themeMode, onToggleMode, user } = useSettingsContext();
   const theme = useTheme();
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <Stack
@@ -47,17 +47,19 @@ export default function AppMenuContent({ data }) {
             }}
           />
         </ListItemButton>
-        {/* <ListItemButton onClick={handleLogout} sx={{ px: 1, borderRadius: 1, display: user ? 'flex' : 'none' }}>
-          <ListItemIcon>
-            <Iconify icon="carbon:logout" />
-          </ListItemIcon>
-          <ListItemText
-            primary="Logout"
-            primaryTypographyProps={{
-              typography: 'body2',
-            }}
-          />
-        </ListItemButton> */}
+        <Link color={themeMode === 'dark' ? '#fff' : '#000'} target="_blank" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD" rel="noopener">
+          <ListItemButton sx={{ px: 1, borderRadius: 1 }}>
+            <ListItemIcon>
+              <Iconify icon="mdi:currency-usd" />
+            </ListItemIcon>
+            <ListItemText
+              primary="Payments"
+              primaryTypographyProps={{
+                typography: 'body2',
+              }}
+            />
+          </ListItemButton>
+        </Link>
       </Stack>
     </Stack>
   );

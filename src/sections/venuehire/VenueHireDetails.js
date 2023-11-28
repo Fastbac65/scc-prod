@@ -5,7 +5,7 @@ import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
 const StyledRootResponsive = styled('div')(({ theme }) => ({
-  padding: theme.spacing(8, 0),
+  padding: theme.spacing(4, 0),
   ...bgGradient({
     direction: 'to top',
 

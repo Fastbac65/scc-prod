@@ -55,6 +55,8 @@ const OurClubLanding = () => {
               { name: 'SCC Cafe-Gusto', href: '/ourclub/#gustocafe' },
               { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
             ]}
+            moreLink={[{ name: 'Payments and Donations', href: 'https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' }]}
+            theme={theme}
           />
         </Container>
       </Box>

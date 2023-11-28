@@ -6,8 +6,10 @@ import LinkItem from './LinkItem';
 
 // ----------------------------------------------------------------------
 
-export default function CustomBreadcrumbs({ links, action, heading = 'Quik links on this page', moreLink, activeLast, sx, ...other }) {
+export default function CustomBreadcrumbs({ links, action, heading = 'Quik links on this page', moreLink, activeLast, theme, sx, ...other }) {
   const lastLink = links[links.length - 1].name;
+
+  console.log(theme);
 
   return (
     <Box sx={{ mb: 5, ...sx }}>
@@ -37,8 +39,8 @@ export default function CustomBreadcrumbs({ links, action, heading = 'Quik links
       {!!moreLink && (
         <Box sx={{ mt: 2 }}>
           {moreLink.map((href) => (
-            <Link noWrap key={href} href={href} variant="body2" target="_blank" rel="noopener" sx={{ display: 'table' }}>
-              {href}
+            <Link color={theme.palette.mode === 'dark' ? '#fff' : '#000'} noWrap key={href.name} href={href.href} variant="body2" target="_blank" rel="noopener">
+              {href.name}
             </Link>
           ))}
         </Box>

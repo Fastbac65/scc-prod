@@ -101,10 +101,10 @@ export default function HomeLanding(props) {
       <Stack direction="row" sx={{ mx: 0, px: 0, justifyContent: 'center' }}>
         <Box sx={{ mx: { xs: 0, sm: 1, md: 2 }, maxWidth: 1000, textAlign: 'center' }} pt={10} pb={2}>
           <Typography textAlign="center" variant="h2" component="h1" m={2}>
-            South Curl Curl Surf Life Saving Club
+            🎄South Curl Curl Surf Life Saving Club🎄
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            Summer is here, Nippers are on and the sand is back on our beautiful beach!!
+            🎉would like to wish all of our members, sponsors and beach-goers a wonderful Christmas and Happy New Year🎉
           </Typography>
           {/* <PreloadImg /> */}
 

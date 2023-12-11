@@ -94,13 +94,13 @@ const OurClubTraining = () => {
             </Typography>
           </Stack>
         </Box>
-        {user && (
-          <Link component={NextLink} href="/training">
-            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-              SCC Members Training
-            </Button>
-          </Link>
-        )}
+        {/* {user && ( */}
+        <Link component={NextLink} href="/training">
+          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+            SCC Members Training
+          </Button>
+        </Link>
+        {/* )} */}
       </Container>
     </StyledRootResponsive>
   );

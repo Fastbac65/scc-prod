@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
 import Carousel from 'react-material-ui-carousel';
-import { CardMedia, Box, Typography, Container, Stack } from '@mui/material';
+import { CardMedia, Box, Typography, Container, Stack, Link, Button } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import Iconify from 'src/components/iconify';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   ...bgGradient({
@@ -139,6 +140,13 @@ export default function HomeLanding(props) {
               water safety for our locals, visitors and nippers.
             </Typography>
           </Box>
+          <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ pt: 2 }}>
+            <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+              <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+                Payments & Donations
+              </Button>
+            </Link>
+          </Stack>
         </Box>
       </Stack>
     </StyledRoot>

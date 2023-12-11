@@ -9,7 +9,7 @@ import LinkItem from './LinkItem';
 export default function CustomBreadcrumbs({ links, action, heading = 'Quik links on this page', moreLink, activeLast, theme, sx, ...other }) {
   const lastLink = links[links.length - 1].name;
 
-  console.log(theme);
+  // console.log(theme);
 
   return (
     <Box sx={{ mb: 3, ...sx }}>

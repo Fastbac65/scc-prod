@@ -38,7 +38,7 @@ const modules = {
 };
 
 const NewPost = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
   const handleEditorUpdates = (content, delta, source, editor) => {
     setValue(content);
   };

@@ -59,14 +59,14 @@ const OurClubLanding = () => {
             // moreLink={[{ name: 'Payments and Donations', href: 'https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' }]}
             // theme={theme}
           />
+          <Stack spacing={1} alignItems={{ xs: 'center' }}>
+            <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+              <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+                Payments & Donations
+              </Button>
+            </Link>
+          </Stack>
         </Container>
-        <Stack spacing={1} alignItems={{ xs: 'center' }}>
-          <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
-            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-              Payments & Donations
-            </Button>
-          </Link>
-        </Stack>
       </Box>
 
       {/* <Divider /> */}

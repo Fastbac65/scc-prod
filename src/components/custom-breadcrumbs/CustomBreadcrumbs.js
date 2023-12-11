@@ -12,7 +12,7 @@ export default function CustomBreadcrumbs({ links, action, heading = 'Quik links
   console.log(theme);
 
   return (
-    <Box sx={{ mb: 5, ...sx }}>
+    <Box sx={{ mb: 3, ...sx }}>
       <Stack direction="row" alignItems="center">
         <Box sx={{ flexGrow: 1 }}>
           {/* HEADING */}

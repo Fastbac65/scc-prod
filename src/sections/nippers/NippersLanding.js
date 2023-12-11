@@ -24,7 +24,7 @@ const NippersLanding = () => {
             <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ textAlign: { xs: 'center' } }}>
               <Typography variant="h2" component="h1">
                 {/* {title} */}
-                Nippers - Starts Oct 15th
+                SCC Nippers
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400

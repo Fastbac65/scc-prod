@@ -31,7 +31,7 @@ export async function getStaticProps(context) {
       // staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
       title: post.length ? post[0].data.title : '',
       description: firstEl?.textContent || 'South Curl Curl SLSC shared post',
-      canonical: post.length ? `https:southcurlcurlslsc.com.au/posts/${post[0].id}` : '',
+      canonical: post.length ? `https://southcurlcurlslsc.com.au/posts/${post[0].id}` : '',
       image: post.length ? post[0].data.images[0].src : '',
     },
     // revalidate: 10,

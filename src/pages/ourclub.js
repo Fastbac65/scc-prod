@@ -15,7 +15,7 @@ export async function getStaticProps() {
       title: 'SCC - Our Club',
       description:
         'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.',
-      canonical: 'https:southcurlcurlslsc.com.au/ourclub',
+      canonical: 'https://southcurlcurlslsc.com.au/ourclub',
 
       // staticMembers: members,
     },

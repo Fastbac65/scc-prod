@@ -19,7 +19,7 @@ export async function getStaticProps() {
       title: 'SCC - Nippers',
       description:
         'For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400 little caps adorning our glorious beach.',
-      canonical: 'https:southcurlcurlslsc.com.au/nippers',
+      canonical: 'https://southcurlcurlslsc.com.au/nippers',
     },
     // revalidate: 10,
   };

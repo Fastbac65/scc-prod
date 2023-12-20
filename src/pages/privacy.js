@@ -13,7 +13,7 @@ export async function getStaticProps() {
     props: {
       title: 'SCC Privacy & Terms of Use',
       description: 'South Curl Curl Surf Life Saving Club Website Privacy and Terms & Conditions of Use',
-      canonical: 'https:southcurlcurlslsc.com.au/privacy',
+      canonical: 'https://southcurlcurlslsc.com.au/privacy',
     },
     // revalidate: 10,
   };

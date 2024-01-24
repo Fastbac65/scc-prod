@@ -149,18 +149,18 @@ export default function HomeLanding(props) {
             <Typography sx={{ pt: 2 }}>South Curl Curl Socials</Typography>
             <Stack direction="row" spacing={1}>
               <Link target="_blank" rel="noopener" href="https://www.facebook.com/groups/2409768001/">
-                <Button sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:facebook" />}>
-                  South Curly
+                <Button size="small" sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:facebook" />}>
+                  SCC
                 </Button>
               </Link>
               <Link target="_blank" rel="noopener" href="https://www.instagram.com/southcurlyboaties/">
-                <Button sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:instagram" />}>
-                  SCC Boaties
+                <Button size="small" sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:instagram" />}>
+                  Boaties
                 </Button>
               </Link>
               <Link target="_blank" rel="noopener" href="https://www.instagram.com/scchampionlifesavers/">
-                <Button sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:instagram" />}>
-                  SCC Champs
+                <Button size="small" sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:instagram" />}>
+                  Champs
                 </Button>
               </Link>
             </Stack>

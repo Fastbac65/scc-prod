@@ -112,6 +112,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
   const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
 
+  // posts will load up to 4 images, to stop the scroll odd number of images only load 2
+  const filter = doc.data.images.length % 2 !== 0 ? 2 : 4;
+
   var tempDiv = document.createElement('div');
   tempDiv.innerHTML = doc.data?.content;
   var firstPara;
@@ -144,77 +147,80 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: maxHeightImg, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
           rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
+          // cols={doc.data.images.length === 1 ? 1 : 2}
           cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
-          {doc.data.images.map((image, indx) => (
-            <ImageListItem key={image.src}>
-              <CardMedia
-                component="img"
-                height={rowHeight}
-                src={image.src}
-                alt={image.alt}
-                sx={{ cursor: 'pointer' }}
-                onClick={() => {
-                  setCurrentImageIndex(indx);
-                  setImages(doc.data?.images);
-                  setOpen(true);
-                }}
-              />
-              {indx === 0 && (
-                <Typography
-                  variant="caption"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomRightRadius: 10,
+          {doc.data.images
+            .filter((item, index) => index < filter) // filtering images to 1, 2 or 4max
+            .map((image, indx) => (
+              <ImageListItem key={image.src}>
+                <CardMedia
+                  component="img"
+                  height={rowHeight}
+                  src={image.src}
+                  alt={image.alt}
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    setCurrentImageIndex(indx);
+                    setImages(doc.data?.images);
+                    setOpen(true);
                   }}
-                >
-                  last updated..
-                  <br />
-                  {fToNow(doc.data?.timestamp)}
-                </Typography>
-              )}
-              {indx === 1 && doc.data.images.length === 3 && (
-                <Typography
-                  variant="body1"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    right: 0,
-                    Top: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomLeftRadius: 10,
-                  }}
-                >
-                  {`+1 photo`}
-                </Typography>
-              )}
-              {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
-                <Typography
-                  variant="body2"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    right: 0,
-                    Top: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomLeftRadius: 10,
-                  }}
-                >
-                  {`+${morePics} photos`}
-                </Typography>
-              )}
-            </ImageListItem>
-          ))}
+                />
+                {indx === 0 && (
+                  <Typography
+                    variant="caption"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomRightRadius: 10,
+                    }}
+                  >
+                    last updated..
+                    <br />
+                    {fToNow(doc.data?.timestamp)}
+                  </Typography>
+                )}
+                {indx === 1 && doc.data.images.length === 3 && (
+                  <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      right: 0,
+                      Top: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomLeftRadius: 10,
+                    }}
+                  >
+                    {`+1 photo`}
+                  </Typography>
+                )}
+                {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
+                  <Typography
+                    variant="body2"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      right: 0,
+                      Top: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomLeftRadius: 10,
+                    }}
+                  >
+                    {`+${morePics} photos`}
+                  </Typography>
+                )}
+              </ImageListItem>
+            ))}
         </ImageList>
         {/* {!expanded && ( */}
         <CardContent sx={{ py: 1 }}>

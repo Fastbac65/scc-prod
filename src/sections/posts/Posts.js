@@ -36,7 +36,7 @@ export default function Posts({ staticPosts }) {
     if (!posts) {
       return;
     } else {
-      setAllPosts([...posts.slice(6, 20)]);
+      setAllPosts([...posts.slice(6, 26)]);
     }
   }, [posts]);
 

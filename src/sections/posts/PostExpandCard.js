@@ -147,8 +147,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: maxHeightImg, zIndex: 100 }} // height 301 allows for 1px gap so no scroll bars show up
           rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
-          // cols={doc.data.images.length === 1 ? 1 : 2}
-          cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
+          cols={doc.data.images.length === 1 ? 1 : 2}
+          // cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
           {doc.data.images
             .filter((item, index) => index < filter) // filtering images to 1, 2 or 4max
@@ -159,7 +159,7 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   height={rowHeight}
                   src={image.src}
                   alt={image.alt}
-                  sx={{ cursor: 'pointer' }}
+                  sx={{ cursor: 'pointer', objectPosition: 'top' }}
                   onClick={() => {
                     setCurrentImageIndex(indx);
                     setImages(doc.data?.images);

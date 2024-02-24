@@ -101,14 +101,14 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   let rowHeight = doc.data.images.length < 4 ? 301 : 150;
   // let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 150;
   if (isSmUp) {
-    rowHeight = doc.data.images.length < 4 ? 401 : 200;
+    rowHeight = doc.data.images.length < 4 ? 441 : 240;
     // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
-    maxHeightImg = 401;
+    maxHeightImg = 441;
   }
   if (isMdUp) {
-    rowHeight = doc.data.images.length < 4 ? 481 : 240;
+    rowHeight = doc.data.images.length < 4 ? 601 : 300;
     // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
-    maxHeightImg = 481;
+    maxHeightImg = 601;
   }
 
   // more pics is different for odd number of pics as we use full width so no gaps

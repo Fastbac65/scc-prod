@@ -106,9 +106,9 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     maxHeightImg = 441;
   }
   if (isMdUp) {
-    rowHeight = doc.data.images.length < 4 ? 601 : 300;
+    rowHeight = doc.data.images.length < 4 ? 561 : 280;
     // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
-    maxHeightImg = 601;
+    maxHeightImg = 561;
   }
 
   // more pics is different for odd number of pics as we use full width so no gaps

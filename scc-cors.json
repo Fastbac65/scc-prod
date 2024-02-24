@@ -3,9 +3,9 @@
     "origin": [
       "https://southcurlcurlslsc.com.au",
       "https://scc-prod.vercel.app",
-      "http://192.168.0.220:5002",
-      "http://192.168.0.220:3000",
-      "https://192.168.0.220:3000",
+      "http://192.168.0.124:5002",
+      "http://192.168.0.124:3000",
+      "https://192.168.0.124:3000",
       "https://localhost:3000",
       "https://scc-proto.web.app"
     ],

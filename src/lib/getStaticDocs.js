@@ -5,7 +5,7 @@ import { db } from 'src/lib/createFirebaseApp';
 // export function getPosts() {
 //   return new Promise(async (resolve, reject) => {
 //     try {
-//       // const response = await fetch('http://192.168.0.220:5002/api/posts', {
+//       // const response = await fetch('http://192.168.0.124:5002/api/posts', {
 //       //   method: 'POST',
 //       //   headers: {
 //       //     'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ import { Body, Button, Container, Head, Html, Hr, Img, Link, Preview, Section, T
 
 // const image = 'https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/images%2Fscc-logo-blue-sm.jpg?alt=media&token=d84a55ab-848a-4798-b111-d7d614da797a';
 const image = 'https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/images%2Fscc-logo-blue-sm2.png?alt=media&token=4ac16294-1a4e-44e5-a71b-ad6c25b18f07';
-const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://southcurlcurlslsc.com.au';
+const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:5002' : 'https://southcurlcurlslsc.com.au';
 
 export const EmailTest = ({ name, email, link, booking }) => {
   const { fullName, phoneNumber, bookingType, bookingDate, occasion } = booking;

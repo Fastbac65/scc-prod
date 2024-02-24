@@ -12,7 +12,7 @@ Example JSON file containing the CORS configuration
 
 [
     {
-      "origin": ["https://your-example-website.appspot.com", "http://192.168.0.220:5002"],
+      "origin": ["https://your-example-website.appspot.com", "http://192.168.0.124:5002"],
       "method": ["GET", "POST"],
       "responseHeader": ["Content-Type"],
       "maxAgeSeconds": 3600

@@ -1,6 +1,6 @@
 import { createFirebaseAdminApp } from 'src/lib/createFireBaseAdminApp';
 const { db } = createFirebaseAdminApp();
-// const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.scc.com'; */
+// const host = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:5002' : 'https://scc-prod.vercel.app'; /* : 'https://www.scc.com'; */
 
 const membersRef = db.collection('members');
 let members = [];

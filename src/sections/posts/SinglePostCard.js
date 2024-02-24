@@ -1,6 +1,6 @@
 import { memo, useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
-import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem, Fade } from '@mui/material';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, Tooltip, Typography, IconButton, ImageList, ImageListItem, Checkbox, Popover, Link, MenuItem } from '@mui/material';
 import PostOptions from './PostOptions';
 import Iconify from 'src/components/iconify/Iconify';
 import { useSettingsContext } from 'src/components/settings';
@@ -26,36 +26,29 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const [favorite, setFavorite] = useState(false);
   const [author, setAuthor] = useState(null);
   const theme = useTheme();
-  const { member, members } = useSettingsContext();
+  const { member, members, host } = useSettingsContext();
   const socials = [
     {
       value: 'facebook',
       label: 'FaceBook',
-      icon: 'carbon:logo-facebook',
+      icon: 'ic:baseline-facebook',
       color: '#1877F2',
-      href: 'https://facebook.com',
+      href: `https://www.facebook.com/sharer/sharer.php?u=${host}/posts/${doc.id}`,
     },
     {
-      value: 'instagram',
-      label: 'Instagram',
-      icon: 'carbon:logo-instagram',
-      color: '#E02D69',
-      href: 'https://facebook.com',
+      value: 'whatsapp',
+      label: 'WhatsApp',
+      icon: 'ic:baseline-whatsapp',
+      color: '#72ee79',
+      href: `https://api.whatsapp.com/send?text=${host}/posts/${doc.id}`,
     },
-    {
-      value: 'linkedin',
-      label: 'Linkedin',
-      icon: 'carbon:logo-linkedin',
-      color: '#007EBB',
-      href: 'https://facebook.com',
-    },
-    {
-      value: 'twitter',
-      label: 'Twitter',
-      icon: 'carbon:logo-twitter',
-      color: '#00AAEC',
-      href: 'https://facebook.com',
-    },
+    // {
+    //   value: 'twitter',
+    //   label: 'Twitter',
+    //   icon: 'carbon:logo-twitter',
+    //   color: '#00AAEC',
+    //   href: 'https://facebook.com',
+    // },
   ];
   // need to take care of doc coming in as {} empty - for example if its deleted else where
   useEffect(() => {
@@ -97,13 +90,16 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const isSmUp = useResponsive('up', 'sm');
   const isMdUp = useResponsive('up', 'md');
   let maxHeightImg = 301;
-  let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 150;
+  let rowHeight = doc.data.images.length < 4 ? 301 : 150;
+  // let rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 301 : 150;
   if (isSmUp) {
-    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
+    rowHeight = doc.data.images.length < 4 ? 401 : 200;
+    // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 401 : 200;
     maxHeightImg = 401;
   }
   if (isMdUp) {
-    rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
+    rowHeight = doc.data.images.length < 4 ? 481 : 240;
+    // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
     maxHeightImg = 481;
   }
 
@@ -111,6 +107,10 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   if (!doc) return;
   const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
   const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
+
+  // posts will load up to 4 images, to stop the scroll odd number of images only load 2
+  const filter = doc.data.images.length < 4 ? 2 : 4;
+  // const filter = doc.data.images.length % 2 !== 0 ? 2 : 4;
 
   var tempDiv = document.createElement('div');
   tempDiv.innerHTML = doc.data?.content;
@@ -130,7 +130,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         </div>
         <CardHeader
           avatar={
-            <Tooltip enterTouchDelay={100} placement="top" title={author?.data?.profileName || author?.data?.displayName || doc.data?.uName}>
+            <Tooltip enterTouchDelay={100} placement="top" title={authorPost}>
               <Avatar src={author?.data?.photoURL || doc.data?.uAvatar} alt={doc.data?.uName} aria-label={doc.data?.uName} />
             </Tooltip>
           }
@@ -143,78 +143,81 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           sx={{ mt: 1, width: 'auto', height: 'auto', maxHeight: maxHeightImg, zIndex: 100 }} // height 401 allows for 1px gap so no scroll bars show up
           rowHeight={rowHeight}
           // cols={layout[files.length - 1]}
-          cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
+          cols={doc.data.images.length === 1 ? 1 : 2}
+          // cols={doc.data.images.length % 2 !== 0 ? 1 : 2}
         >
-          {doc.data.images.map((image, indx) => (
-            <ImageListItem key={image.src}>
-              <CardMedia
-                component="img"
-                height={rowHeight}
-                // height={doc.data.images.length === 1 ? '400' : '200'}
-                src={image.src}
-                alt={image.alt}
-                sx={{ cursor: 'pointer' }}
-                onClick={() => {
-                  setCurrentImageIndex(indx);
-                  setImages(doc.data?.images);
-                  setOpen(true);
-                }}
-              />
-              {indx === 0 && (
-                <Typography
-                  variant="caption"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomRightRadius: 10,
+          {doc.data.images
+            .filter((item, index) => index < filter) // filtering images to 1, 2 or 4max
+            .map((image, indx) => (
+              <ImageListItem key={image.src}>
+                <CardMedia
+                  component="img"
+                  height={rowHeight}
+                  // height={doc.data.images.length === 1 ? '400' : '200'}
+                  src={image.src}
+                  alt={image.alt}
+                  sx={{ cursor: 'pointer', objectPosition: 'top' }}
+                  onClick={() => {
+                    setCurrentImageIndex(indx);
+                    setImages(doc.data?.images);
+                    setOpen(true);
                   }}
-                >
-                  last updated..
-                  <br />
-                  {fToNow(doc.data?.timestamp)}
-                </Typography>
-              )}
-              {indx === 1 && doc.data.images.length === 3 && (
-                <Typography
-                  variant="body1"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    right: 0,
-                    Top: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomLeftRadius: 10,
-                  }}
-                >
-                  {`+1 photo`}
-                </Typography>
-              )}
-              {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
-                <Typography
-                  variant="body2"
-                  component="span"
-                  sx={{
-                    position: 'absolute',
-                    right: 0,
-                    Top: 0,
-                    color: 'white',
-                    bgcolor: 'rgba(0,0,0,0.5)',
-                    p: '3px',
-                    borderBottomLeftRadius: 10,
-                  }}
-                >
-                  {`+${morePics} photos`}
-                </Typography>
-              )}
-            </ImageListItem>
-          ))}
+                />
+                {indx === 0 && (
+                  <Typography
+                    variant="caption"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomRightRadius: 10,
+                    }}
+                  >
+                    last updated..
+                    <br />
+                    {fToNow(doc.data?.timestamp)}
+                  </Typography>
+                )}
+                {indx === 1 && doc.data.images.length === 3 && (
+                  <Typography
+                    variant="body1"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      right: 0,
+                      Top: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomLeftRadius: 10,
+                    }}
+                  >
+                    {`+1 photo`}
+                  </Typography>
+                )}
+                {(indx === 1 || indx === doc.data.images.length - 1) && doc.data.images.length > 4 && (
+                  <Typography
+                    variant="body2"
+                    component="span"
+                    sx={{
+                      position: 'absolute',
+                      right: 0,
+                      Top: 0,
+                      color: 'white',
+                      bgcolor: 'rgba(0,0,0,0.5)',
+                      p: '3px',
+                      borderBottomLeftRadius: 10,
+                    }}
+                  >
+                    {`+${morePics} photos`}
+                  </Typography>
+                )}
+              </ImageListItem>
+            ))}
         </ImageList>
         {!expanded && (
           <CardContent sx={{ py: 1 }}>

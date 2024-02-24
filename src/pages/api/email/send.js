@@ -17,7 +17,7 @@ import BookingEmail from 'src/components/email/BookingEmail';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const { db } = createFirebaseAdminApp();
 const host = 'https://southcurlcurlslsc.com.au';
-const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.220:5002' : 'https://southcurlcurlslsc.com.au';
+const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:5002' : 'https://southcurlcurlslsc.com.au';
 
 // Lets connect the email API server to the customer database
 // const ref = db.ref('customers/');

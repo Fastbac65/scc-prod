@@ -317,9 +317,11 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
       >
         {socials.map((social) => (
           <Link key={social.value} href={social.href} target="_blank" underline="none">
-            <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: theme.palette.primary.light }}>
-              <Iconify icon={social.icon} width={24} sx={{ mr: 1 }} />
-              Share via {social.label}
+            <MenuItem onClick={handleClose} sx={{ typography: 'body2', color: social.color }}>
+              <Iconify icon={social.icon} width={24} sx={{ minWidth: '24px' }} />
+              <Typography sx={{ pl: 1 }} variant="body2">
+                {social.label}
+              </Typography>
             </MenuItem>
           </Link>
         ))}

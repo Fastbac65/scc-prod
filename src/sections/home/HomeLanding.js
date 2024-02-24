@@ -175,7 +175,7 @@ function Item({ item }) {
   return (
     <Box sx={{ height: '275', overflow: 'hidden' }}>
       {/* <Image alt={item.description} src={item.src} fill objectFit="cover" /> */}
-      <CardMedia height={275} component="img" alt={item.description} src={item.src} />
+      <CardMedia height={275} component="img" alt={item.description} src={item.src} sx={{ objectPosition: 'top' }} />
     </Box>
   );
 }

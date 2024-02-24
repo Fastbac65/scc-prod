@@ -116,7 +116,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
 
   // posts will load up to 4 images, to stop the scroll odd number of images only load 2
-  const filter = doc.data.images.length % 2 !== 0 ? 2 : 4;
+  const filter = doc.data.images.length < 4 ? 2 : 4;
+  // const filter = doc.data.images.length % 2 !== 0 ? 2 : 4;
 
   var tempDiv = document.createElement('div');
   tempDiv.innerHTML = doc.data?.content;

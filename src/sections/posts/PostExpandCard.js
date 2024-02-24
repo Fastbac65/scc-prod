@@ -235,16 +235,18 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         </CardContent>
         {/* )} */}
         <CardActions disableSpacing sx={{ py: 0 }}>
-          {user && !expanded && (
+          {!expanded && (
             <>
-              <Checkbox
-                color="error"
-                aria-label="add to favorites"
-                checked={favorite}
-                onChange={handleChangeFavorite}
-                icon={<Iconify icon="carbon:favorite" />}
-                checkedIcon={<Iconify icon="carbon:favorite-filled" />}
-              />
+              {user && (
+                <Checkbox
+                  color="error"
+                  aria-label="add to favorites"
+                  checked={favorite}
+                  onChange={handleChangeFavorite}
+                  icon={<Iconify icon="carbon:favorite" />}
+                  checkedIcon={<Iconify icon="carbon:favorite-filled" />}
+                />
+              )}
               <IconButton aria-label="share post" onClick={handleOpen}>
                 <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
               </IconButton>
@@ -282,9 +284,9 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
               )
             )} */}
           </CardContent>
-          <CardActions disableSpacing sx={{ py: 0 }}>
-            {user && (
-              <>
+          <CardActions disableSpacing sx={{ pt: 1 }}>
+            <>
+              {user && (
                 <Checkbox
                   color="error"
                   aria-label="add to favorites"
@@ -293,16 +295,17 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                   icon={<Iconify icon="carbon:favorite" />}
                   checkedIcon={<Iconify icon="carbon:favorite-filled" />}
                 />
-                <IconButton aria-label="share post" onClick={handleOpen}>
-                  <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+              )}
+              <IconButton aria-label="share post" onClick={handleOpen}>
+                <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+              </IconButton>
+              <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
+                <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
+                  <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
                 </IconButton>
-                <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
-                  <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
-                    <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
-                  </IconButton>
-                </Tooltip>
-              </>
-            )}
+              </Tooltip>
+            </>
+
             <PostOptions postDoc={doc} />
             {/* <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
               <Iconify icon="fluent:chevron-down-24-filled" />

@@ -312,7 +312,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
         PaperProps={{
-          sx: { width: 200, p: 1 },
+          sx: { width: 140, p: 1 },
         }}
       >
         {socials.map((social) => (

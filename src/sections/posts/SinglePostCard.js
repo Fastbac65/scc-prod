@@ -8,6 +8,7 @@ import { updateDoco } from 'src/lib/firestoreDocument';
 import { fToNow } from 'src/lib/formatTime';
 import useResponsive from 'src/hooks/useResponsive';
 import Markdown from 'src/components/markdown/Markdown';
+import copy from 'clipboard-copy';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,6 +26,7 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
   const [openShare, setOpenShare] = useState(null);
   const [favorite, setFavorite] = useState(false);
   const [author, setAuthor] = useState(null);
+  const [copyUrl, setCopyUrl] = useState('copy post URL');
   const theme = useTheme();
   const { member, members, host } = useSettingsContext();
   const socials = [
@@ -85,6 +87,12 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleCopyLinkClick = async () => {
+    await copy(`${host}/posts/${doc.id}`);
+    setCopyUrl('post URL copied');
+    setTimeout(() => setCopyUrl('copy post URL'), 2000);
   };
 
   const isSmUp = useResponsive('up', 'sm');
@@ -240,6 +248,13 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
             <IconButton aria-label="share post" onClick={handleOpen}>
               <Iconify icon="carbon:share" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
             </IconButton>
+            <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
+              {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
+              <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
+                <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+              </IconButton>
+              {/* </Link> */}
+            </Tooltip>
             <PostOptions postDoc={doc} />
 
             {allEl.length > 1 && (
@@ -271,6 +286,13 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
                 <IconButton aria-label="share post" onClick={handleOpen}>
                   <Iconify icon="carbon:share" color={open ? theme.palette.primary.light : 'default'} />
                 </IconButton>
+                <Tooltip arrow enterTouchDelay={10} enterDelay={100} placement="top-start" title={copyUrl}>
+                  {/* <Link component={NextLink} href={`/posts/${doc.id}`}> */}
+                  <IconButton aria-label="view post" onClick={handleCopyLinkClick}>
+                    <Iconify icon="carbon:copy" color={theme.palette.mode === 'dark' ? theme.palette.primary.lighter : theme.palette.primary.light} />
+                  </IconButton>
+                  {/* </Link> */}
+                </Tooltip>
               </>
             )}
             <PostOptions postDoc={doc} />

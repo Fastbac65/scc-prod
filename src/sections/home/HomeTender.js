@@ -45,7 +45,7 @@ const membershipContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'Current SCC Cafe Operations',
-    text: 'Current trading hours are 6:30am – 2:30pm. The Café does not have deep frying capability, nor does it have a liquor license. It should plan to trade at least 360 days each year. If you are interested in responding please see the link below to download our RFP document.',
+    text: 'Current trading hours are 6:30am – 2:30pm, however longer trading hours are welcome. The Club premises are located on Crown land and the Surf Club holds a new 20 year lease with Northern Beaches Council. If you are interested in responding please see the link below to download our RFP document.',
   },
 ];
 const HomeTender = () => {

@@ -104,7 +104,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            Our season is well under way for 2024, check out all our up coming activities below!
+            ☕️🧋🍛 Our beautiful surf club cafe is up for grabs.. We are tendering for a new operator. See details below🍛🧋☕️
           </Typography>
           {/* <PreloadImg /> */}
 

@@ -35,7 +35,7 @@ const membershipContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'SCC Cafe RFP Process',
-    text: 'The Club is seeking proposals from parties who believe they have the necessary skills and experience to operate the facility for the benefit of the Surf Club, the local community and visitors to Curl Curl.',
+    text: 'The Club is seeking proposals from parties who believe they have the necessary skills and experience to operate the facility for the benefit of the Surf Club, the local community and visitors to Curl Curl. All submissions have to be received via email no later than 5.00pm on Wednesday 27th March 2024.',
   },
   {
     icon: 'mdi:flag-variant-outline',

@@ -13,18 +13,18 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
     endColor: `${alpha(theme.palette.background.neutral, 0.8)} 90%`,
     // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.7)} 0%`,
     // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0.95)} 70%`,
-    imgUrl: '/assets/images/gusto2.jpeg',
+    imgUrl: '/assets/images/cafetender.jpeg',
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
-      direction: 'to right',
+      direction: 'to left',
       startColor: `${alpha(theme.palette.background.neutral, 0)} 5%`,
       endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/gusto2.jpeg',
+      imgUrl: '/assets/images/cafetender.jpeg',
     }),
-    backgroundPosition: 'center, left',
+    backgroundPosition: 'center, right',
     backgroundSize: 'cover, auto 100%',
   },
 }));
@@ -65,8 +65,7 @@ const HomeTender = () => {
           </Stack>
         </Box>
 
-        <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 3fr' }}>
-          <Stack></Stack>
+        <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
               {membershipContent.map((item) => (
@@ -74,6 +73,7 @@ const HomeTender = () => {
               ))}
             </Stack>
           </Stack>
+          <Stack></Stack>
         </Stack>
         <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlCafeRFP-6March2024.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>

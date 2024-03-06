@@ -22,7 +22,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
       endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/cafetender.jpeg',
+      imgUrl: '/assets/images/tenderCafe.jpeg',
     }),
     backgroundPosition: 'center, right',
     backgroundSize: 'cover, auto 100%',
@@ -31,7 +31,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const membershipContent = [
+const tenderContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'SCC Cafe RFP Process',
@@ -68,7 +68,7 @@ const HomeTender = () => {
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
-              {membershipContent.map((item) => (
+              {tenderContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>

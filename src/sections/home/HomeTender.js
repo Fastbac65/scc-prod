@@ -40,7 +40,7 @@ const tenderContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'The Opportunity To Be Awesome',
-    text: 'Over the past five years, from 2019 to 2023, the café has averaged a turnover of $1,524,000 per annum. The café is fully equipped and furnished. It offers both indoor and outdoor dining plus take-away food and drinks.',
+    text: 'Over the past five years, from 2019 to 2023, the café has had a very healthy revenue turnover, further details can be found in the RFP document. The café is fully equipped and furnished. It offers both indoor and outdoor dining plus take-away food and drinks.',
   },
   {
     icon: 'mdi:flag-variant-outline',

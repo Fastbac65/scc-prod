@@ -71,7 +71,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Patrol Supervisor</td>
-			<td>David O&rsquo;Reilly</td>
+			<td>TBD</td>
 			<td><a href="mailto:PatrolSup@southcurlcurlslsc.com.au">PatrolSup@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>

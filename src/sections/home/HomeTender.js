@@ -1,4 +1,5 @@
 import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '@mui/material';
+import { ST } from 'next/dist/shared/lib/utils';
 // components
 import Iconify from 'src/components/iconify/Iconify';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -75,11 +76,19 @@ const HomeTender = () => {
           </Stack>
           <Stack></Stack>
         </Stack>
-        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlCafeRFP-6March2024.pdf">
+        {/* <Stack spacing={2} direction="row" display="flex" alignItems="center"> */}
+        <Link sx={{ mr: 1 }} target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlCafeRFP-6March2024.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC RFP Document
           </Button>
         </Link>
+        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCC-CafeRFP-Questions&Response-11March24.pdf">
+          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+            SCC RFP Q&A
+          </Button>
+        </Link>
+        {/* </Stack> */}
+
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
             <Typography variant="caption">

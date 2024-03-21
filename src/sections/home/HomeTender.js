@@ -82,7 +82,7 @@ const HomeTender = () => {
             SCC RFP Document
           </Button>
         </Link>
-        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCC-CafeRFP-Questions&Response-11March24.pdf">
+        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCC-CafeRFP-Questions&Response-19March24.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC RFP Q&A
           </Button>

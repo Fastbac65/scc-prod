@@ -111,8 +111,8 @@ function PostExpandCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
     // rowHeight = doc.data.images.length === 1 || doc.data.images.length === 2 ? 481 : 240;
     maxHeightImg = 481;
   }
-  // more pics is different for odd number of pics as we use full width so no gaps
-  const morePics = doc.data.images.length % 2 === 0 ? doc.data.images.length - 4 : doc.data.images.length - 2;
+  // more pics is different for 3 pics as we use only 2 otherwise we show 4 pics
+  const morePics = doc.data.images.length === 3 ? 1 : doc.data.images.length - 4;
   const authorPost = author?.data?.profileName || author?.data?.displayName || doc.data?.uName;
 
   // posts will load up to 4 images, to stop the scroll odd number of images only load 2

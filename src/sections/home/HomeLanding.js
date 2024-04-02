@@ -104,7 +104,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            ☕️🧋🍛 Our beautiful surf club cafe is up for grabs.. We are tendering for a new operator. See details below🍛🧋☕️
+            🏊‍♀️🏊🏽South Curly hosts our annual Ocean Swim - Sunday 28th April, check it out, details below!! 🏊🏽🏊‍♀️
           </Typography>
           {/* <PreloadImg /> */}
 

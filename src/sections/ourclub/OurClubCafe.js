@@ -36,7 +36,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const cafeContent = [
   {
     icon: 'mdi:umbrella-beach',
-    label: 'About Gusto',
+    label: 'About The Beach Eatery',
     text: `<p>We are a dog friendly cafe located in the South Curl Curl Surf Club. Situated directly above the golden sands of South Curl Curl beach. Gusto is a great place to stop in for a coffee and a bite to eat after the beach, a swim in the rock pool or a pit stop on your walk. Just up the hill is the beautiful board walk around South Curl Curl headland cliff top.</p>`,
   },
   {
@@ -61,7 +61,7 @@ const OurClubCafe = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
             <Typography variant="h3" component="h2">
-              Gusto On The Beach
+              The Beach Eatery
             </Typography>
             <Typography variant="body2">
               Located right on south curly beach: beautiful views, great food, awesome coffee and a relaxed vibe, with dogs of all kinds and the odd seagull, welcomed and encouraged!
@@ -81,7 +81,7 @@ const OurClubCafe = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2, maxWidth: '400px' }}>
-            <Markdown content={`<p>Follow us on Insta: <a target='_blank' rel='noopener noreffer' href="https://www.instagram.com/gusto_on_the_beach/">@gusto_on_the_beach</a></p>`} />
+            <Markdown content={`<p>Follow us on Insta: <a target='_blank' rel='noopener noreffer' href=" https://www.instagram.com/thebeacheatery/">@thebeacheatery</a></p>`} />
           </Stack>
         </Box>
       </Container>

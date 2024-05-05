@@ -36,17 +36,22 @@ const tenderContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'SCC Cafe RFP Process',
-    text: 'The Club is seeking proposals from parties who believe they have the necessary skills and experience to operate the facility for the benefit of the Surf Club, the local community and visitors to Curl Curl. All submissions have to be received via email no later than 5.00pm on Wednesday 27th March 2024.',
+    text: 'A rigorous assessment process for both non-price and price components resulted in a cohesive ranking of the proposals including benefits to the local community and SLSC club, with the shortlisted candidates being recommended to interview for final selection. The quality of the submissions was very strong and also provided us with current market insights including recommendations for improvement at such an iconic location as South Curl Curl beach.',
   },
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'The Opportunity To Be Awesome',
-    text: 'Over the past five years, from 2019 to 2023, the café has had a very healthy revenue turnover, further details can be found in the RFP document. The café is fully equipped and furnished. It offers both indoor and outdoor dining plus take-away food and drinks.',
+    label: 'Beach Eatery at South Curl Curl',
+    text: 'The successful management operators of the new Beach Eatery at South Curl Curl are Shahid & Anna Rahman. They are local business people with a range of experience (including ups and downs during COVID) and currently run the successful Fish Face Cafe in Balgowlah. We thank Lisa and Brendan, the previous managers, for their commitment to the SCC Cafe over the past years and wish them the best in their new endeavours.',
   },
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'Current SCC Cafe Operations',
-    text: 'Current trading hours are 6:30am – 2:30pm, however longer trading hours are welcome. The Club premises are located on Crown land and the Surf Club holds a new 20 year lease with Northern Beaches Council. If you are interested in responding please see the link below to download our RFP document.',
+    label: 'Commitment to the Community',
+    text: 'To demonstrate their commitment to the community, Shahid and his chef have been working preparing and serving food at the cafe this past week with the previous managers to help facilitate a smooth transition (including working at no charge as well as helping to purchase current stock). In addition, they have been working with current staff and offering them a position going forward.',
+  },
+  {
+    icon: 'mdi:flag-variant-outline',
+    label: 'A New Era Begins',
+    text: 'We are excited about the new Beach Eatery on South Curl Curl Beach with Shahid & Anna already talking to regulars and locals as well as SLSC club members about how they can best serve the community moving forward.  Please come down and support the SLS club and enjoy a coffee or a meal at South Curly.',
   },
 ];
 const HomeTender = () => {
@@ -56,12 +61,12 @@ const HomeTender = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
             <Typography variant="h3" component="h2">
-              SCC Cafe Request For Proposal
+              SCC Cafe RFP successfully completed.
             </Typography>
             <Typography variant="body2">
-              South Curl Curl SLSC is engaging the market to appoint a suitably qualified respondent to take over operations of the beach café at South Curl Curl. South Curl Curl Surf Life Saving Club
-              Incorporated is located at the southern end of Curl Curl Beach on Carrington Parade, Curl Curl. The café is an integral part of the Club, is busy year round and has been operating continuously for
-              20 years.
+              The SCC Cafe Request for Proposal was triggered from the previous cafe operator giving formal notice combined with new Northern Beaches council lease for the surf club. To ensure a formal fair and
+              equitable process was followed for the RFP, the club followed ICAC guidelines and received a great response with almost 30 interested parties and 21 formal submissions. Thank you to Manly Observer
+              for keeping the local community informed and getting the message out!
             </Typography>
           </Stack>
         </Box>
@@ -77,7 +82,7 @@ const HomeTender = () => {
           <Stack></Stack>
         </Stack>
         {/* <Stack spacing={2} direction="row" display="flex" alignItems="center"> */}
-        <Link sx={{ mr: 1 }} target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlCafeRFP-6March2024.pdf">
+        {/* <Link sx={{ mr: 1 }} target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlCafeRFP-6March2024.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC RFP Document
           </Button>
@@ -86,15 +91,12 @@ const HomeTender = () => {
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC RFP Q&A
           </Button>
-        </Link>
+        </Link> */}
         {/* </Stack> */}
 
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
-            <Typography variant="caption">
-              All communication including any further clarifications or requests for information must be via scc_cafe_rfp@southcurlcurlslsc.com.au. No direct contact is to be made with any South Curl Curl
-              Committee member, employee or contractor.
-            </Typography>
+            <Typography variant="caption">For any further clarifications plese email scc_cafe_rfp@southcurlcurlslsc.com.au.</Typography>
           </Stack>
         </Box>
       </Container>

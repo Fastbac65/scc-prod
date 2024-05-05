@@ -104,7 +104,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            🏊‍♀️🏊🏽South Curly Annual 2km Ocean Swim - Sunday 28th April, check it out, registration details below!! 🏊🏽🏊‍♀️
+            Another season comes to an end and our beaches are no longer patrolled. Stay safe!! 
           </Typography>
           {/* <PreloadImg /> */}
 

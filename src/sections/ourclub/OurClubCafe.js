@@ -37,12 +37,12 @@ const cafeContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'About The Beach Eatery',
-    text: `<p>We are a dog friendly cafe located in the South Curl Curl Surf Club. Situated directly above the golden sands of South Curl Curl beach. Gusto is a great place to stop in for a coffee and a bite to eat after the beach, a swim in the rock pool or a pit stop on your walk. Just up the hill is the beautiful board walk around South Curl Curl headland cliff top.</p>`,
+    text: `<p>We are a dog friendly cafe located in the South Curl Curl Surf Club. Situated directly above the golden sands of South Curl Curl beach. The Beach Eatery is a great place to stop in for a coffee and a bite to eat after the beach, a swim in the rock pool or a pit stop on your walk. Just up the hill is the beautiful board walk around South Curl Curl headland cliff top.</p>`,
   },
   {
     icon: 'mdi:umbrella-beach',
     label: 'Our Menu',
-    text: `<p>At Gusto we have a delicious menu to either dine in or takeaway. We have options available for vegetarians and vegans, and also a great range of gluten free items. Whether its a quick takeaway bacon and egg roll on the run or something more substantial to enjoy dine in with friends and family (or your furry companion) while enjoying our beautiful location.</p>`,
+    text: `<p>At Beach Eatery we have a delicious menu to either dine in or takeaway. We have options available for vegetarians and vegans, and also a great range of gluten free items. Whether its a quick takeaway bacon and egg roll on the run or something more substantial to enjoy dine in with friends and family (or your furry companion) while enjoying our beautiful location.</p>`,
   },
   {
     icon: 'mdi:umbrella-beach',

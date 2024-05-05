@@ -94,11 +94,11 @@ const HomeTender = () => {
         </Link> */}
         {/* </Stack> */}
 
-        <Box display="flex" justifyContent="center">
+        {/* <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
             <Typography variant="caption">For any further clarifications plese email scc_cafe_rfp@southcurlcurlslsc.com.au.</Typography>
           </Stack>
-        </Box>
+        </Box> */}
       </Container>
     </StyledRootResponsive>
   );

@@ -53,7 +53,7 @@ const OurClubLanding = () => {
             links={[
               { name: 'Home', href: '/' },
               { name: 'SRC/Bronze', href: '/ourclub/#srcbronze' },
-              { name: 'SCC Cafe-Beach Eatery', href: '/ourclub/#gustocafe' },
+              { name: 'SCC Cafe-Beach Eatery', href: '/ourclub/#beacheatery' },
               { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
             ]}
             // moreLink={[{ name: 'Payments and Donations', href: 'https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' }]}

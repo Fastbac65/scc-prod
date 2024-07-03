@@ -150,7 +150,7 @@ export default function HomeLanding(props) {
               </Link>
               <Link component={NextLink} href="/ourclub">
                 <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-                  SCC Sponsorship
+                  Sponsor South Curly
                 </Button>
               </Link>
             </Stack>

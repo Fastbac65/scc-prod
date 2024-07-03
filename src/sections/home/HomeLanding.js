@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 
 import Carousel from 'react-material-ui-carousel';
 import { CardMedia, Box, Typography, Container, Stack, Link, Button } from '@mui/material';
@@ -104,7 +105,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            Another season comes to an end and our beaches are no longer patrolled. Stay safe!! 
+            Another season comes to an end and our beaches are no longer patrolled. Stay safe!!
           </Typography>
           {/* <PreloadImg /> */}
 
@@ -141,11 +142,18 @@ export default function HomeLanding(props) {
             </Typography>
           </Box>
           <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ pt: 2 }}>
-            <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
-              <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-                Payments & Donations
-              </Button>
-            </Link>
+            <Stack direction="row" spacing={1}>
+              <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+                <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+                  Payments & Donations
+                </Button>
+              </Link>
+              <Link component={NextLink} href="/ourclub">
+                <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+                  SCC Sponsorship
+                </Button>
+              </Link>
+            </Stack>
             <Typography sx={{ pt: 2 }}>South Curl Curl Socials</Typography>
             <Stack direction="row" spacing={1}>
               <Link target="_blank" rel="noopener" href="https://www.facebook.com/groups/2409768001/">

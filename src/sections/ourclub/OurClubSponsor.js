@@ -44,7 +44,7 @@ const OurClubSponsor = () => {
             <Typography variant="body2">
               It takes a lot of support and funding to run a busy surf life saving club. Through our members, the club is committed to maintaining the spirit of Surf Life-Saving via promotion of beach safety,
               member competency in the beach / surf environment, surf sports competition and surf lifesaving education in the community. Rescue gear and equipment represents the greatest single cost to running
-              a surf lifesaving Club. If you would like to support South Curl Curl SLSC through sponsorship please download our sponsorship document below!
+              a surf lifesaving Club. If you would like to support South Curl Curl SLSC through sponsorship please view & download our sponsorship document below!
             </Typography>
           </Stack>
         </Box>
@@ -59,7 +59,7 @@ const OurClubSponsor = () => {
 
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
-            <Typography variant="caption">For any further clarifications plese email sponsorship@southcurlcurlslsc.com.au.</Typography>
+            <Typography variant="caption">For any further clarifications plese email sponsorship@southcurlcurlslsc.com.au</Typography>
           </Stack>
         </Box>
       </Container>

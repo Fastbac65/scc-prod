@@ -57,6 +57,9 @@ const membershipContent = [
 const OurClubMembership = () => {
   return (
     <StyledRootResponsive>
+      <div style={{ position: 'relative' }}>
+        <div id="membership" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>

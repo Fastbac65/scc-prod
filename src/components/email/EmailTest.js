@@ -38,7 +38,7 @@ export const EmailTest = ({ name, email, link, booking }) => {
           {/* <Text style={text}>If you didn&apos;t initwant to change your password or didn&apos;t request this, just ignore and delete this message.</Text> */}
 
           <Text style={text}>
-            We will be in touch shortly to finalise everything. Have a great day!,
+            We will be in touch shortly to finalise everything. Have a great day!
             <br />
             The South Curly Venue Management team
           </Text>
@@ -49,7 +49,7 @@ export const EmailTest = ({ name, email, link, booking }) => {
           <Hr style={hr} />
           <Text style={subtext}>
             This email was originally sent to {email}.<br />
-            If you need update your details please reach us at caretaker@southcurlcurlslsc.com.au or 0432066292
+            If you need update your details please reach us at scccaretaker@gmail.com or 0432066292
           </Text>
         </Section>
       </Container>

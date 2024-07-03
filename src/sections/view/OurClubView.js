@@ -2,7 +2,7 @@
 import RecentPosts from '../posts/RecentPosts';
 import OurClubLanding from '../ourclub/OurClubLanding';
 import OurClubMembership from '../ourclub/OurClubMembership';
-// import OurClubTest from '../ourclub/OurClubTest';
+import OurClubSponsor from '../ourclub/OurClubSponsor';
 import OurClubCommitee from '../ourclub/OurClubCommittee';
 import OurClubCafe from '../ourclub/OurClubCafe';
 import OurClubTraining from '../ourclub/OurClubTraining';
@@ -12,6 +12,7 @@ export default function OurClubView({ staticPosts }) {
   return (
     <>
       <OurClubLanding />
+      <OurClubSponsor />
       <OurClubMembership />
       <OurClubTraining />
       <OurClubCafe />

@@ -11,7 +11,7 @@ export default function HomeView({ staticPosts }) {
   return (
     <>
       <HomeLanding />
-      <HomeTender />
+      {/* <HomeTender /> */}
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
       <HomeMembership />
       <Posts staticPosts={staticPosts.slice(6)} />

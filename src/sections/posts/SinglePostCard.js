@@ -144,7 +144,8 @@ function SinglePostCard({ user, doc, setOpen, setCurrentImageIndex, setImages, m
           }
           action={<PostOptions postDoc={doc} />}
           title={doc.data?.title}
-          subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
+          subheader={doc.data?.subtitle}
+          // subheader={(author?.data?.profileName || author?.data?.displayName || doc.data?.uName) + ', ' + doc.data?.subtitle}
         />
         <ImageList
           gap={1}

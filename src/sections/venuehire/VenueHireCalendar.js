@@ -47,8 +47,8 @@ const VenueHireCalendar = () => {
       setBooking(!booking);
       // } else if (event.target.labels[0].innerText.includes('Patrol')) {
       //   setPatrolTraining(!patrolTraining);
-    } else if (event.target.labels[0].innerText.includes('Venue')) {
-      setSocial(!social);
+      // } else if (event.target.labels[0].innerText.includes('Venue')) {
+      //   setSocial(!social);
     }
 
     event.target = null;

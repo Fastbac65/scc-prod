@@ -36,7 +36,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const patrolInfoContent = [
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'Season First Patrol Sept 23rd',
+    label: 'Season First Patrol Sept 28th',
     text: `<p>All active members are required to be rostered onto patrol duty throughout the season on a rotational basis usually one day per month, which equates to 5-6 half day patrols per season. Due to the strength of our patrolling membership and our patrol hours, this is one of the lightest patrolling commitments across the Sydney Northern Beaches Branch.</p>`,
   },
   {
@@ -63,7 +63,7 @@ const PatrolInformation = () => {
             <Typography variant="h3" component="h2">
               SCC Patrol
             </Typography>
-            <Typography variant="body2">Our favourite time of year is here again. South Curly beach patrol season has started.</Typography>
+            <Typography variant="body2">Our favourite time of year is almost here again. South Curly beach patrol season is almost upon us.</Typography>
           </Stack>
         </Box>
 

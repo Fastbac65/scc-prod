@@ -1,6 +1,6 @@
 import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled } from '@mui/material';
 import { useState } from 'react';
-import CalendarVenueHire2 from './CalendarVenueHire';
+import CalendarVenueHire from './CalendarVenueHire';
 import { bgGradient } from 'src/lib/cssStyles';
 import useResponsive from 'src/hooks/useResponsive';
 
@@ -75,15 +75,15 @@ const VenueHireCalendar = () => {
                     Filter
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="SCC Events" />
+                  {/* <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" /> */}
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="warning" />} label="Venue Bookings" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>
             )}
             <Box sx={{ flexGrow: 1 }}>
               {/* margin seems to fix scroll issue on mobile */}
-              <CalendarVenueHire2
+              <CalendarVenueHire
                 holidays={holidays}
                 booking={booking}
                 // patrolTraining={patrolTraining}

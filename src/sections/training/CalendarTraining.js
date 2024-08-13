@@ -13,8 +13,7 @@ import { useSettingsContext } from 'src/components/settings';
 
 export const getCalendarEvents = (googleCalColors) => async (info, successCallback, failureCallback) => {
   const googleCalIds = [
-    '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com',
-    'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com',
+    'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com',
     '49f89ba0be1b94707fe1601fb913799dd5160f3a95ab401c864060264516c081@group.calendar.google.com', // training gcal
   ];
 
@@ -74,7 +73,7 @@ const CalendarTraining = ({ holidays, training }) => {
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
-  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.info.main}`, `${theme.palette.error.main}`];
+  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.error.main}`];
   // to stop FC rerendering and re-fetching events everytime a state change occurs on the page
   const memoizeGetCalendarEvents = useMemo(() => {
     return getCalendarEvents(googleCalColors);
@@ -83,19 +82,13 @@ const CalendarTraining = ({ holidays, training }) => {
   useEffect(() => {
     if (!holidays) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
-          event.setProp('display', 'none');
-        }
-        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+        if (event?.extendedProps?.creator?.email === 'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (holidays) {
       allEvents.current.forEach((event) => {
-        if (event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
-          event.setProp('display', 'auto');
-        }
-        if (event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+        if (event?.extendedProps?.creator?.email === 'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com') {
           event.setProp('display', 'auto');
         }
       });
@@ -164,10 +157,7 @@ const CalendarTraining = ({ holidays, training }) => {
   const handleEventDidMount = (calEventInfo) => {
     if (!holidays) {
       // if (calEventInfo?.borderColor === `${theme.palette.info.main}`) {
-      if (calEventInfo.event?.extendedProps?.creator?.email === '9p7plr8ugunp5eaj57krb1rcaco2fhnh@import.calendar.google.com') {
-        calEventInfo.event.setProp('display', 'none');
-      }
-      if (calEventInfo.event?.extendedProps?.creator?.email === 'o2lpae7ahjt1fjsielmk8535usqrr781@import.calendar.google.com') {
+      if (calEventInfo.event?.extendedProps?.creator?.email === 'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com') {
         calEventInfo.event.setProp('display', 'none');
       }
     }

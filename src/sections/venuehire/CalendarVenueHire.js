@@ -104,14 +104,12 @@ const CalendarVenueHire2 = ({ holidays, booking, social }) => {
     if (!booking) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.warning.main}`) {
-          // if (event?.extendedProps?.creator?.email === 'scccaretaker@gmail.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (booking) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.warning.main}`) {
-          // if (event?.extendedProps?.creator?.email === 'scccaretaker@gmail.com') {
           event.setProp('display', 'auto');
         }
       });

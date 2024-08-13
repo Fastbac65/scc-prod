@@ -105,7 +105,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            Another season comes to an end and our beaches are no longer patrolled. Stay safe!!
+            2024 season at South Curl Curl is almost upon us.. 28th Sept is first patrol, new memberships are open!!
           </Typography>
           {/* <PreloadImg /> */}
 

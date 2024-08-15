@@ -43,18 +43,18 @@ const ourclubTrainingContent = [
   },
   {
     icon: 'grommet-icons:swim',
-    label: 'Bronze Medallion - New Members $380',
-    text: `<p>New South Curly member to the club, the BM course fee is $310 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. An active club Membership fee of $70 is also required.`,
+    label: 'Bronze Medallion - New Members $400',
+    text: `<p>New South Curly member to the club, the BM course fee is $310 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. An active club Membership fee of $90 is also required.`,
   },
   {
     icon: 'grommet-icons:swim',
-    label: 'Bronze Medallion - Nipper Parent/Associate Member $290',
-    text: `<p>Nippers parents and associate members, upgrade your skills to Bronze Medallion and qualify to assist with water safety for our Nippers. The BM course fee is $220 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. An active club Membership fee of $70 is also required.</p>`,
+    label: 'Bronze Medallion - Nipper Parent/Associate Member $310',
+    text: `<p>Nippers parents and associate members, upgrade your skills to Bronze Medallion and qualify to assist with water safety for our Nippers. The BM course fee is $220 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. An active club Membership fee of $90 is also required.</p>`,
   },
   {
     icon: 'grommet-icons:swim',
     label: 'Bronze Medallion - Existing SRC $100',
-    text: `<p>A current SRC upgrading to the Bronze the BM course fee is only $70 - includes Bronze Medallion Certification, First aid certification and Advanced Resuscitation Certificate. A club SRC Membership fee of $30 is also required</p>`,
+    text: `<p>A current SRC upgrading to the Bronze medallion. This fee includes membership and the Bronze Medallion Certification, First aid certification and Advanced Resuscitation Certificate.</p>`,
   },
 ];
 const OurClubTraining = () => {

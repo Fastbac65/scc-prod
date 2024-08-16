@@ -48,8 +48,8 @@ const ourclubTrainingContent = [
   },
   {
     icon: 'grommet-icons:swim',
-    label: 'Bronze Medallion - Nipper Parent/Associate Member $310',
-    text: `<p>Nippers parents and associate members, upgrade your skills to Bronze Medallion and qualify to assist with water safety for our Nippers. The BM course fee is $220 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. An active club Membership fee of $90 is also required.</p>`,
+    label: 'Bronze Medallion - Nipper Parent/Associate Member $220',
+    text: `<p>Nippers parents and associate members, upgrade your skills to Bronze Medallion and qualify to assist with water safety for our Nippers. The BM course fee is $220 - includes Hi-Vis Rashie, skull cap, Bronze Medallion Certification, First aid certification, Advanced Resuscitation Certificate and patrol uniform. Club Membership fee of $50 is also required.</p>`,
   },
   {
     icon: 'grommet-icons:swim',

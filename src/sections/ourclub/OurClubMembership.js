@@ -36,7 +36,7 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'Membership Renewal',
-    text: `<p>Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadet (u18) $30 and Family Membership $250. Family membership covers parents/guardians plus kids under 18.</p>`,
+    text: `<p>Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadet (u18) $50 and Family Membership $275. Family membership covers parents/guardians plus kids under 18.</p>`,
   },
   {
     icon: 'tdesign:member',

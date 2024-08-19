@@ -46,7 +46,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Deputy President</td>
-			<td>Dave Alldis</td>
+			<td>Scott Stein</td>
 			<td><a href="mailto:Deputypresident@southcurlcurlslsc.com.au">Deputypresident@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -61,23 +61,28 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Club Captain</td>
-			<td>Kevin Moffat</td>
+			<td>Trent Rogers</td>
 			<td><a href="mailto:Captain@southcurlcurlslsc.com.au">Captain@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Nippers President</td>
-			<td>Steve Rudd</td>
+			<td>Rachael Gaynes</td>
 			<td><a href="mailto:Nippers@southcurlcurlslsc.com.au">Nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Patrol Supervisor</td>
-			<td>TBD</td>
+			<td>Luca Stein</td>
 			<td><a href="mailto:PatrolSup@southcurlcurlslsc.com.au">PatrolSup@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Chief Instructor</td>
 			<td>Natalie Neary</td>
 			<td><a href="mailto:Chiefinstructor@southcurlcurlslsc.com.au">Chiefinstructor@southcurlcurlslsc.com.au</a></td>
+		</tr>
+			<tr>
+			<td>Competitions</td>
+			<td>Michela Verwey</td>
+			<td><a href="mailto:Boatcaptain@southcurlcurlslsc.com.au">Competition@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Boat Captain 1</td>
@@ -126,7 +131,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Cadets</td>
-			<td>Saul Carroll</td>
+			<td>Trish Byrne & Amanda Cannon</td>
 			<td><a href="mailto:Cadets@southcurlcurlslsc.com.au">Cadets@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -146,7 +151,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Gear Steward</td>
-			<td>Steve Birch</td>
+			<td>Nick Careless</td>
 			<td><a href="mailto:Gear@southcurlcurlslsc.com.au">Gear@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -156,12 +161,12 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Tour Manager</td>
-			<td>Michelle Lowery</td>
+			<td>Lara Campbell</td>
 			<td><a href="mailto:TourManager@southcurlcurlslsc.com.au">TourManager@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Complaints or Grievances</td>
-			<td>Jenny Drury</td>
+			<td>Michela Verwey</td>
 			<td><a href="mailto:Complaints@southcurlcurlslsc.com.au">Complaints@southcurlcurlslsc.com.au</a></td>
 		</tr>
 	</tbody>

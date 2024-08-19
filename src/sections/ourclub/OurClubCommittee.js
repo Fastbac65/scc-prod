@@ -194,7 +194,7 @@ const OurClubCommitee = () => {
               South Curl Curl Committee
             </Typography>
             <Typography variant="body2">
-              A massive Thank You to all our volunteer South Curl Curl SLSC Committee members. SCC SLSC is a volunteer organisation with a large member base and we could not exit without the amazing hard work
+              A massive Thank You to all our volunteer South Curl Curl SLSC Committee members. SCC SLSC is a volunteer organisation with a large member base and we could not exist without the amazing hard work
               put in by all involved in running the club
             </Typography>
           </Stack>

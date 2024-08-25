@@ -78,7 +78,7 @@ const CompetitorsCalendar = () => {
             </Box>
           </Box>
           <Box>
-            <Typography>If you would like to add an event to the SCC competitive calendar please contact competition@slsc</Typography>
+            <Typography>If you would like to add an event to the SCC competitive calendar please contact competition@southcurlcurlslsc.com.au</Typography>
           </Box>
         </Container>
       </Styled2ndLayer>

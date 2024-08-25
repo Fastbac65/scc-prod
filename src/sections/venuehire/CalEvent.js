@@ -1,5 +1,6 @@
 import { Box, Button, DialogActions, DialogContent, DialogContentText, Grid, Stack } from '@mui/material';
 import { CalendarMonth, Circle, Description, Place } from '@mui/icons-material';
+import Markdown from 'src/components/markdown/Markdown';
 import { fDateTime } from 'src/lib/formatTime';
 import { useRouter } from 'next/router';
 import { useSettingsContext } from 'src/components/settings';
@@ -13,30 +14,32 @@ const CalEvent = ({ eventInfo }) => {
     state: { modal },
   } = useSettingsContext();
 
-  if (eventInfo?.extendedProps?.description) {
-    var description = [];
-    var atag = '<a></a>'; // initialise to something
-    if (eventInfo.extendedProps.description.includes('</a>')) {
-      atag = '<a' + eventInfo.extendedProps.description.split('<a')[1].split('</a>')[0] + '</a>';
-    }
-    var descriptionFormatted = eventInfo.extendedProps.description.split(atag);
-    var newstring = '';
-    descriptionFormatted.forEach((str) => {
-      newstring = newstring + str;
-    });
-    if (newstring.includes('</a>')) {
-      //  another bloody atag
-      var atag2 = '<a></a>'; // initialise to something
-      atag2 = '<a' + newstring.split('<a')[1].split('</a>')[0] + '</a>';
-      descriptionFormatted = newstring.split(atag2);
-      newstring = '';
-      descriptionFormatted.forEach((str) => {
-        newstring = newstring + str;
-      });
-    }
+  // if (eventInfo?.extendedProps?.description) {
+  //   console.log(eventInfo?.extendedProps?.description);
+  //   var description = [];
+  //   var atag = '<a></a>'; // initialise to something
+  //   if (eventInfo.extendedProps.description.includes('</a>')) {
+  //     atag = '<a' + eventInfo.extendedProps.description.split('<a')[1].split('</a>')[0] + '</a>';
+  //   }
+  //   var descriptionFormatted = eventInfo.extendedProps.description.split(atag);
+  //   var newstring = '';
+  //   descriptionFormatted.forEach((str) => {
+  //     newstring = newstring + str;
+  //   });
+  //   if (newstring.includes('</a>')) {
+  //     //  another bloody atag
+  //     var atag2 = '<a></a>'; // initialise to something
+  //     atag2 = '<a' + newstring.split('<a')[1].split('</a>')[0] + '</a>';
+  //     descriptionFormatted = newstring.split(atag2);
+  //     newstring = '';
+  //     descriptionFormatted.forEach((str) => {
+  //       newstring = newstring + str;
+  //     });
+  //   }
 
-    description = newstring.split('<br>');
-  }
+  //   description = eventInfo.extendedProps.description.split('<br>');
+  //   // description = newstring.split('<br>');
+  // }
   var startEnd;
   if (!eventInfo.allDay) {
     if (eventInfo.end) {
@@ -96,11 +99,7 @@ const CalEvent = ({ eventInfo }) => {
                   </DialogContentText>
                 </Grid>
                 <Grid item xs={11}>
-                  {description.map((line, indx) => (
-                    <DialogContentText variant="body2" key={indx}>
-                      {line}
-                    </DialogContentText>
-                  ))}
+                  <Markdown content={eventInfo.extendedProps.description} />
                 </Grid>
               </>
             )}

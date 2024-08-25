@@ -30,17 +30,17 @@ const Styled2ndLayer = styled('div')(({ theme }) => ({
 const CompetitorsCalendar = () => {
   const theme = useTheme();
   const [holidays, setHolidays] = useState(true);
-  const [comps, setPatrol] = useState(true);
+  const [comps, setComps] = useState(true);
   const isSmUp = useResponsive('up', 'sm');
 
   const handleChange = (event) => {
     if (event.target.labels[0].innerText.includes('View')) {
       setHolidays(true);
-      setPatrol(true);
+      setComps(true);
     } else if (event.target.labels[0].innerText.includes('NSW')) {
       setHolidays(!holidays);
     } else if (event.target.labels[0].innerText.includes('Comps')) {
-      setPatrol(!comps);
+      setComps(!comps);
     }
     event.target = null;
   };

@@ -64,7 +64,7 @@ const NippersIntro = () => {
               Welcome to Nippers 2024/25
             </Typography>
             <Typography variant="body2">
-              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2023/2024 season. So what is South Curly
+              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2024/2025 season. So what is South Curly
               Nippers all about?
             </Typography>
           </Stack>

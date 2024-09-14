@@ -72,7 +72,6 @@ const CompetitorsCalendar = () => {
               </Box>
             )}
             <Box sx={{ flexGrow: 1 }}>
-              {/* {' '} */}
               {/* margin seems to fix scroll issue on mobile */}
               <CalendarCompetitors holidays={holidays} comps={comps} />
             </Box>

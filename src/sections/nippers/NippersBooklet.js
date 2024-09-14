@@ -87,17 +87,12 @@ const NippersBooklet = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2 }}>
             <Typography variant="body2">
-              Details on Nippers SurfEd programs, Nippers calendar for 2023/2024, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in the
+              Details on Nippers SurfEd programs, Nippers calendar for 2024/2025, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in the
               Nippers Information Booklet
             </Typography>
           </Stack>
         </Box>
-        <Link
-          target="_blank"
-          rel="noopener"
-          // href="https://file-assets.teamapp.com/uploads/files/45a9c1ca-6ab1-4412-a847-38fe7c1b4ed9?Expires=1696118399&Signature=c1fVPY~E78qiYqGur5bON17FOQeHNGJLJH~VaDJXD5BOp0wGfSpuZgKpynX2Idq4OpoPvNk8pEa6ROjS47forIqZzmfHXMLSbRBklOrr4RIT6tF1I5n3Jcdl1ByNPMi728R55SsphzdKv~PC6ANoHP1l~2FxPz6NY~K6P8C5n~i8Oy-JO-qVCHMsqEWc8og6nn9wpnTP3aTanq2lUFZFew1zLm8e4Ih8atS6I2D4vNS4cvm5p7I6ML4XIq160mXeJbBq~IEUX9KSK-t-Agu0h4PXE3yka-AZ~VkFKC0WiKKMKY9OvpcAw0QNfY9~V8FZh3pGuUW4aurCn7vsfVh5WQ__&Key-Pair-Id=APKAJFZWFRGCAFJEEKOA"
-          href="https://southcurlcurlslsc.com.au/assets/docs/nippersbook23-24.pdf"
-        >
+        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCCNippersInfoBooklet2024-25.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC Nippers Information Booklet
           </Button>

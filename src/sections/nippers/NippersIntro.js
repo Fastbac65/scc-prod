@@ -61,7 +61,7 @@ const NippersIntro = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3" component="h2">
-              Welcome to Nippers 2023/24
+              Welcome to Nippers 2024/25
             </Typography>
             <Typography variant="body2">
               South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2023/2024 season. So what is South Curly

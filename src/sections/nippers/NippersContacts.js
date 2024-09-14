@@ -48,7 +48,7 @@ const nippersContactsContent = [
 	<tbody>
 		<tr>
 			<td>Junior Activity Chair</td>
-			<td>Steve Rudd</td>
+			<td>Rachael Gaynes</td>
 			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>

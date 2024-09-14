@@ -97,64 +97,9 @@ const nippersContactsContent = [
 			<td>&nbsp;<a href="mailto:social@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">social@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
-			<td>U6 Age Managers</td>
-			<td>&nbsp;</td>
-			<td>&quot;Under 6s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U7 Age Managers</td>
-			<td>&nbsp;</td>
-			<td>&quot;Under 7s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U8 Age Managers</td>
-			<td>Rachael Gaynes; Charley Bailey</td>
-			<td>&quot;Under 8s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U9 Age Managers</td>
-			<td>Serena White; Paul White; Ben Humel; Danielle van Dijk; James Crozier; Marcus Babajews; John Maddalena; Doug Mears</td>
-			<td>&quot;Under 9s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U10 Age Managers</td>
-			<td>Chris Coroneos; Damon Ashton; Lauren Gleeson</td>
-			<td>&quot;Under 10s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U11 Age Managers</td>
-			<td>Tracey Watts; Rachael Gaynes; Serena White; Colette Woodliffe</td>
-			<td>&quot;Under 11s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U12 Age Managers</td>
-			<td>Andrew Firth; Marcus Babajews; Graham Bucknell; Stuart Barnes; Phil Callum</td>
-			<td>&quot;Under 12s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U13 Age Managers</td>
-			<td>Steve Rudd; Cameron Garland; Frank Tol</td>
-			<td>&quot;Under 13s-2023/2024&quot;</td>
-		</tr>
-		<tr>
-			<td>U14 &ndash; The SRC Squad</td>
-			<td>Luca Stein, Zara Howes & Sue Hanley; supported by Guy Waddilove</td>
-			<td>&quot;Under 14s-2023/2024-SRC SQUAD&quot;</td>
-		</tr>
-		<tr>
 			<td>&lsquo;Rippers&rsquo;: Additional Needs Nippers</td>
 			<td>Kirsten Quinn, Gordon Carroll</td>
 			<td>&quot;Rippers-Special Needs Group&quot;</td>
-		</tr>
-		<tr>
-			<td>Age Managers</td>
-			<td>&nbsp;</td>
-			<td>&quot;Age Managers&quot;</td>
-		</tr>
-		<tr>
-			<td>Age Manager Coach</td>
-			<td>Jordi Skelton</td>
-			<td>&nbsp;</td>
 		</tr>
 	</tbody>
 </table>

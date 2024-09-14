@@ -68,7 +68,7 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>Water Safety Supervisor</td>
-			<td>Bernard Blanchfield</td>
+			<td>Bennet Waller</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>

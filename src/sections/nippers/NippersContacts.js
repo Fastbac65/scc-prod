@@ -53,7 +53,7 @@ const nippersContactsContent = [
 		</tr>
 		<tr>
 			<td>Junior Activity Deputy</td>
-			<td>TBA</td>
+			<td>Charley Bailey</td>
 			<td><a href="mailto:president@southcurlcurlslsc.com.au" rel="noopener noreferrer" target="_blank">nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>

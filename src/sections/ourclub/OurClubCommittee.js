@@ -131,7 +131,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Cadets</td>
-			<td>Trish Byrne & Amanda Cannon</td>
+			<td>Amanda Cannon</td>
 			<td><a href="mailto:Cadets@southcurlcurlslsc.com.au">Cadets@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>

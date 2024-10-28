@@ -51,7 +51,7 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'New Member & Nipper Registration',
-    text: `<p>Create a new account for each member at SLS members portal below. Within members portal, click on $ menu top right, select South Curl Curl and 'Pay Online' to pay your membership fee. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
+    text: `<p>Use 'Join South Curly' button below to 'Join A Club' and setup online SLS accounts for you and/or your family and make the appropriate payment. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
   },
 ];
 const OurClubMembership = () => {
@@ -72,7 +72,6 @@ const OurClubMembership = () => {
             </Typography>
           </Stack>
         </Box>
-
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 3fr' }}>
           <Stack></Stack>
           <Stack>
@@ -83,11 +82,19 @@ const OurClubMembership = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">
-          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-            SLS Members Portal
-          </Button>
-        </Link>
+        <Stack spacing={1} direction="row" justifyContent="center">
+          <Link target="_blank" rel="noopener" href="https://www.surflifesaving.com.au/join/">
+            {/* <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_MembersOnline/public/join/member-join"> */}
+            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+              Join South Curly
+            </Button>
+          </Link>
+          <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">
+            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+              Members Renewal
+            </Button>
+          </Link>
+        </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
             <Typography variant="caption">If you experience difficulties in setting up an online account or renewal, please email the club at mail@southcurlcurlslsc.org.</Typography>

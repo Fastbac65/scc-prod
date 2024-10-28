@@ -1,6 +1,7 @@
 import { Box, Typography, Stack, styled, alpha, Container, Button, Link } from '@mui/material';
 // components
 import Iconify from 'src/components/iconify/Iconify';
+import Markdown from 'src/components/markdown/Markdown';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
@@ -33,29 +34,32 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 const membershipContent = [
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'tdesign:member',
     label: 'Membership Renewal',
-    text: 'Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadel (u18) $50 and Family Membership $275.',
+    text: `<p>Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadet (u18) $50 and Family Membership $275. Family membership covers parents/guardians plus kids under 18.</p>`,
   },
   {
-    icon: 'mdi:flag-variant-outline',
-    label: 'Nippers & Nippers Parents Renewal',
-    text: 'Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details',
+    icon: 'tdesign:member',
+    label: 'Nippers & Nipper Parents Renewal',
+    text: `<p>Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details</p>`,
   },
   // {
-  //   icon: 'mdi:flag-variant-outline',
+  //   icon: 'tdesign:member',
   //   label: 'New members Welcome',
   //   text: 'South Curl Curl Surf Life Saving Club welcomes new membership enquiries from all-comers regardless of age and skill levels. Training is available in all facets of surf life saving and members are encouraged to obtain the various life saving qualifications. Registration',
   // },
   {
-    icon: 'mdi:flag-variant-outline',
+    icon: 'tdesign:member',
     label: 'New Member & Nipper Registration',
-    text: 'Create a new account for each member at SLS members portal below. Within members portal, pay your membership fee. Email mail@southcurlcurlslsc.org ID for each new member (e.g. Passport or Birth Certificate).',
+    text: `<p>Use 'Join South Curly' button below to 'Join A Club' and setup online SLS accounts for you and/or your family and make the appropriate payment. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
   },
 ];
 const HomeMembership = () => {
   return (
     <StyledRootResponsive>
+      <div style={{ position: 'relative' }}>
+        <div id="membership" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
@@ -68,7 +72,6 @@ const HomeMembership = () => {
             </Typography>
           </Stack>
         </Box>
-
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '1fr 3fr' }}>
           <Stack></Stack>
           <Stack>
@@ -79,11 +82,19 @@ const HomeMembership = () => {
             </Stack>
           </Stack>
         </Stack>
-        <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">
-          <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-            SLS Members Portal
-          </Button>
-        </Link>
+        <Stack spacing={1} direction="row" justifyContent="center">
+          <Link target="_blank" rel="noopener" href="https://www.surflifesaving.com.au/join/">
+            {/* <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_MembersOnline/public/join/member-join"> */}
+            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+              Join South Curly
+            </Button>
+          </Link>
+          <Link target="_blank" rel="noopener" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">
+            <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+              Members Renewal
+            </Button>
+          </Link>
+        </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
             <Typography variant="caption">If you experience difficulties in setting up an online account or renewal, please email the club at mail@southcurlcurlslsc.org.</Typography>
@@ -103,9 +114,10 @@ function OverviewItem({ icon, label, text = '-' }) {
       </Box>
       <Stack spacing={0.5}>
         <Typography>{label}</Typography>
-        <Typography color="text.secondary" variant="body2">
+        <Markdown content={text} />
+        {/* <Typography color="text.secondary" variant="body2">
           {text}
-        </Typography>
+        </Typography> */}
       </Stack>
     </Stack>
   );

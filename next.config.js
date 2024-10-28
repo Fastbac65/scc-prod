@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'southcurlcurlslsc.org',
+        hostname: 'southcurlcurlslsc.com.au',
         port: '',
       },
     ],

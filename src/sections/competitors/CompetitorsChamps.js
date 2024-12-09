@@ -54,8 +54,7 @@ const champsContent = [
     <li>Resuscitation 40 points - Part A: A live patient assessment including lateral position (20 points maximum), Part B: One person CPR on a manikin (20 points maximum)
     </ul>
 </li>
-    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact:
-    Bill Yeates (Theory and Resus Coach): +61 432 667 314 or Peter Yeates (Physical Coach): +61 408 657 739</p>`,
+    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact: Ben Humel, CLS Head Coach mobile:0419 446 864, Valery Burke, CLS Team Mgr  mobile:0431 905 095.</p>`,
   },
   {
     icon: 'mdi:run',

@@ -94,8 +94,8 @@ Can be downloaded <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto
 <td>The minutes of the 100th AGM can be <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-Minutes-100th-AGM-2018.pdf?alt=media&token=d0a63468-4bd4-4802-8a97-8a27ecc90d7f" target="_blank" rel="noopener noreferrer">downloaded here</a>.</td>
 </tr>
 <tr>
+<td>Prior AGMs</td>
 <td>All documents prior to the 100th AGM</td>
-<td></td>
 <td>Can be found <a href="https://drive.google.com/drive/folders/10Ne-gBkj1CihhrVMWG9H2omw_lpqVdAi" target="_blank" rel="noopener noreferrer">downloaded here</a></td>
 </tr>
 </tbody>

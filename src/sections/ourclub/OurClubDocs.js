@@ -44,7 +44,7 @@ const ourDocs = [
 <tr>
 <td>SCC Club Constitution</td>
 <td>SCC SLSC Club Constitution Adopted 7 August 2022</td>
-<td>The club constitution can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-Annual-Report-2022-Complete-Compressed.pdf?alt=media&token=1dcccc1d-8f73-41ca-8035-4c1605eb819c" target="_blank" rel="noopener">here</a></td>
+<td>The club constitution can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-SLSC-Club-Constitution-Adopted-7-08-2022.pdf?alt=media&token=597000bd-06b5-48c3-aeb3-3c8ab76e7730" target="_blank" rel="noopener">here</a></td>
 </tr>
 <tr>
 <td>SCC Club By-Laws</td>

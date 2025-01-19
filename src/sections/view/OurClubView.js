@@ -5,6 +5,7 @@ import OurClubMembership from '../ourclub/OurClubMembership';
 import OurClubSponsor from '../ourclub/OurClubSponsor';
 import OurClubCommitee from '../ourclub/OurClubCommittee';
 import OurClubDocs from '../ourclub/OurClubDocs';
+import OurClubLifeMembers from '../ourclub/OurClubLifeMembers';
 import OurClubCafe from '../ourclub/OurClubCafe';
 import OurClubTraining from '../ourclub/OurClubTraining';
 // ----------------------------------------------------------------------
@@ -19,6 +20,7 @@ export default function OurClubView({ staticPosts }) {
       <OurClubCafe />
       <OurClubCommitee />
       <OurClubDocs />
+      <OurClubLifeMembers />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />
     </>
   );

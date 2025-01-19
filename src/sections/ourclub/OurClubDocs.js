@@ -96,7 +96,7 @@ Can be downloaded <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto
 <tr>
 <td>Prior AGMs</td>
 <td>All documents prior to the 100th AGM</td>
-<td>Can be found <a href="https://drive.google.com/drive/folders/10Ne-gBkj1CihhrVMWG9H2omw_lpqVdAi" target="_blank" rel="noopener noreferrer">downloaded here</a></td>
+<td>Can be downloaded<a href="https://drive.google.com/drive/folders/10Ne-gBkj1CihhrVMWG9H2omw_lpqVdAi" target="_blank" rel="noopener noreferrer"> here</a></td>
 </tr>
 </tbody>
 </table>`,

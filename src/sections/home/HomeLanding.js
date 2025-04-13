@@ -166,7 +166,7 @@ export default function HomeLanding(props) {
                   Boaties
                 </Button>
               </Link>
-              <Link target="_blank" rel="noopener" href="https://www.instagram.com/scchampionlifesavers/">
+              <Link target="_blank" rel="noopener" href="https://www.instagram.com/sccchampionlifesavers/">
                 <Button size="small" sx={{ borderRadius: 25 }} color="secondary" variant="contained" startIcon={<Iconify icon="mdi:instagram" />}>
                   Champs
                 </Button>

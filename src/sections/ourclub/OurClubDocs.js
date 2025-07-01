@@ -61,6 +61,17 @@ const ourDocs = [
 <td>The history of South Curly as captured in our 50th anniversary year.</td>
 <td>A scanned image of the book can be found <a href="The-History-of-South-Curl-Curl-Surf-Life-Saving-Club-1918-1968.pdf" target="_blank" rel="noopener noreferrer">here</a> .</td>
 </tr><tr>
+<td>2024 Annual General Meeting (AGM)</td>
+<td>The 106th Annual General Meeting was held at 10:00am, on Sunday 4th August 2024.</td>
+<td>The 2024 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC%20Annual%20Report%20Season%202324%20Final%20Print.pdf?alt=media&token=19dff873-33f8-4b84-9a70-f2f4a1959d50" target="_blank" rel="noopener">here</a></td>
+</tr>
+<tr>
+<td>2023 Annual General Meeting (AGM)</td>
+<td>The 105th Annual General Meeting was held at 10:00am, on Sunday 6th August 2023.</td>
+<td>The 2023 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC%20Annual%20Report%20Season%202223%20-%20Published.pdf?alt=media&token=eb8b96da-1ba9-45f9-8bb9-623b373e3f1e" target="_blank" rel="noopener">here</a></td>
+</tr>
+<tr>
+
 <td>2022 Annual General Meeting (AGM)</td>
 <td>The 104th Annual General Meeting was held at 10:00am, on Sunday 7th August 2022.</td>
 <td>The 2022 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-Annual-Report-2022-Complete-Compressed.pdf?alt=media&token=1dcccc1d-8f73-41ca-8035-4c1605eb819c" target="_blank" rel="noopener">here</a></td>

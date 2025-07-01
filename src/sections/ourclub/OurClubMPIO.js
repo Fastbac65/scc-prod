@@ -38,7 +38,7 @@ const mpioContent = [
     icon: 'mdi:umbrella-beach',
     label: 'Our Members Protection Team',
     text: `<p class="p1">
-    Our club has a group of dedicated volunteers who look after member protection practices and issues.&nbsp; These are as follows;
+    Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;
 </p>
 <p class="p2">
     <span class="s1">Member Protection Information Officer (MPIO): Dave Alldis </span><a href="mailto:MPIO@southcurlcurlslsc.com.au"><span class="s1">MPIO@southcurlcurlslsc.com.au</span></a>

@@ -20,7 +20,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
       direction: 'to left',
-      startColor: `${alpha(theme.palette.background.neutral, 0)} 5%`,
+      startColor: `${alpha(theme.palette.background.neutral, 0.4)} 5%`,
       endColor: `${alpha(theme.palette.background.neutral, 1)} 50%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
@@ -79,7 +79,7 @@ const OurClubCafe = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
-        <div id="beacheatery" style={{ position: 'absolute', top: '-80px' }} />
+        <div id="mpio" style={{ position: 'absolute', top: '-80px' }} />
       </div>
 
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>

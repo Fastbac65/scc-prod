@@ -62,7 +62,7 @@ const mpioContent = [
   },
   {
     icon: 'mdi:umbrella-beach',
-    label: 'Child Safe',
+    label: 'Child Safety',
     text: `
 <p class="p2">
     Our Club is committed to the safety and wellbeing of every child and young person who takes part in our activities, programs, events or services and will work to create an environment in which children and young people are safe and feel safe at all times.

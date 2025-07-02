@@ -36,12 +36,13 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'Membership Renewal',
-    text: `<p>Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadet (u18) $50 and Family Membership $275. Family membership covers parents/guardians plus kids under 18.</p>`,
+    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
+    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
   },
   {
     icon: 'tdesign:member',
     label: 'Nippers & Nipper Parents Renewal',
-    text: `<p>Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details</p>`,
+    text: `<p>An MPIO is available to provide information to members who may have an issue or grievance at the club. The MPIO may be a first point of contact for any member wishing to raise a concern. To contact the MPIO, please email Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> to arrange a call back. After contacting the MPIO, should a member wish to proceed with a formal complaint, this can be lodged via the online complaints portal: <a target="_blank" rel="noopener noreferrer" href="https://complaints.sls.com.au/"> https://complaints.sls.com.au/</a></p><p>All formal complaints are handled by a Complaints Manager, who will take action to resolve complaints after they are lodged via the portal. We understand that in a community organisation where everyone knows each other, conflicts of interest can arise. We want members to feel they are able to raise any concerns they have, and if there is a conflict of interest and members would prefer to speak to someone else within the club regarding their concern, please email <a href="mailto:president@southcurlcurlslsc.com.au">president@southcurlcurlslsc.com.au</a>. Alternatively, you can contact the MPIO at your branch or any SLS MPIO.</p>`,
   },
   // {
   //   icon: 'tdesign:member',
@@ -58,27 +59,13 @@ const mpioContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'Our Members Protection Team',
-    text: `<p >
-    Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p>
-<p >
-    Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a>
-</p>
-<p >
-    Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a>
-</p>
-<p >
-    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a>
-</p>`,
+    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
+    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
   },
   {
     icon: 'mdi:umbrella-beach',
     label: 'Complaint Management',
-    text: `<p >
-    An MPIO is available to provide information to members who may have an issue or grievance at the club. The MPIO may be a first point of contact for any member wishing to raise a concern. To contact the MPIO, please email Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> to arrange a call back. After contacting the MPIO, should a member wish to proceed with a formal complaint, this can be lodged via the online complaints portal: <a target="_blank" rel="noopener noreferrer" href="https://complaints.sls.com.au/"> https://complaints.sls.com.au/</a>
-</p>
-<p >
-    All formal complaints are handled by a Complaints Manager, who will take action to resolve complaints after they are lodged via the portal. We understand that in a community organisation where everyone knows each other, conflicts of interest can arise. We want members to feel they are able to raise any concerns they have, and if there is a conflict of interest and members would prefer to speak to someone else within the club regarding their concern, please email <a href="mailto:president@southcurlcurlslsc.com.au">president@southcurlcurlslsc.com.au</a></i>. Alternatively, you can contact the MPIO at your branch or any SLS MPIO.
-</p>`,
+    text: `<p>An MPIO is available to provide information to members who may have an issue or grievance at the club. The MPIO may be a first point of contact for any member wishing to raise a concern. To contact the MPIO, please email Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> to arrange a call back. After contacting the MPIO, should a member wish to proceed with a formal complaint, this can be lodged via the online complaints portal: <a target="_blank" rel="noopener noreferrer" href="https://complaints.sls.com.au/"> https://complaints.sls.com.au/</a></p><p>All formal complaints are handled by a Complaints Manager, who will take action to resolve complaints after they are lodged via the portal. We understand that in a community organisation where everyone knows each other, conflicts of interest can arise. We want members to feel they are able to raise any concerns they have, and if there is a conflict of interest and members would prefer to speak to someone else within the club regarding their concern, please email <a href="mailto:president@southcurlcurlslsc.com.au">president@southcurlcurlslsc.com.au</a>. Alternatively, you can contact the MPIO at your branch or any SLS MPIO.</p>`,
   },
   {
     icon: 'mdi:umbrella-beach',

@@ -17,7 +17,7 @@ export default function OurClubView({ staticPosts }) {
       <OurClubLanding />
       <OurClubSponsor />
       <OurClubMembership />
-      {/* <OurClubMPIO /> */}
+      <OurClubMPIO />
       <OurClubTraining />
       <OurClubCafe />
       <OurClubCommitee />

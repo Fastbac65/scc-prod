@@ -33,12 +33,12 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 const membershipContent = [
-  // {
-  //   icon: 'tdesign:member',
-  //   label: 'Membership Renewal',
-  //   text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
-  //   Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
-  // },
+  {
+    icon: 'tdesign:member',
+    label: 'Membership Renewal',
+    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
+    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
+  },
   // {
   //   icon: 'tdesign:member',
   //   label: 'Nippers & Nipper Parents Renewal',

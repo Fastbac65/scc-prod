@@ -33,21 +33,16 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 const membershipContent = [
-  {
-    icon: 'tdesign:member',
-    label: 'Membership Renewal',
-    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
-    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
-  },
-  {
-    icon: 'tdesign:member',
-    label: 'Nippers & Nipper Parents Renewal',
-    text: `<p>An MPIO is available to provide information to members who may have an issue or grievance at the club. The MPIO may be a first point of contact for any member wishing to raise a concern. To contact the MPIO, please email Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> to arrange a call back. After contacting the MPIO, should a member wish to proceed with a formal complaint, this can be lodged via the online complaints portal: <a target="_blank" rel="noopener noreferrer" href="https://complaints.sls.com.au/"> https://complaints.sls.com.au/</a></p><p>All formal complaints are handled by a Complaints Manager, who will take action to resolve complaints after they are lodged via the portal. We understand that in a community organisation where everyone knows each other, conflicts of interest can arise. We want members to feel they are able to raise any concerns they have, and if there is a conflict of interest and members would prefer to speak to someone else within the club regarding their concern, please email <a href="mailto:president@southcurlcurlslsc.com.au">president@southcurlcurlslsc.com.au</a>. Alternatively, you can contact the MPIO at your branch or any SLS MPIO.</p>`,
-  },
   // {
   //   icon: 'tdesign:member',
-  //   label: 'New members Welcome',
-  //   text: 'South Curl Curl Surf Life Saving Club welcomes new membership enquiries from all-comers regardless of age and skill levels. Training is available in all facets of surf life saving and members are encouraged to obtain the various life saving qualifications. Registration',
+  //   label: 'Membership Renewal',
+  //   text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
+  //   Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
+  // },
+  // {
+  //   icon: 'tdesign:member',
+  //   label: 'Nippers & Nipper Parents Renewal',
+  //   text: `<p>An MPIO is available to provide information to members who may have an issue or grievance at the club. The MPIO may be a first point of contact for any member wishing to raise a concern. To contact the MPIO, please email Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> to arrange a call back. After contacting the MPIO, should a member wish to proceed with a formal complaint, this can be lodged via the online complaints portal: <a target="_blank" rel="noopener noreferrer" href="https://complaints.sls.com.au/"> https://complaints.sls.com.au/</a></p><p>All formal complaints are handled by a Complaints Manager, who will take action to resolve complaints after they are lodged via the portal. We understand that in a community organisation where everyone knows each other, conflicts of interest can arise. We want members to feel they are able to raise any concerns they have, and if there is a conflict of interest and members would prefer to speak to someone else within the club regarding their concern, please email <a href="mailto:president@southcurlcurlslsc.com.au">president@southcurlcurlslsc.com.au</a>. Alternatively, you can contact the MPIO at your branch or any SLS MPIO.</p>`,
   // },
   {
     icon: 'tdesign:member',
@@ -70,16 +65,7 @@ const mpioContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'Child Safety',
-    text: `
-<p >
-    Our Club is committed to the safety and wellbeing of every child and young person who takes part in our activities, programs, events or services and will work to create an environment in which children and young people are safe and feel safe at all times.
-</p>
-<p >
-    SCC SLSC recognises the importance of protecting young people under the age of 18 from abuse, harm and exploitation.&nbsp; It is everyone’s responsibility to treat children and young people respectfully and follow child safe legislation and the SLSA Child Safe Policy. The Child Safe Code of Conduct applies to all members and associated parties as outlined in the <a target="_blank" rel="noopener noreferrer" href="https://www.surflifesaving.com.au/members/policies/slsa-policy-6-04-child-safe/">Child Safe Policy</a>.
-</p>
-<p >
-    Resources, webinars and online training courses are available to all members, providing clear guidelines of appropriate behaviour when engaging with children and young people.&nbsp; All members are encouraged to complete the <a target="_blank" rel="noopener noreferrer" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">Child Safe Awareness online course</a> found in the e-learning section of your members portal.
-</p>`,
+    text: `<p>Our Club is committed to the safety and wellbeing of every child and young person who takes part in our activities, programs, events or services and will work to create an environment in which children and young people are safe and feel safe at all times.</p><p>SCC SLSC recognises the importance of protecting young people under the age of 18 from abuse, harm and exploitation.&nbsp; It is everyone’s responsibility to treat children and young people respectfully and follow child safe legislation and the SLSA Child Safe Policy. The Child Safe Code of Conduct applies to all members and associated parties as outlined in the <a target="_blank" rel="noopener noreferrer" href="https://www.surflifesaving.com.au/members/policies/slsa-policy-6-04-child-safe/">Child Safe Policy</a>.</p><p>Resources, webinars and online training courses are available to all members, providing clear guidelines of appropriate behaviour when engaging with children and young people.&nbsp; All members are encouraged to complete the <a target="_blank" rel="noopener noreferrer" href="https://members.sls.com.au/SLSA_Online/modules/login/index.php">Child Safe Awareness online course</a> found in the e-learning section of your members portal.</p>`,
   },
 ];
 const OurClubMPIO = () => {

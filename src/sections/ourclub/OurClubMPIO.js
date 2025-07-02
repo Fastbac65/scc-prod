@@ -32,14 +32,34 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 }));
 
 // ----------------------------------------------------------------------
-
+const membershipContent = [
+  {
+    icon: 'tdesign:member',
+    label: 'Membership Renewal',
+    text: `<p>Renew online at SLS members portal below. Patroling Member $90, Associate (Social) Member $50, Patrol Cadet (u18) $50 and Family Membership $275. Family membership covers parents/guardians plus kids under 18.</p>`,
+  },
+  {
+    icon: 'tdesign:member',
+    label: 'Nippers & Nipper Parents Renewal',
+    text: `<p>Renew online at SLS members portal below. Nipper $100, Associate Nipper Parent $50. Please see Nippers page for all program details</p>`,
+  },
+  // {
+  //   icon: 'tdesign:member',
+  //   label: 'New members Welcome',
+  //   text: 'South Curl Curl Surf Life Saving Club welcomes new membership enquiries from all-comers regardless of age and skill levels. Training is available in all facets of surf life saving and members are encouraged to obtain the various life saving qualifications. Registration',
+  // },
+  {
+    icon: 'tdesign:member',
+    label: 'New Member & Nipper Registration',
+    text: `<p>Use 'Join South Curly' button below to 'Join A Club' and setup online SLS accounts for you and/or your family and make the appropriate payment. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
+  },
+];
 const mpioContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'Our Members Protection Team',
     text: `<p >
-    Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;
-</p>
+    Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p>
 <p >
     Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a>
 </p>
@@ -75,7 +95,7 @@ const mpioContent = [
 </p>`,
   },
 ];
-const OurClubCafe = () => {
+const OurClubMPIO = () => {
   return (
     <StyledRootResponsive>
       <div style={{ position: 'relative' }}>
@@ -99,7 +119,7 @@ const OurClubCafe = () => {
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
-              {mpioContent.map((item) => (
+              {membershipContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>
@@ -115,7 +135,7 @@ const OurClubCafe = () => {
     </StyledRootResponsive>
   );
 };
-export default OurClubCafe;
+export default OurClubMPIO;
 
 function OverviewItem({ icon, label, text = '-' }) {
   return (

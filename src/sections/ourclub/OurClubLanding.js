@@ -52,13 +52,13 @@ const OurClubLanding = () => {
           <CustomBreadcrumbs
             links={[
               { name: 'Home', href: '/' },
-              { name: 'SCC Membership', href: '/ourclub/#membership' },
+              { name: 'Membership', href: '/ourclub/#membership' },
               { name: 'Member & Child Safety', href: '/ourclub/#mpio' },
               { name: 'SRC/Bronze', href: '/ourclub/#srcbronze' },
-              { name: 'SCC Cafe-Beach Eatery', href: '/ourclub/#beacheatery' },
-              { name: 'SCC Committee', href: '/ourclub/#clubcommittee' },
+              { name: 'Beach Eatery', href: '/ourclub/#beacheatery' },
+              { name: 'Our Committee', href: '/ourclub/#clubcommittee' },
               { name: 'SCC Docs', href: '/ourclub/#sccdocs' },
-              { name: 'SCC Life Members', href: '/ourclub/#lifemembers' },
+              { name: 'Life Members', href: '/ourclub/#lifemembers' },
             ]}
             // moreLink={[{ name: 'Payments and Donations', href: 'https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' }]}
             // theme={theme}

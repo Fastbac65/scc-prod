@@ -36,7 +36,7 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'Membership Renewal',
-    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows; Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a>
+    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows; Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a> Complaints Manager: <a href="mailto:complaints@southcurlcurlslsc.com.au">Michele Verwey </a>
     Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">Lisa Settree</a></p>`,
   },
   // {
@@ -54,8 +54,8 @@ const mpioContent = [
   {
     icon: 'mdi:umbrella-beach',
     label: 'Our Members Protection Team',
-    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): Dave Alldis <a href="mailto:MPIO@southcurlcurlslsc.com.au">MPIO@southcurlcurlslsc.com.au</a></p><p>Complaints Manager: Michele Verwey <a href="mailto:complaints@southcurlcurlslsc.com.au">complaints@southcurlcurlslsc.com.au</a></p><p>
-    Child Safe Coordinator: Lisa Settree <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au">childsafecoordinator@southcurlcurlslsc.com.au</a></p>`,
+    text: `<p>Our club has a group of dedicated volunteers who look after member protection practices and issues. These are as follows;</p><p>Member Protection Information Officer (MPIO): <a href="mailto:MPIO@southcurlcurlslsc.com.au">Dave Alldis </a></p><p>Complaints Manager: <a href="mailto:complaints@southcurlcurlslsc.com.au">Michele Verwey </a></p><p>
+    Child Safe Coordinator: <a href="mailto:childsafecoordinator@southcurlcurlslsc.com.au"> Lisa Settree </a></p>`,
   },
   {
     icon: 'mdi:umbrella-beach',
@@ -92,7 +92,7 @@ const OurClubMPIO = () => {
         <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
-              {membershipContent.map((item) => (
+              {mpioContent.map((item) => (
                 <OverviewItem key={item.label} icon={item.icon} label={item.label} text={item.text} />
               ))}
             </Stack>

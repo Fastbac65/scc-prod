@@ -143,9 +143,9 @@ export default function HomeLanding(props) {
           </Box>
           <Stack spacing={1} alignItems={{ xs: 'center' }} sx={{ pt: 2 }}>
             <Stack direction="row" spacing={1}>
-              <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+              <Link rel="noopener" href="/#membership">
                 <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
-                  Payments & Donations
+                  SCC Membership
                 </Button>
               </Link>
               <Link component={NextLink} href="/ourclub">

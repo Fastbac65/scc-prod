@@ -72,7 +72,7 @@ const VenueHireDetails = () => {
             </Stack>
           </Stack>
         </Box>
-        <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+        <Link target="_blank" rel="noopener" href="https://hub.sls.com.au/public/pay/338">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             Venue Hire Payments
           </Button>

@@ -47,7 +47,7 @@ const patrolInfoContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'Gym Access',
-    text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk. Patrolling members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link <a rel='noopener' target='_blank' href=' https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' >"HERE"</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.com.au/assets/docs/SCC-Gym-agreement-FINAL.pdf' >"HERE"</a>. Email mail@southcurlcurlslsc.org to arrange FOB collection or activation.</p>`,
+    text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk. Patrolling members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link <a rel='noopener' target='_blank' href=' https://hub.sls.com.au/public/pay/338' >"HERE"</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.com.au/assets/docs/SCC-Gym-agreement-FINAL.pdf' >"HERE"</a>. Email mail@southcurlcurlslsc.org to arrange FOB collection or activation.</p>`,
   },
 ];
 const PatrolInformation = () => {

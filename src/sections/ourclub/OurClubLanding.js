@@ -60,11 +60,11 @@ const OurClubLanding = () => {
               { name: 'SCC Docs', href: '/ourclub/#sccdocs' },
               { name: 'Life Members', href: '/ourclub/#lifemembers' },
             ]}
-            // moreLink={[{ name: 'Payments and Donations', href: 'https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD' }]}
+            // moreLink={[{ name: 'Payments and Donations', href: 'https://hub.sls.com.au/public/pay/338' }]}
             // theme={theme}
           />
           <Stack spacing={1} alignItems={{ xs: 'center' }}>
-            <Link target="_blank" rel="noopener" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD">
+            <Link target="_blank" rel="noopener" href="https://hub.sls.com.au/public/pay/338">
               <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
                 Payments & Donations
               </Button>

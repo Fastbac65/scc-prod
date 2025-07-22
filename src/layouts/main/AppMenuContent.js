@@ -47,7 +47,7 @@ export default function AppMenuContent({ data }) {
             }}
           />
         </ListItemButton>
-        <Link color={themeMode === 'dark' ? '#fff' : '#000'} target="_blank" href="https://pnpnet.qvalent.com/OnlinePaymentServlet?cd_community=SLSA&cd_currency=AUD" rel="noopener">
+        <Link color={themeMode === 'dark' ? '#fff' : '#000'} target="_blank" href="https://hub.sls.com.au/public/pay/338" rel="noopener">
           <ListItemButton sx={{ px: 1, borderRadius: 1 }}>
             <ListItemIcon>
               <Iconify icon="mdi:currency-usd" />

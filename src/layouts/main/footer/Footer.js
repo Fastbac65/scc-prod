@@ -21,7 +21,23 @@ const Footer = () => {
     },
     {
       href: 'https://okanui.com/',
-      src: theme.palette.mode === 'dark' ? '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg' : '/assets/sponsors/OKA_PRIMARYLOGO.jpeg',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg' : '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg',
+    },
+    {
+      href: 'https://deewhyrsl.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/deewhyrsl.jpeg' : '/assets/sponsors/deewhyrsl.jpeg.jpeg',
+    },
+    {
+      href: 'https://solitonnetworkconsulting.com/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/solitonnetworkconsulting.jpeg' : '/assets/sponsors/solitonnetworkconsulting.jpeg',
+    },
+    {
+      href: 'https://www.manlyleagues.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/manlyleagues.jpeg' : '/assets/sponsors/manlyleagues.jpeg',
+    },
+    {
+      href: 'https://www.balgowalhrsl.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/balgowlahrsl.jpeg' : '/assets/sponsors/balgowlahrsl.jpeg',
     },
     {
       href: 'https://www.humel.com.au/',

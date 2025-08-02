@@ -36,7 +36,7 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/manlyleagues.jpeg' : '/assets/sponsors/manlyleagues.jpeg',
     },
     {
-      href: 'https://www.balgowalhrsl.com.au/',
+      href: 'https://www.balgowlahrsl.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/balgowlahrsl.jpeg' : '/assets/sponsors/balgowlahrsl.jpeg',
     },
     {

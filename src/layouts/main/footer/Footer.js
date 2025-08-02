@@ -40,6 +40,10 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/balgowlahrsl.jpeg' : '/assets/sponsors/balgowlahrsl.jpeg',
     },
     {
+      href: 'https://localvet.com.au/Harbord/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/harbordvet.jpeg' : '/assets/sponsors/harbordvet.jpeg',
+    },
+    {
       href: 'https://www.humel.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark1.jpeg' : '/assets/sponsors/humel-light.jpeg',
     },

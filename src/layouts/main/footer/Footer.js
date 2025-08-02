@@ -19,10 +19,10 @@ const Footer = () => {
       href: 'https://www.communicloud.com/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/comcloud.jpeg' : '/assets/sponsors/comcloud.jpeg',
     },
-    // {
-    //   href: 'https://www.humel.com.au/',
-    //   src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark2.jpeg' : '/assets/sponsors/humel-light.jpeg',
-    // },
+    {
+      href: 'https://okanui.com/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg' : '/assets/sponsors/OKA_PRIMARYLOGO.jpeg',
+    },
     {
       href: 'https://www.humel.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/humel-dark1.jpeg' : '/assets/sponsors/humel-light.jpeg',
@@ -63,7 +63,7 @@ const Footer = () => {
           &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Tel: +61-2-99385430&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Mail: P.O. Box 18, Freshwater NSW 2096
         </Typography>
         <Typography color="text-primary" pb={1} paragraph variant="caption">
-          © Copyright 2023 | South Curl Curl Surf Life Saving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
+          © Copyright 2025 | South Curl Curl Surf Life Saving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
           <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="/privacy">
             Terms & Conditions
           </Link>{' '}

@@ -56,6 +56,10 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/afis.jpeg' : '/assets/sponsors/afis.jpeg',
     },
     {
+      href: 'https://www.chrisflemmingbuilding.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/chrisflemmingbuilding.jpeg' : '/assets/sponsors/chrisflemmingbuilding.jpeg',
+    },
+    {
       href: 'https://www.cooksplumbing.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/cooks.jpeg' : '/assets/sponsors/cooks.jpeg',
     },

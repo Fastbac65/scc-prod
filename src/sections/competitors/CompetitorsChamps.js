@@ -25,7 +25,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
       endColor: `${alpha(theme.palette.background.neutral, 1)} 35%`,
       // startColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 0)} 0%`,
       // endColor: `${alpha(theme.palette.grey[theme.palette.mode === 'light' ? 500 : 800], 1)} 55%`,
-      imgUrl: '/assets/images/header15.jpeg',
+      imgUrl: '/assets/images/champs10wide.jpeg',
     }),
     backgroundPosition: 'center, top',
     backgroundSize: '100%',
@@ -47,22 +47,23 @@ const champsContent = [
     icon: 'mdi:run',
     label: 'A Champion Lifesaver Event',
     text: `
-    <p>The Champion Lifesaver event provides Surf Life Saving members (minimum age group U15) with the opportunity to demonstrate, in a competitive manner, the physical, lifesaving and knowledge skills required of a Lifesaver. The event is determined through a scoring system, where the competitor with the highest score, after all 3 sections, is declared the winner. The maximum attainable score in total is 120 points.</p>
+    <p>The Champion Lifesaver event provides Surf Life Saving members (minimum age group U14, so 13 yrs of age) with the opportunity to demonstrate, in a competitive manner, the physical, lifesaving and knowledge skills required of a Lifesaver. The event is determined through a scoring system, where the competitor with the highest score, after all 3 sections, is declared the winner. The maximum attainable score in total is 120 points.</p>
     <ul>
     <li>Physical Skills 40 points - Surf (swim) Race, Board Race, Beach Sprint, Tube Rescue (10 points each)</li>
     <li>Questionnaire 40 points - The theory section consists of 40 multiple choice questions derived from the current edition of the SLSA Public Safety and Aquatic Rescue Manual. 30-minute time limit.</li>
     <li>Resuscitation 40 points - Part A: A live patient assessment including lateral position (20 points maximum), Part B: One person CPR on a manikin (20 points maximum)
     </ul>
 </li>
-    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact: Ben Humel, CLS Head Coach mobile:0419 446 864, Valery Burke, CLS Team Mgr  mobile:0431 905 095.</p>`,
+    <p>For more information on how to join the Champion Lifesavers at South Curl Curl, please do not hesitate to contact: Ben Humel, CLS Head Coach mobile:0419 446 864 or email <a target='_blank rel='noopener' href='mailto:ben@humel.com.au'   >ben@humel.com.au</a>, Valerie Burke, CLS Team Mgr  mobile:0431 905 095.</p>`,
   },
   {
     icon: 'mdi:run',
     label: 'Follow Us',
     text: `
-    <p>For all the latest updates and posts, follow our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/sccchampionlifesavers/'   >@sccchampionlifesavers</a></p>`,
+    <p>For all the latest updates and posts, follow our Instagram: <a target='_blank rel='noopener' href='https://www.instagram.com/sccchampionlifesavers/'   >@sccchampionlifesavers</a> or <a target='_blank rel='noopener' href='https://www.facebook.com/groups/2409768001/'   >SCC Facebook</a></p>`,
   },
 ];
+//
 const CompetitorsChamps = () => {
   return (
     <StyledRootResponsive>

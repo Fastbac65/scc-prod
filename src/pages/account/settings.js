@@ -32,7 +32,7 @@ export default function AccountSettingsPage() {
   return (
     <>
       <Head>
-        <title>Account: Settings | SJB Therapy</title>
+        <title>SCC Account Settings</title>
       </Head>
 
       <AccountSettingsView />

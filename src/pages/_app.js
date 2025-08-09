@@ -33,7 +33,7 @@ import ThemeProvider from 'src/theme';
 // utils
 import createEmotionCache from 'src/lib/createEmotionCache';
 // components
-import ProgressBar from 'src/components/progress-bar';
+//import ProgressBar from 'src/components/progress-bar';
 import { SettingsProvider } from 'src/components/settings';
 import MotionLazyContainer from 'src/components/animate/MotionLazyContainer';
 import LoadingCircular from 'src/components/loading-circular/LoadingCircular';

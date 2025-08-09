@@ -10,8 +10,9 @@ const resizeImage = (imageToResize, jpegQuality = 75, resizeMax = 1200) => {
       const url = URL.createObjectURL(imageToResize);
       var img = new Image();
       img.onload = () => {
-        var height = img.height;
-        var width = img.width;
+        //var height = img.height;
+        const { height, width } = img;
+        // const { width } = img;
         var newAspect = 1;
         // set maxwidth (landscape) or maxheight (portrait) if either is greater than 1200px (1200 is 16:9 with 720px)
         if (width > resizeMax || height > resizeMax) {

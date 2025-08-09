@@ -32,7 +32,7 @@ export default function AccountPersonalPage() {
   return (
     <>
       <Head>
-        <title>Account: Personal | SJB Therapy</title>
+        <title>SCC Account Profile</title>
       </Head>
 
       <AccountProfileView />

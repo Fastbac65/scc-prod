@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 // @mui
-import { useTheme } from '@mui/material/styles';
+//import { useTheme } from '@mui/material/styles';
 import { Card, CardMedia, Link } from '@mui/material';
 // components
 import Carousel from 'src/components/carousel';

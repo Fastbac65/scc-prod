@@ -10,7 +10,7 @@ import Image from 'src/components/image/Image';
 // ----------------------------------------------------------------------
 
 function Logo({ single = false, sx }) {
-  const theme = useTheme();
+  //const theme = useTheme();
 
   const singleLogo = (
     <Box sx={{ position: 'relative', width: '250px' }}>

@@ -48,7 +48,7 @@ const ResetPasswordVerification = ({ oobCode }) => {
             ...alert,
             open: true,
             severity: 'success',
-            message: 'Your password has been updated. You are go to !',
+            message: 'Your password has been updated. You are go to go!',
             duration: 10000,
           },
         });

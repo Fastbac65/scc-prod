@@ -17,7 +17,7 @@ import BookingEmail from 'src/components/email/BookingEmail';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const { db } = createFirebaseAdminApp();
 const host = 'https://southcurlcurlslsc.com.au';
-const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:5002' : 'https://southcurlcurlslsc.com.au';
+//const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:5002' : 'https://southcurlcurlslsc.com.au';
 
 // Lets connect the email API server to the customer database
 // const ref = db.ref('customers/');
@@ -33,9 +33,6 @@ const host1 = process.env.NODE_ENV === 'development' ? 'http://192.168.0.124:500
 // );
 
 export default async function handler(req, res) {
-  if (req.body.api_key !== process.env.API_ROUTE_SECRET) {
-    return res.status(401).send('Not Authorised To Access This API');
-  }
   let currentUser = {}; // if user is a current client it will populate
   // mode and email vars
   const { mode = '', currentUserEmail: email = '', currentUserName: name = '', currentUserPhone: mobile = '', booking = '' } = req.body;
@@ -43,6 +40,9 @@ export default async function handler(req, res) {
   let link = null;
 
   if (req.method === 'POST') {
+    if (req.body.api_key !== process.env.API_ROUTE_SECRET) {
+      return res.status(401).send('Error: Not Authorised To Access This API');
+    }
     try {
       const actionCodeSettings = {
         // URL you want to redirect back to. The domain (www.example.com) for
@@ -62,15 +62,16 @@ export default async function handler(req, res) {
         // dynamicLinkDomain: 'coolapp.page.link',
       };
 
-      https: switch (mode) {
+      switch (mode) {
         case 'signInWithEmail': {
           link = await getAuth().generateSignInWithEmailLink(email, actionCodeSettings);
           try {
             await resend.emails.send({
-              from: 'South Curly Members <onboarding@southcurlcurlslsc.com.au>',
-              reply_to: 'webadmin@southcurlcurlslsc.com.au',
+              //from: 'South Curly Members <onboarding@southcurlcurlslsc.com.au>',
+              from: 'South Curly Members <webadmin@southcurlcurlslsc.com.au>',
+              reply_to: 'sccslsc.webdev@gmail.com',
               to: email,
-              bcc: ['webadmin@southcurlcurlslsc.com.au' /*mail@southcurlcurlslsc.org*/],
+              bcc: ['sccslsc.webdev@gmail.com' /*mail@southcurlcurlslsc.org*/],
               subject: 'Welcome to South Curl Curl SLSC Members',
               html: '<strong>Please finalise your members account setup</strong>',
               react: SignUpEmail({ link, email, name }),
@@ -111,14 +112,17 @@ export default async function handler(req, res) {
             const firstName = currentUser?.displayName.split(/[ ]+/)[0];
             try {
               const data = await resend.emails.send({
-                from: 'support@resend.dev',
-                to: 'sccslsc.webdev@gmail.com',
+                //from: 'support@resend.dev',
+                from: 'webadmin@southcurlcurlslsc.com.au',
+                reply_to: 'sccslsc.webdev@gmail.com',
                 // to: 'terry.durnin@yahoo.com',
-                // to: email,
+                to: email,
+                bcc: ['sccslsc.webdev@gmail.com' /*mail@southcurlcurlslsc.org*/],
                 subject: 'South Curl Curl SLSC - Reset Password',
                 html: '<strong>Request to reset password</strong>',
                 react: ResetPasswordEmail({ link, email, name: firstName }),
               });
+              console.log(data);
             } catch (error) {
               console.log(error);
             }
@@ -130,6 +134,9 @@ export default async function handler(req, res) {
         //   link = await getAuth().generateVerifyAndChangeEmailLink(email, newUserEmail, actionCodeSettings);
         //   return res.status(200).json({ signin: link });
         // }
+        case 'test': {
+          return res.status(200).json({ mode: 'test OK', email: email, user: name });
+        }
         case 'isClient': {
           currentUser = await getAuth().getUserByEmail(email);
           return res.status(200).json({ ...currentUser });
@@ -160,7 +167,7 @@ export default async function handler(req, res) {
     // }
   } else {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end('Method Not Allowed');
+    return res.status(405).end('Error: Method Not Allowed');
   }
   // return null;
 }

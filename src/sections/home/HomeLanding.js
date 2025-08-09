@@ -110,7 +110,7 @@ export default function HomeLanding(props) {
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
             🎉 South Curl Curl has been awarded Club Of The Year for 2024/2025 Season for AMAZING Achievements across the board 🎉
           </Typography>
-          {/* <PreloadImg /> */}
+          {/* <PreloadImg/> */}
 
           <Carousel
             interval={6000}

@@ -8,7 +8,7 @@ import deleteFile from 'src/lib/deleteFile';
 import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 import resizeImage from 'src/lib/resizeImage';
 import { useSettingsContext } from 'src/components/settings';
-import { updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
+//import { updateRealtimeDoc } from 'src/lib/firebaseRealtimeDatabase';
 
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.bubble.css';

@@ -1,6 +1,6 @@
 import { deleteDoco } from './firestoreDocument';
 import deleteFile from './deleteFile';
-import { deleteRealtimeDoc } from './firebaseRealtimeDatabase';
+//import { deleteRealtimeDoc } from './firebaseRealtimeDatabase';
 
 const deletePost = (postDoc) => {
   return new Promise(async (resolve, reject) => {

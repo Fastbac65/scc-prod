@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useMemo, useState, useEffect, useContext, useCallback, createContext, useReducer } from 'react';
 // firebase
-import { auth, db, rtdb } from 'src/lib/createFirebaseApp';
+import { auth, db } from 'src/lib/createFirebaseApp';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { connectAuthEmulator } from 'firebase/auth';

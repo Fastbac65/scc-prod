@@ -60,6 +60,11 @@ const ourDocs = [
 <td>50th Anniversary Book 1968</td>
 <td>The history of South Curly as captured in our 50th anniversary year.</td>
 <td>A scanned image of the book can be found <a href="The-History-of-South-Curl-Curl-Surf-Life-Saving-Club-1918-1968.pdf" target="_blank" rel="noopener noreferrer">here</a> .</td>
+</tr>
+<tr>
+<td>2025 Annual General Meeting (AGM)</td>
+<td>The 107th Annual General Meeting was held at 10:00am, on Sunday 3rd August 2025.</td>
+<td>The 2025 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC%20Annual%20Report%20Season%202425%20Final%2028072025.pdf?alt=media&token=2c468ad9-7289-4533-8b14-2b55dafda7f2" target="_blank" rel="noopener">here</a></td>
 </tr><tr>
 <td>2024 Annual General Meeting (AGM)</td>
 <td>The 106th Annual General Meeting was held at 10:00am, on Sunday 4th August 2024.</td>

@@ -21,7 +21,7 @@ const deletePost = (postDoc) => {
         }
       }
       await deleteDoco('posts', postDoc.id);
-      await deleteRealtimeDoc('Posts', postDoc.id);
+      //await deleteRealtimeDoc('Posts', postDoc.id);
       resolve();
     } catch (error) {
       console.log(error.message, error);

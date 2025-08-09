@@ -142,7 +142,7 @@ const EditPost = ({ postDoc }) => {
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await updateDoco('posts', postDocumentId, postDocumentObj); // also adds timestamp automatically
-      await updateRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj);
+      //await updateRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj);
     } catch (error) {
       console.log(error.message);
     }

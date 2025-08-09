@@ -140,7 +140,7 @@ const NewPost = () => {
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await addDoco('posts', postDocumentId, postDocumentObj); // timestamp simplified
-      await addRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj); // timestamp simplified
+      //await addRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj); // timestamp simplified
     } catch (error) {
       console.log(error.message);
     }

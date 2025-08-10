@@ -11,7 +11,7 @@ export async function getStaticProps() {
   const posts = await getPosts();
   return {
     props: {
-      staticPosts: posts,
+      staticPosts: posts.slice(0, 6),
       title: 'SCC - Our Club',
       description:
         'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.',

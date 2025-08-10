@@ -13,7 +13,7 @@ export async function getStaticProps() {
   // const members = await getMembers();
   return {
     props: {
-      staticPosts: posts,
+      staticPosts: posts.slice(0, 6),
       title: 'SCC - Competitors',
       description:
         'Our competitors at South Curl Curl SLSC share a unified mission: To excel in the waters, on the sand, and beyond. We commit to relentless training, unwavering dedication, and embodying the values of lifesaving.',

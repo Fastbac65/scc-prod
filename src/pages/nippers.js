@@ -15,7 +15,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      staticPosts: posts,
+      staticPosts: posts.slice(0, 6),
       title: 'SCC - Nippers',
       description:
         'For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400 little caps adorning our glorious beach.',

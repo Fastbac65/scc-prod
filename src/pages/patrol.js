@@ -13,7 +13,7 @@ export async function getStaticProps() {
   // const members = await getMembers();
   return {
     props: {
-      staticPosts: posts,
+      staticPosts: posts.slice(0, 6),
       title: 'SCC - Patrol',
       description:
         'The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and nippers.',

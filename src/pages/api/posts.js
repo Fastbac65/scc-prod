@@ -7,11 +7,11 @@ let postDocs = [];
 try {
   const postRef = db.collection('posts').orderBy('timestamp', 'desc');
 
-  console.log('init ran');
+  // console.log('init ran');
   // take over as listener
   postRef.onSnapshot(
     (snapshot) => {
-      postDocs = [];
+      // postDocs = [];
       snapshot.forEach((doc) => {
         postDocs.push({ id: doc.id, data: doc.data() });
       });
@@ -41,7 +41,7 @@ try {
 // await new Promise((resolve) => setTimeout(resolve, 1000));
 
 export default async function handler(req, res) {
-  console.log('init bakup', initPosts.length);
+  console.log('init bakup', initPosts.length, postDocs.length);
   // Check for secret to confirm this is a valid request
   if (req.method === 'OPTIONS') return res.status(200).send(); // takes care of browser preflight
 

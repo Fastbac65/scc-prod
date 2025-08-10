@@ -12,8 +12,8 @@ import useOffSetTop from 'src/hooks/useOffSetTop';
 
 export default function TrainingView({ staticPosts }) {
   // const loadRecentPosts = useOffSetTop(700);
-  console.log(loadRecentPosts);
-  console.log(staticPosts);
+  // console.log(loadRecentPosts);
+  // console.log(staticPosts);
   return (
     <>
       <TrainingLanding />

@@ -25,7 +25,6 @@
     "@mui/material": "^5.13.7",
     "@mui/x-data-grid": "^6.13.0",
     "@mui/x-date-pickers": "^6.9.2",
-    "@next/swc-darwin-arm64": "^15.4.6",
     "@react-email/components": "^0.0.7",
     "axios": "^1.4.0",
     "buffer": "^6.0.3",

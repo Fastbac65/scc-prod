@@ -5,8 +5,8 @@ export default function getPatrol(patrol) {
   return new Promise(async (resolve, reject) => {
     try {
       const calId = 'cb27ab3151610b4206a2df3bb7d606f71216f9d3e7ec4b4aa80171f8b2286ee9@group.calendar.google.com'; // patrol gcal
-      const start = encodeURIComponent(new Date('01 Sept 2024').toISOString());
-      const end = encodeURIComponent(new Date('01 June 2025').toISOString());
+      const start = encodeURIComponent(new Date('01 Aug 2025').toISOString());
+      const end = encodeURIComponent(new Date('01 June 2026').toISOString());
       const url = `https://www.googleapis.com/calendar/v3/calendars/${calId}/events?key=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&timeMin=${start}&timeMax=${end}&singleEvents=true&maxResults=999`;
       const getEvents = await axios.get(url);
       if (getEvents.status === 200) {

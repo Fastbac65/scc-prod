@@ -108,7 +108,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            🎉 South Curl Curl has been awarded Club Of The Year for 2024/2025 Season for AMAZING Achievements across the board 🎉
+            🎉 Sept 26th - SEASON KICK OFF ROCKBOX PARTY TICKETS NOW ON SALE. SCROLL DOWN TKT LINK BELOW 🎉
           </Typography>
           {/* <PreloadImg/> */}
 

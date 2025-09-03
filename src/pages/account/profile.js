@@ -11,11 +11,11 @@ import { AccountProfileView } from 'src/sections/view';
 
 // ----------------------------------------------------------------------
 
-AccountPersonalPage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
+AccountProfilePage.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 // ----------------------------------------------------------------------
 
-export default function AccountPersonalPage() {
+export default function AccountProfilePage() {
   const { loading, user } = useSettingsContext();
   const router = useRouter();
 

@@ -151,11 +151,16 @@ export default function HomeLanding(props) {
                   SCC Membership
                 </Button>
               </Link>
-              <Link component={NextLink} href="/ourclub">
+              <Link target="_blank" rel="noopener" href="https://hub.sls.com.au/public/pay/338">
+                <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
+                  SCC Events Payment
+                </Button>
+              </Link>
+              {/* <Link component={NextLink} href="/ourclub">
                 <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
                   Sponsor South Curly
                 </Button>
-              </Link>
+              </Link> */}
             </Stack>
             <Typography sx={{ pt: 2 }}>South Curl Curl Socials</Typography>
             <Stack direction="row" spacing={1}>

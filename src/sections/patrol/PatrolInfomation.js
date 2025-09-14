@@ -36,7 +36,7 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 const patrolInfoContent = [
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'Season First Patrol Sept 28th',
+    label: 'Season First Patrol Sept 27th',
     text: `<p>All active members are required to be rostered onto patrol duty throughout the season on a rotational basis usually one day per month, which equates to 5-6 half day patrols per season. Due to the strength of our patrolling membership and our patrol hours, this is one of the lightest patrolling commitments across the Sydney Northern Beaches Branch.</p>`,
   },
   {

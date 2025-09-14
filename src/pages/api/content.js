@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       switch (mode) {
         case 'add': {
           // await db.ref('members').update({ ...customers }); // sends update to db - lets us know the server is in sync
-          return res.status(200).json({ adduser: 'test' });
+          return res.status(200).json({ adduser: 'test', email: email, mode: mode });
         }
 
         case 'role': {
@@ -34,13 +34,17 @@ export default async function handler(req, res) {
           console.log(result);
           return res.status(200).json({ request: email, member: member.length ? member[0] : 'empty' });
         }
+        case 'check': {
+          const member = members.filter((member) => member.email === email);
+          return res.status(200).json({ request: email, member: member.length ? member[0] : 'empty' });
+        }
         default: {
           return res.status(200).json({ error: 'No mode' });
         }
       }
     } catch (error) {
       console.log('Error in API', error.message);
-      return res.status(200).json({ error: 'Error in API', reason: error });
+      return res.status(200).json({ error: 'Error in API', reason: error.message });
     }
   } else {
     res.setHeader('Allow', 'POST');

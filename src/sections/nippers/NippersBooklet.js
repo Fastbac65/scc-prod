@@ -87,12 +87,12 @@ const NippersBooklet = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2 }}>
             <Typography variant="body2">
-              Details on Nippers SurfEd programs, Nippers calendar for 2024/2025, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in the
+              Details on Nippers SurfEd programs, Nippers calendar for 2025/2026, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in the
               Nippers Information Booklet
             </Typography>
           </Stack>
         </Box>
-        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCCNippersInfoBooklet2024-25.pdf">
+        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCCNippersInfoBooklet2025-26.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC Nippers Information Booklet
           </Button>

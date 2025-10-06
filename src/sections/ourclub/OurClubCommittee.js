@@ -65,8 +65,13 @@ const ourCommittee = [
 			<td><a href="mailto:Captain@southcurlcurlslsc.com.au">Captain@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
-			<td>Nippers President</td>
+			<td>Nippers Chair</td>
 			<td>Rachael Gaynes</td>
+			<td><a href="mailto:Nippers@southcurlcurlslsc.com.au">Nippers@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Nippers Deputy</td>
+			<td>Charley Bailey</td>
 			<td><a href="mailto:Nippers@southcurlcurlslsc.com.au">Nippers@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -126,7 +131,7 @@ const ourCommittee = [
 		</tr>
 		<tr>
 			<td>Social Secretary</td>
-			<td>Trish Byrne</td>
+			<td>Michelle English</td>
 			<td><a href="mailto:Social@southcurlcurlslsc.com.au">Social@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -137,6 +142,11 @@ const ourCommittee = [
 		<tr>
 			<td>Sponsor Coordinator</td>
 			<td>Graeme Dominish</td>
+			<td><a href="mailto:Sponsorship@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>Sponsor Coordinator</td>
+			<td>Michela Verwey</td>
 			<td><a href="mailto:Sponsorship@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
@@ -165,10 +175,26 @@ const ourCommittee = [
 			<td><a href="mailto:TourManager@southcurlcurlslsc.com.au">TourManager@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
-			<td>Complaints or Grievances</td>
+			<td>Complaints Officer</td>
 			<td>Michela Verwey</td>
 			<td><a href="mailto:Complaints@southcurlcurlslsc.com.au">Complaints@southcurlcurlslsc.com.au</a></td>
 		</tr>
+		<tr>
+			<td>MPIO Officer 1</td>
+			<td>Andrew Rivett</td>
+			<td><a href="mailto:MPIO.one@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>MPIO Officer 2</td>
+			<td>Michael Berry</td>
+			<td><a href="mailto:MPIO.two@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+		</tr>
+		<tr>
+			<td>MPIO Officer 3</td>
+			<td>Scott Stein</td>
+			<td><a href="mailto:MPIO.three@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+		</tr>
+
 	</tbody>
 </table>
 `,

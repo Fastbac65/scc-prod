@@ -84,7 +84,7 @@ const PatrolCalendar = () => {
                 color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'}
                 rel="noopener"
                 target="_blank"
-                href="https://southcurlcurlslsc.com.au/assets/docs/SCC Patrol Roster 2025-2026 (No numbers).pdf"
+                href="https://southcurlcurlslsc.com.au/assets/docs/SCC Patrol Roster 2025-2026 (Private).pdf"
               >
                 {/* <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/SCC24-25roster.pdf"> */}
                 SCC 2025/2026 PATROLS Full Roster

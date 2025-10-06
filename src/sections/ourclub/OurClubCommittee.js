@@ -182,17 +182,17 @@ const ourCommittee = [
 		<tr>
 			<td>MPIO Officer 1</td>
 			<td>Andrew Rivett</td>
-			<td><a href="mailto:MPIO.one@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:MPIO.one@southcurlcurlslsc.com.au">MPIO.one@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>MPIO Officer 2</td>
 			<td>Michael Berry</td>
-			<td><a href="mailto:MPIO.two@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:MPIO.two@southcurlcurlslsc.com.au">MPIO.two@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>MPIO Officer 3</td>
 			<td>Scott Stein</td>
-			<td><a href="mailto:MPIO.three@southcurlcurlslsc.com.au">Sponsorship@southcurlcurlslsc.com.au</a></td>
+			<td><a href="mailto:MPIO.three@southcurlcurlslsc.com.au">MPIO.three@southcurlcurlslsc.com.au</a></td>
 		</tr>
 
 	</tbody>

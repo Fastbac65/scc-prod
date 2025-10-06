@@ -24,6 +24,10 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg' : '/assets/sponsors/OKA_PRIMARYLOGO-1.jpeg',
     },
     {
+      href: 'https://www.thebeacheatery.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/beacheatery.jpeg' : '/assets/sponsors/beacheatery.jpeg',
+    },
+    {
       href: 'https://deewhyrsl.com.au/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/deewhyrsl.jpeg' : '/assets/sponsors/deewhyrsl.jpeg.jpeg',
     },

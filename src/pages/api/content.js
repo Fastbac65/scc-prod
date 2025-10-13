@@ -51,3 +51,10 @@ export default async function handler(req, res) {
     return res.status(405).end('Method Not Allowed');
   }
 }
+
+// Format of json body for post request role
+// {
+//   "api_key" :"1234",
+//   "email" :"name@this.com",
+//   "mode" : "role"
+// }

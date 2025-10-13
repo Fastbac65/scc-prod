@@ -30,25 +30,21 @@ const Styled2ndLayer = styled('div')(({ theme }) => ({
 const VenueHireCalendar = () => {
   const theme = useTheme();
   const [holidays, setHolidays] = useState(true);
-  const [booking, setBooking] = useState(true);
-  // const [patrolTraining, setPatrolTraining] = useState(false);
-  const [social, setSocial] = useState(true);
+  const [booking, setBooking] = useState(true); // SCC Events
+  const [social, setSocial] = useState(true); // SCC Venue Hire private events
   const isSmUp = useResponsive('up', 'sm');
 
   const handleChange = (event) => {
     if (event.target.labels[0].innerText.includes('View')) {
       setHolidays(true);
       setBooking(true);
-      // setPatrolTraining(true);
       setSocial(true);
     } else if (event.target.labels[0].innerText.includes('NSW')) {
       setHolidays(!holidays);
-    } else if (event.target.labels[0].innerText.includes('Venue')) {
+    } else if (event.target.labels[0].innerText.includes('SCC Events')) {
       setBooking(!booking);
-      // } else if (event.target.labels[0].innerText.includes('Patrol')) {
-      //   setPatrolTraining(!patrolTraining);
-      // } else if (event.target.labels[0].innerText.includes('Venue')) {
-      //   setSocial(!social);
+    } else if (event.target.labels[0].innerText.includes('Venue')) {
+      setSocial(!social);
     }
 
     event.target = null;
@@ -75,8 +71,8 @@ const VenueHireCalendar = () => {
                     Filter
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
-                  {/* <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="success" />} label="Venue Bookings" /> */}
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="warning" />} label="Venue Bookings" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="success" />} label="Venue Hire" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="warning" />} label="SCC Events" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>
@@ -86,7 +82,6 @@ const VenueHireCalendar = () => {
               <CalendarVenueHire
                 holidays={holidays}
                 booking={booking}
-                // patrolTraining={patrolTraining}
                 social={social}
               />
             </Box>

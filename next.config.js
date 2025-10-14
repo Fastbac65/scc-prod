@@ -10,6 +10,14 @@ const nextConfig = {
       },
     ],
   },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/shop/:path*',
+  //       destination: 'https://www.squarespace.com/:path*',
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;

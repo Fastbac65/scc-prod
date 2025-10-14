@@ -56,7 +56,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
       allEvents = [...allEvents, ...events];
     }
   });
-
+  // console.log(allEvents);
   successCallback(allEvents);
 };
 
@@ -82,6 +82,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   }, []);
 
   useEffect(() => {
+    if (allEvents.current.length === 0) return; // wait for events
+
     // using the event color set by the getEvents function
     if (!holidays) {
       allEvents.current.forEach((event) => {
@@ -100,6 +102,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   }, [holidays]);
 
   useEffect(() => {
+    if (allEvents.current.length === 0) return; // wait for events
+
     if (!booking) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.warning.main}`) {
@@ -116,6 +120,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   }, [booking]);
 
   useEffect(() => {
+    if (allEvents.current.length === 0) return; // wait for events
+
     if (!social) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.success.main}`) {
@@ -217,7 +223,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           titleFormat={{ year: 'numeric', month: 'short' }}
           eventClick={handleEventClick}
           eventsSet={handleEventSet} // called after events are initialized/added/changed/removed
-          eventDidMount={handleEventDidMount}
+          eventDidMount={handleEventDidMount} // called after the date range is switched for example
         />
       </Box>
     </div>

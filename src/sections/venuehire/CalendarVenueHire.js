@@ -44,7 +44,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
       events = response.data.items.map((event) => ({
         //
         id: event?.id,
-        title: event?.summary || 'Private Event',
+        title: event?.summary || 'Private Function',
         location: event?.location,
         description: event?.description,
         start: event.start?.dateTime || event.start?.date,
@@ -52,7 +52,6 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
         created: event?.created,
         creator: event?.creator,
         borderColor: googleCalColors[indx],
-        // borderColor: googleCalColors[indx],
       }));
       allEvents = [...allEvents, ...events];
     }

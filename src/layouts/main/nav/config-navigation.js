@@ -10,4 +10,5 @@ export const navConfig = [
   { access: 'public', title: 'Competitors', path: '/competitors', icon: <Iconify icon="mdi:gym" /> },
   { access: 'public', title: 'Patrol', path: '/patrol', icon: <Iconify icon="mdi:flag-variant-outline" /> },
   { access: 'public', title: 'Training', path: '/training', icon: <Iconify icon="icon-park-outline:degree-hat" /> },
+  // { access: 'public', title: 'Shop', path: '/training', icon: <Iconify icon="icon-park-outline:degree-hat" /> },
 ];

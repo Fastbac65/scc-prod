@@ -147,7 +147,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
             setStartStr('');
             setEndStr('prev,next');
           } else {
-            setStartStr('listMonth,list3Months');
+            setStartStr('listWeek,listMonth');
             setEndStr('today prev,next');
           }
         }, 500);
@@ -211,9 +211,10 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           eventSources={[memoizeGetCalendarEvents]}
           initialView="list3Months"
           views={{
+            listWeek: { buttonText: 'week' },
             listMonth: { buttonText: 'month' },
             list3Months: { type: 'listMonth', duration: { months: 3 }, buttonText: '3 months' },
-            listYear: { buttonText: 'Year' },
+            listYear: { buttonText: 'year' },
           }}
           headerToolbar={{
             start: startStr,

@@ -209,7 +209,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           googleCalendarApiKey="AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM"
           // events={getCalendarEvents}
           eventSources={[memoizeGetCalendarEvents]}
-          initialView="list3Months"
+          initialView="listMonth"
           views={{
             listWeek: { buttonText: 'week' },
             listMonth: { buttonText: 'month' },

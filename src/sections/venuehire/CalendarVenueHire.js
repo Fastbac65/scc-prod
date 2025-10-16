@@ -8,6 +8,7 @@ import axios from 'axios';
 import CalEvent from './CalEvent';
 import { useTheme } from '@mui/material';
 import { useSettingsContext } from 'src/components/settings';
+import useResponsive from 'src/hooks/useResponsive';
 
 //sample google cal url https://www.googleapis.com/calendar/v3/calendars/fastbac65%40gmail.com/events?key=AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM&timeMin=2023-01-01T00%3A00%3A00%2B11%3A00&timeMax=2023-02-01T00%3A00%3A00%2B11%3A00&singleEvents=true&maxResults=9999
 
@@ -74,6 +75,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   const [startStr, setStartStr] = useState('listWeek,listMonth');
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
+  const isMdUp = useResponsive('up', 'md');
 
   const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`, `${theme.palette.success.main}`];
 
@@ -211,8 +213,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           eventSources={[memoizeGetCalendarEvents]}
           initialView="listMonth"
           views={{
-            listWeek: { buttonText: 'wk' },
-            listMonth: { buttonText: 'mth' },
+            listWeek: { buttonText: isMdUp ? 'week' : 'wk' },
+            listMonth: { buttonText: isMdUp ? 'month' : 'mth' },
             list3Months: { type: 'listMonth', duration: { months: 3 }, buttonText: '3 months' },
             listYear: { buttonText: 'year' },
           }}

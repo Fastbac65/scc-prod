@@ -70,8 +70,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   const allEvents = useRef([]); // Will be a copy of all events so we can filter
 
   // responsive workaround for buttons on the FC header
-  const [endStr, setEndStr] = useState('');
-  const [startStr, setStartStr] = useState('');
+  const [endStr, setEndStr] = useState('prev,next');
+  const [startStr, setStartStr] = useState('listWeek,listMonth');
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
@@ -159,7 +159,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
     return size;
   }
 
-  useWindowSize(); // dynamically sets the calendar list menu statefully
+  // useWindowSize(); // dynamically sets the calendar list menu statefully
 
   const handleEventSet = (events) => {
     allEvents.current = [...events];
@@ -211,8 +211,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           eventSources={[memoizeGetCalendarEvents]}
           initialView="listMonth"
           views={{
-            listWeek: { buttonText: 'week' },
-            listMonth: { buttonText: 'month' },
+            listWeek: { buttonText: 'wk' },
+            listMonth: { buttonText: 'mth' },
             list3Months: { type: 'listMonth', duration: { months: 3 }, buttonText: '3 months' },
             listYear: { buttonText: 'year' },
           }}

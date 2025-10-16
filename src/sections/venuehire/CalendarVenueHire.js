@@ -69,13 +69,14 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   } = useSettingsContext();
 
   const allEvents = useRef([]); // Will be a copy of all events so we can filter
+  const isMdUp = useResponsive('up', 'md');
+  const isSmUp = useResponsive('up', 'sm');
 
   // responsive workaround for buttons on the FC header
-  const [endStr, setEndStr] = useState('prev,next');
-  const [startStr, setStartStr] = useState('listWeek,listMonth');
+  // const [endStr, setEndStr] = useState('');
+  // const [startStr, setStartStr] = useState('');
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
-  const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
-  const isMdUp = useResponsive('up', 'md');
+  // const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
   const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`, `${theme.palette.success.main}`];
 
@@ -213,15 +214,15 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
           eventSources={[memoizeGetCalendarEvents]}
           initialView="listMonth"
           views={{
-            listWeek: { buttonText: isMdUp ? 'week' : 'wk' },
-            listMonth: { buttonText: isMdUp ? 'month' : 'mth' },
+            listWeek: { buttonText: isSmUp ? 'week' : 'wk' },
+            listMonth: { buttonText: isSmUp ? 'month' : 'mth' },
             list3Months: { type: 'listMonth', duration: { months: 3 }, buttonText: '3 months' },
             listYear: { buttonText: 'year' },
           }}
           headerToolbar={{
-            start: startStr,
+            end: isSmUp ? 'today prev,next' : 'prev,next',
             center: 'title',
-            end: endStr,
+            start: 'listWeek,listMonth',
           }}
           titleFormat={{ year: 'numeric', month: 'short' }}
           eventClick={handleEventClick}

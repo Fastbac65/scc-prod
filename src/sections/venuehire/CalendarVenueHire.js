@@ -63,6 +63,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
 
 const CalendarVenueHire = ({ holidays, booking, social }) => {
   const theme = useTheme();
+  console.log(theme);
   const {
     dispatch,
     state: { modal },
@@ -201,18 +202,32 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
       }
     }
   };
+  const calendarRef = useRef(null);
+
+  // const handleJumpClick = () => {
+  //   const calendarApi = calendarRef.current.getApi();
+  //   console.log('hello', calendarApi);
+  //   calendarApi.gotoDate('2025-12-25');
+  // };
 
   // className wrapper is used to override FC defauls CSS styles to SCC colors and work better with dark mode
   return (
     <div>
       <Box className="wrapper">
         <FullCalendar
+          ref={calendarRef}
           height={550}
           plugins={[listPlugin, googleCalendarPlugin]}
           googleCalendarApiKey="AIzaSyBz4ew-AmtQGL0h6DNYJKhniipIK7eFBUM"
           // events={getCalendarEvents}
           eventSources={[memoizeGetCalendarEvents]}
           initialView="listMonth"
+          // customButtons={{
+          //   jump: {
+          //     text: 'jump',
+          //     click: handleJumpClick,
+          //   },
+          // }}
           views={{
             listWeek: { buttonText: isSmUp ? 'week' : 'wk' },
             listMonth: { buttonText: isSmUp ? 'month' : 'mth' },

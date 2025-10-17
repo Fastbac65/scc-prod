@@ -41,7 +41,7 @@ export default function Header() {
   const isMdUp = useResponsive('up', 'md');
   const isSmUp = useResponsive('up', 'sm');
 
-  const isOffset = useOffSetTop(2);
+  const isOffset = useOffSetTop(50);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -71,8 +71,8 @@ export default function Header() {
           }),
 
           ...(isOffset && {
-            ...{ backgroundColor: theme.palette.primary.main },
-            // ...bgBlur({ color: theme.palette.primary.darker, blur: 6 }),
+            // ...{ backgroundColor: theme.palette.primary.main },
+            ...bgBlur({ color: theme.palette.primary.dark, blur: 7, opacity: 0.4 }),
             // ...bgBlur({ color: theme.palette.background.default, blur: 5 }),
             // color: 'text.primary',
             color: 'common.white',
@@ -105,9 +105,11 @@ export default function Header() {
                     ml: '5px',
                     lineHeight: 0,
                     position: 'relative',
-                    height: isOffset ? '64px' : '54px',
+                    // height: isOffset ? '64px' : '54px',
+                    height: isOffset ? '54px' : '54px',
                     width: '170px',
-                    borderRadius: isOffset ? 0 : 1,
+                    // borderRadius: isOffset ? 0 : 1,
+                    borderRadius: isOffset ? 1 : 1,
                     overflow: 'hidden',
                     transition: theme.transitions.create(['height'], {
                       easing: theme.transitions.easing.easeInOut,

@@ -10,7 +10,7 @@ const CompetitorsLanding = () => {
       <Box
         sx={{
           pt: 8,
-          pb: 2,
+          pb: 1,
           mt: { sm: '16px' },
           position: 'relative',
           ...bgGradient({

@@ -24,7 +24,7 @@ export const data = [
   {
     path: '',
     title: 'Categories',
-    icon: <Iconify icon="carbon:menu" sx={{ width: 1, height: 1 }} />,
+    icon: <Iconify icon="mdi:menu" sx={{ width: 1, height: 1 }} />,
     products: PRODUCTS,
     tags: TAGS,
     children: [

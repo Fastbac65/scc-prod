@@ -35,7 +35,7 @@ export default function NavMobile({ data }) {
   return (
     <>
       <IconButton onClick={handleOpen} sx={{ ml: 1, color: 'inherit' }}>
-        <Iconify icon="carbon:menu" />
+        <Iconify icon="mdi:menu" />
       </IconButton>
 
       <Menu

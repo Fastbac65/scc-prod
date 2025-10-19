@@ -87,7 +87,7 @@ const Footer = () => {
         <CarouselBasic1 data={sponsors} />
       </Box>
       <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
-        <Typography pt={1} mb={1} paragraph color="text-primary" variant="caption">
+        <Typography pt={1} mb={3} paragraph color="text-primary" variant="caption">
           Email:{' '}
           <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.org">
             mail@southcurlcurlslsc.org

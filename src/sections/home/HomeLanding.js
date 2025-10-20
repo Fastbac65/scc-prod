@@ -108,7 +108,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            🎉 Sept 26th - SEASON KICK OFF ROCKBOX PARTY TICKETS NOW ON SALE. SCROLL DOWN TKT LINK BELOW 🎉
+            🎉 Welcome back to all our members & nippers. The season has started, feels like Summer already, new members welcome 🎉
           </Typography>
           {/* <PreloadImg/> */}
 

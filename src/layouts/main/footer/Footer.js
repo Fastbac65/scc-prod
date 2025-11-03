@@ -16,6 +16,10 @@ const Footer = () => {
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/light-bendigo.jpeg' : '/assets/sponsors/light-bendigo.jpeg',
     },
     {
+      href: 'http://www.kanproperty.com.au/',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/KerryAnn.jpeg' : '/assets/sponsors/KerryAnn.jpeg',
+    },
+    {
       href: 'https://www.communicloud.com/',
       src: theme.palette.mode === 'dark' ? '/assets/sponsors/comcloud.jpeg' : '/assets/sponsors/comcloud.jpeg',
     },

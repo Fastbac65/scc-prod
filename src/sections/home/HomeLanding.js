@@ -108,7 +108,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            🎉 Welcome back to all our members & nippers. The season has started, feels like Summer already, new members welcome 🎉
+            🎉 Happy New Year to all our members, nippers and our surf club friends and sponsors. Welcome to 2026 and we're looking forward to a beautiful summer on the beach 🎉
           </Typography>
           {/* <PreloadImg/> */}
 

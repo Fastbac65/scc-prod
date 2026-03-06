@@ -57,7 +57,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
       allEvents = [...allEvents, ...events];
     }
   });
-  // console.log(allEvents);
+  console.log(allEvents);
   successCallback(allEvents);
 };
 

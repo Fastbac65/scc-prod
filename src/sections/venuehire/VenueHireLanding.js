@@ -28,6 +28,7 @@ const VenueHireLanding = () => {
               </Typography>
               <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
                 Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings and other similar functions.
+                Unfortunately, the surf club does not allow 18th or 21st parties.
               </Typography>
               {/* <Typography variant="h2" component="h1">
                 {title}

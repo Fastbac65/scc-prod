@@ -15,7 +15,7 @@ import useResponsive from 'src/hooks/useResponsive';
 export const getCalendarEvents = (googleCalColors) => async (info, successCallback, failureCallback) => {
   // export const getCalendarEvents = (googleCalColors) => async (info, successCallback, failureCallback) => {
   const googleCalIds = [
-    'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com',
+    'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com', // holidays
     'scccaretaker@gmail.com', // scc events
     '37l5rugffebdsl9jue5lvuugv4@group.calendar.google.com', // private venue hire
   ];
@@ -57,13 +57,13 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
       allEvents = [...allEvents, ...events];
     }
   });
-  console.log(allEvents);
+  // console.log(allEvents);
   successCallback(allEvents);
 };
 
 const CalendarVenueHire = ({ holidays, booking, social }) => {
   const theme = useTheme();
-  console.log(theme);
+  // console.log(theme);
   const {
     dispatch,
     state: { modal },
@@ -107,7 +107,6 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
 
   useEffect(() => {
     if (allEvents.current.length === 0) return; // wait for events
-
     if (!booking) {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.warning.main}`) {
@@ -116,6 +115,8 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
       });
     } else if (booking) {
       allEvents.current.forEach((event) => {
+        console.log(event);
+
         if (event.borderColor === `${theme.palette.warning.main}`) {
           event.setProp('display', 'auto');
         }
@@ -136,6 +137,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
       allEvents.current.forEach((event) => {
         if (event.borderColor === `${theme.palette.success.main}`) {
           event.setProp('display', 'auto');
+          console.log(event.title);
         }
       });
     }

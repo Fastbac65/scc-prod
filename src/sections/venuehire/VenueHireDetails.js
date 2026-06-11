@@ -68,6 +68,11 @@ const VenueHireDetails = () => {
                 label="Large Bar Servery Area"
                 text="Large private outdoor balcony adjoining the hall. Capacity for up to 120 people. Inside and outside dining with BBQs. "
               />
+              <OverviewItem
+                icon="material-symbols:menu-book"
+                label="Onsite Catering"
+                text="Planning an event at South Curl Curl Surf Life Saving Club? Make your celebration even easier with our preferred onsite catering partner, The Beach Eatery."
+              />
               <OverviewItem icon="mdi:currency-usd" label="Venue Hire Payments" text="For venue hire payments please visit the link below, select 'South Curl Curl' as entity and transaction type 'Function'." />
             </Stack>
           </Stack>

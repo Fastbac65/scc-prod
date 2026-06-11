@@ -34,71 +34,81 @@ const ourLifeMembers = [
 <tbody>
 <tr>
 <td>Flora Roberts* – Patron Life Member</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>Alldis, David</td>
 <td>Atkins, Steve</td>
-</tr>
-<tr>
 <td>Backhouse*, Clive N.</td>
-<td>Barlow, Rodney</td>
-<td>Bland*, Jim</td>
 </tr>
 <tr>
+<td>Barlow, Rodney</td>
+<td>Beavon, Jono</td>
+<td>Blake, C.E.</td>
+</tr>
+<tr>
+<td>Bland*, Jim</td>
 <td>Brown, Andy</td>
 <td>Brown*, Len A.</td>
-<td>Brown, Mark E.</td>
 </tr>
 <tr>
+<td>Brown, Mark E.</td>
 <td>Brown, Roper ‘Buster’ L. S.</td>
 <td>Buckingham*, Bruce</td>
-<td>Buckingham, Robert (Bob)</td>
 </tr>
 <tr>
+<td>Buckingham, Robert (Bob)</td>
 <td>Cassidy, John ‘Casso’</td>
 <td>Cuneo, Anthony</td>
-<td>Dossetor, Graeme</td>
 </tr>
 <tr>
+<td>Dominish, Graeme</td>
+<td>Dossetor, Graeme</td>
 <td>Drury, Jenny</td>
+</tr>
+<tr>
 <td>Flemming, Christopher ‘Ribs’</td>
 <td>Flemming,&nbsp;Lyndall</td>
+<td>Flower*, Campbell</td>
 </tr>
 <tr>
-<td>Flower*, Campbell</td>
 <td>Gloag, Mick</td>
 <td>Good, William (Billy)</td>
+<td>Harbron*,&nbsp;Kenneth</td>
 </tr>
 <tr>
-<td>Harbron*,&nbsp;Kenneth</td>
 <td>Harradine, Kevin</td>
 <td>Hewitt, Jeffrey</td>
+<td>Hogan*, Mick</td>
 </tr>
 <tr>
-<td>Hogan*, Mick</td>
 <td>Hourigan*, Cecil A.</td>
+<td>Jones, Darren</td>
 <td>Jones*, Mervyn H.</td>
 </tr>
 <tr>
-<td>Jones, Darren</td>
 <td>Joyce*, Denzil [O.A.M.]</td>
 <td>Kuhn, Charles ‘Chicka’</td>
+<td>Leggett*, Charles</td>
 </tr>
 <tr>
-<td>Leggett*, Charles</td>
 <td>Longley, Charles</td>
 <td>Lowery,&nbsp;Michelle</td>
+<td>Lowery, Robert</td>
 </tr>
 <tr>
 <td>Lowther, Peter</td>
-<td>MacPherson*, William (Bill) J.C.</td>
 <td>MacPherson*, Robert (Bob) G.</td>
-</tr>
-<tr>
-<td>McColm*, John G.</td>
-<td>McErlane*, David</td>
-<td>McKay, Elton</td>
+<td>MacPherson*, William (Bill) J.C.</td>
 </tr>
 <tr>
 <td>Marvin, Ron L.</td>
+<td>McColm*, John G.</td>
+<td>McErlane*, David</td>
+</tr>
+<tr>
+<td>McKay, Elton</td>
 <td>Middleton*, Tom A.</td>
 <td>Moffat, Kevin ‘Spook’ A.</td>
 </tr>
@@ -108,9 +118,9 @@ const ourLifeMembers = [
 <td>O’Keefe*, Lindsay</td>
 </tr>
 <tr>
+<td>Olivey*, David</td>
 <td>Olsen*, Arthur O.</td>
 <td>Olsen*, Clive E.</td>
-<td>Olivey*, David</td>
 </tr>
 <tr>
 <td>Picard*, Robert (Bob)</td>
@@ -141,14 +151,9 @@ const ourLifeMembers = [
 <td>Taylor*, Norm R.</td>
 <td>Thompson, Martin</td>
 <td>White, John</td>
+</tr>
 <tr>
 <td>Woodward, Michael</td>
-<td>Dominish, Graeme</td>
-<td>Lowery, Robert</td>
-</tr>
-</tr>
-<tr>
-<td>Blake, C.E.</td>
 <td></td>
 <td></td>
 </tr>

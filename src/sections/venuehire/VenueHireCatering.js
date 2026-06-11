@@ -11,8 +11,8 @@ const StyledRootResponsive = styled('div', {
   padding: theme.spacing(4, 0),
   ...bgGradient({
     direction: 'to top',
-    startColor: `${alpha(theme.palette.background.neutral, 0.8)} 0%`,
-    endColor: `${alpha(theme.palette.background.neutral, 0.98)} 70%`,
+    startColor: `${alpha(theme.palette.background.neutral, 0.6)} 0%`,
+    endColor: `${alpha(theme.palette.background.neutral, 0.98)} 80%`,
     imgUrl,
   }),
   [theme.breakpoints.up('sm')]: {

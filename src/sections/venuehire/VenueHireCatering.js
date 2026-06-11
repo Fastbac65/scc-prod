@@ -61,7 +61,7 @@ const VenueHireCatering = () => {
                 label="Our Menu"
                 text={
                   <>
-                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. Please take a look at our{' '}
+                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. Check out our{' '}
                     <Link href="https://southcurlcurlslsc.com.au/assets/docs/TheBeachEatery-Catering&SetMenu.pdf" target="_blank" rel="noopener" color="secondary">
                       full menu
                     </Link>

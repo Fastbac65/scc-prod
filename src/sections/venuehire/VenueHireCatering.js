@@ -1,23 +1,26 @@
 import { Box, Typography, Stack, styled, alpha, Link, Container } from '@mui/material';
+import { useState } from 'react';
 // components
 import Iconify from 'src/components/iconify/Iconify';
 import { bgGradient } from 'src/lib/cssStyles';
 
 // ----------------------------------------------------------------------
-const StyledRootResponsive = styled('div')(({ theme }) => ({
+const StyledRootResponsive = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'imgUrl',
+})(({ theme, imgUrl }) => ({
   padding: theme.spacing(4, 0),
   ...bgGradient({
     direction: 'to top',
     startColor: `${alpha(theme.palette.background.neutral, 0.8)} 0%`,
     endColor: `${alpha(theme.palette.background.neutral, 0.98)} 70%`,
-    imgUrl: '/assets/images/beacheatery1.jpg',
+    imgUrl,
   }),
   [theme.breakpoints.up('sm')]: {
     ...bgGradient({
       direction: 'to left',
       startColor: `${alpha(theme.palette.background.neutral, 0)} 0%`,
       endColor: `${alpha(theme.palette.background.neutral, 1)} 30%`,
-      imgUrl: '/assets/images/beacheatery1.jpg',
+      imgUrl,
     }),
     backgroundPosition: 'center, right',
     backgroundSize: 'cover, auto 100%',
@@ -26,9 +29,18 @@ const StyledRootResponsive = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
+const IMAGES = [
+  '/assets/images/beacheatery1.jpg',
+  '/assets/images/beacheatery2.jpg',
+  '/assets/images/beacheatery3.jpg',
+  '/assets/images/beacheatery4.jpg',
+];
+
 const VenueHireCatering = () => {
+  const [imgUrl] = useState(() => IMAGES[Math.floor(Math.random() * IMAGES.length)]);
+
   return (
-    <StyledRootResponsive>
+    <StyledRootResponsive imgUrl={imgUrl}>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>

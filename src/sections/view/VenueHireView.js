@@ -12,7 +12,7 @@ export default function VenueHireView({ staticPosts }) {
     <>
       <VenueHireLanding />
       <VenueHireDetails />
-      <VenueHireCatering />
+      {/* <VenueHireCatering /> */}
       <VenueHireBooking />
       <VenueHireCalendar />
       <RecentPosts staticPosts={staticPosts.slice(0, 6)} />

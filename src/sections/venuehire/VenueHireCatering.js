@@ -29,18 +29,16 @@ const StyledRootResponsive = styled('div', {
 
 // ----------------------------------------------------------------------
 
-const IMAGES = [
-  '/assets/images/beacheatery1.jpg',
-  '/assets/images/beacheatery2.jpg',
-  '/assets/images/beacheatery3.jpg',
-  '/assets/images/beacheatery4.jpg',
-];
+const IMAGES = ['/assets/images/beacheatery1.jpg', '/assets/images/beacheatery2.jpg', '/assets/images/beacheatery3.jpg', '/assets/images/beacheatery4.jpg'];
 
 const VenueHireCatering = () => {
   const [imgUrl] = useState(() => IMAGES[Math.floor(Math.random() * IMAGES.length)]);
 
   return (
     <StyledRootResponsive imgUrl={imgUrl}>
+      <div style={{ position: 'relative' }}>
+        <div id="venuecatering" style={{ position: 'absolute', top: '-80px' }} />
+      </div>
       <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>

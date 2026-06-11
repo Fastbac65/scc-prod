@@ -51,6 +51,7 @@ const VenueHireLanding = () => {
           <CustomBreadcrumbs
             links={[
               { name: 'Home', href: '/' },
+              { name: 'On-site Catering', href: '/venuehire/#venuecatering' },
               { name: 'Booking Inquiry', href: '/venuehire/#venuebooking' },
               { name: 'Venue Bookings', href: '/venuehire/#venuecalendar' },
             ]}

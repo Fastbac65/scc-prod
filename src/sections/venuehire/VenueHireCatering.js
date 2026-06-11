@@ -81,13 +81,20 @@ const VenueHireCatering = () => {
         </Stack>
 
         <Box display="flex" justifyContent="center">
-          <Stack sx={{ py: 2, maxWidth: '1000px' }}>
-            <Typography variant="body2" color="text.secondary">
-              Beach Eatery w:&nbsp;
+          {/* <Typography variant="body2" color="text.secondary">
+            Beach Eatery&nbsp;
+          </Typography> */}
+          <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ py: 2, maxWidth: '1000px' }}>
+            <Typography>
+              w:&nbsp;
               <Link href="https://www.thebeacheatery.com.au/" target="_blank" rel="noopener" variant="body2" color="inherit">
                 https://www.thebeacheatery.com.au/
               </Link>
-              &nbsp;&nbsp;e:&nbsp;
+              &nbsp;&nbsp;
+            </Typography>
+
+            <Typography variant="body2" color="text.secondary">
+              e:&nbsp;
               <Link href="mailto:hello@thebeacheatery.com.au" variant="body2" color="inherit">
                 hello@thebeacheatery.com.au
               </Link>

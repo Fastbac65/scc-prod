@@ -39,7 +39,7 @@ const VenueHireCatering = () => {
       <div style={{ position: 'relative' }}>
         <div id="venuecatering" style={{ position: 'absolute', top: '-80px' }} />
       </div>
-      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
+      <Stack maxWidth="lg" sx={{ textAlign: 'center' }}>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '800px' }}>
             <Typography variant="h3" component="h2">
@@ -48,7 +48,7 @@ const VenueHireCatering = () => {
           </Stack>
         </Box>
 
-        <Stack sx={{ px: 1, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
+        <Stack sx={{ px: { xs: 1, sm: 2 }, py: 2, textAlign: 'left' }} columnGap={0} display="grid" gridTemplateColumns={{ xs: '1fr', sm: '3fr 1fr' }}>
           <Stack>
             <Stack spacing={1}>
               <OverviewItem
@@ -108,7 +108,7 @@ const VenueHireCatering = () => {
             </Typography>
           </Stack>
         </Box>
-      </Container>
+      </Stack>
     </StyledRootResponsive>
   );
 };

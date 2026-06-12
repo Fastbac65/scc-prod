@@ -1,13 +1,13 @@
 // next
 import { useRouter } from 'next/router';
 // fb
-import { applyActionCode, checkActionCode, signOut, isSignInWithEmailLink, signInWithEmailLink } from 'firebase/auth';
+import { applyActionCode, checkActionCode, signOut, isSignInWithEmailLink, /* signInWithEmailLink */ } from 'firebase/auth';
 
 // @mui
 import { Stack } from '@mui/material';
 // components
 //
-import { useCallback, useEffect } from 'react';
+import { /* useCallback, */ useEffect } from 'react';
 import { useSettingsContext } from 'src/components/settings';
 import { auth } from 'src/lib/createFirebaseApp';
 import { AuthCarousel } from '../components';

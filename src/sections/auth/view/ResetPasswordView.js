@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { Link, Stack, Typography } from '@mui/material';
 // routes
 // components
-import Image from 'src/components/image';
+// import Image from 'src/components/image';
 import Iconify from 'src/components/iconify';
 //
 import SvgColor from 'src/components/svg-color/SvgColor';

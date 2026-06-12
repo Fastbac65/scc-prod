@@ -1,9 +1,8 @@
 // ----------------------------------------------------------------------
-import Posts from '../posts/Posts';
+// import Posts from '../posts/Posts';
 import PostsShareAll from '../posts/PostsShareAll';
-import RecentPosts from '../posts/RecentPosts';
-import SinglePostShare from '../posts/SinglePostShare';
 // import RecentPosts from '../posts/RecentPosts';
+import SinglePostShare from '../posts/SinglePostShare';
 // ----------------------------------------------------------------------
 
 export default function PostsView({ staticPosts, staticPost }) {

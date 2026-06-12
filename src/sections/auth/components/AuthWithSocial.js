@@ -7,7 +7,7 @@ import { Stack, Button } from '@mui/material';
 import Iconify from 'src/components/iconify';
 import { signInSocial } from 'src/lib/firebaseAuth';
 import { useSettingsContext } from 'src/components/settings';
-import { auth, providerFacebook, providerGoogle } from 'src/lib/createFirebaseApp';
+import { auth, /* providerFacebook, */ providerGoogle } from 'src/lib/createFirebaseApp';
 import { addDoco, updateDoco } from 'src/lib/firestoreDocument';
 
 // ----------------------------------------------------------------------

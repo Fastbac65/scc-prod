@@ -6,7 +6,7 @@ import TrainingARTFirstAid from 'src/sections/training/TrainingARTFirstAid';
 import TrainingSRCBronze from '../training/TrainingSRCBronze';
 import TrainingIRB from '../training/TrainingIRB';
 
-import useOffSetTop from 'src/hooks/useOffSetTop';
+// import useOffSetTop from 'src/hooks/useOffSetTop';
 
 // ----------------------------------------------------------------------
 

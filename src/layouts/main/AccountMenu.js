@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 import { alpha } from '@mui/material/styles';
 import { Link, Stack, Avatar, Divider, ListItemIcon, ListItemText, ListItemButton, Menu, useTheme, IconButton } from '@mui/material';
 // hooks
-import useResponsive from 'src/hooks/useResponsive';
-import useActiveLink from 'src/hooks/useActiveLink';
+// import useResponsive from 'src/hooks/useResponsive';
+// import useActiveLink from 'src/hooks/useActiveLink';
 
 // components
 import Iconify from 'src/components/iconify';

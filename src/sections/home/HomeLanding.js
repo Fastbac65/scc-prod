@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import NextLink from 'next/link';
+// import Image from 'next/image';
+// import NextLink from 'next/link';
 
 import Carousel from 'react-material-ui-carousel';
-import { CardMedia, Box, Typography, Container, Stack, Link, Button } from '@mui/material';
+import { CardMedia, Box, Typography, /* Container, */ Stack, Link, Button } from '@mui/material';
 import { bgGradient } from 'src/lib/cssStyles';
 import { styled, alpha, useTheme } from '@mui/material/styles';
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { /* useEffect, useLayoutEffect, */ useMemo, useRef, useState } from 'react';
 import Iconify from 'src/components/iconify';
 
 const StyledRoot = styled('div')(({ theme }) => ({

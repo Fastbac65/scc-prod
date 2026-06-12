@@ -1,4 +1,4 @@
-import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled, Link } from '@mui/material';
+import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled, /* Link */ } from '@mui/material';
 import { useState } from 'react';
 import CalendarCompetitors from './CalendarCompetitors';
 import { bgGradient } from 'src/lib/cssStyles';

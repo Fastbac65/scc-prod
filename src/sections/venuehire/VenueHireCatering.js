@@ -61,7 +61,7 @@ const VenueHireCatering = () => {
                 label="Our Menu"
                 text={
                   <>
-                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. Check out our{' '}
+                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. Check out their{' '}
                     <Link href="https://southcurlcurlslsc.com.au/assets/docs/TheBeachEatery-Catering&SetMenu.pdf" target="_blank" rel="noopener" color="secondary">
                       full menu
                     </Link>
@@ -84,7 +84,7 @@ const VenueHireCatering = () => {
           {/* <Typography variant="body2" color="text.secondary">
             Beach Eatery&nbsp;
           </Typography> */}
-          <Stack direction={{ xs: 'column', sm: 'row' }} sx={{ py: 2, maxWidth: '1000px' }}>
+          <Stack direction={{ sm: 'column', md: 'row' }} sx={{ py: 2, maxWidth: '1000px' }}>
             <Typography>
               w:&nbsp;
               <Link href="https://www.thebeacheatery.com.au/" target="_blank" rel="noopener" variant="body2" color="inherit">
@@ -97,6 +97,13 @@ const VenueHireCatering = () => {
               e:&nbsp;
               <Link href="mailto:hello@thebeacheatery.com.au" variant="body2" color="inherit">
                 hello@thebeacheatery.com.au
+              </Link>
+              &nbsp;&nbsp;
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              t:&nbsp;
+              <Link href="tel:+61294498916" variant="body2" color="inherit">
+                +612 94498916
               </Link>
             </Typography>
           </Stack>

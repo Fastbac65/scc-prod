@@ -152,7 +152,7 @@ const ourCommittee = [
 		<tr>
 			<td>Club Admin</td>
 			<td>Lisa Settree</td>
-			<td><a href="mailto:Mail@southcurlcurlslsc.org">Mail@southcurlcurlslsc.org</a></td>
+			<td><a href="mailto:mail@southcurlcurlslsc.com.au">mail@southcurlcurlslsc.com.au</a></td>
 		</tr>
 		<tr>
 			<td>Technology Officer</td>

@@ -51,7 +51,7 @@ const membershipContent = [
   {
     icon: 'tdesign:member',
     label: 'New Member & Nipper Registration',
-    text: `<p>Use 'Join South Curly' button below to 'Join A Club' and setup online SLS accounts for you and/or your family and make the appropriate payment. Send photo of ID with proof of age to mail@southcurlcurlslsc.org for each new member (e.g. License, Passport or Birth Certificate).</p>`,
+    text: `<p>Use 'Join South Curly' button below to 'Join A Club' and setup online SLS accounts for you and/or your family and make the appropriate payment. Send photo of ID with proof of age to mail@southcurlcurlslsc.com.au for each new member (e.g. License, Passport or Birth Certificate).</p>`,
   },
 ];
 const OurClubMembership = () => {
@@ -97,7 +97,7 @@ const OurClubMembership = () => {
         </Stack>
         <Box display="flex" justifyContent="center">
           <Stack sx={{ pt: 2, maxWidth: '800px' }}>
-            <Typography variant="caption">If you experience difficulties in setting up an online account or renewal, please email the club at mail@southcurlcurlslsc.org.</Typography>
+            <Typography variant="caption">If you experience difficulties in setting up an online account or renewal, please email the club at mail@southcurlcurlslsc.com.au.</Typography>
           </Stack>
         </Box>
       </Container>

@@ -95,13 +95,26 @@ const COMMON = {
 export default function palette(themeMode) {
   const light = {
     ...COMMON,
-    mode: 'light',
+    // mode: 'light',
+    // text: {
+    //   primary: GREY[800],
+    //   secondary: GREY[700],
+    //   disabled: GREY[600],
+    // },
+    // background: { paper: '#FFFFFF', default: '#FFFFFF', neutral: GREY[200] },
     text: {
-      primary: GREY[800],
-      secondary: GREY[700],
-      disabled: GREY[600],
+      primary: '#FFFFFF',
+      secondary: '#FFFFFF',
+      disabled: GREY[400],
     },
-    background: { paper: '#FFFFFF', default: '#FFFFFF', neutral: GREY[200] },
+    background: {
+      paper: GREY[800],
+      default: '#4E7FB6',
+      neutral: '#003768',
+      // paper: GREY[800],
+      // default: GREY[900],
+      // neutral: GREY[800],
+    },
     action: {
       ...COMMON.action,
       active: GREY[600],

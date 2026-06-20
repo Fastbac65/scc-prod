@@ -15,7 +15,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
   ...bgBlur({
     blur: 2,
     // opacity: 0.99,
-    color: theme.palette.mode === 'dark' ? '#111111' : '#fff',
+    color: theme.palette.mode === 'dark' ? '#111111' : '#4E7FB6',
   }),
   top: 0,
   zIndex: 9999,

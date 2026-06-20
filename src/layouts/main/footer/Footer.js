@@ -33,7 +33,7 @@ const Footer = () => {
     },
     {
       href: 'https://deewhyrsl.com.au/',
-      src: theme.palette.mode === 'dark' ? '/assets/sponsors/deewhyrsl.jpeg' : '/assets/sponsors/deewhyrsl.jpeg.jpeg',
+      src: theme.palette.mode === 'dark' ? '/assets/sponsors/deewhyrsl.jpeg' : '/assets/sponsors/deewhyrsl.jpeg',
     },
     {
       href: 'https://solitonnetworkconsulting.com/',

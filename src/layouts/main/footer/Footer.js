@@ -90,7 +90,7 @@ const Footer = () => {
       <Box sx={{ height: '200px', overflow: 'hidden', borderRadius: 2 }}>
         <CarouselBasic1 data={sponsors} />
       </Box>
-      <Paper sx={{ boxShadow: 0, borderRadius: 0 }}>
+      <Box sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={3} paragraph color="text-primary" variant="caption">
           Email:{' '}
           <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.com.au">
@@ -109,7 +109,7 @@ const Footer = () => {
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Site by TezD
         </Typography>
-      </Paper>
+      </Box>
     </Box>
   );
 };

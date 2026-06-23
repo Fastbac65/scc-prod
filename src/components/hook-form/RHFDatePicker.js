@@ -21,6 +21,9 @@ export default function RHFDatePicker({ name, helperText, ...other }) {
               helperText: error?.message || helperText,
               error: !!error?.message,
             },
+            openPickerButton: {
+              sx: { color: 'text.primary' },
+            },
           }}
           {...field}
           value={field.value}

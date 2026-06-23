@@ -82,7 +82,7 @@ export function MenuContent() {
         flexShrink: 0,
         borderRadius: 1,
         width: 1,
-        bgcolor: alpha(theme.palette.primary.main, 0.25),
+        bgcolor: theme.palette.background.neutral,
         py: 0,
       }}
     >
@@ -184,7 +184,7 @@ function MenuItem({ item }) {
   const active = pathname.includes(item.path);
 
   return (
-    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'secondary.light' : 'inherit'} underline="none">
+    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'warning.dark' : 'inherit'} underline="none">
       <ListItemButton
         sx={{
           px: 1,
@@ -198,9 +198,6 @@ function MenuItem({ item }) {
           primary={item.title}
           primaryTypographyProps={{
             typography: 'body2',
-            ...(active && {
-              typography: 'subtitle2',
-            }),
           }}
         />
       </ListItemButton>

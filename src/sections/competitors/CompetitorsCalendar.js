@@ -66,7 +66,7 @@ const CompetitorsCalendar = () => {
                     Filter
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && comps} color="primary" />} label="View All" disabled={holidays && comps} />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={comps} sx={{ color: 'warning.dark', '&.Mui-checked': { color: 'warning.dark' } }} />} label="SCC Comps" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={comps} color="warning" />} label="SCC Comps" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>

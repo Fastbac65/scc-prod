@@ -36,7 +36,7 @@ export const StyledNavItem = styled(ListItemButton, {
     },
     // Active
     ...(active && {
-      color: theme.palette.warning.dark,
+      color: theme.palette.warning.main,
       '&::before': dotActiveStyle,
     }),
   };

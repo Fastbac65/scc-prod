@@ -184,7 +184,7 @@ function MenuItem({ item }) {
   const active = pathname.includes(item.path);
 
   return (
-    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'warning.dark' : 'inherit'} underline="none">
+    <Link component={NextLink} key={item.title} href={item.path} color={active ? 'warning.main' : 'inherit'} underline="none">
       <ListItemButton
         sx={{
           px: 1,

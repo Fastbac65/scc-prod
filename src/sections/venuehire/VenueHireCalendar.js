@@ -72,7 +72,7 @@ const VenueHireCalendar = () => {
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && booking && social} color="primary" />} label="View All" disabled={holidays && booking && social} />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={social} color="success" />} label="Venue Hire" />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} color="warning" />} label="SCC Events" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={booking} sx={{ color: 'warning.dark', '&.Mui-checked': { color: 'warning.dark' } }} />} label="SCC Events" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>

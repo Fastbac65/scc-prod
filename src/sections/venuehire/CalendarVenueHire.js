@@ -79,7 +79,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   // const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
-  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`, `${theme.palette.success.main}`];
+  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.dark}`, `${theme.palette.success.main}`];
 
   const memoizeGetCalendarEvents = useMemo(() => {
     return getCalendarEvents(googleCalColors);
@@ -109,7 +109,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
     if (allEvents.current.length === 0) return; // wait for events
     if (!booking) {
       allEvents.current.forEach((event) => {
-        if (event.borderColor === `${theme.palette.warning.main}`) {
+        if (event.borderColor === `${theme.palette.warning.dark}`) {
           event.setProp('display', 'none');
         }
       });
@@ -117,7 +117,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
       allEvents.current.forEach((event) => {
         console.log(event);
 
-        if (event.borderColor === `${theme.palette.warning.main}`) {
+        if (event.borderColor === `${theme.palette.warning.dark}`) {
           event.setProp('display', 'auto');
         }
       });
@@ -193,7 +193,7 @@ const CalendarVenueHire = ({ holidays, booking, social }) => {
       }
     }
     if (!booking) {
-      if (calEventInfo?.borderColor === `${theme.palette.warning.main}`) {
+      if (calEventInfo?.borderColor === `${theme.palette.warning.dark}`) {
         // if (calEventInfo.event?.extendedProps?.creator?.email === 'scccaretaker@gmail.com') {
         calEventInfo.event.setProp('display', 'none');
       }

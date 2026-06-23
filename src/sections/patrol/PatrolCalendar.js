@@ -66,7 +66,7 @@ const PatrolCalendar = () => {
                     Filter
                   </Typography>
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && patrol} color="primary" />} label="View All" disabled={holidays && patrol} />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={patrol} color="warning" />} label="SCC Patrols" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={patrol} sx={{ color: 'warning.dark', '&.Mui-checked': { color: 'warning.dark' } }} />} label="SCC Patrols" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>

@@ -73,7 +73,7 @@ const CalendarPatrol = ({ holidays, patrol }) => {
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
-  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`];
+  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.dark}`];
   // to stop FC rerendering and re-fetching events everytime a state change occurs on the page
   const memoizeGetCalendarEvents = useMemo(() => {
     return getCalendarEvents(googleCalColors);
@@ -98,14 +98,14 @@ const CalendarPatrol = ({ holidays, patrol }) => {
   useEffect(() => {
     if (!patrol) {
       allEvents.current.forEach((event) => {
-        if (event?.borderColor === `${theme.palette.warning.main}`) {
+        if (event?.borderColor === `${theme.palette.warning.dark}`) {
           // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'none');
         }
       });
     } else if (patrol) {
       allEvents.current.forEach((event) => {
-        if (event?.borderColor === `${theme.palette.warning.main}`) {
+        if (event?.borderColor === `${theme.palette.warning.dark}`) {
           // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'auto');
         }
@@ -162,13 +162,13 @@ const CalendarPatrol = ({ holidays, patrol }) => {
       }
     }
     if (!patrol) {
-      if (calEventInfo?.borderColor === `${theme.palette.warning.main}`) {
+      if (calEventInfo?.borderColor === `${theme.palette.warning.dark}`) {
         // if (calEventInfo.event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
         calEventInfo.event.setProp('display', 'none');
       }
     }
     // if (!patrolTraining) {
-    //   // if (calEventInfo?.borderColor === `${theme.palette.warning.main}`) {
+    //   // if (calEventInfo?.borderColor === `${theme.palette.warning.dark}`) {
     //   if (calEventInfo.event?.extendedProps?.creator?.email === 'fastbac65@gmail.com') {
     //     calEventInfo.event.setProp('display', 'none');
     //   }

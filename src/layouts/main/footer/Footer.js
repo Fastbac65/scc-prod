@@ -93,18 +93,18 @@ const Footer = () => {
       <Box sx={{ boxShadow: 0, borderRadius: 0 }}>
         <Typography pt={1} mb={3} paragraph color="text-primary" variant="caption">
           Email:{' '}
-          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="mailto:mail@southcurlcurlslsc.com.au">
+          <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'common.white'} href="mailto:mail@southcurlcurlslsc.com.au">
             mail@southcurlcurlslsc.com.au
           </Link>
           &nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Tel: +61-2-99385430&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; Mail: P.O. Box 18, Freshwater NSW 2096
         </Typography>
         <Typography color="text-primary" pb={1} paragraph variant="caption">
           © Copyright 2026 | South Curl Curl Surf Life Saving club &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="/privacy">
+          <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'common.white'} href="/privacy">
             Terms & Conditions
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;{' '}
-          <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} href="/privacy">
+          <Link component={NextLink} color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'common.white'} href="/privacy">
             Privacy
           </Link>{' '}
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web Site by TezD

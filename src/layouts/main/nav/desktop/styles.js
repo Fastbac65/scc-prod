@@ -36,8 +36,7 @@ export const StyledNavItem = styled(ListItemButton, {
     },
     // Active
     ...(active && {
-      // color: theme.palette.text.primary,
-      fontWeight: theme.typography.fontWeightSemiBold,
+      color: theme.palette.warning.dark,
       '&::before': dotActiveStyle,
     }),
   };

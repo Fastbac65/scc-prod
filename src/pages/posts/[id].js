@@ -1,5 +1,6 @@
 // next
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 // layouts
 import MainLayout from 'src/layouts/main';
 // sections
@@ -56,9 +57,8 @@ export async function getStaticPaths() {
 // Entry point to website content
 
 export default function SinglePost({ staticPosts, staticPost }) {
+  const router = useRouter();
   const { loading, host } = useSettingsContext();
-  if (loading) {
-    return <LoadingScreen />;
-  }
+  if (router.isFallback || loading) return <LoadingScreen />;
   return <PostsView staticPosts={staticPosts} staticPost={staticPost} />;
 }

@@ -142,6 +142,11 @@ const EditPost = ({ postDoc }) => {
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await updateDoco('posts', postDocumentId, postDocumentObj); // also adds timestamp automatically
+      fetch('/api/revalidate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET, path: 'all' }),
+      });
       //await updateRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj);
     } catch (error) {
       console.log(error.message);

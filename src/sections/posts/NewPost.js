@@ -140,6 +140,11 @@ const NewPost = () => {
       };
       const realtimePostObj = { id: postDocumentId, data: postDocumentObj };
       await addDoco('posts', postDocumentId, postDocumentObj); // timestamp simplified
+      fetch('/api/revalidate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET, path: 'all' }),
+      });
       //await addRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj); // timestamp simplified
     } catch (error) {
       console.log(error.message);

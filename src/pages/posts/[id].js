@@ -27,7 +27,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      staticPosts: posts,
+      staticPosts: [],
       staticPost: post.length ? post[0] : {},
       // staticPost: post.length ? posts.filter((post) => post.id === context.params.id)[0] : {},
       title: post.length ? post[0].data.title : '',

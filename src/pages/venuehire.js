@@ -8,11 +8,11 @@ import { getPosts } from 'src/lib/getStaticDocs';
 VenueHire.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts(6);
   // const members = await getMembers();
   return {
     props: {
-      staticPosts: posts.slice(0, 6),
+      staticPosts: posts,
       title: 'SCC - Venue Hire',
       description:
         'Amazing location, stunning panoramic views of Curl Curl beach. We offer a unique venue, right on the beach, for parties, weddings, conferences, business meetings and other similar functions.',

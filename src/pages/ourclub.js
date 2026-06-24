@@ -8,10 +8,10 @@ import { getPosts } from 'src/lib/getStaticDocs';
 OurClub.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts(6);
   return {
     props: {
-      staticPosts: posts.slice(0, 6),
+      staticPosts: posts,
       title: 'SCC - Our Club',
       description:
         'South Curl Curl Surf Life Saving Club is dedicated to its core mission of delivering optimal water safety. Our club places significant focus on equipping its members with the highest level of lifesaving expertise.',

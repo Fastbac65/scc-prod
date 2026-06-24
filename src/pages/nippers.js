@@ -10,12 +10,12 @@ import { getPosts } from 'src/lib/getStaticDocs';
 Nippers.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts(6);
   // const members = await getMembers();
 
   return {
     props: {
-      staticPosts: posts.slice(0, 6),
+      staticPosts: posts,
       title: 'SCC - Nippers',
       description:
         'For over a century South Curly SLSC has excelled in providing excellence in life saving services. Our Nippers programs continue this legacy whilst having fun, every Sunday morning with over 400 little caps adorning our glorious beach.',

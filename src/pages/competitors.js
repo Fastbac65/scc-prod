@@ -9,11 +9,11 @@ import { getPosts } from 'src/lib/getStaticDocs';
 Competitors.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts(6);
   // const members = await getMembers();
   return {
     props: {
-      staticPosts: posts.slice(0, 6),
+      staticPosts: posts,
       title: 'SCC - Competitors',
       description:
         'Our competitors at South Curl Curl SLSC share a unified mission: To excel in the waters, on the sand, and beyond. We commit to relentless training, unwavering dedication, and embodying the values of lifesaving.',

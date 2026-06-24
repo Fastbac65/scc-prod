@@ -9,11 +9,11 @@ import { getPosts } from 'src/lib/getStaticDocs';
 Patrol.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts(6);
   // const members = await getMembers();
   return {
     props: {
-      staticPosts: posts.slice(0, 6),
+      staticPosts: posts,
       title: 'SCC - Patrol',
       description:
         'The South Curl Curl Surf Life Saving Patrols are provided by a volunteer organisation whose basic objective is to provide the highest possible level of water safety for our locals, visitors and nippers.',

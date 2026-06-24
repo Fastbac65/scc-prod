@@ -143,7 +143,7 @@ const NewPost = () => {
       fetch('/api/revalidate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET, path: 'all' }),
+        body: JSON.stringify({ api_key: process.env.NEXT_PUBLIC_API_ROUTE_SECRET, path: 'main' }),
       });
       //await addRealtimeDoc(`Posts/${postDocumentId}`, realtimePostObj); // timestamp simplified
     } catch (error) {

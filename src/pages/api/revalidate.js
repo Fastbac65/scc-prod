@@ -18,8 +18,8 @@ export default async function handler(req, res) {
       await Promise.all([...mainPages.map((path) => res.revalidate(path)), ...postPaths]);
       return res.status(200).json({ revalidated: 'all paths OK' });
     } else if (req.body.path === 'main') {
-      await Promise.all(mainPages.map((path) => res.revalidate(path)));
-      return res.status(200).json({ revalidated: 'main pages OK' });
+      mainPages.forEach((path) => res.revalidate(path));
+      return res.status(200).json({ revalidated: 'main pages queued' });
     } else {
       await res.revalidate(req.body.path);
       return res.status(200).json({ revalidated: req.body.path });

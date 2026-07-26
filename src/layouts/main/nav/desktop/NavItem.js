@@ -24,8 +24,10 @@ export const NavItem = forwardRef(({ item, active, isExternalLink, ...other }, r
 
   // ExternalLink
   if (isExternalLink) {
+    const sameTab = path.includes('shop.southcurlcurlslsc.com.au');
+
     return (
-      <Link href={path} target="_blank" rel="noopener" color="inherit" underline="none">
+      <Link href={path} target={sameTab ? undefined : '_blank'} rel={sameTab ? undefined : 'noopener'} color="inherit" underline="none">
         {renderContent}
       </Link>
     );

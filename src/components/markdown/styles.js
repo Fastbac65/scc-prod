@@ -30,7 +30,7 @@ const StyledMarkdown = styled('div', {
     color: theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.primary.lighter,
     textDecoration: 'underline',
     '&:hover': {
-      fontWeight: '600',
+      textDecoration: 'none',
     },
   },
 

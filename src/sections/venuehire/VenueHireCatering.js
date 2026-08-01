@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, styled, alpha, Link, /* Container */ } from '@mui/material';
+import { Box, Typography, Stack, styled, alpha, Link } from '@mui/material';
 import { useState } from 'react';
 // components
 import Iconify from 'src/components/iconify/Iconify';
@@ -61,9 +61,9 @@ const VenueHireCatering = () => {
                 label="Our Menu"
                 text={
                   <>
-                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. Check out their{' '}
-                    <Link href="https://southcurlcurlslsc.com.au/assets/docs/TheBeachEatery-Catering&SetMenu.pdf" target="_blank" rel="noopener" color="secondary">
-                      full menu
+                    Located on site, their experienced team can help create a seamless food and beverage experience so you can focus on enjoying your event. To check out their full menu click{' '}
+                    <Link href="https://southcurlcurlslsc.com.au/assets/docs/TheBeachEatery-Catering&SetMenu.pdf" target="_blank" rel="noopener" color="#f9de00">
+                      here
                     </Link>
                     .
                   </>

@@ -28,9 +28,9 @@ const StyledMarkdown = styled('div', {
   // Link
   a: {
     color: theme.palette.mode === 'light' ? theme.palette.common.white : theme.palette.primary.lighter,
-    textDecoration: 'none',
+    textDecoration: 'underline',
     '&:hover': {
-      textDecoration: 'underline',
+      fontWeight: '600',
     },
   },
 

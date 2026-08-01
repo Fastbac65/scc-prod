@@ -52,7 +52,7 @@ const ourDocs = [
 <td>The club By-Laws can be viewed <a href="https://southcurlcurlslsc.com.au/assets/docs/SCCBy-Laws-d260731.pdf" target="_blank" rel="noopener">here</a></td>
 </tr>
 <td>SCC Club By-Laws 2024</td>
-<td>SCC SLSC Club By-Laws Adopted 24 June 2024</td>
+<td>SCC SLSC Club By-Laws Adopted 24th June 2024</td>
 <td>The club By-Laws can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-By-Laws-d240617.pdf?alt=media&token=ac8a0b61-80bb-428f-b07c-4736a5b0a5df" target="_blank" rel="noopener">here</a></td>
 </tr>
 <tr>

@@ -81,7 +81,6 @@ const ourDocs = [
 <td>The 2023 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC%20Annual%20Report%20Season%202223%20-%20Published.pdf?alt=media&token=eb8b96da-1ba9-45f9-8bb9-623b373e3f1e" target="_blank" rel="noopener">here</a></td>
 </tr>
 <tr>
-
 <td>2022 Annual General Meeting (AGM)</td>
 <td>The 104th Annual General Meeting was held at 10:00am, on Sunday 7th August 2022.</td>
 <td>The 2022 Annual Report can be viewed <a href="https://firebasestorage.googleapis.com/v0/b/scc-proto.appspot.com/o/sccdocs%2FSCC-Annual-Report-2022-Complete-Compressed.pdf?alt=media&token=1dcccc1d-8f73-41ca-8035-4c1605eb819c" target="_blank" rel="noopener">here</a></td>

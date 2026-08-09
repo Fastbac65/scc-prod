@@ -24,7 +24,7 @@ const initialState = {
   modal: { open: false, title: '', content: '' },
   loadingSpinner: false,
   // themeMode, themeDirection etc..
-  themeMode: 'dark',
+  themeMode: 'light',
   // toggle Mode
   onToggleMode: () => {},
   // Global state vars

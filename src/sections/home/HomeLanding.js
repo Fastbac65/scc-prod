@@ -108,7 +108,7 @@ export default function HomeLanding(props) {
             South Curl Curl Surf Life Saving Club
           </Typography>
           <Typography textAlign="center" variant="body1" color="text" m={2} mb={4}>
-            🎉 Another amazing season comes to an end. Big thank you to all our members, voluteers, surf club friends and sponsors. We are looking forward to seeing you all again next season. Stay warm. 🎉
+            🎉 Big welcome to the 2026 Season to all our members, voluteers, surf club friends and sponsors. Patrols start again on 26th Sept. See below for our latest news and all your membership needs. 🎉
           </Typography>
           {/* <PreloadImg/> */}
 

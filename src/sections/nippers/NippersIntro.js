@@ -61,11 +61,11 @@ const NippersIntro = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ maxWidth: '700px' }}>
             <Typography variant="h3" component="h2">
-              Welcome to Nippers 2025/26
+              Welcome to Nippers
             </Typography>
             <Typography variant="body2">
-              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the 2025/2026 season. So what is South Curly
-              Nippers all about?
+              South Curl Curl Surf Life Saving Club warmly welcomes all our new and existing Nippers, Nipper parents, Nippers committee members and Age Managers to the new season. So what is South Curly Nippers
+              all about?
             </Typography>
           </Stack>
         </Box>

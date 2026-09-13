@@ -80,7 +80,7 @@ const PatrolCalendar = () => {
           <Box>
             <Typography>
               Public version of full patrol roster: &nbsp;
-              <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/2026ROSTER-ForAllMembers.pdf">
+              <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'secondary'} rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/SCC-PATROL-DATES-26_27.pdf">
                 SCC 2026/2027 PATROLS Full Roster
               </Link>
             </Typography>

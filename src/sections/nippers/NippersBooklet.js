@@ -92,7 +92,7 @@ const NippersBooklet = () => {
             </Typography>
           </Stack>
         </Box>
-        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/SCCNippersInfoBooklet2025-26.pdf">
+        <Link target="_blank" rel="noopener" href="https://southcurlcurlslsc.com.au/assets/docs/Nippers_Information_Booklet_2026-27.pdf">
           <Button color="primary" variant="contained" endIcon={<Iconify icon="carbon:launch" />}>
             SCC Nippers Information Booklet
           </Button>

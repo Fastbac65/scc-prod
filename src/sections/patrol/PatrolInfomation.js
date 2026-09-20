@@ -42,12 +42,30 @@ const patrolInfoContent = [
   {
     icon: 'mdi:flag-variant-outline',
     label: 'Patrol Roster',
-    text: `<p>Current SCC Patrol roster can be seen below in the calendar section. This version on the public website does not include telephone numbers due to privacy reasons. Patrolling Members can access the Patrol Roster with telephone number on TeamApp under ‘Information for Patrolling Members’.</p>`,
+    text: `<p>Current SCC Patrol roster can be seen below in the calendar section. This version on the public website does not include telephone numbers due to privacy reasons. Patrolling Members can access the Patrol Roster with telephone numbers within the patrol room. Patrol swaps are now done via the patrol WhatsApp group, to join please scan the group QR code on the patrol room.</p>`,
   },
   {
     icon: 'mdi:flag-variant-outline',
-    label: 'Gym Access',
-    text: `<p>Our gym is for the benefit of our Patrolling Members only. Allowing non-members to access the facility puts the club at risk. Patrolling members wishing to access the gym must complete patrol obligations, and will require a FOB.  The fee is $50 (non-refundable) and is payable via the payment link <a rel='noopener' target='_blank' href=' https://hub.sls.com.au/public/pay/338' >"HERE"</a>. Select South Curl Curl at the top and 'club key' for 'Transaction Type". Please complete Gym Agreement Form found <a rel='noopener' target='_blank' href='https://southcurlcurlslsc.com.au/assets/docs/SCC-Gym-agreement-FINAL.pdf' >"HERE"</a>. Email mail@southcurlcurlslsc.com.au to arrange FOB collection or activation.</p>`,
+    label: 'Gym Access Information (Patrolling Members Only)',
+    text: `<p><em>Access Eligibility</em> - <em>Our gym is </em><em>strictly for Patrolling Members</em><em>. Allowing non‑members to enter the facility places the club at risk and is </em><em>not permitted</em><em>.&nbsp;</em><em>To access the gym, Patrolling Members must:</em></p>
+<ul>
+<li>Be current and active,</li>
+<li>Have completed all patrol obligations, and</li>
+<li>Hold an activated access FOB.</li>
+</ul>`,
+  },
+  {
+    icon: 'mdi:flag-variant-outline',
+    label: 'FOB Access and Fees',
+    text: `<p>All FOBs cost $50 (non‑refundable), there are 2 variants, a water proof wrist band and a keychain option</p>
+<p>Where to Purchase:</p>
+<ul>
+<li>Uniform Shop &ndash; Sunday mornings.</li>
+<li>Online Shop &ndash; via the club website</li>
+</ul>
+<p>FOB Activation</p>
+<p>To activate your FOB, you must complete the <em>FOB Agreement/Access Form</em> (Gym Agreement Form). The form is available <em><a href="https://southcurlcurlslsc.com.au/assets/docs/SCC-Gym-agreement-FINAL.pdf" target="_blank" rel="noopener">HERE</a></em>. If you have any questions or issues regarding gym access or FOB activation, please contact:<a href="mailto:mail@southcurlcurlslsc.com.au"> mail@southcurlcurlslsc.com.au</a></p>
+<p></p>`,
   },
 ];
 const PatrolInformation = () => {

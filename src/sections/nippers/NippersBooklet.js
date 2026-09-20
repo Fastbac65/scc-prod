@@ -87,8 +87,8 @@ const NippersBooklet = () => {
         <Box display="flex" justifyContent="center">
           <Stack sx={{ py: 2 }}>
             <Typography variant="body2">
-              Details on Nippers SurfEd programs, Nippers calendar for 2026/2027, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in the
-              Nippers Information Booklet
+              Details on Nippers SurfEd programs, Nippers calendar for the new season, Carnivals, Proficiencies required per age group, Age group manager details and TeamApp setup instructions are all found in
+              the Nippers Information Booklet
             </Typography>
           </Stack>
         </Box>

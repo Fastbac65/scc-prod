@@ -64,7 +64,7 @@ const patrolInfoContent = [
 <li>Online Shop &ndash; via the club website or directly <a href="https://shop.southcurlcurlslsc.com.au/collections/club-merch" target="_blank" rel="noopener"> HERE</a></a></li>
 </ul>
 <p>FOB Activation</p>
-<p>To activate your FOB, you must complete the <em>FOB Agreement/Access Form</em> (Gym Agreement Form). The form is available <em><a href="https://southcurlcurlslsc.com.au/assets/docs/SCC-Gym-agreement-FINAL.pdf" target="_blank" rel="noopener">HERE</a></em>. If you have any questions or issues regarding gym access or FOB activation, please contact:<a href="mailto:mail@southcurlcurlslsc.com.au"> mail@southcurlcurlslsc.com.au</a></p>
+<p>To activate your FOB, you must complete the <em>FOB Agreement/Access Form</em> (Gym Agreement Form). The form is available <em><a href="https://form.jotform.com/251303951956864" target="_blank" rel="noopener">HERE</a></em>. If you have any questions or issues regarding gym access or FOB activation, please contact:<a href="mailto:mail@southcurlcurlslsc.com.au"> mail@southcurlcurlslsc.com.au</a></p>
 <p></p>`,
   },
 ];

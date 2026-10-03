@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, styled, alpha, Container, /* Button, Link */ } from '@mui/material';
+import { Box, Typography, Stack, styled, alpha, Container /* Button */, Link } from '@mui/material';
 // import NextLink from 'next/link';
 // components
 import Iconify from 'src/components/iconify/Iconify';
@@ -77,6 +77,15 @@ const CompetitorsBoaties = () => {
             <Typography variant="caption">Email Boat Captain - Boatiesemailhere@southcurlynippers.com.</Typography>
           </Stack>
         </Box> */}
+        <Box>
+          <Typography>
+            2026/2027 NSW Surf Boat Events: &nbsp;
+            {/* <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'white'} rel="noopener" target="_blank" */}
+            <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/26_27NSWSurfBoatsCalendar.pdff">
+              Calendar Download
+            </Link>
+          </Typography>
+        </Box>
       </Container>
     </StyledRootResponsive>
   );

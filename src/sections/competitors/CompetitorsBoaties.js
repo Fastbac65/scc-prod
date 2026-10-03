@@ -81,7 +81,7 @@ const CompetitorsBoaties = () => {
           <Typography>
             2026/2027 NSW Surf Boat Events: &nbsp;
             {/* <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'white'} rel="noopener" target="_blank" */}
-            <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/26_27NSWSurfBoatsCalendar.pdff">
+            <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/26_27NSWSurfBoatsCalendar.pdf">
               Calendar Download
             </Link>
           </Typography>

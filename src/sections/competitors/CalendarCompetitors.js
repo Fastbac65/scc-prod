@@ -14,7 +14,8 @@ import { useSettingsContext } from 'src/components/settings';
 export const getCalendarEvents = (googleCalColors) => async (info, successCallback, failureCallback) => {
   const googleCalIds = [
     'qe0q09knhqeim7ng95daocmhctbjbdjo@import.calendar.google.com',
-    'acaab1f23ecb4b7dcb6f8bd7157f7064d5e2999701f7aed235787d969acebcfe@group.calendar.google.com', // competitive gcal
+    '9d6ca6e5926beb49dcd72214f3eab0716839334718ff103bc23d78ef794bdaa3@group.calendar.google.com', // SCC Surf Boat Events
+    '39a4ee282f7dd1fa6cb43909e3f4d06e878874c5d3fb4534673296b4dc177400@group.calendar.google.com', // SLS Sports Events
     // 'cb27ab3151610b4206a2df3bb7d606f71216f9d3e7ec4b4aa80171f8b2286ee9@group.calendar.google.com', //  gcal
   ];
 
@@ -59,7 +60,7 @@ export const getCalendarEvents = (googleCalColors) => async (info, successCallba
   successCallback(allEvents);
 };
 
-const CalendarCompetitors = ({ holidays, comps }) => {
+const CalendarCompetitors = ({ holidays, comps, boats }) => {
   const theme = useTheme();
   const {
     dispatch,
@@ -74,7 +75,7 @@ const CalendarCompetitors = ({ holidays, comps }) => {
   // const screenWidth = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1400 };  //  for some reason the app is still using default breakpoints
   const screenWidth = { xs: 0, sm: 700, md: 900, lg: 1200 }; // sm default is 600  but I'm using 700 to fit filter in
 
-  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`];
+  const googleCalColors = [`${theme.palette.info.main}`, `${theme.palette.warning.main}`, `${theme.palette.error.main}`];
   // to stop FC rerendering and re-fetching events everytime a state change occurs on the page
   const memoizeGetCalendarEvents = useMemo(() => {
     return getCalendarEvents(googleCalColors);
@@ -97,16 +98,34 @@ const CalendarCompetitors = ({ holidays, comps }) => {
   }, [holidays]);
 
   useEffect(() => {
-    if (!comps) {
+    if (!boats) {
       allEvents.current.forEach((event) => {
         if (event?.borderColor === `${theme.palette.warning.main}`) {
           // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'none');
         }
       });
-    } else if (comps) {
+    } else if (boats) {
       allEvents.current.forEach((event) => {
         if (event?.borderColor === `${theme.palette.warning.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+          event.setProp('display', 'auto');
+        }
+      });
+    }
+  }, [boats]);
+
+  useEffect(() => {
+    if (!comps) {
+      allEvents.current.forEach((event) => {
+        if (event?.borderColor === `${theme.palette.error.main}`) {
+          // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
+          event.setProp('display', 'none');
+        }
+      });
+    } else if (comps) {
+      allEvents.current.forEach((event) => {
+        if (event?.borderColor === `${theme.palette.error.main}`) {
           // if (event?.extendedProps?.creator?.email === 'sccslsc.webdev@gmail.com') {
           event.setProp('display', 'auto');
         }

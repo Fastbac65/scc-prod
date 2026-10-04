@@ -1,4 +1,4 @@
-import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled, /* Link */ } from '@mui/material';
+import { Container, Box, Checkbox, FormControlLabel, FormGroup, Typography, useTheme, alpha, styled, Link } from '@mui/material';
 import { useState } from 'react';
 import CalendarCompetitors from './CalendarCompetitors';
 import { bgGradient } from 'src/lib/cssStyles';
@@ -31,16 +31,20 @@ const CompetitorsCalendar = () => {
   const theme = useTheme();
   const [holidays, setHolidays] = useState(true);
   const [comps, setComps] = useState(true);
+  const [boats, setBoats] = useState(true);
   const isSmUp = useResponsive('up', 'sm');
 
   const handleChange = (event) => {
     if (event.target.labels[0].innerText.includes('View')) {
       setHolidays(true);
       setComps(true);
+      setBoats(true);
     } else if (event.target.labels[0].innerText.includes('NSW')) {
       setHolidays(!holidays);
     } else if (event.target.labels[0].innerText.includes('Comps')) {
       setComps(!comps);
+    } else if (event.target.labels[0].innerText.includes('Boats')) {
+      setBoats(!boats);
     }
     event.target = null;
   };
@@ -53,7 +57,7 @@ const CompetitorsCalendar = () => {
         </div>
         <Container maxWidth="lg" sx={{ py: 4, textAlign: 'center', justifyContent: 'center' }}>
           <Typography variant="h3" component="h2">
-            SCC Competitive Calendar
+            SLSSNB Surf Sports Competitive Calendar
           </Typography>{' '}
           <Typography variant="caption" sx={{ mb: 3 }}>
             scroll within calendar to view more
@@ -65,19 +69,38 @@ const CompetitorsCalendar = () => {
                   <Typography sx={{ fontWeight: '500', fontSize: '1.25em' }} variant="h5">
                     Filter
                   </Typography>
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && comps} color="primary" />} label="View All" disabled={holidays && comps} />
-                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={comps} color="warning" />} label="SCC Comps" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays && comps && boats} color="primary" />} label="View All" disabled={holidays && comps} />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={boats} color="warning" />} label="Surf Boats" />
+                  <FormControlLabel onChange={handleChange} control={<Checkbox checked={comps} color="error" />} label="SLS Comps" />
                   <FormControlLabel onChange={handleChange} control={<Checkbox checked={holidays} color="info" />} label="NSW Holidays" />
                 </FormGroup>
               </Box>
             )}
             <Box sx={{ flexGrow: 1 }}>
               {/* margin seems to fix scroll issue on mobile */}
-              <CalendarCompetitors holidays={holidays} comps={comps} />
+              <CalendarCompetitors holidays={holidays} comps={comps} boats={boats} />
             </Box>
           </Box>
           <Box>
             <Typography variant="caption">If you would like to add an event to the SCC competitive calendar please contact competition@southcurlcurlslsc.com.au</Typography>
+          </Box>
+          <Box>
+            <Typography variant="caption">
+              2026/2027 NSW Surf Boat events: &nbsp;
+              {/* <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'white'} rel="noopener" target="_blank" */}
+              <Link color="inherit" rel="noopener" target="_blank" href="https://southcurlcurlslsc.com.au/assets/docs/26_27NSWSurfBoatsCalendar.pdf">
+                View or Download
+              </Link>
+            </Typography>
+          </Box>
+          <Box>
+            <Typography variant="caption">
+              Full 2026/2027 SLSSNB Surf Sports Calendar: &nbsp;
+              {/* <Link color={theme.palette.mode === 'dark' ? 'secondary.lighter' : 'white'} rel="noopener" target="_blank" */}
+              <Link color="inherit" rel="noopener" target="_blank" href="https://www.surflifesaving.net.au/wp-content/uploads/2026-2027-Surf-Sports-Calendar-Planner.pdf">
+                View or Download
+              </Link>
+            </Typography>
           </Box>
         </Container>
       </Styled2ndLayer>

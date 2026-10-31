@@ -64,7 +64,7 @@ const ourDocs = [
 <tr>
 <td>2026 Annual General Meeting (AGM)</td>
 <td>The 108th Annual General Meeting was held at 10:00am, on Sunday 2nd August 2026.</td>
-<td>The 2026 Annual Report can be viewed <a href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlSLSC-AnnualReportSeason2025-2026.pdf" target="_blank" rel="noopener">here</a></td>
+<td>The 2026 Annual Report can be viewed <a href="https://southcurlcurlslsc.com.au/assets/docs/SouthCurlCurlSLSC-AnnualReportSeason2025-2026.pdf" target="_blank" rel="noopener">here</a>, and the 2026 AGM minutes can be viewed <a href="https://southcurlcurlslsc.com.au/assets/docs/AGM-Minutes-02-08-2026.pdf" target="_blank" rel="noopener">here</a></td>
 </tr><tr>
 <td>2025 Annual General Meeting (AGM)</td>
 <td>The 107th Annual General Meeting was held at 10:00am, on Sunday 3rd August 2025.</td>
